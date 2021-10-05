@@ -1,0 +1,128 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<!-- <div class="govuk-width-container"> -->
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+          <p class="govuk-body govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-2">Already have an account?
+          <a class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold" href="javascript:void(0)" id="login-btn" data-module="govuk-button" role="button"
+            >
+            Log in
+          </a></p>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--visible">
+    <main class="govuk-main-wrapper" id="main-content">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-caption-l govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
+          <h1 class="govuk-heading-xl">What would you like to do?</h1>
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+  
+        <div class="govuk-grid-cardpanel-1">
+          <div class="govuk-panel govuk-panel--card">
+            <div class="govuk-panel--card-cotent">
+              <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Set up an account</h1>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                Create a pay as you go or a prepay account.
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Personal account</li>
+                <li>Business account</li>
+                <li>Local resident's discount scheme</li>
+              </ul>
+            </div>
+            <button role="button" class="govuk-button govuk-panel--card-button govuk-!-margin-bottom-0 create-acct" data-module="govuk-button" >
+                Set up an account
+            </button>
+          </div>
+        </div>
+        <div class="govuk-grid-cardpanel-2">
+          <div class="govuk-panel govuk-panel--card">
+            <div class="govuk-panel--card-cotent">
+              <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Make a one off payment</h1>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                Make a payment without creating an account
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Pay for the crossings made</li>
+                <li>Pay for future crossings</li>
+              </ul>
+            </div>
+            <button role="button" class="govuk-button govuk-panel--card-button govuk-!-margin-bottom-0" data-module="govuk-button" >
+                Make a one off payment
+            </button>
+          </div>
+        </div>
+        <div class="govuk-grid-cardpanel-3">
+          <div class="govuk-panel govuk-panel--card">
+            <div class="govuk-panel--card-cotent">
+              <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Penalty Charge Notice</h1>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                Resolve a Penalty Charge Notice (PCN)
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Pay for a PCN</li>
+                <li>Challenge a PCN</li>
+              </ul>
+            </div>
+            <a href="https://dartford-crossing-charge.herokuapp.com/demo/flow1" role="button" class="govuk-button govuk-panel--card-button govuk-!-margin-bottom-0" data-module="govuk-button" >
+              Pay or challenge PCN
+            </a>
+          </div>
+        </div>
+      </div>
+        
+      <!---table start-->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="govuk-inset-text govuk-!-margin-bottom-7">
+            <p class="govuk-body govuk-!-margin-bottom-1"><a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Check for paid crossing</a></p>
+            <p class="govuk-body">Check your payment made against your vehicle registration number</p>
+          </div>
+  
+          <hr class="govuk-section-break govuk-section-break--visible">
+          <table class="govuk-table govuk-!-margin-top-8" role="table">
+            <caption class="govuk-table__caption govuk-table__caption--m">
+              Charges (6am-10pm)
+            </caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                {% for head in landingData.chargeListHead %}
+                <th scope="col" class="govuk-table__header">
+                  {{ head }}
+                </th> 
+                {% endfor %}
+                <!-- <th scope="col" class="govuk-table__header" *ngFor="let head of chargeListHead">
+                  {{ head }}
+                </th> -->
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+              {% for list in landingData.chargeList %}
+                <tr class="govuk-table__row" >
+                  <td class="govuk-table__cell">{{ list.title }}</td>
+                  <td class="govuk-table__cell">{{ list.oneOff }}</td>
+                  <td class="govuk-table__cell">{{ list.payG }}</td>
+                  <td class="govuk-table__cell">{{ list.prePay }}</td>
+                </tr> 
+                {% endfor %}
+      
+            </tbody>
+          </table>
+        </div>
+      </div>
+  
+      <!----table end-->
+    </main>
+  <!-- </div> -->
+
+{% endblock %}

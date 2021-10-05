@@ -1,0 +1,49 @@
+
+</div>
+<div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-m govuk-!-font-weight-regular govuk-!-margin-bottom-2">
+        Steps
+    </h3>
+    <div class="account-steps-block">
+        <div class="account-step {% if step > 1 %}complete {% elif step === 1 %} active {% endif %}">
+            <div class="step" aria-label="step 1">1</div>
+            <div class="step-name">
+                <p class="step-title govuk-body">Verification</p>
+                {% if step > 1 %}
+                <p class="govuk-body-s">- jonhdoe@gmail.com</p> 
+                {% endif %}
+            </div> 
+        </div>
+        <div class="account-step {% if step > 2 %} complete {% elif step === 2 %} active {% endif %}">
+            <div class="step" aria-label="step 2">2</div>
+            <div class="step-name">
+                <p class="step-title govuk-body">Select an account type</p>
+                {% if step > 2 %}
+                <p class="govuk-body-s">- Pre-pay, Personel, Manual topup</p> 
+                {% endif %}
+            </div> 
+        </div>
+        <div class="account-step {% if step > 3 %} complete {% elif step === 3 %} active {% endif %}">
+            <div class="step" aria-label="step 3">3</div>
+            <div class="step-name">
+                <p class="step-title govuk-body">Add Vehicle</p>
+                {% if step > 3 %}
+                <p class="govuk-body-s">- AN23CHA</p> 
+                {% endif %}
+            </div> 
+        </div>
+        <div class="account-step  {% if step === 4 %} active {% endif %}">
+            <div class="step" aria-label="step 4">4</div>
+            <div class="step-name">
+                <p class="step-title govuk-body">Payment</p>
+            </div> 
+        </div>
+    </div>
+
+</div>
+</div>
+
+  
+</main>
+
+

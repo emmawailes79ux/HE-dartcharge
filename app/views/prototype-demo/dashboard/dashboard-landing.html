@@ -1,0 +1,156 @@
+{% extends "./dashboard-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 divider">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-heading-l">John Doe's Dashboard</h1>
+        </div>
+      </div>
+      <div class="dashboard-card-container">
+        <div class="dashboard-card-heading">
+          <div>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your Balance</h3>
+            <h3 class="govuk-heading-xl govuk-!-font-weight-regular govuk-!-margin-bottom-4 balance">£ 14.00</h3>
+          </div>
+        </div>
+        <div class="account-status-right">
+          <p class="govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-2">Account status</p>
+          <div class="status-circle bg-active">
+            <span
+              class="
+                status
+                govuk-body govuk-!-font-size-16 govuk-!-font-weight-bold
+              "
+            >
+              Open</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="bottom-line"></div>
+      <div class="dashboard-card-container">
+        <div class="dashboard-card-heading">
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your vehicle</h3>
+          <h3 class="govuk-heading-l govuk-!-font-weight-regular govuk-!-margin-bottom-4">1 <span class="govuk-body">Vehicle</span></h3>
+        </div> 
+        <div class="govuk-!-margin-top-1"><a class="govuk-link govuk-link--no-visited-state" role="link"  href="/dashboard/vehicles" >View all vehicles</a></div>
+      </div>
+
+      <div class="govuk-table-list-container">
+        <div class="govuk-table-list-row table-header">
+            {% for head in dashboardData.vehicleListHead %}
+          <div class="govuk-table-list-cell govuk-body-s" >
+            {{ head }}
+          </div>
+          {% endfor %}
+        </div>
+        <div class="govuk-table-list-row table-body">
+          <h5 class="govuk-table-list-cell govuk-body-s"><a href="/dashboard/vehicles/view" class="govuk-link">PMEZE171</a></h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">B</h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">OTHER</h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">OTHER</h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">Yellow</h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">Standard</h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">02/09/2021</h5>
+          <h5 class="govuk-table-list-cell govuk-body-s"> </h5>
+        </div>
+      </div>
+
+
+      <div class="dashboard-card-container" >
+        <div class="dashboard-card-heading">
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your last 30 day usage</h3>
+          <h3 class="govuk-heading-l govuk-!-font-weight-regular govuk-!-margin-bottom-4">2 <span class="govuk-body">Trips</span></h3>
+          <h3
+            class="govuk-body govuk-!-margin-bottom-2">
+            Last 5 Crossing made
+          </h3>          
+        </div>
+        <div class="govuk-!-margin-top-1"><a class="govuk-link govuk-link--no-visited-state" role="link"  href="/dashboard/crossings" >View crossing history</a></div>
+      </div>
+
+
+      <div class="govuk-table-list-container" >
+        <div class="govuk-table-list-row table-header">
+            {% for head in dashboardData.crossingListHead %}
+          <div  class="govuk-table-list-cell govuk-body-s" >
+            {{ head }}
+          </div>
+          {% endfor %}
+        </div>
+        {% for crossingItem in dashboardData.transactionList %}
+     
+        <div
+          class="govuk-table-list-row table-body">
+          <h5 class="govuk-table-list-cell govuk-body-s">
+            {{ crossingItem.postingDate}}
+          </h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">
+            {{ crossingItem.exitTime }}
+          </h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">Nil</h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">
+            {{ crossingItem.transponderNumber }}
+          </h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">12345</h5>
+          <h5 class="govuk-table-list-cell govuk-body-s">
+            Accepted
+          </h5>
+        </div>
+        {% endfor %}
+      </div>
+
+
+      <div  class="dashboard-card-container" >
+        <div class="dashboard-card-heading">
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Your payments</h3>
+          <h3 class="govuk-body govuk-!-margin-bottom-2" >
+            Last 5 payments
+          </h3>
+        </div>
+        <div class="govuk-!-margin-top-1"><a class="govuk-link govuk-link--no-visited-state" role="link"  href="/dashboard/payments" >View payment history</a></div>
+      </div>
+
+      <div class="govuk-table-list-container govuk-tbl-column">
+        <div class="govuk-table-list-row table-header">
+          {% for head in dashboardData.paymentListHead %}
+          <div  class="govuk-table-list-cell govuk-body-s" >
+            {{ head }}
+          </div>
+          {% endfor %}
+        </div>
+        {% for paymentItem in dashboardData.paytransactionList %}
+        <div class="govuk-table-list-row table-body tabular-flex-row" >
+          <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+            {{ paymentItem.postingDate }}
+          </h3>
+          <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+            {{ paymentItem.amount}}
+          </h3>
+          <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+            12345678
+          </h3>
+        </div>
+        {% endfor %}
+      </div>
+
+
+    </div>
+    
+
+    {% include "./dashboard-user-account-info.html" %}
+
+
+  </div>
+  
+
+
+{% endblock %}

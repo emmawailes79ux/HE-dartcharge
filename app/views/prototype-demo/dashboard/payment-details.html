@@ -1,0 +1,106 @@
+{% extends "./dashboard-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Payments</h1>
+                <p class="govuk-body">Payments can take up to 48 hours to appear on your account</p>
+            </div>
+            <div class="govuk-grid-column-full govuk-!-margin-bottom-7">
+                <ul class="table-sort-box-block govuk-!-margin-0  govuk-!-padding-0 govuk-grid-row">
+                    <li>
+                        <div class="govuk-radios govuk-radios--small">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                                    value="month">
+                                <label class="govuk-radios__label govuk-body-s" for="changed-name">
+                                   View all
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="govuk-radios govuk-radios--small">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                                    value="month">
+                                <label class="govuk-radios__label govuk-body-s" for="changed-name">
+                                    last 30 days
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="govuk-radios govuk-radios--small">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                                    value="month">
+                                <label class="govuk-radios__label govuk-body-s" for="changed-name">
+                                    last 90 days
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="govuk-radios govuk-radios--small">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio"
+                                    value="month">
+                                <label class="govuk-radios__label govuk-body-s" for="changed-name">
+                                    custom range
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+        
+                </ul>
+            </div>
+            <div class="govuk-grid-column-full">
+                <p class="table-info-text govuk-body-s">Clicking on columns headers will refresh the data sorted by the chosen heading</p>
+
+                <div class="govuk-table-list-container govuk-tbl-column">
+                    <div class="govuk-table-list-row table-header">
+                      {% for head in dashboardData.paymentListHead %}
+                      <div  class="govuk-table-list-cell govuk-body-s" >
+                        {{ head }}
+                      </div>
+                      {% endfor %}
+                    </div>
+                    {% for paymentItem in dashboardData.paytransactionList %}
+                    <div class="govuk-table-list-row table-body tabular-flex-row" >
+                      <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+                        {{ paymentItem.postingDate }}
+                      </h3>
+                      <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+                        {{ paymentItem.amount}}
+                      </h3>
+                      <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+                        12345678
+                      </h3>
+                    </div>
+                    {% endfor %}
+                </div>
+
+
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                   Change your payment details
+                </button>
+
+
+            </div>
+        </div>
+       
+        
+    </div>
+    {% include "./dashboard-user-account-info.html" %}
+</div>
+
+
+{% endblock %}
