@@ -121,16 +121,19 @@ $(document).ready(function () {
   });
 
 
-  var radiolink = document.getElementsByName('selectlink');
-  var linkWrapper = document.getElementById('landing_nav');
-  for (var i in radiolink){
-    if(radiolink[i].addEventListener){
-      radiolink[i].addEventListener('click', function(){
-         linkWrapper.childNodes[0].setAttribute('href', this.getAttribute('data-href'));
-      });
-    }
+ $(".landingNxtBtn").click(() => {
+  let radioVal = $("[name='selectlink']:checked").val();
+  
+  if(radioVal === 'pcn') {
+
+    document.location.href="https://dartford-crossing-charge.herokuapp.com/demo/flow1";
+
+  } else if(radioVal === 'create-account') {
+
+    $.fn.redirectPage('create-account');
+
   }
- 
+ });
 
 
   $("#login-submit").on("submit", function(e){
