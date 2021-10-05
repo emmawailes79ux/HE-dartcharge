@@ -1,0 +1,19 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+<div class=" govuk-!-padding-top-5">
+  <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-3"><span class="check-icon"></span> AN23CHA</p>
+  <p class="govuk-body govuk-!-margin-bottom-7">Your vehicle has been added</p>
+  <div class="govuk-form-group">
+    <button class="govuk-button payments" data-module="govuk-button" role="button" aria-label="Move to payment"
+      >Next</button>
+  </div>
+</div>
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

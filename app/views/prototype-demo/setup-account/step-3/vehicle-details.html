@@ -1,0 +1,29 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+<table class="govuk-table govuk-!-margin-top-5">
+  <caption class="govuk-table__caption govuk-table__caption--m">Your vehicle </caption>
+  {% for vehicle in data %}
+  <tr class="govuk-table__row">
+    <td scope="col" class="govuk-table__header govuk-body"> {{ vehicle.head }}</td>
+    <td class="govuk-table__cell  govuk-body"> {{ vehicle.value }} </td>
+  </tr>
+  {% endfor %}
+</table>
+<div class="govuk-body-s govuk-!-margin-bottom-7">
+  *Additional vehicles can be added later after creating the account
+</div>
+<div class="govuk-form-group govuk-button-group" style="float: right;">
+  <button class="govuk-button add_vehicle" data-module="govuk-button" role="button" aria-label="Confirm a vehicle"
+    >Confirm vehicle details</button>
+    <button class="govuk-button govuk-button--secondary reject_vehicle" data-module="govuk-button" role="button" aria-label="Not my a vehicle"
+    >This is not my vehicle</button>
+</div>
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+<div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <h3 class="govuk-heading-m">Personal pre pay scheme</h3>
+      </div>
+  
+      <div class="govuk-grid-column-one-half govuk-!-padding-top-1 govuk-!-padding-bottom-3">
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="../select-account"> Change account </a>
+      </div>
+    </div>
+    
+    <p class="govuk-body">
+      In order to set up your Dart Charge account, please provide
+      <br />
+       the below information.
+    </p>
+  
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="first-name"> First name </label>
+          <input
+            class="govuk-input govuk-!-width-one-half"
+            id="first-name"
+            name="first-name"
+            type="text"
+            aria-required="true"
+          />
+        </div>
+  
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="last-name"> Last name </label>
+          <input
+            class="govuk-input govuk-!-width-one-half"
+            id="last-name"
+            name="last-name"
+            type="text"
+            aria-required="true"
+          />
+        </div>
+  
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="mobile-no"> Mobile telephone number (optional) </label>
+          <input
+            class="govuk-input govuk-!-width-one-half"
+            id="mobile-no"
+            name="mobile-no"
+            type="number"
+            aria-required="true"
+          />
+        </div>
+       
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="landline-no"> Landline telephone number (optional) </label>
+          <input
+            class="govuk-input govuk-!-width-one-half"
+            id="landline-no"
+            name="landline-no"
+            type="number"
+            aria-required="true"
+          />
+        </div>
+  
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email"> Email </label>
+          <input
+            class="govuk-input govuk-!-width-one-half"
+            id="email"
+            name="email"
+            type="email"
+            aria-required="true"
+          />
+        </div>
+  
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="password"> Enter password </label>
+          <input
+            class="govuk-input govuk-!-width-one-half"
+            id="password"
+            name="password"
+            type="password"
+            aria-required="true"
+          />
+        </div>
+  
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="password-1"> Reenter password </label>
+          <input
+            class="govuk-input govuk-!-width-one-half"
+            id="password-1"
+            name="password-1"
+            type="password-1"
+            aria-required="true"
+          />
+        </div>
+      </fieldset>
+    </div>
+    
+    <button
+      class="govuk-button user-info"
+      data-module="govuk-button"
+      role="button"
+    >
+      Next
+    </button>
+  </div>
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

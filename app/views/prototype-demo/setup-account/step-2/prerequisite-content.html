@@ -1,0 +1,44 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Personal pre pay scheme</h3>
+      </div>
+
+      <div class="govuk-grid-column-one-third govuk-!-padding-top-1">
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="select-account"> Change account type </a>
+      </div>
+    </div>
+    
+    <h3 class="govuk-heading-s">
+      To set up a personal pre pay scheme, you’ll need:
+    </h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        You must start a personal account with £10. If you close your account,
+        any remaining balance will be refunded.
+      </li>
+      <li>Your personal details .</li>
+      <li>
+        Details of each vehicle you’re registering, Maximum 10 vehicls can be
+        added.
+      </li>
+      <li>A debit or credit card.</li>
+    </ul>
+
+    <button
+      class="govuk-button prereq"
+      data-module="govuk-button"
+      role="button"
+    >
+      Next
+    </button>
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

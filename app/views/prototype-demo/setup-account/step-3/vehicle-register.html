@@ -1,0 +1,25 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="registration_number"> Enter your vehicle registration number </label>
+          <input class="govuk-input govuk-input--width-10" id="registration_number" name="registration_number"
+            type="text" />
+        </div>
+        <div class="govuk-form-group">
+          <button class="govuk-button vehicle_details" data-module="govuk-button" role="button" aria-label="Find a vehicle"
+          >Find</button>
+        </div>
+    
+      
+ 
+{% include "../setup-acct-bottom-container.html" %}
+
+{% endblock %}

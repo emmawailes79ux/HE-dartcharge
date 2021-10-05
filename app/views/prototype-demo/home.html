@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-body-m govuk-!-margin-bottom-0">
+      Pay the Dartford Crossing charge (Dart Charge)
+    </h1>
+    <h2 class="govuk-heading-xl govuk-!-padding-top-1 govuk-!-margin-bottom-6">
+      Paying the charge
+    </h2>
+    <p class="govuk-body govuk-!-margin-bottom-1">
+      You must pay the Dartford Crossing charge by midnight the day after
+      you cross.
+    </p>
+    <p class="govuk-body">
+      You can get a fine if you’re late or do not pay.
+    </p>
+    <button
+      class="govuk-button redirectLanding"
+      data-module="govuk-button"
+      role="button"
+    >
+      Start Now
+    </button>
+
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-3">Other ways to pay</h3>
+    <p class="govuk-body govuk-!-margin-bottom-2">You can also use this service to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li> pay with cash at <a class="govuk-link govuk-link--no-visited-state" href="#" aria-label="nearest Payzone store">your nearest Payzone store</a></li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="#" aria-label="set up an account">set up an account</a> by post</li>
+      <li><a class="govuk-link govuk-link--no-visited-state" href="#" aria-label="pay in advance or top-up your account">pay in advance or top-up your account</a> by post</li>
+      <li>pay or set up an account by phone</li>
+    </ul>
+
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-3">Dart Charge contact centre</h3>
+    <div role="note" aria-label="Information" class="govuk-inset-text govuk-!-margin-top-2">
+      <ul class="govuk-list govuk-!-margin-bottom-0">
+        <li>Phone: <a class="govuk-link govuk-link--no-visited-state" href="#" aria-label="phone number">0300 300 0120</a></li>
+        <li>
+          From outside the UK:
+          <a class="govuk-link govuk-link--no-visited-state" href="#" aria-label="from outside the UK">+44 (0) 300 300 0120</a>
+        </li>
+        <li>
+          Textphone: <a class="govuk-link govuk-link--no-visited-state" href="#" aria-label="text-phone">18001 0300 300 0120</a>
+        </li>
+        <li>Monday to Sunday, 8am to 10pm (excluding public holidays)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

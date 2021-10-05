@@ -1,0 +1,54 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+{% include "../setup-acct-head-container.html" %}
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+      <div class="govuk-radios">
+        <div class="govuk-radios__item govuk-!-margin-bottom-4">
+          <input
+            class="govuk-radios__input"
+            id="personal-account"
+            name="select-account"
+            type="radio"
+            value="government-gateway"
+            aria-describedby="personal-account-item-hint"
+          />
+          <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="personal-account">
+            Personal account
+          </label>
+
+        </div>
+        <div class="govuk-radios__item govuk-!-margin-bottom-7">
+          <input
+            class="govuk-radios__input"
+            id="business-account"
+            name="select-account"
+            type="radio"
+            value="govuk-verify"
+            aria-describedby="business-account-item-hint"
+          />
+          <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="business-account">
+            Business account
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  
+    <button
+      class="govuk-button account-type"
+      data-module="govuk-button"
+      role="button"
+      disabled
+    >
+      Next
+    </button>
+  </div>
+  
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}
