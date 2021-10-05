@@ -120,6 +120,19 @@ $(document).ready(function () {
     $.fn.redirectPage('dashboard');
   });
 
+
+  var radiolink = document.getElementsByName('selectlink');
+  var linkWrapper = document.getElementById('landing_nav');
+  for (var i in radiolink){
+    if(radiolink[i].addEventListener){
+      radiolink[i].addEventListener('click', function(){
+         linkWrapper.childNodes[0].setAttribute('href', this.getAttribute('data-href'));
+      });
+    }
+  }
+ 
+
+
   $("#login-submit").on("submit", function(e){
     e.preventDefault();
     console.log("working");

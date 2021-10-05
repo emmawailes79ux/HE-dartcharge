@@ -18,78 +18,104 @@
     </div>
     <hr class="govuk-section-break govuk-section-break--visible">
     <main class="govuk-main-wrapper" id="main-content">
+
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-          <h1 class="govuk-caption-l govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
-          <h1 class="govuk-heading-xl">What would you like to do?</h1>
-        </div>
-      </div>
-      <div class="govuk-grid-row">
-  
-        <div class="govuk-grid-cardpanel-1">
-          <div class="govuk-panel govuk-panel--card">
-            <div class="govuk-panel--card-cotent">
-              <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Set up an account</h1>
-              <p class="govuk-body govuk-!-margin-bottom-2">
-                Create a pay as you go or a prepay account.
-              </p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Personal account</li>
-                <li>Business account</li>
-                <li>Local resident's discount scheme</li>
-              </ul>
-            </div>
-            <button role="button" class="govuk-button govuk-panel--card-button govuk-!-margin-bottom-0 create-acct" data-module="govuk-button" >
-                Set up an account
-            </button>
+          <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">What would you like to do?</h1>
+
+          <div class="govuk-form-group govuk-!-margin-bottom-3">
+            <fieldset class="govuk-fieldset" aria-describedby="select-account-type">
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="make-oneoff-payment"
+                    type="radio"
+                    value="pre-pay"
+                    aria-describedby="make-oneoff-payment-hint"
+                    name="selectlink"  data-href="#"
+                  />
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="make-oneoff-payment">
+                    Make a one off payment
+                  </label>
+                  <div class="govuk-body-s govuk-!-padding-left-3">
+                    <p>Make a pre or post crossing payemnt without creating an account</p>
+                  </div>
+                </div>
+      
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="pcn"
+                    type="radio"
+                    value="pcn"
+                    aria-describedby="pcn-hint"
+                    name="selectlink"  data-href="https://dartford-crossing-charge.herokuapp.com/demo/flow1"
+                  />
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pcn">
+                    Resolve a Penalty Charge Notice (PCN)
+                  </label>
+                  <div class="govuk-body-s govuk-!-padding-left-3">
+                    <p>Pay or challenge a Penalty Charge Notice</p>
+                  </div>
+                </div>
+      
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="create-account"
+                    type="radio"
+                    value="create-account"
+                    aria-describedby="pcn-hint"
+                    name="selectlink"  data-href="create-account"
+                  />
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pcn">
+                   Set up an account
+                  </label>
+                  <div class="govuk-body-s govuk-!-padding-left-3">
+                    <p>create auto pay accounts</p>
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="paid-crossing"
+                    type="radio"
+                    value="paid-crossing"
+                    aria-describedby="paid-crossing-hint"
+                    name="selectlink"  data-href="#"
+                  />
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="paid-crossing">
+                    Check for paid crossing
+                  </label>
+                  <div id="lrds-item-hint" class="govuk-body-s govuk-!-padding-left-3">
+                    <p>Check your payemnt made against your vehicle registration number</p>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
           </div>
+          <div id="landing_nav"><a href=""
+            class="govuk-button"
+            data-module="govuk-button"
+            role="button"
+          >
+            Next
+          </a>
         </div>
-        <div class="govuk-grid-cardpanel-2">
-          <div class="govuk-panel govuk-panel--card">
-            <div class="govuk-panel--card-cotent">
-              <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Make a one off payment</h1>
-              <p class="govuk-body govuk-!-margin-bottom-2">
-                Make a payment without creating an account
-              </p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Pay for the crossings made</li>
-                <li>Pay for future crossings</li>
-              </ul>
-            </div>
-            <button role="button" class="govuk-button govuk-panel--card-button govuk-!-margin-bottom-0" data-module="govuk-button" >
-                Make a one off payment
-            </button>
-          </div>
-        </div>
-        <div class="govuk-grid-cardpanel-3">
-          <div class="govuk-panel govuk-panel--card">
-            <div class="govuk-panel--card-cotent">
-              <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Penalty Charge Notice</h1>
-              <p class="govuk-body govuk-!-margin-bottom-2">
-                Resolve a Penalty Charge Notice (PCN)
-              </p>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>Pay for a PCN</li>
-                <li>Challenge a PCN</li>
-              </ul>
-            </div>
-            <a href="https://dartford-crossing-charge.herokuapp.com/demo/flow1" role="button" class="govuk-button govuk-panel--card-button govuk-!-margin-bottom-0" data-module="govuk-button" >
-              Pay or challenge PCN
-            </a>
-          </div>
+
+
+
+
         </div>
       </div>
         
       <!---table start-->
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-          <div class="govuk-inset-text govuk-!-margin-bottom-7">
-            <p class="govuk-body govuk-!-margin-bottom-1"><a href="#" class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold">Check for paid crossing</a></p>
-            <p class="govuk-body">Check your payment made against your vehicle registration number</p>
-          </div>
-  
-          <hr class="govuk-section-break govuk-section-break--visible">
-          <table class="govuk-table govuk-!-margin-top-8" role="table">
+          <table class="govuk-table govuk-!-margin-top-5 govuk-!-margin-bottom-0" role="table">
             <caption class="govuk-table__caption govuk-table__caption--m">
               Charges (6am-10pm)
             </caption>
