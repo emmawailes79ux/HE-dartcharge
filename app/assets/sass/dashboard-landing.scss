@@ -129,7 +129,7 @@ $bg_circle: #bfe3e0;
 .govuk-table-list-container {
   display: table;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .govuk-table-list-row {
@@ -239,3 +239,9 @@ $bg_circle: #bfe3e0;
 .table-sort-box-block li .govuk-radios--small .govuk-radios__input:focus + .govuk-radios__label:before{
   border-width: 3px;
 }
+
+
+
+
+.table-header .govuk-table-list-cell { padding: 0.5rem 1.1rem 0.5rem 0; }
+.table-body .govuk-table-list-cell { padding: 1rem 0.5rem 1rem 0; }

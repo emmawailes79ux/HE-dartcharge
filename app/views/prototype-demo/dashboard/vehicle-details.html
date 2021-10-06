@@ -17,8 +17,8 @@
             <div class="govuk-grid-column-full">
 
                 <p class="table-info-text govuk-body-s">Clicking on columns headers will refresh the data sorted by the chosen heading</p>
-
-                <div class="govuk-table-list-container">
+                <div class="table-scroll">
+                  <div class="govuk-table-list-container">
                     <div class="govuk-table-list-row table-header">
                       {% for head in dashboardData.vehicleListHead %}
                       <div class="govuk-table-list-cell govuk-body-s" >
@@ -27,33 +27,61 @@
                       {% endfor %}
                     </div>
                     <div class="govuk-table-list-row table-body">
-                      <h5 class="govuk-table-list-cell govuk-body-s"><a href="/dashboard/vehicles/view" class="govuk-link">PMEZE171</a></h5>
-                      <h5 class="govuk-table-list-cell govuk-body-s">B</h5>
-                      <h5 class="govuk-table-list-cell govuk-body-s">OTHER</h5>
-                      <h5 class="govuk-table-list-cell govuk-body-s">OTHER</h5>
-                      <h5 class="govuk-table-list-cell govuk-body-s">Yellow</h5>
-                      <h5 class="govuk-table-list-cell govuk-body-s">Standard</h5>
-                      <h5 class="govuk-table-list-cell govuk-body-s">02/09/2021</h5>
-                      <h5 class="govuk-table-list-cell govuk-body-s"> </h5>
-                    </div>
+                        <h5 class="govuk-table-list-cell govuk-body-s"><a href="/dashboard/vehicles/view" class="govuk-link">PMEZE171</a></h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">B</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">AUDI</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">TT FSI</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">Black</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">Standard</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">02 Sep 2021</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">
+                          <div class="govuk-checkboxes--small table-remove-check">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
+                                    value="DfT">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation-4"></label>
+                            </div>
+                        </div>
+                        </h5>
+                      </div>
+                      <div class="govuk-table-list-row table-body">
+                        <h5 class="govuk-table-list-cell govuk-body-s"><a href="/dashboard/vehicles/view" class="govuk-link">ASIE843</a></h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">B</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">BMW</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">550</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">Red</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">Standard</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">18 Sep 2021</h5>
+                        <h5 class="govuk-table-list-cell govuk-body-s">
+                          <div class="govuk-checkboxes--small table-remove-check">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
+                                    value="DfT">
+                                <label class="govuk-label govuk-checkboxes__label" for="organisation-4"></label>
+                            </div>
+                        </div>
+                        </h5>
+                      </div>
+                   </div>
                 </div>
 
                 <div class="govuk-!-margin-top-6">
-                    <button role="button" class="govuk-button pull-left" data-module="govuk-button">
-                        Add Another Vehicle
+                    <button role="button" class="govuk-button govuk-!-margin-right-3" data-module="govuk-button">
+                        Add another vehicle
                     </button>
-                    <button role="button" class="govuk-button govuk-button--secondary pull-right" data-module="govuk-button">
-                        Remove Vehicle
+                    <button role="button" class="govuk-button govuk-button--secondary " data-module="govuk-button">
+                        Remove vehicle
                     </button>
                 </div>
 
             </div>
-            <div class="govuk-grid-column-full govuk-!-margin-bottom-4">
+
+            <!-- <div class="govuk-grid-column-full govuk-!-margin-bottom-4">
                 <div class="govuk-body-m  govuk-!-margin-bottom-2">You can add up to ten vehicles manually</div>
                 <div class="govuk-caption-m"><b>important-</b> If you have made crossings in a vehicle prior to adding it to
                     your account,these must be paid for individually.only crossings made after the VRM has been added
                     will be settled to your account</div>
-            </div>
+            </div> -->
 
 
         </div>
