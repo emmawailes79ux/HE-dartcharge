@@ -7,21 +7,20 @@
 {% block content %}
 
 {% include "../setup-acct-head-container.html" %}
-<div class="govuk-grid-row">
-  <div class="govuk-body-l govuk-!-font-weight-bold  govuk-grid-column-one-third govuk-!-margin-top-1">
-    Payment amount
-  </div>
-  
+
+<div class="govuk-form-group ">
+  <label class="govuk-label govuk-!-font-weight-bold " for="holder_name">Payment amount</label>
   <div class="govuk-input__wrapper govuk-grid-column-two-third">
-      <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
-      <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-5" id="amount" name="amount" value="10.00" type="number" aria-describedby="amount" spellcheck="false">
-  </div>
+    <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-5" id="amount" name="amount" value="10.00" type="number" aria-describedby="amount" spellcheck="false">
+</div>
+ 
 </div>
 
 <div class="govuk-form-group govuk-!-margin-bottom-2">
   <label class="govuk-label govuk-!-font-weight-bold " for="holder_name">Card number</label>
   <input class="govuk-input govuk-input--width-20" id="holder_name" name="holder_name" type="text"
-      aria-required="true" aria-label="Enter the card holder name" placeholder="FirstNameLastName" />
+      aria-required="true" aria-label="Enter the card holder name" />
 </div>
 <div class="govuk-!-margin-bottom-2"><img class="card-img" src="/public/images/cards.png"  width="360px" alt="payment" /></div>
 <div class="govuk-caption-m govuk-!-margin-bottom-5">
@@ -35,22 +34,22 @@
 </div>
 <div style="display: flex;">
   <div class="govuk-form-group govuk-!-margin-bottom-2">
-      <label class="govuk-label" for="holder_name">Month</label>
-      <input class="govuk-input govuk-input--width-2" id="holder_name" name="holder_name" type="text"
+      <label class="govuk-label" for="month">Month</label>
+      <input class="govuk-input govuk-input--width-2" id="month" name="month" type="text"
           aria-required="true" aria-label="Enter the card holder name"  />
   </div> 
   <div class="govuk-caption-xl govuk-!-font-weight-regular govuk-!-margin-top-5 govuk-!-margin-bottom-0 govuk-!-padding-2"> / </div>
   <div class="govuk-form-group govuk-!-margin-bottom-2">
-      <label class="govuk-label" for="holder_name">Year</label>
-      <input class="govuk-input govuk-input--width-4" id="holder_name" name="holder_name" type="text"
+      <label class="govuk-label" for="year">Year</label>
+      <input class="govuk-input govuk-input--width-4" id="year" name="year" type="text"
           aria-required="true" aria-label="Enter the card holder name"  />
   </div>
 </div>
 
 <div class="govuk-form-group govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-  <label class="govuk-label govuk-!-font-weight-bold " for="holder_name">Name on card</label>
-  <input class="govuk-input govuk-input--width-20" id="holder_name" name="holder_name" type="text"
-      aria-required="true" aria-label="Enter the card holder name" placeholder="FirstName LastName" />
+  <label class="govuk-label govuk-!-font-weight-bold " for="name-on-card">Name on card</label>
+  <input class="govuk-input govuk-input--width-20" id="name-on-card" name="name-on-card" type="text"
+      aria-required="true" aria-label="Enter the card holder name" />
 </div>
 
 <div class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
@@ -69,7 +68,7 @@
 
 <!-- Terms and Condition Starts-->
 <div class="govuk-form-group govuk-!-margin-bottom-2" >
-  <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-0" for="Terms and condition"> Terms and conditions - Pay for crossing
+  <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-0" for="Terms and conditions"> Terms and conditions - Pay for crossing
   </p>
  
 </div>
@@ -79,12 +78,12 @@
           <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
               value="DfT">
           <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
-              I accept the terms and condition
+              I accept the terms and conditions
           </label>
       </div>
   </div>
 </div>
-<p class="govuk-body">Read terms and condition ( link open in a new window )</p>
+<p class="govuk-body">Read terms and condition ( link opens in a new window )</p>
 <div class="govuk-button-group govuk-!-margin-top-6">
   <input data-module="govuk-button" class="govuk-button payment_done" value="Proceed to payment" type="submit" role="button"
       aria-label="Pay crossing payment"  />

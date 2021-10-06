@@ -33,9 +33,9 @@ exports.chargeList = [
 ];
 
 exports.vehicleList = [
-  { 'head':"Registration Number", 'value':'AN23CHA'},
-   {'head':"Class", 'value': 'B'},
-   {'head': "Make", 'value':'AUDI' },
-   {'head': "Model", 'value':'TT FSI' },
-   {'head': "Colour", 'value':'Black' },
+  { 'head':"Registration Number", 'value':'AN23CHA', 'class':'govuk-!-font-size-24 govuk-!-font-weight-bold'},
+   {'head':"Class", 'value': 'B', 'class':''},
+   {'head': "Make", 'value':'AUDI' , 'class':''},
+   {'head': "Model", 'value':'TT FSI' , 'class':''},
+   {'head': "Colour", 'value':'Black' , 'class':''},
  ];

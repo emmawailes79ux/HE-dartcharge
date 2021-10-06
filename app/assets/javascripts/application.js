@@ -38,6 +38,10 @@ $(document).ready(function () {
     window.location.href = `/${uri}`;
   }
 
+  $.fn.goBack = () => {
+    window.history.back();
+  }
+
   $(".redirectLanding").click(function(){
     $.fn.redirectPage('landing');
   });
@@ -109,7 +113,7 @@ $(document).ready(function () {
   });
 
   $(".govuk-back-link").click(function(){
-    window.history.back()
+    $.fn.goBack();
   });
 
   $("#login-btn").click(function(){
@@ -123,7 +127,7 @@ $(document).ready(function () {
 
  $(".landingNxtBtn").click(() => {
   let radioVal = $("[name='selectlink']:checked").val();
-  
+
   if(radioVal === 'pcn') {
 
     document.location.href="https://dartford-crossing-charge.herokuapp.com/demo/flow1";
