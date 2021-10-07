@@ -240,7 +240,18 @@ $bg_circle: #bfe3e0;
   border-width: 3px;
 }
 
+.table-sort-box-block .govuk-radios--small .govuk-radios__label{padding-right: 0px;}
 
+@media (max-width: 600px) {
+  .table-sort-box-block li{width: 50%;}
+  .table-sort-box-block li .govuk-radios { margin-right: 10px;  margin-bottom: 10px;
+    padding: 2px 0px 2px 5px;}
+}
+@media (min-width: 40.0625em) and (max-width: 56.0625em){
+  .table-sort-box-block li{width: 50%;}
+  .table-sort-box-block li .govuk-radios { margin-right: 10px;  margin-bottom: 10px;
+    padding: 2px 0px 2px 5px;}
+}
 
 
 .table-header .govuk-table-list-cell { padding: 0.5rem 1.1rem 0.5rem 0; }
