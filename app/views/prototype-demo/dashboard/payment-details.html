@@ -64,8 +64,8 @@
             </div>
             <div class="govuk-grid-column-full">
                 <p class="table-info-text govuk-body-s">Clicking on columns headers will refresh the data sorted by the chosen heading</p>
-
-                <div class="govuk-table-list-container govuk-tbl-column">
+                <div class="table-scroll">
+                  <div class="govuk-table-list-container govuk-tbl-column">
                     <div class="govuk-table-list-row table-header">
                       {% for head in dashboardData.paymentListHead %}
                       <div  class="govuk-table-list-cell govuk-body-s" >
@@ -75,17 +75,18 @@
                     </div>
                     {% for paymentItem in dashboardData.paytransactionList %}
                     <div class="govuk-table-list-row table-body tabular-flex-row" >
-                      <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
-                        {{ paymentItem.postingDate }}
-                      </h3>
-                      <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
-                        {{ paymentItem.amount}}
-                      </h3>
-                      <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
-                        12345678
-                      </h3>
+                        <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+                          {{ paymentItem.postingDate }}
+                        </h3>
+                        <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+                          £ {{ paymentItem.amount}}
+                        </h3>
+                        <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+                          {{ paymentItem.refNumber}}
+                        </h3>
                     </div>
                     {% endfor %}
+                  </div>
                 </div>
 
 

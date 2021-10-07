@@ -63,13 +63,22 @@ $(document).ready(function () {
   });
  
   $(".account-type").click(function(){
-    $.fn.redirectPage('create-account/step-2/personal-account-type');
+    let accoutTypeVal = $("[name='select-account']:checked").val();
+    if( accoutTypeVal === 'perosnal-account') {
+      $.fn.redirectPage('create-account/step-2/personal-account-type');
+    }
+    
   });
  
   $(".prsl-acct-type").click(function(){
     let personalAccountType = $("[name='personal-account-type']:checked").val();
-    let url = personalAccountType === 'pre-pay' ? 'pre-pay/prerequisites' : 'payg/prerequisites';
-    $.fn.redirectPage(`create-account/step-2/${url}`);
+    
+    if(personalAccountType === 'pre-pay') {
+      url = 'pre-pay/prerequisites';
+      $.fn.redirectPage(`create-account/step-2/${url}`);
+    }
+    
+    
   });
  
   $(".prereq").click(function(){
@@ -124,6 +133,9 @@ $(document).ready(function () {
     $.fn.redirectPage('dashboard');
   });
 
+  $("[name='selectlink']").change(() => {
+    $(".landingNxtBtn").prop("disabled", false);
+  })
 
  $(".landingNxtBtn").click(() => {
   let radioVal = $("[name='selectlink']:checked").val();
