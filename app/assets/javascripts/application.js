@@ -11,28 +11,43 @@ $(document).ready(function () {
   $("[name='select-account']").change(function () {
     $(".account-type").prop("disabled", false);
   })
-  
+
+  $('#navigation li:last').addClass("welcomemenu");
+  $('#navigation li:last').click(() => {
+    let length = $(this).find(".submenu").length;
+    if (length == 0) {
+      var newDiv = $('<div class="submenu dropdown-content"><a href="/">Logout</a></div>');
+      $('#navigation li:last').append(newDiv);
+      $(this).find(".submenu").show();
+    } else {
+      $(this).find(".submenu").toggle();
+    }
+  })
+
+
   $("[name='personal-account-type']").change(function () {
-    
+
     $(".prsl-acct-type").prop("disabled", false);
   })
 
   $("[name='initial-payment']").change(function () {
-      
-     if ( this.value === "auto-topup" )  {
 
-        $("#auto-topup-options").css("display", "block");
-        $("#manual-topup-option").css("display", "none");
+    if (this.value === "auto-topup") {
 
-     } else if(this.value === "manual-topup") {
+      $("#auto-topup-options").css("display", "block");
+      $("#manual-topup-option").css("display", "none");
 
-        $("#auto-topup-options").css("display", "none");
-        $("#manual-topup-option").css("display", "block");
-        
-     }
-      
-      
+    } else if (this.value === "manual-topup") {
+
+      $("#auto-topup-options").css("display", "none");
+      $("#manual-topup-option").css("display", "block");
+
+    }
+
+
   })
+
+
 
   $.fn.redirectPage = (uri) => {
     window.location.href = `/${uri}`;
@@ -42,94 +57,94 @@ $(document).ready(function () {
     window.history.back();
   }
 
-  $(".redirectLanding").click(function(){
+  $(".redirectLanding").click(function () {
     $.fn.redirectPage('landing');
   });
 
-  $(".create-acct").click(function(){
+  $(".create-acct").click(function () {
     $.fn.redirectPage('create-account');
   });
-  
-  $(".send-code").click(function(){
+
+  $(".send-code").click(function () {
     $.fn.redirectPage('create-account/check-code');
   });
-  
-  $(".email-verification").click(function(){
+
+  $(".email-verification").click(function () {
     $.fn.redirectPage('create-account/verification-confirmation');
   });
-  
-  $(".confirm-verification").click(function(){
+
+  $(".confirm-verification").click(function () {
     $.fn.redirectPage('create-account/step-2/select-account');
   });
- 
-  $(".account-type").click(function(){
+
+  $(".account-type").click(function () {
     let accoutTypeVal = $("[name='select-account']:checked").val();
-    if( accoutTypeVal === 'perosnal-account') {
+    if (accoutTypeVal === 'perosnal-account') {
       $.fn.redirectPage('create-account/step-2/personal-account-type');
     }
-    
+
   });
- 
-  $(".prsl-acct-type").click(function(){
+
+  $(".prsl-acct-type").click(function () {
     let personalAccountType = $("[name='personal-account-type']:checked").val();
-    
-    if(personalAccountType === 'pre-pay') {
+
+    if (personalAccountType === 'pre-pay') {
       url = 'pre-pay/prerequisites';
       $.fn.redirectPage(`create-account/step-2/${url}`);
     }
-    
-    
+
+
   });
- 
-  $(".prereq").click(function(){
+
+  $(".prereq").click(function () {
     $.fn.redirectPage('create-account/step-2/pre-pay/user-info');
   });
-  
-  $(".user-info").click(function(){
+
+  $(".user-info").click(function () {
     $.fn.redirectPage('create-account/step-2/pre-pay/initial-payment');
   });
-  
-  $(".initial-payment-next").click(function(){
+
+  $(".initial-payment-next").click(function () {
     $.fn.redirectPage('create-account/step-2/pre-pay/done');
   });
-  
-  $(".payg-prereq").click(function(){
+
+  $(".payg-prereq").click(function () {
     $.fn.redirectPage('create-account/step-2/payg/done');
   });
- 
-  $(".redirectStep3").click(function(){
+
+  $(".redirectStep3").click(function () {
     $.fn.redirectPage('create-account/step-3/vehicle-register');
   });
-  
-  $(".vehicle_register").click(function(){
+
+  $(".vehicle_register").click(function () {
     $.fn.redirectPage('create-account/step-3/vehicle-register');
   });
-  
-  $(".vehicle_details").click(function(){
+
+  $(".vehicle_details").click(function () {
     $.fn.redirectPage('create-account/step-3/vehicle-details');
   });
-  
-  $(".add_vehicle").click(function(){
+
+  $(".add_vehicle").click(function () {
     $.fn.redirectPage('create-account/step-3/step-3-done');
   });
-  
-  $(".payments").click(function(){
+
+  $(".payments").click(function () {
     $.fn.redirectPage('create-account/step-4/payments');
   });
-  
-  $(".payment_done").click(function(){
+
+  $(".payment_done").click(function () {
     $.fn.redirectPage('create-account/step-4/step-4-done');
   });
 
-  $(".govuk-back-link").click(function(){
+  $(".govuk-back-link").click(function () {
     $.fn.goBack();
   });
 
-  $("#login-btn").click(function(){
+  $("#login-btn").click(function () {
     $.fn.redirectPage('login');
   });
 
-  $(".todashboard").click(function(){
+  $(".todashboard").click(function () {
     $.fn.redirectPage('dashboard');
   });
 
@@ -137,33 +152,33 @@ $(document).ready(function () {
     $(".landingNxtBtn").prop("disabled", false);
   })
 
- $(".landingNxtBtn").click(() => {
-  let radioVal = $("[name='selectlink']:checked").val();
+  $(".landingNxtBtn").click(() => {
+    let radioVal = $("[name='selectlink']:checked").val();
 
-  if(radioVal === 'pcn') {
+    if (radioVal === 'pcn') {
 
-    document.location.href="https://dartford-crossing-charge.herokuapp.com/demo/flow1";
+      document.location.href = "https://dartford-crossing-charge.herokuapp.com/demo/flow1";
 
-  } else if(radioVal === 'create-account') {
+    } else if (radioVal === 'create-account') {
 
-    $.fn.redirectPage('create-account');
+      $.fn.redirectPage('create-account');
 
-  }
- });
+    }
+  });
 
 
-  $("#login-submit").on("submit", function(e){
+  $("#login-submit").on("submit", function (e) {
     e.preventDefault();
     console.log("working");
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
-    if( username == "" || username == null ){
+    if (username == "" || username == null) {
       document.getElementById("user-name-error").innerHTML = "Username is required";
     }
-    if ( password == "" || password == null ){
+    if (password == "" || password == null) {
       document.getElementById("password-error").innerHTML = "Password is required";
     }
   });
 
-  
+
 })

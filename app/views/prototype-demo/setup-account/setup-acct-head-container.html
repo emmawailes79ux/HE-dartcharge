@@ -1,6 +1,4 @@
-
-
-    <!-- <div class="govuk-breadcrumbs">
+<!-- <div class="govuk-breadcrumbs">
       <ol class="govuk-breadcrumbs__list">
           <li class="govuk-breadcrumbs__list-item">
               <a href="/home" class="govuk-breadcrumbs__link" >Home</a>
@@ -11,26 +9,24 @@
       </ol>
       
     </div> -->
-    <a style="cursor: pointer;" class="govuk-back-link">Back</a>
-    <main class="govuk-main-wrapper" id="main-content" role="main">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-            <h1 class="govuk-caption-l govuk-!-margin-bottom-1 govuk-!-margin-top-0">Set up an account</h1>
-            <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">
-            
-              {% if (step === 2) %}
-              Step 2 - Select an account type
-              {% elif (step === 3) %}
-              Step 3 - Add a vehicle
-              {% elif (step === 4) %}
-              Step 4 - Payment
-            {% else %}
-              Step 1 - Verification
-            {% endif %}
-            </h2>
-        </div>
-      </div>
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-l govuk-!-margin-bottom-1 govuk-!-margin-top-0">Set up an account</h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">
 
-            
+        {% if (step === 2) %}
+        Step 2 - Select an account type
+        {% elif (step === 3) %}
+        Step 3 - Add a vehicle
+        {% elif (step === 4) %}
+        Step 4 - Payment
+        {% else %}
+        Step 1 - Verification
+        {% endif %}
+      </h2>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">

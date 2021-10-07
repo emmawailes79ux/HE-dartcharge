@@ -32,22 +32,24 @@
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 
 {% block head %}
-  {% include "includes/head.html" %}
+{% include "includes/head.html" %}
+
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
+
+{# Set serviceName in config.js. #}
+{{ govukHeader({
     serviceName: serviceName,
     serviceUrl: "/",
     navigation: [
       {
         href: "/dashboard",
-        text: "Dashboard",
+        text: "Dashboard",        
         attributes: {
           "data-install": "Dashboard"
         }
@@ -74,21 +76,30 @@
         }
       },
       {
-        href: "/dashboard/payments",
+        href: "/dashboard/payments",        
         text: "Payments",
         attributes: {
           "data-about": "Payments"
         }
+      },
+      {       
+        text: "Welcome",          
+        attributes: {
+          "data-about": "welcome"
+        }
       }
     ]
   }) }}
+
 {% endblock %}
+
+
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing ") %}
 
 {% if useAutoStoreData %}
-  {% block footer %}
-    {{ govukFooter({
+{% block footer %}
+{{ govukFooter({
       meta: {
         items: [
           {
@@ -102,13 +113,13 @@
         ]
       }
     }) }}
-  {% endblock %}
+{% endblock %}
 {% endif %}
 
 {% block bodyEnd %}
-  {% block scripts %}
-    {% include "includes/scripts.html" %}
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% block scripts %}
+{% include "includes/scripts.html" %}
+{% block pageScripts %}{% endblock %}
+{% endblock %}
+<!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}
