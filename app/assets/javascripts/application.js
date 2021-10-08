@@ -44,9 +44,7 @@ $(document).ready(function () {
 
     }
 
-
   })
-
 
 
   $.fn.redirectPage = (uri) => {
@@ -92,10 +90,10 @@ $(document).ready(function () {
       url = 'pre-pay/prerequisites';
       $.fn.redirectPage(`create-account/step-2/${url}`);
     }
-    if (personalAccountType === 'payg') {
-      url = 'payg/prerequisites';
-      $.fn.redirectPage(`create-account/step-2/${url}`);
-    }
+    // if (personalAccountType === 'payg') {
+    //   url = 'payg/prerequisites';
+    //   $.fn.redirectPage(`create-account/step-2/${url}`);
+    // }
 
 
   });
