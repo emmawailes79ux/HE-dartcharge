@@ -16,7 +16,7 @@ $(document).ready(function () {
   $('#navigation li:last').click(() => {
     let length = $(this).find(".submenu").length;
     if (length == 0) {
-      var newDiv = $('<div class="submenu dropdown-content"><a href="/">Logout</a></div>');
+      var newDiv = $('<div class="submenu dropdown-content"><a href="/landing">Logout</a></div>');
       $('#navigation li:last').append(newDiv);
       $(this).find(".submenu").show();
     } else {
