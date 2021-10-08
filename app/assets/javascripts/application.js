@@ -87,9 +87,13 @@ $(document).ready(function () {
 
   $(".prsl-acct-type").click(function () {
     let personalAccountType = $("[name='personal-account-type']:checked").val();
-
+     
     if (personalAccountType === 'pre-pay') {
       url = 'pre-pay/prerequisites';
+      $.fn.redirectPage(`create-account/step-2/${url}`);
+    }
+    if (personalAccountType === 'payg') {
+      url = 'payg/prerequisites';
       $.fn.redirectPage(`create-account/step-2/${url}`);
     }
 

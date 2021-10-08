@@ -13,7 +13,20 @@
 <main class="govuk-main-wrapper" id="main-content" role="main">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-caption-l govuk-!-margin-bottom-1 govuk-!-margin-top-0">Set up an account</h1>
+      <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-0">
+        {% if (step === 2) %}
+        Set up an account 2 of 4
+        {% elif (step === 3) %}
+        Set up an account 3 of 4
+        {% elif (step === 4) %}
+        Set up an account 4 of 4
+        {% else %}
+        Set up an account 1 of 4
+        {% endif %}
+        
+        
+      
+      </h1>
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">
 
         {% if (step === 2) %}
