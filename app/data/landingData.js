@@ -7,7 +7,7 @@ exports.chargeListHead = [
 
 exports.chargeList = [
   {
-    title: "Motorcycle, mopeds, quad bikes",
+    title: "Motorcycles, mopeds, quad bikes",
     oneOff: "Free",
     payG: "Free",
     prePay: "Free",
