@@ -13,7 +13,7 @@
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 divider">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                <h1 class="govuk-heading-l govuk-!-margin-top-5 govuk-!-margin-bottom-1">PMEZE171</h1>
+                <p class="govuk-heading-l govuk-!-margin-top-5 govuk-!-margin-bottom-1">PMEZE171</p>
                 <p class="govuk-body govuk-!-margin-bottom-7">Added on 27 Sep 2021</p>
             </div>
             <div class="govuk-grid-column-two-thirds">
@@ -24,34 +24,34 @@
                 
                 <div class="govuk-table-list-container">
                     <div class="govuk-table-list-row table-body">
-                      <h5 class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Class</h5>
-                      <h5 class="govuk-table-list-cell govuk-body-s">Class B</h5>
+                      <p class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Class</p>
+                      <p class="govuk-table-list-cell govuk-body-s">Class B</p>
                     </div>
                     <div class="govuk-table-list-row table-body">
-                        <h5 class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Make</h5>
-                        <h5 class="govuk-table-list-cell govuk-body-s">Audi</h5>
+                        <p class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Make</p>
+                        <p class="govuk-table-list-cell govuk-body-s">Audi</p>
                     </div>
                     <div class="govuk-table-list-row table-body">
-                        <h5 class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Model</h5>
-                        <h5 class="govuk-table-list-cell govuk-body-s">RS4</h5>
+                        <p class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Model</p>
+                        <p class="govuk-table-list-cell govuk-body-s">RS4</p>
                     </div>
                     <div class="govuk-table-list-row table-body">
-                        <h5 class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Color</h5>
-                        <h5 class="govuk-table-list-cell govuk-body-s">Black</h5>
+                        <p class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Color</p>
+                        <p class="govuk-table-list-cell govuk-body-s">Black</p>
                     </div>
                     <div class="govuk-table-list-row table-body">
-                        <h5 class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Vehicle plan</h5>
-                        <h5 class="govuk-table-list-cell govuk-body-s">Standard</h5>
+                        <p class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Vehicle plan</p>
+                        <p class="govuk-table-list-cell govuk-body-s">Standard</p>
                     </div>
                     <div class="govuk-table-list-row table-body">
-                        <h5 class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Group name</h5>
-                        <h5 class="govuk-table-list-cell govuk-body-s"> -</h5>
+                        <p class="govuk-table-list-cell govuk-body-s govuk-!-font-weight-bold">Group name</p>
+                        <p class="govuk-table-list-cell govuk-body-s"> -</p>
                     </div>
                 </div>
 
             </div>
             <div class="govuk-grid-column-full">
-                <h1 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Crossing</h1>                
+                <p class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Crossing</p>                
                 <p class="govuk-body">Payments can take up to 48 hours to appear on your account</p>
                 <div class="table-scroll">
                     <div class="govuk-table-list-container" >
@@ -65,20 +65,20 @@
                     {% for crossingItem in dashboardData.transactionList %}
                     <div
                         class="govuk-table-list-row table-body">
-                        <h5 class="govuk-table-list-cell govuk-body-s">
+                        <p class="govuk-table-list-cell govuk-body-s">
                             {{ crossingItem.postingDate}}
-                        </h5>
-                        <h5 class="govuk-table-list-cell govuk-body-s">
+                        </p>
+                        <p class="govuk-table-list-cell govuk-body-s">
                             {{ crossingItem.exitTime }}
-                        </h5>
-                        <h5 class="govuk-table-list-cell govuk-body-s">{{ crossingItem.direction }}</h5>
-                        <h5 class="govuk-table-list-cell govuk-body-s">
+                        </p>
+                        <p class="govuk-table-list-cell govuk-body-s">{{ crossingItem.direction }}</p>
+                        <p class="govuk-table-list-cell govuk-body-s">
                             <a href="/dashboard/vehicles/view" class="govuk-link">{{ crossingItem.number }}</a>
-                        </h5>
-                        <h5 class="govuk-table-list-cell govuk-body-s"> </h5>
-                        <h5 class="govuk-table-list-cell govuk-body-s">
+                        </p>
+                        <p class="govuk-table-list-cell govuk-body-s"> </p>
+                        <p class="govuk-table-list-cell govuk-body-s">
                             {{ crossingItem.transactionDate }}
-                        </h5>
+                        </p>
                     </div>
                     {% endfor %}
                   </div>
