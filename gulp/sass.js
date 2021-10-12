@@ -6,13 +6,13 @@
 */
 
 const gulp = require('gulp')
-const sass = require('gulp-sass')
+const sass =  require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps')
 const path = require('path')
 const fs = require('fs')
 
 const extensions = require('../lib/extensions/extensions')
-const config = require('./config.json')
+const confNig = require('./config.json')
 const stylesheetDirectory = config.paths.public + 'stylesheets'
 
 gulp.task('sass-extensions', function (done) {
