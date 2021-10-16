@@ -233,6 +233,16 @@
 
 
 
+  exports.dashboardVehicleListHead = [
+    "Registration number",
+    "Class",
+    "Make",
+    "Model",
+    "Colour",
+    "Vehicle plan",
+    "Date added",
+  ];
+  
   exports.vehicleListHead = [
     "Registration number",
     "Class",

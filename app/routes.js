@@ -73,6 +73,11 @@ router.get("/create-account/step-3/step-3-done", function(req, res){
 router.get("/create-account/step-4/payments", function(req, res){
   res.render("prototype-demo/setup-account/step-4/payments", {step:4, section:'payments'});
 });
+
+router.get("/create-account/step-4/confirm-payment", function(req, res){
+  res.render("prototype-demo/setup-account/step-4/confirm-payment", {step:4, section:'confirm-payment'});
+});
+
 router.get("/create-account/step-4/step-4-done", function(req, res){
   res.render("prototype-demo/setup-account/step-4/step-4-done", {step:4, section:'step-4-done'});
 });
@@ -80,7 +85,30 @@ router.get("/create-account/step-4/step-4-done", function(req, res){
 
 // Setup account end ///
 
+// Make one off payment
 
+router.get("/one-off-payment", function(req, res){
+  res.render("prototype-demo/one-off-payment/pay-for-crossings", {section:'make-one-off-payment'});
+});
+
+
+router.get("/one-off-payment/find-vehicle", function(req, res){
+  res.render("prototype-demo/one-off-payment/find-vehicle", {section:'find-vehicle'});
+});
+
+router.get("/one-off-payment/vehicle-details", function(req, res){
+  res.render("prototype-demo/one-off-payment/vehicle-details", {data:landingData.vehicleList});
+});
+
+router.get("/one-off-payment/payment-info", function(req, res){
+  res.render("prototype-demo/one-off-payment/payment-info");
+});
+
+router.get("/one-off-payment/payment-options", function(req, res){
+  res.render("prototype-demo/one-off-payment/payment-options");
+});
+
+// Make one off payment
 
 router.get("/under-development", function(req, res){
   res.render("prototype-demo/under-development");

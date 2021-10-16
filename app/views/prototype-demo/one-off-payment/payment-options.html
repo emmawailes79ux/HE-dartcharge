@@ -1,0 +1,89 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Make a one-off payment</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Pay for one or more crossings</h1>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full ">
+        <div class="govuk-form-group ">
+            <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">Payment amount</label>
+               
+            <div class="govuk-input__wrapper govuk-grid-column-two-third">
+                <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3" id="amount" name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false">
+            </div>
+        </div>
+
+        <div class="govuk-form-group">
+            <div class="govuk-heading-m">
+                Bank payment options
+            </div>
+            <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="card-payment" name="bank-payment" type="radio"
+                        value="card-payment" >
+                    <label class="govuk-label govuk-radios__label" for="card-payment">
+                        Card Payment
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="bank-payment" name="bank-payment" type="radio"
+                        value="bank-payment" >
+                    <label class="govuk-label govuk-radios__label" for="bank-payment">
+                        Bank payment
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="govuk-form-group">
+            <div class="govuk-heading-m">
+                Other payment options
+            </div>
+            <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="paypal" name="other-payment" type="radio"
+                        value="paypal" >
+                    <label class="govuk-label govuk-radios__label" for="paypal">
+                        Paypal
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="google-pay" name="other-payment" type="radio"
+                        value="google-pay" >
+                    <label class="govuk-label govuk-radios__label" for="google-pay">
+                        Google pay
+                    </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="apple-pay" name="other-payment" type="radio"
+                        value="apple-pay" >
+                    <label class="govuk-label govuk-radios__label" for="apple-pay">
+                        Apple pay
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

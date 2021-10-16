@@ -50,6 +50,10 @@ $(document).ready(function () {
   $.fn.redirectPage = (uri) => {
     window.location.href = `/${uri}`;
   }
+  
+  $.fn.slideToTop = () => {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  }
 
   $.fn.goBack = () => {
     window.history.back();
@@ -133,6 +137,10 @@ $(document).ready(function () {
   $(".payments").click(function () {
     $.fn.redirectPage('create-account/step-4/payments');
   });
+ 
+  $(".confrim-payment").click(function () {
+    $.fn.redirectPage('create-account/step-4/confirm-payment');
+  });
 
   $(".payment_done").click(function () {
     $.fn.redirectPage('create-account/step-4/step-4-done');
@@ -165,7 +173,12 @@ $(document).ready(function () {
 
       $.fn.redirectPage('create-account');
 
+    }else if(radioVal === 'make-oneoff-payment') {
+
+      $.fn.redirectPage('one-off-payment');
+
     }
+
   });
 
 
@@ -183,4 +196,48 @@ $(document).ready(function () {
   });
 
 
+})
+
+// One Off Payment
+
+$(".pay-for-crossings").click(function () {
+  let makePayment = $("[name='crossingsPayment']:checked").val();
+  if (makePayment === 'yes') {
+    $.fn.redirectPage('one-off-payment/find-vehicle');
+  }
+});
+
+$("[name='vrm']").click(() => {
+  $("[name='vrm']").val('LO62 NRO');
+})
+
+$(".find-vehicle").click(() => {
+  let inputVal = $("[name='vrm']").val();
+  if(inputVal === 'LO62 NRO') {
+    $.fn.redirectPage('one-off-payment/vehicle-details');
+  }else {
+    $("#vrm-error").css("display", "block");
+    $("#vrm").parent().addClass("govuk-form-group--error");
+    $("#vrm").addClass("govuk-input--error");
+    $(".error-summary").css("display", "block");
+    $.fn.slideToTop();
+  }
+})
+
+$("[name='email']").click(() => {
+  $("[name='email']").val('johndoe@gmail.com');
+  $("[name='confirm-email']").val('johndoe@gmail.com');
+})
+
+$(".proceed-to-pay").click(() => {
+  let inputVal = $("[name='email']").val();
+  if(inputVal === 'johndoe@gmail.com') {
+   alert('redirect');
+  }else {
+    $(".email-error").css("display", "block");
+    $(".email-address").parent().addClass("govuk-form-group--error");
+    $(".email-address").addClass("govuk-input--error");
+    $(".error-summary").css("display", "block");
+    $.fn.slideToTop();
+  }
 })
