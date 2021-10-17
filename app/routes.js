@@ -108,7 +108,87 @@ router.get("/one-off-payment/payment-options", function(req, res){
   res.render("prototype-demo/one-off-payment/payment-options");
 });
 
+router.get("/one-off-payment/payment", function(req, res){
+  res.render("prototype-demo/one-off-payment/crossing-payment");
+});
+
+router.get("/one-off-payment/confirm-payment", function(req, res){
+  res.render("prototype-demo/one-off-payment/confirm-payment");
+});
+
+router.get("/one-off-payment/paypal", function(req, res){
+  res.render("prototype-demo/one-off-payment/paypal");
+});
+
+router.get("/one-off-payment/success", function(req, res){
+  res.render("prototype-demo/one-off-payment/success");
+});
+
+router.get("/one-off-payment/late-payment", function(req, res){
+  res.render("prototype-demo/one-off-payment/late-payment");
+});
+
+router.get("/one-off-payment/notification", function(req, res){
+  res.render("prototype-demo/one-off-payment/notification");
+});
+
+router.get("/one-off-payment/notification-success", function(req, res){
+  res.render("prototype-demo/one-off-payment/notification-success");
+});
+
 // Make one off payment
+
+
+// Make one off payment account create payment
+router.get("/one-off-payment/create-account", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/email-verification");
+});
+router.get("/one-off-payment/check-mail", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/email-code");
+});
+router.get("/one-off-payment/mail-done", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/email-done");
+});
+router.get("/one-off-payment/select-account", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/account-type");
+});
+router.get("/one-off-payment/personal-type", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/personal-type");
+});
+router.get("/one-off-payment/prerequisite", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/prerequisite");
+});
+router.get("/one-off-payment/user-info", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/info-form");
+});
+router.get("/one-off-payment/initial-pay", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/initial-pay");
+});
+router.get("/one-off-payment/account-done", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/account-done");
+});
+router.get("/one-off-payment/vehicle-confirm", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/vehicle-confirm", { data:landingData.vehicleList});
+});
+router.get("/one-off-payment/vehicle-done", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/vehicle-done");
+});
+router.get("/one-off-payment/account-payment", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/account-payment");
+});
+router.get("/one-off-payment/account-create-done", function(req, res){
+  res.render("prototype-demo/one-off-payment/create-account/account-create-done");
+});
+// Make one off payment step account create payment
+
+
+
+
+
+
+
+
+
 
 router.get("/under-development", function(req, res){
   res.render("prototype-demo/under-development");

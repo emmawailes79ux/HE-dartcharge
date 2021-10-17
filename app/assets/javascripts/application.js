@@ -204,6 +204,8 @@ $(".pay-for-crossings").click(function () {
   let makePayment = $("[name='crossingsPayment']:checked").val();
   if (makePayment === 'yes') {
     $.fn.redirectPage('one-off-payment/find-vehicle');
+  }else if (makePayment === 'no') {
+    $.fn.redirectPage('one-off-payment/late-payment');
   }
 });
 
@@ -232,7 +234,7 @@ $("[name='email']").click(() => {
 $(".proceed-to-pay").click(() => {
   let inputVal = $("[name='email']").val();
   if(inputVal === 'johndoe@gmail.com') {
-   alert('redirect');
+    $.fn.redirectPage('one-off-payment/payment-options');
   }else {
     $(".email-error").css("display", "block");
     $(".email-address").parent().addClass("govuk-form-group--error");
@@ -241,3 +243,83 @@ $(".proceed-to-pay").click(() => {
     $.fn.slideToTop();
   }
 })
+
+$("[name='option-payment']").change(() => {
+  $(".paymentoptionBtn").prop("disabled", false);
+})
+
+$(".paymentoptionBtn").click(() => {
+  let radioVal = $("[name='option-payment']:checked").val();
+
+  if (radioVal === 'card-payment') {
+
+    $.fn.redirectPage('one-off-payment/payment');
+
+  } else if (radioVal === 'paypal') {
+
+    $.fn.redirectPage('one-off-payment/paypal');
+
+  }
+
+});
+
+
+$(".successNxt").click(function () {
+  let SuccessNext = $("[name='successnextoption']:checked").val();
+  if (SuccessNext === 'create-account') {
+     $.fn.redirectPage('one-off-payment/create-account');
+  }else if (SuccessNext === 'vrm-notifi') {
+    $.fn.redirectPage('one-off-payment/notification');
+  }else if (SuccessNext === 'finish') {
+    $.fn.redirectPage('home');
+  }
+});
+
+
+
+
+
+
+
+//Make one off payment create account
+
+$("[name='select-account']").change(function () {
+  $(".oneoff-account-type").prop("disabled", false);
+})
+$(".oneoff-account-type").click(function () {
+  let accoutTypeVal = $("[name='select-account']:checked").val();
+  if (accoutTypeVal === 'perosnal-account') {
+    $.fn.redirectPage('one-off-payment/personal-type');
+  }
+});
+
+$("[name='personal-account-type']").change(function () {
+  $(".oneoff-prsl-acct-type").prop("disabled", false);
+})
+$(".oneoff-prsl-acct-type").click(function () {
+  let personalAccountType = $("[name='personal-account-type']:checked").val();   
+  if (personalAccountType === 'pre-pay') {
+    url = 'prerequisite';
+    $.fn.redirectPage(`one-off-payment/${url}`);
+  }
+});
+
+
+$("[name='option-payment']").change(() => {
+  $(".accountpaymentoptionBtn").prop("disabled", false);
+})
+
+$(".accountpaymentoptionBtn").click(() => {
+  let radioVal = $("[name='option-payment']:checked").val();
+
+  if (radioVal === 'card-payment') {
+
+    // $.fn.redirectPage('one-off-payment/payment');
+
+  } else if (radioVal === 'paypal') {
+
+    $.fn.redirectPage('one-off-payment/account-create-done');
+
+  }
+
+});

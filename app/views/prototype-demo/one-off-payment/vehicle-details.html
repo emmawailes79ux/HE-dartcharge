@@ -7,17 +7,17 @@
 {% block content %}
 
 {% include "./one-off-payment-body-head.html" %}
-
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full govuk-!-margin-top-6">
-      <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Make a one-off payment</h1>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Pay for one or more crossings</h1>
+    <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
   </div>
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <table class="govuk-table govuk-!-margin-top-5">
+    <table class="govuk-table ">
   <caption class="govuk-table__caption govuk-table__caption--m">Your vehicle </caption>
   
   {% for vehicle in data %}
