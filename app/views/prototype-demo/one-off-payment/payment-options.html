@@ -22,17 +22,18 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full ">
         <div class="govuk-form-group ">
-            <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">Payment amount</label>
+            <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">
+              Payment amount</label>
                
             <div class="govuk-input__wrapper">
                 <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
-                <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3" id="amount" name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false">
+                <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3" id="amount" name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false" disabled>
             </div>
         </div>
 
         <div class="govuk-form-group">
             <div class="govuk-heading-m">
-               Please select the prefered payment method.
+               Please select the preferred payment method.
             </div>
             <div class="govuk-tabs" data-module="govuk-tabs">
               <h2 class="govuk-tabs__title">
@@ -60,22 +61,26 @@
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="paypal" name="option-payment" type="radio"
                       value="paypal" >
-                  <label class="govuk-label govuk-radios__label" for="paypal">
-                      Paypal
+                  
+                  <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 label-img" for="paypal">
+                    <img src="/public/images/paypal_icon.png"  alt="paypal" />
+                      <span>Paypal</span>
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="google-pay" name="option-payment" type="radio"
                         value="google-pay" >
-                    <label class="govuk-label govuk-radios__label" for="google-pay">
-                        Google pay
+                    <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 label-img" for="google-pay">
+                      <img src="/public/images/gpay_icon.png"  alt="Google pay" />
+                        <span>Google pay</span>
                     </label>
                 </div>
                 <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="apple-pay" name="option-payment" type="radio"
                         value="apple-pay" >
-                    <label class="govuk-label govuk-radios__label" for="apple-pay">
-                        Apple pay
+                    <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 label-img" for="apple-pay">
+                      <img src="/public/images/apple_pay.png"  alt="Google pay" />
+                        <span>Apple pay</span>
                     </label>
                 </div>
                 

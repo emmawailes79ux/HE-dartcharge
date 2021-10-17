@@ -33,7 +33,7 @@ exports.chargeList = [
 ];
 
 exports.vehicleList = [
-  { 'head':"Registration number", 'value':'AN23CHA', 'class':'govuk-!-font-weight-bold'},
+  { 'head':"Registration number", 'value':'LO62 NRO', 'class':'govuk-!-font-weight-bold'},
    {'head':"Class", 'value': 'B', 'class':''},
    {'head': "Make", 'value':'AUDI' , 'class':''},
    {'head': "Model", 'value':'TT FSI' , 'class':''},

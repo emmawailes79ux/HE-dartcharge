@@ -140,3 +140,16 @@
 @media (max-width: 40.0625em) {
 .table-scroll{overflow-x: scroll;}
 }
+
+.label-img {
+  display: flex;
+  align-items: center;
+  img{
+    height: 40px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    padding: 2px 5px;
+  }
+  > * {
+  }
+}
