@@ -47,12 +47,12 @@
                 </li>
                 <li class="govuk-tabs__list-item">
                   <a class="govuk-tabs__tab" href="#past-week">
-                    Card
+                    Debit/Credit Card
                   </a>
                 </li>
                 <li class="govuk-tabs__list-item">
                   <a class="govuk-tabs__tab" href="#past-month">
-                    Bank
+                    Bank transfer
                   </a>
                 </li>
               </ul>
@@ -91,22 +91,76 @@
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="card-payment" name="option-payment" type="radio"
                       value="card-payment" >
-                  <label class="govuk-label govuk-radios__label" for="card-payment">
-                      Card payment
+                  <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 label-img" for="card-payment">
+                    <img src="/public/images/card-img.png"  alt="Google pay" />
+                    <span>Debit card</span> 
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="card-payment" name="option-payment" type="radio"
+                      value="card-payment" >
+                  <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 label-img" for="card-payment">
+                    <img src="/public/images/card-img.png"  alt="Google pay" />
+                    <span>Credit card</span> 
                   </label>
                 </div>
             
               </div>
               <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
                 
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="bank-payment" name="option-payment" type="radio"
-                      value="bank-payment" >
-                  <label class="govuk-label govuk-radios__label" for="bank-payment">
-                      Bank payment
-                  </label>
+                <p class="govuk-heading-m govuk-!-font-weight-bold">Please select the preferred payment method.</p>
+                <div class="govuk-form-group govuk-!-margin-bottom-5">
+                  <label class="govuk-label govuk-!-font-weight-bold " for="card-number">Name on the account</label>
+                  <span class="govuk-error-message card-number-error" style="display: none">
+                      <span class="govuk-visually-hidden">Error:</span> Enter a card number
+                  </span>
+                  <input class="govuk-input govuk-input--width-20" id="card-number" name="card-number" type="text"
+                      aria-required="true" aria-label="Enter the card number" />
                 </div>
-            
+                
+
+                <div class="govuk-form-group govuk-!-margin-bottom-5">
+                  <div class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
+                      Sort code
+                  </div>
+                  <div class="govuk-caption-m govuk-!-margin-bottom-2">
+                      Must be 6 digits long
+                  </div>
+                  <div class="govuk-form-group">
+                      <input class="govuk-input govuk-input--width-5" id="cvv" name="cvv" type="text"
+                          aria-required="true" aria-label="Enter the card holder name"  />
+                  </div>
+                </div>
+
+                <div class="govuk-form-group govuk-!-margin-bottom-5">
+                  <div class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
+                      Account number 
+                  </div>
+                  <div class="govuk-caption-m govuk-!-margin-bottom-2">
+                      Must be between 6 and 8 digits long
+                  </div>
+                  <div class="govuk-form-group">
+                      <input class="govuk-input govuk-input--width-20" id="acc-numbber" name="account-number" type="text"
+                          aria-required="true" aria-label="Enter the card holder name"  />
+                  </div>
+                </div>
+
+                <div class="govuk-form-group govuk-!-margin-bottom-5">
+                  <div class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
+                    Building soceity roll number(if you have one)
+                  </div>
+                  <div class="govuk-caption-m govuk-!-margin-bottom-2">
+                    You can find it on your card, statement or passbook
+                  </div>
+                  <div class="govuk-form-group">
+                      <input class="govuk-input govuk-input--width-20" id="roll-number" name="roll-number" type="text"
+                          aria-required="true" aria-label="Enter the card holder name"  />
+                  </div>
+                </div>
+                  
+              
+
+                
               </div>
             </div>
 
@@ -114,7 +168,7 @@
                     class="govuk-button govuk-!-margin-top-6 paymentoptionBtn"
                     data-module="govuk-button"
                     role="button"
-                    disabled
+                    
                 >
                 Continue
                 </button>
