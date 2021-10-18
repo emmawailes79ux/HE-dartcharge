@@ -374,6 +374,26 @@ $(".oneoff-prsl-acct-type").click(function () {
 });
 
 
+
+$(".accountpaymentoptionBtn").click(() => {
+  let radioVal = $("[name='option-payment']:checked").val();
+
+  if (radioVal === 'card-payment') {
+
+    // $.fn.redirectPage('one-off-payment/payment');
+
+  } else if (radioVal === 'paypal') {
+
+    $.fn.redirectPage('one-off-payment/account-create-done');
+
+  }else  {
+
+    $.fn.redirectPage('one-off-payment/account-create-done');
+
+  }
+
+});
+
 // One off payment's payment page validation
 
 $("[name='card-number']").click(()=> {
