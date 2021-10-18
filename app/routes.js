@@ -132,6 +132,10 @@ router.get("/one-off-payment/paypal", function(req, res){
   res.render("prototype-demo/one-off-payment/paypal");
 });
 
+router.get("/one-off-payment/bank-transfer", function(req, res){
+  res.render("prototype-demo/one-off-payment/bank-transfer");
+});
+
 router.get("/one-off-payment/success", function(req, res){
   res.render("prototype-demo/one-off-payment/success");
 });

@@ -277,6 +277,10 @@ $(".paymentoptionBtn").click(() => {
 
     $.fn.redirectPage('one-off-payment/paypal');
 
+  }else  {
+
+    $.fn.redirectPage('one-off-payment/bank-transfer');
+
   }
 
 });
@@ -356,6 +360,10 @@ $(".successNxt").click(function () {
 
 
 
+
+
+
+
 //Make one off payment create account
 
 $("[name='select-account']").change(function () {
@@ -380,9 +388,6 @@ $(".oneoff-prsl-acct-type").click(function () {
 });
 
 
-$("[name='option-payment']").change(() => {
-  $(".accountpaymentoptionBtn").prop("disabled", false);
-})
 
 $(".accountpaymentoptionBtn").click(() => {
   let radioVal = $("[name='option-payment']:checked").val();
@@ -392,6 +397,10 @@ $(".accountpaymentoptionBtn").click(() => {
     // $.fn.redirectPage('one-off-payment/payment');
 
   } else if (radioVal === 'paypal') {
+
+    $.fn.redirectPage('one-off-payment/account-create-done');
+
+  }else  {
 
     $.fn.redirectPage('one-off-payment/account-create-done');
 
