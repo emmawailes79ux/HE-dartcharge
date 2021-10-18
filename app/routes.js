@@ -139,6 +139,9 @@ router.get("/one-off-payment/success", function(req, res){
 router.get("/one-off-payment/late-payment", function(req, res){
   res.render("prototype-demo/one-off-payment/late-payment");
 });
+router.get("/one-off-payment/late-payment2", function(req, res){
+  res.render("prototype-demo/one-off-payment/late-payment2");
+});
 
 router.get("/one-off-payment/notification", function(req, res){
   res.render("prototype-demo/one-off-payment/notification");

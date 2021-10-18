@@ -216,11 +216,25 @@ $("[name='changed-name']").change(() => {
 $("[name='vrm']").click(() => {
   $("[name='vrm']").val('LO62 NRO');
 })
-
+// FIND VEHICLE
+$("[name='payment']").change(() => {
+  $(".payment-madecross").prop("disabled", false);
+  $(".warning_payment").css("font-style", "Italic")
+})
+$(".payment-madecross").click(function () {
+  let makePayment = $("[name='payment']:checked").val();
+  if (makePayment === 'pay') {
+    $.fn.redirectPage('one-off-payment/vehicle-details');
+  }else if (makePayment === 'penalty') {
+    document.location.href = "https://dartford-crossing-charge.herokuapp.com/demo/flow1";
+  }
+});
 $(".find-vehicle").click(() => {
   let inputVal = $("[name='vrm']").val();
   if(inputVal === 'LO62 NRO') {
-    $.fn.redirectPage('one-off-payment/vehicle-details');
+    // $.fn.redirectPage('one-off-payment/vehicle-details');
+    $.fn.redirectPage('one-off-payment/late-payment2');
+
   }else {
     $("#vrm-error").css("display", "block");
     $("#vrm").parent().addClass("govuk-form-group--error");
