@@ -277,10 +277,6 @@ $(".successNxt").click(function () {
 
 
 
-
-
-
-
 //Make one off payment create account
 
 $("[name='select-account']").change(function () {
@@ -323,3 +319,29 @@ $(".accountpaymentoptionBtn").click(() => {
   }
 
 });
+
+// One off payment's payment page validation
+
+$("[name='card-number']").click(()=> {
+  $("[name='name-on-card']").val('John Doe');
+  $("[name='card-number']").val('7653265926348576');
+  $("[name='month']").val('12');
+  $("[name='year']").val('21');
+  $("[name='cvv']").val('212');
+
+})
+$(".confirm-payment-btn").click( () => {
+  if ($("[name='card-number']").val() === "" || $("[name='name-on-card']").val() === "") {
+    $(".card-number-error").css("display", "block");
+    $("#card-number").parent().addClass("govuk-form-group--error");
+
+    $(".card-name-error").css("display", "block");
+    $("#name-on-card").parent().addClass("govuk-form-group--error");
+    $(".error-summary").css("display", "block");
+    $.fn.slideToTop();
+    return;
+  }
+  $.fn.redirectPage('one-off-payment/confirm-payment')
+})
+
+// One off payment's payment page validation
