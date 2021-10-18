@@ -96,6 +96,18 @@ router.get("/one-off-payment/find-vehicle", function(req, res){
   res.render("prototype-demo/one-off-payment/find-vehicle", {section:'find-vehicle'});
 });
 
+router.get("/one-off-payment/vehicle-crossinfo", function(req, res){
+  res.render("prototype-demo/one-off-payment/vehicle-flowtype");
+});
+
+router.get("/one-off-payment/vehicle-payinfo", function(req, res){
+  res.render("prototype-demo/one-off-payment/vehicle-forcross-future");
+});
+
+router.get("/one-off-payment/vehicle-crossmade", function(req, res){
+  res.render("prototype-demo/one-off-payment/vehicle-cross-made");
+});
+
 router.get("/one-off-payment/vehicle-details", function(req, res){
   res.render("prototype-demo/one-off-payment/vehicle-details", {data:landingData.vehicleList});
 });

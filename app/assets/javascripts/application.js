@@ -175,7 +175,7 @@ $(document).ready(function () {
 
     }else if(radioVal === 'make-oneoff-payment') {
 
-      $.fn.redirectPage('one-off-payment');
+      $.fn.redirectPage('one-off-payment/vehicle-payinfo');
 
     }
 
@@ -208,6 +208,10 @@ $(".pay-for-crossings").click(function () {
     $.fn.redirectPage('one-off-payment/late-payment');
   }
 });
+
+$("[name='changed-name']").change(() => {
+  $(".find-vehicle").prop("disabled", false);
+})
 
 $("[name='vrm']").click(() => {
   $("[name='vrm']").val('LO62 NRO');
@@ -258,6 +262,67 @@ $(".paymentoptionBtn").click(() => {
   } else if (radioVal === 'paypal') {
 
     $.fn.redirectPage('one-off-payment/paypal');
+
+  }
+
+});
+
+
+$("[name='vehilce-crossinfo']").change(() => {
+  $(".vehicle-flowtype").prop("disabled", false);
+})
+
+$(".vehicle-flowtype").click(() => {
+  let radioVal = $("[name='vehilce-crossinfo']:checked").val();
+
+  if (radioVal === 'resolve-penalty') {
+
+    $.fn.redirectPage('one-off-payment/late-payment');
+
+  } else if (radioVal === 'pay-crossing') {
+
+    $.fn.redirectPage('one-off-payment/vehicle-payinfo');
+
+  }
+
+});
+
+
+$("[name='pay-crossinfo']").change(() => {
+  $(".vehicle-crossing").prop("disabled", false);
+})
+
+$(".vehicle-crossing").click(() => {
+  let radioVal = $("[name='pay-crossinfo']:checked").val();
+
+  if (radioVal === 'pay-mcrossing') {
+
+    $.fn.redirectPage('one-off-payment/vehicle-crossmade');
+
+  } else if (radioVal === 'pay-fcrossing') {
+
+    $.fn.redirectPage('one-off-payment/find-vehicle');
+
+  }
+
+});
+
+
+
+$("[name='pay-madecross']").change(() => {
+  $(".vehicle-madecross").prop("disabled", false);
+})
+
+$(".vehicle-madecross").click(() => {
+  let radioVal = $("[name='pay-madecross']:checked").val();
+
+  if (radioVal === 'yes') {
+
+    $.fn.redirectPage('one-off-payment/find-vehicle');
+
+  } else if (radioVal === 'no') {
+
+    $.fn.redirectPage('one-off-payment/late-payment');
 
   }
 
