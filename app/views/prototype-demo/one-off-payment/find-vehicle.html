@@ -41,11 +41,11 @@
      
       <div class="govuk-form-group">
         <label class="govuk-label govuk-!-font-weight-bold govuk-!-margin-bottom-3" for="country">
-          Where is the vehicle registred?
+          Where is your vehicle registered?
         </label>
         <div class="govuk-radios govuk-radios--inline">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="uk">
+            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="uk" checked>
             <label class="govuk-label govuk-radios__label" for="changed-name">
               UK
             </label>
@@ -59,6 +59,7 @@
         </div>
       </div>
 
+      <form method="post" action="/find-vehicle">
       <div class="govuk-form-group ">
         <label class="govuk-label govuk-!-font-weight-bold" for="vrm"> Enter your vehicle registration number </label>
         <span id="vrm-error" class="govuk-error-message" style="display: none">
@@ -68,8 +69,11 @@
           type="text" />
       </div>
       <div class="govuk-form-group">
-        <button class="govuk-button find-vehicle" data-module="govuk-button" role="button" aria-label="Find a vehicle" disabled>Find your vehicle</button>
+        <!-- <button class="govuk-button find-vehicle" data-module="govuk-button" role="button" aria-label="Find a vehicle" disabled>Find your vehicle</button> -->
+        <button type="submit" class="govuk-button" data-module="govuk-button" role="button" aria-label="Find a vehicle">Find your vehicle</button>
       </div>
+    </form>
+
     </div>
   </div>
 

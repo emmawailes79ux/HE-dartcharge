@@ -35,20 +35,22 @@
 
     <div class="govuk-grid-column-full ">
 
+      {% if (data.vrm === 'LO61 NRO') or data.vrm === 'LO63 NRO' %}
         <div class="govuk-inset-text govuk-!-margin-top-0 govuk-!-font-weight-bold">
-          <i>LO62 NRO has 2 unpaid crossing</i>
+          <i>{{data.vrm}} has 2 unpaid crossing</i>
         </div>
-
+      {% endif %}
         
         <h5 class="govuk-heading-m"> Please select the number of crossings you would like to pay for.</h5>
         <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
             <label class="govuk-label" for="trips">
                 <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips">
-                    <option value="1">1</option>
-                    <option value="2" selected>2</option>
+                    <option value="1" {% if (data.vrm === 'LO62 NRO' ) or (data.vrm === 'LO64 NRO') %} selected {% endif %} >1</option>
+                    <option value="2"  {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO63 NRO') %} selected {% endif %}>2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
-                </select> <b>Trips</b></label>
+                </select> 
+            </label>
         </div>
        
         <p class="govuk-body"> Each crossing is <span class="govuk-!-font-weight-bold">£2.50.</span>
@@ -62,7 +64,11 @@
                
             <div class="govuk-input__wrapper govuk-grid-column-two-third">
              <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
-              <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3" id="amount" name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false">
+             {% if (data.vrm === 'LO62 NRO' ) or (data.vrm === 'LO64 NRO')  %} 
+              <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount" name="amount" value="2.50" type="number" aria-describedby="amount" spellcheck="false">
+              {% else %} 
+              <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount" name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false">
+              {% endif %}
           </div>
     </div>
 

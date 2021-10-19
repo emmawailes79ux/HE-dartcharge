@@ -23,25 +23,23 @@
     <div class="govuk-grid-column-full">
         <div class="govuk-warning-text ">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text govuk-!-font-size-24">
+            <p class="govuk-warning-text__text govuk-!-font-size-24 govuk-!-font-weight-bold">
               <span class="govuk-warning-text__assistive">Warning</span>
-             <span class="warning_payment"><span class="govuk-!-font-weight-regular"> LO62 NRO has,</span><strong>1 PCN, 1 unpaid crossing</strong>
-           </span> </strong>
+              <span class="warning_payment"> {{data.vrm}} has 1 PCN and 2 unpaid crossings</span> 
+            </p>
           </div>
-      <div class="govuk-form-group govuk-!-margin-top-9">
- 
-      
+      <div class="govuk-form-group govuk-!-margin-top-5">
           <div class="govuk-radios ">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="panalty" name="payment" type="radio" value="penalty">
               <label class="govuk-label govuk-radios__label" for="penalty">
-                Resolve the penalty charge
+                Resolve the penalty charge notice (PCN)
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="pay" name="payment" type="radio" value="pay">
               <label class="govuk-label govuk-radios__label" for="pay">
-                Pay for crossings made or Future crossing
+                Pay for crossing
               </label>
             </div>
           </div>
