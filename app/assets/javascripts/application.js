@@ -45,7 +45,9 @@ $(document).ready(function () {
   };
 
   $.fn.slideToTop = () => {
-    $("html, body").animate({ scrollTop: 0 }, "slow");
+    $("html, body").animate({
+      scrollTop: 0
+    }, "slow");
   };
 
   $.fn.goBack = () => {
@@ -161,13 +163,29 @@ $(document).ready(function () {
     } else if (radioVal === "create-account") {
 
       $.fn.redirectPage("create-account");
-      
+
     } else if (radioVal === "make-oneoff-payment") {
 
-      $.fn.redirectPage("one-off-payment/find-vehicle");
+      // $.fn.redirectPage("one-off-payment/find-vehicle");
+      $.fn.redirectPage("one-off-payment/multiple-vehicle-flow");
 
     }
   });
+  $("[name='vehicle-flow-type']").change(() => {
+    $(".vehicle-flow").prop("disabled", false);
+  });
+
+  $(".vehicle-flow").click(() => {
+    let radioVal = $("[name='vehicle-flow-type']:checked").val();
+    console.log(radioVal);
+    if (radioVal === "single") {
+      $.fn.redirectPage("one-off-payment/find-vehicle");
+    } else if (radioVal === "multiple") {
+      $.fn.redirectPage("one-off-payment/confirm-vehicle-details");
+    }
+  });
+
+
 
   $("#login-submit").on("submit", function (e) {
     e.preventDefault();
@@ -380,3 +398,23 @@ $(".confirm-payment-btn").click(() => {
 });
 
 // One off payment's payment page validation
+
+//muliple vehicle flow
+
+$(".find-vehicle-multiple-flow").click(() => {
+  $.fn.redirectPage("one-off-payment/multiple-vehicle-details");
+})
+
+$(".add-vehicle-multiple-flow").click(() => {
+
+  // $('#mytable tbody tr:last').clone().insertAfter('#mytable tbody tr:last');
+  // var vehicleNo = $("#vehicle-no").val();
+  // // console.log(vehicleNo);
+
+  // var markup = "<tr><td class=govuk-table__header>" + vehicleNo + "</td><td class=govuk-table__cell><div class=govuk-radios govuk-radios--inline> " + "</td></tr>";
+  // $("#mytable tbody").append(markup);
+
+  // var markup = "<tr><td class=govuk-table__header>" + vehicleNo + "</td><td>" + 'email' + "</td></tr>";
+  // $("#mytable tbody>tr").append(markup);
+  // $('#mytable tbody>tr:last').clone(true).insertAfter('#mytable tbody>tr:last');
+});

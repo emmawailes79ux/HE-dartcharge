@@ -8,7 +8,9 @@ router.get("/home", function (req, res) {
 });
 
 router.get("/landing", function (req, res) {
-  res.render("prototype-demo/landing", { landingData });
+  res.render("prototype-demo/landing", {
+    landingData
+  });
 });
 
 // Setup account section routes
@@ -147,6 +149,28 @@ router.get("/one-off-payment/find-vehicle", function (req, res) {
   });
 });
 
+
+
+router.get("/one-off-payment/confirm-vehicle-details", function (req, res) {
+  res.render("prototype-demo/one-off-payment/confirm-vehicle-details", {
+    section: "confirm-vehicle",
+  });
+});
+
+router.get("/one-off-payment/multiple-vehicle-flow", function (req, res) {
+  res.render("prototype-demo/one-off-payment/multiple-vehicle-flow", {
+    section: "multiple-vehicle-flow",
+  });
+});
+
+
+
+router.get("/one-off-payment/multiple-vehicle-details", function (req, res) {
+  res.render("prototype-demo/one-off-payment/multiple-vehicle-details", {
+    section: "multiple-vehicle-flow",
+  });
+});
+
 router.post("/find-vehicle", function (req, res) {
   if (req.body.vrm) {
     res.redirect("/one-off-payment/vehicle-details");
@@ -154,7 +178,9 @@ router.post("/find-vehicle", function (req, res) {
 });
 
 router.get("/one-off-payment/vehicle-crossinfo", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   res.render("prototype-demo/one-off-payment/vehicle-flowtype", data);
 });
 
@@ -167,18 +193,24 @@ router.get("/one-off-payment/vehicle-crossmade", function (req, res) {
 });
 
 router.get("/one-off-payment/vehicle-details", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   data["vehicleData"] = landingData.vehicleList;
   res.render("prototype-demo/one-off-payment/vehicle-details", data);
 });
 
 router.get("/one-off-payment/payment-info", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   res.render("prototype-demo/one-off-payment/payment-info", data);
 });
 
 router.get("/one-off-payment/payment-options", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   res.render("prototype-demo/one-off-payment/payment-options", data);
 });
 
@@ -199,12 +231,16 @@ router.get("/one-off-payment/bank-transfer", function (req, res) {
 });
 
 router.get("/one-off-payment/success", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   res.render("prototype-demo/one-off-payment/success", data);
 });
 
 router.get("/one-off-payment/late-payment", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   res.render("prototype-demo/one-off-payment/late-payment2", data);
 });
 
@@ -295,23 +331,33 @@ router.get("/login", function (req, res) {
 // Dashboaord section start
 
 router.get("/dashboard", function (req, res) {
-  res.render("prototype-demo/dashboard/dashboard-landing", { dashboardData });
+  res.render("prototype-demo/dashboard/dashboard-landing", {
+    dashboardData
+  });
 });
 
 router.get("/dashboard/vehicles", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicle-details", { dashboardData });
+  res.render("prototype-demo/dashboard/vehicle-details", {
+    dashboardData
+  });
 });
 
 router.get("/dashboard/crossings", function (req, res) {
-  res.render("prototype-demo/dashboard/crossing-details", { dashboardData });
+  res.render("prototype-demo/dashboard/crossing-details", {
+    dashboardData
+  });
 });
 
 router.get("/dashboard/payments", function (req, res) {
-  res.render("prototype-demo/dashboard/payment-details", { dashboardData });
+  res.render("prototype-demo/dashboard/payment-details", {
+    dashboardData
+  });
 });
 
 router.get("/dashboard/vehicles/view", function (req, res) {
-  res.render("prototype-demo/dashboard/view-details", { dashboardData });
+  res.render("prototype-demo/dashboard/view-details", {
+    dashboardData
+  });
 });
 
 // Dashboaord section end
