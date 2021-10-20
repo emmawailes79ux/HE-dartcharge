@@ -149,6 +149,9 @@ $(document).ready(function () {
   $(".todashboard").click(function () {
     $.fn.redirectPage("dashboard");
   });
+  $(".multiple-vehicle").click(function(){
+    $.fn.redirectPage("one-off-payment/payment-info");
+  });
 
   $("[name='selectlink']").change(() => {
     $(".landingNxtBtn").prop("disabled", false);

@@ -49,7 +49,7 @@ exports.vehicleList = [
 
  ]
  exports.vehicles = [
-   {
-  vrm:'LO61 NRO'
-},{vrm:'LO62 NRO'},
+//    {
+//   vrm:'LO61 NRO'
+// },{vrm:'LO62 NRO'},
 {vrm:'LO63 NRO'}]

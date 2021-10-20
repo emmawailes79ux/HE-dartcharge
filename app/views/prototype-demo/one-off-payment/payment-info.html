@@ -23,7 +23,7 @@ GOV.UK Prototype Kit
 
   <div class="govuk-grid-column-two-thirds">
     {% if (vehicles.length == 1) %}
-    <div class="govuk-inset-text govuk-!-margin-top-0 ">
+    <div class="govuk-inset-text govuk-!-margin-top-0  govuk-!-font-size-16 ">
       {{vehicles[0].vrm}} has 3 unpaid crossing,
       <ul>
         <li>2 are payable,</li>
@@ -51,7 +51,7 @@ GOV.UK Prototype Kit
     {% endif %}
     <div class="govuk-warning-text ">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <p class="govuk-warning-text__text govuk-!-font-weight-regular govuk-!-font-weight-normal govuk-!-font-size-16">
+      <p class="govuk-warning-text__text govuk-!-font-weight-regular govuk-!-font-size-16">
         <span class="govuk-warning-text__assistive">Warning</span>
         <span class=""> We suggest you to clear the payable crossing first as it may cross the deadline,
           then we will take you to resolve the crossing which missed the deadline.</span>
@@ -60,13 +60,14 @@ GOV.UK Prototype Kit
     <div class="">
       {% for item in vehicles %}
       {% if (vehicles.length > 1) %}
-      <label class="govuk-label govuk-body-l govuk-!-margin-top-5 govuk-!-font-weight-bold govuk-!-font-size-24"
+      <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-font-size-24"
         for="amount">{{item.vrm}}</label>
       {% else %}
-      <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">Available Balance: £ 0.0</label>
+      <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-7 govuk-!-font-size-24" for="amount">Amount</label>
 
       {% endif %}
-      <table class="govuk-table govuk-!-margin-top-5 govuk-!-margin-bottom-" role="table">
+      
+      <table class="govuk-table govuk-!-margin-top-5 govuk-!-margin-bottom-0" role="table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             {% for head in paymentConfirmhead %}
