@@ -174,7 +174,14 @@ router.get("/one-off-payment/vehicle-details", function (req, res) {
 
 router.get("/one-off-payment/payment-info", function (req, res) {
   const { data } = req.session;
+  data.vehicles= landingData.vehicles;
+  data.paymentConfirmhead = landingData.paymentConfirmhead;
+  data.crossingList = landingData.crossingList;
   res.render("prototype-demo/one-off-payment/payment-info", data);
+});
+router.get("/one-off-payment/payment-info-confirm", function (req, res) {
+  const { data } = req.session;
+  res.render("prototype-demo/one-off-payment/payment-info-confirm", data);
 });
 
 router.get("/one-off-payment/payment-options", function (req, res) {

@@ -39,3 +39,17 @@ exports.vehicleList = [
    {'head': "Model", 'value':'TT FSI' , 'class':''},
    {'head': "Colour", 'value':'Black' , 'class':''},
  ];
+
+ exports.paymentConfirmhead = [
+   "Crossings", "No.Trips", "Amount"
+ ]
+ exports.crossingList = [
+   {cross: "Payable Crossings", amount:"£ 5.00"},
+   {cross: "Future Crossings", amount:""}
+
+ ]
+ exports.vehicles = [
+   {
+  vrm:'LO61 NRO'
+},{vrm:'LO62 NRO'},
+{vrm:'LO63 NRO'}]
