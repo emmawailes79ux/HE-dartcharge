@@ -412,15 +412,5 @@ $(".find-vehicle-multiple-flow").click(() => {
 })
 
 $(".add-vehicle-multiple-flow").click(() => {
-
-  // $('#mytable tbody tr:last').clone().insertAfter('#mytable tbody tr:last');
-  // var vehicleNo = $("#vehicle-no").val();
-  // // console.log(vehicleNo);
-
-  // var markup = "<tr><td class=govuk-table__header>" + vehicleNo + "</td><td class=govuk-table__cell><div class=govuk-radios govuk-radios--inline> " + "</td></tr>";
-  // $("#mytable tbody").append(markup);
-
-  // var markup = "<tr><td class=govuk-table__header>" + vehicleNo + "</td><td>" + 'email' + "</td></tr>";
-  // $("#mytable tbody>tr").append(markup);
-  // $('#mytable tbody>tr:last').clone(true).insertAfter('#mytable tbody>tr:last');
+  $('#mytable tbody>tr:last').clone(true).insertAfter('#mytable tbody>tr:last');
 });
