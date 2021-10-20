@@ -201,10 +201,15 @@ router.get("/one-off-payment/vehicle-details", function (req, res) {
 });
 
 router.get("/one-off-payment/payment-info", function (req, res) {
-  const {
-    data
-  } = req.session;
+  const { data } = req.session;
+  data.vehicles= landingData.vehicles;
+  data.paymentConfirmhead = landingData.paymentConfirmhead;
+  data.crossingList = landingData.crossingList;
   res.render("prototype-demo/one-off-payment/payment-info", data);
+});
+router.get("/one-off-payment/payment-info-confirm", function (req, res) {
+  const { data } = req.session;
+  res.render("prototype-demo/one-off-payment/payment-info-confirm", data);
 });
 
 router.get("/one-off-payment/payment-options", function (req, res) {
@@ -359,6 +364,16 @@ router.get("/dashboard/vehicles/view", function (req, res) {
     dashboardData
   });
 });
+
+router.get("/dashboard/profile", function (req, res) {
+  res.render("prototype-demo/dashboard/account-update-profile", { dashboardData });
+});
+
+router.get("/dashboard/notification", function (req, res) {
+  res.render("prototype-demo/dashboard/account-notification", { dashboardData });
+});
+
+
 
 // Dashboaord section end
 

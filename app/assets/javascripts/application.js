@@ -119,7 +119,7 @@ $(document).ready(function () {
   });
 
   $(".vehicle_details").click(function () {
-    $.fn.redirectPage("create-account/step-3/vehicle-details");
+    $.fn.redirectPage("create-account/step-3/vehicle-details" );
   });
 
   $(".add_vehicle").click(function () {
@@ -266,7 +266,10 @@ $(".proceed-to-pay").click(() => {
     $.fn.slideToTop();
   }
 });
+$(".proceed-to-pay-continue").click(() => {
+  $.fn.redirectPage("one-off-payment/payment-info-confirm");
 
+});
 $("[name='option-payment']").change(() => {
   $(".paymentoptionBtn").prop("disabled", false);
 });
