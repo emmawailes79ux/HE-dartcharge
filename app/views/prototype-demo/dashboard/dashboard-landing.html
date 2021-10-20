@@ -8,11 +8,12 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 divider">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-three-quarters divider">
+      <div class="dashboard-card-container">
+        <div class="dashboard-card-heading">
           <h1 class="govuk-heading-l">John Doe's Dashboard</h1>
         </div>
+        <div class="govuk-!-margin-top-1"><a href="#" class="govuk-body-s govuk-!-margin-top-1">Notifications (2)</a></div>
       </div>
       <div class="dashboard-card-container">
         <div class="dashboard-card-heading">
@@ -23,29 +24,103 @@
         </div>
         <div class="account-status-right">
           <p class="govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-2">Account status</p>
-          <div class="status-circle bg-active">
-            <span
-              class="
-                status
-                govuk-body govuk-!-font-size-16 govuk-!-font-weight-bold
-              "
-            >
-              Open</span
-            >
-          </div>
+          <strong class="govuk-tag govuk-tag--red">
+            DORMANT
+          </strong>
+          <!-- <div class="status-circle bg-active">
+            <span class="status govuk-body govuk-!-font-size-16 govuk-!-font-weight-bold">
+              Open</span>
+          </div> -->
         </div>
       </div>
       <div class="bottom-line"></div>
-    
+      <div class="govuk-inset-text">
+        <div class="govuk-warning-text govuk-!-margin-bottom-2">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <div class="govuk-warning-text__text govuk-!-font-weight-regular">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            Please take the necessary action to secure the account status "Open".
+          </div>
+        </div>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>LO62 NRO has 1 PCN and 1 unpaid crossing. <a href="#" class="govuk-link govuk-link--no-visited-state">Resolve a penalty charge notice</a></li>
+          <li>Card has been expired. <a href="#" class="govuk-link govuk-link--no-visited-state">Update card</a></li>
+        </ul>
+      </div>
 
+      
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1 govuk-!-margin-top-7">Your crossing</h3>
+      <div class="dashboard-card-container govuk-!-margin-bottom-4">
+        <div class="dashboard-card-heading ">
+            <h3 class="govuk-heading-xl govuk-!-font-weight-regular govuk-!-margin-bottom-0">10 <span class="govuk-body">Average crossing/month</span></h3>
+        </div>
+        <div class="govuk-!-margin-top-4"><a class="govuk-link govuk-body govuk-link--no-visited-state" role="link"  href="/dashboard/crossings" >View crossing history</a></div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Crossing ID</th>
+              <th scope="col" class="govuk-table__header">Crossing date</th>
+              <th scope="col" class="govuk-table__header">Time</th>
+              <th scope="col" class="govuk-table__header">Direction</th>
+              <th scope="col" class="govuk-table__header">Vehicle</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Status</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="#">CR-02AU21-12-34</a></td>
+              <td class="govuk-table__cell">02 Aug 2021</td>
+              <td class="govuk-table__cell">12.34</td>
+              <td class="govuk-table__cell">Northbound</td>
+              <td class="govuk-table__cell">LO62 NRO</td>
+              <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--yellow"> UNPAID </strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="#">CR-02AU21-12-34</a></td>
+              <td class="govuk-table__cell">02 Aug 2021</td>
+              <td class="govuk-table__cell">12.34</td>
+              <td class="govuk-table__cell">Northbound</td>
+              <td class="govuk-table__cell">LO62 NRO</td>
+              <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--red"> PCN </strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__cell"><a href="#">CR-02AU21-12-34</a></td>
+              <td class="govuk-table__cell">02 Aug 2021</td>
+              <td class="govuk-table__cell">12.34</td>
+              <td class="govuk-table__cell">Northbound</td>
+              <td class="govuk-table__cell">LO62 NRO</td>
+              <td class="govuk-table__cell govuk-table__header--numeric"><strong class="govuk-tag govuk-tag--green"> PAID </strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> 
+
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half govuk-!-margin-top-7 divider">
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your Vehicles</h3>
+          <div class="govuk-!-margin-bottom-3">
+             <h3 class="govuk-heading-xl govuk-!-font-weight-regular govuk-!-margin-bottom-0">6 <span class="govuk-body">Vehicles</span></h3>
+          </div>
+          <div class="govuk-!-margin-top-3"><a class="govuk-link govuk-body govuk-link--no-visited-state" role="link"  href="/dashboard/vehicles" >View vehicles</a></div>
+        </div>
+        <div class="govuk-grid-column-one-half govuk-!-margin-top-7 govuk-!-margin-bottom-7">
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your Savings</h3>
+          <div class="govuk-!-margin-bottom-3">
+             <h3 class="govuk-heading-xl govuk-!-font-weight-regular govuk-!-margin-bottom-0">£ 10 <span class="govuk-body">Average saving/month</span></h3>
+          </div>
+          <div class="govuk-!-margin-top-3"><a class="govuk-link govuk-body govuk-link--no-visited-state" role="link"  href="/dashboard/payments" >View payment history</a></div>
+        </div>
+      </div>
+<!--       
       <div class="dashboard-card-container" >
         <div class="dashboard-card-heading">
           <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your last 30 days usage</h3>
           <h3 class="govuk-heading-xl govuk-!-font-weight-regular govuk-!-margin-bottom-4">10 <span class="govuk-body">Trips</span></h3>
-          <!-- <h3
-            class="govuk-body govuk-!-margin-bottom-2">
-            Last 5 Crossing made
-          </h3>    -->
         </div>
         <div class="govuk-!-margin-top-1"><a class="govuk-link govuk-body govuk-link--no-visited-state" role="link"  href="/dashboard/crossings" >View crossing history</a></div>
       </div>
@@ -107,7 +182,7 @@
           <h5 class="govuk-table-list-cell govuk-body-s">Black</h5>
           <h5 class="govuk-table-list-cell govuk-body-s">Standard</h5>
           <h5 class="govuk-table-list-cell govuk-body-s">02 Sep 2021</h5>
-          <!-- <h5 class="govuk-table-list-cell govuk-body-s">
+          <h5 class="govuk-table-list-cell govuk-body-s">
             <div class="govuk-checkboxes--small table-remove-check">
               <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
@@ -115,7 +190,7 @@
                   <label class="govuk-label govuk-checkboxes__label" for="organisation-4"></label>
               </div>
           </div>
-          </h5> -->
+          </h5>
         </div>
         <div class="govuk-table-list-row table-body">
           <h5 class="govuk-table-list-cell govuk-body-s"><a href="/dashboard/vehicles/view" class="govuk-link">ASIE843</a></h5>
@@ -125,7 +200,7 @@
           <h5 class="govuk-table-list-cell govuk-body-s">Red</h5>
           <h5 class="govuk-table-list-cell govuk-body-s">Standard</h5>
           <h5 class="govuk-table-list-cell govuk-body-s">18 Sep 2021</h5>
-          <!-- <h5 class="govuk-table-list-cell govuk-body-s">
+          <h5 class="govuk-table-list-cell govuk-body-s">
             <div class="govuk-checkboxes--small table-remove-check">
               <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
@@ -133,7 +208,7 @@
                   <label class="govuk-label govuk-checkboxes__label" for="organisation-4"></label>
               </div>
           </div>
-          </h5> -->
+          </h5>
         </div>
       </div>
     </div>
@@ -171,7 +246,10 @@
         </div>
         {% endfor %}
       </div>
-    </div>
+    </div> -->
+
+
+
 
 
     </div>
