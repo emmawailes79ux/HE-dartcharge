@@ -360,6 +360,16 @@ router.get("/dashboard/vehicles/view", function (req, res) {
   });
 });
 
+router.get("/dashboard/profile", function (req, res) {
+  res.render("prototype-demo/dashboard/account-update-profile", { dashboardData });
+});
+
+router.get("/dashboard/notification", function (req, res) {
+  res.render("prototype-demo/dashboard/account-notification", { dashboardData });
+});
+
+
+
 // Dashboaord section end
 
 module.exports = router;
