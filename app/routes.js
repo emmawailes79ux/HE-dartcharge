@@ -200,9 +200,14 @@ router.get("/one-off-payment/vehicle-details", function (req, res) {
   res.render("prototype-demo/one-off-payment/vehicle-details", data);
 });
 
-router.get("/one-off-payment/payment-info", function (req, res) {
+router.get("/one-off-payment/payment-info/:value", function (req, res) {
   const { data } = req.session;
+  console.log(req.params.value)
+  if (req.params.value == 1)
   data.vehicles= landingData.vehicles;
+  else {
+    data.vehicles =[{vrm:'LO61 NRO'}]
+  }
   data.paymentConfirmhead = landingData.paymentConfirmhead;
   data.crossingList = landingData.crossingList;
   res.render("prototype-demo/one-off-payment/payment-info", data);

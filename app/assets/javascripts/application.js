@@ -150,7 +150,7 @@ $(document).ready(function () {
     $.fn.redirectPage("dashboard");
   });
   $(".multiple-vehicle").click(function(){
-    $.fn.redirectPage("one-off-payment/payment-info");
+    $.fn.redirectPage("one-off-payment/payment-info/1");
   });
 
   $("[name='selectlink']").change(() => {
@@ -232,7 +232,7 @@ $("[name='payment']").change(() => {
 $(".payment-madecross").click(function () {
   let makePayment = $("[name='payment']:checked").val();
   if (makePayment === "pay") {
-    $.fn.redirectPage("one-off-payment/payment-info");
+    $.fn.redirectPage("one-off-payment/payment-info/2");
   } else if (makePayment === "penalty") {
     document.location.href =
       "https://dartford-crossing-charge.herokuapp.com/demo/flow1";
