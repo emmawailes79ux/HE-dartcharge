@@ -217,6 +217,21 @@ router.get("/one-off-payment/payment-info-confirm", function (req, res) {
   res.render("prototype-demo/one-off-payment/payment-info-confirm", data);
 });
 
+router.get("/one-off-payment/payment-info-single", function (req, res) {
+  const { data } = req.session;
+  res.render("prototype-demo/one-off-payment/payment-info-single", data);
+});
+
+router.get("/one-off-payment/payment-info-multiple", function (req, res) {
+  const { data } = req.session;
+  res.render("prototype-demo/one-off-payment/payment-info-multiple", data);
+});
+
+router.get("/one-off-payment/pay-receipt-single", function (req, res) {
+  const { data } = req.session;
+  res.render("prototype-demo/one-off-payment/pay-receipt-single", data);
+});
+
 router.get("/one-off-payment/payment-options", function (req, res) {
   const {
     data

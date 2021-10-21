@@ -381,10 +381,11 @@ $(".accountpaymentoptionBtn").click(() => {
 
 $("[name='card-number']").click(() => {
   $("[name='name-on-card']").val("John Doe");
-  $("[name='card-number']").val("7653265926348576");
+  $("[name='card-number']").val("John Doe");
+  $("[name='account-number']").val("12345678");
   $("[name='month']").val("12");
   $("[name='year']").val("21");
-  $("[name='cvv']").val("212");
+  $("[name='cvv']").val("212343");
 });
 $(".confirm-payment-btn").click(() => {
   if (
