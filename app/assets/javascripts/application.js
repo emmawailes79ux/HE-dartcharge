@@ -119,7 +119,7 @@ $(document).ready(function () {
   });
 
   $(".vehicle_details").click(function () {
-    $.fn.redirectPage("create-account/step-3/vehicle-details" );
+    $.fn.redirectPage("create-account/step-3/vehicle-details");
   });
 
   $(".add_vehicle").click(function () {
@@ -149,8 +149,13 @@ $(document).ready(function () {
   $(".todashboard").click(function () {
     $.fn.redirectPage("dashboard");
   });
-  $(".multiple-vehicle").click(function(){
-    $.fn.redirectPage("one-off-payment/payment-info/1");
+
+  // $(".multiple-vehicle").click(function () {
+  //   $.fn.redirectPage("one-off-payment/payment-info/1");
+  // });
+
+  $(".multiple-vehicle").click(function () {
+    $.fn.redirectPage("one-off-payment/payment-info");
   });
 
   $("[name='selectlink']").change(() => {
@@ -413,5 +418,72 @@ $(".find-vehicle-multiple-flow").click(() => {
 })
 
 $(".add-vehicle-multiple-flow").click(() => {
-  $('#mytable tbody>tr:last').clone(true).insertAfter('#mytable tbody>tr:last');
+  var newHead = '<tr class="govuk-table__row">' +
+    '<th scope="col" class="govuk-table__header">Registration No.</th>' +
+    '<th scope="col" class="govuk-table__header">Country registration</th>' +
+    '<th scope="col" class="govuk-table__header">Action</th>' + '<tr>';
+  var newRow = '<tr class="govuk-table__row">' +
+    '<td scope="row" class="govuk-table__header">' +
+    '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input" id="vehicle-no" name="one-quarter" type="text"></div></td>' +
+    '<td class="govuk-table__cell"> <div class="govuk-radios govuk-radios--inline">' +
+    '<div class="govuk-radios__item"><input class="govuk-radios__input checked" id="changed-name" name="changed-name" type="radio" value="UK" checked>' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label></div>' +
+    '<div class="govuk-radios govuk-radios--inline "><div class="govuk-radios__item govuk-!-margin-right-0"><input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="Non-UK">' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-Uk</label></div></td>' +
+    '<td class="govuk-table__cell">tesr</td>' + '</tr>'
+  // '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>'
+
+  $('#mytable thead>tr').remove();
+  $('#mytable thead').append(newHead);
+  var vehicleNo = $("#vehicle-no").val();
+  var rowCount = $('#mytable tbody>tr').length;
+  var td1 = '<td class="govuk-table__cell">' +
+    '<div class="govuk-radios govuk-radios--inline">' +
+    '<div class="govuk-radios__item">' +
+    '<input class="govuk-radios__input" id="changed-name" name="row' + rowCount + '" type="radio" value="UK" checked>' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label>' +
+    '</div>' +
+    '<div class="govuk-radios govuk-radios--inline ">' +
+    '<div class="govuk-radios__item govuk-!-margin-right-0">' +
+    '<input class="govuk-radios__input" id="changed-name" name="row' + rowCount + '" type="radio" value="Non-UK">' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-Uk</label>' +
+    '</div>' +
+    '</td>' + '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>'
+
+  if (length == 1) {
+    $('#mytable tbody>tr').remove();
+    var markup = '<tr id="row' + rowCount + '" class="govuk-table__row">' + '<td class=govuk-table__header>' + vehicleNo + "</td>" + td1 + '</tr>'
+    $('#mytable tbody').append(markup);
+  } else {
+    $('#mytable tbody>tr').last().remove();
+    var markup = '<tr class="govuk-table__row">' + '<td class=govuk-table__header>' + vehicleNo + "</td>" + td1 + '</tr>'
+    $('#mytable tbody').append(markup);
+  }
+
+  $('#mytable tbody>tr').last().after(newRow);
+});
+//remove
+$(document).on('click', '#remove', function () {
+  var rowlength = $('#mytable tbody>tr').length;
+  if (rowlength == 2) {
+    var newHead = '<tr class="govuk-table__row">' +
+      '<th scope="col" class="govuk-table__header">Registration No.</th>' +
+      '<th scope="col" class="govuk-table__header">Country registration</th>' + '<tr>';
+    $('#mytable thead>tr').remove();
+    $('#mytable thead').append(newHead);
+  }
+  $(this).closest('tr').remove();
+  return false;
+});
+
+$('#select-all').click(function () {
+  if (this.checked) {
+    $(".govuk-checkboxes__input").each(function () {
+      $(".govuk-checkboxes__input").prop('checked', true);
+    })
+  } else {
+    $(".govuk-checkboxes__input").each(function () {
+      $(".govuk-checkboxes__input").prop('checked', false);
+    })
+  }
 });
