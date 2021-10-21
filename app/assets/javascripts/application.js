@@ -13,18 +13,6 @@ $(document).ready(function () {
   });
 
   $("#navigation li:last").addClass("welcomemenu");
-  $("#navigation li:last").click(() => {
-    let length = $(this).find(".submenu").length;
-    if (length == 0) {
-      var newDiv = $(
-        '<div class="submenu dropdown-content"><a href="/landing">Logout</a></div>'
-      );
-      $("#navigation li:last").append(newDiv);
-      $(this).find(".submenu").show();
-    } else {
-      $(this).find(".submenu").toggle();
-    }
-  });
 
   $("[name='personal-account-type']").change(function () {
     $(".prsl-acct-type").prop("disabled", false);
@@ -230,14 +218,15 @@ $("[name='vrm']").click(() => {
   $("[name='vrm']").val("LO62 NRO");
 });
 // FIND VEHICLE
+
 $("[name='payment']").change(() => {
   $(".payment-madecross").prop("disabled", false);
-  $(".warning_payment").css("font-style", "Italic");
 });
+
 $(".payment-madecross").click(function () {
   let makePayment = $("[name='payment']:checked").val();
   if (makePayment === "pay") {
-    $.fn.redirectPage("one-off-payment/payment-info/2");
+    $.fn.redirectPage("one-off-payment/payment-info-single");
   } else if (makePayment === "penalty") {
     document.location.href =
       "https://dartford-crossing-charge.herokuapp.com/demo/flow1";
@@ -430,7 +419,7 @@ $(".add-vehicle-multiple-flow").click(() => {
     '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label></div>' +
     '<div class="govuk-radios govuk-radios--inline "><div class="govuk-radios__item govuk-!-margin-right-0"><input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="Non-UK">' +
     '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-Uk</label></div></td>' +
-    '<td class="govuk-table__cell">tesr</td>' + '</tr>'
+    '<td class="govuk-table__cell"> </td>' + '</tr>'
   // '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>'
 
   $('#mytable thead>tr').remove();
@@ -446,7 +435,7 @@ $(".add-vehicle-multiple-flow").click(() => {
     '<div class="govuk-radios govuk-radios--inline ">' +
     '<div class="govuk-radios__item govuk-!-margin-right-0">' +
     '<input class="govuk-radios__input" id="changed-name" name="row' + rowCount + '" type="radio" value="Non-UK">' +
-    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-Uk</label>' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-UK</label>' +
     '</div>' +
     '</td>' + '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>'
 
@@ -468,7 +457,7 @@ $(document).on('click', '#remove', function () {
   if (rowlength == 2) {
     var newHead = '<tr class="govuk-table__row">' +
       '<th scope="col" class="govuk-table__header">Registration No.</th>' +
-      '<th scope="col" class="govuk-table__header">Country registration</th>' + '<tr>';
+      '<th scope="col" class="govuk-table__header">Country of registration</th>' + '<tr>';
     $('#mytable thead>tr').remove();
     $('#mytable thead').append(newHead);
   }
@@ -487,3 +476,17 @@ $('#select-all').click(function () {
     })
   }
 });
+
+$("[name='trips-future-crossing']").change((e)=> {
+  let val = (e.target.value * 2.5).toFixed(2);
+  $("#future-amt").text("£" + val);
+  let tripAmt = $("#trip-amt").length ? $("#trip-amt").html().split("£")[1] : 0 ;
+  $("#amount").val((parseFloat(val) + parseFloat(tripAmt)).toFixed(2));
+})
+
+$("[name='trips']").change((e)=> {
+  let val = (e.target.value * 2.5).toFixed(2);
+  $("#trip-amt").text("£" + val);
+  let futureAmt = $("#future-amt").length ? $("#future-amt").html().split("£")[1] : 0;
+  $("#amount").val((parseFloat(val) + parseFloat(futureAmt)).toFixed(2));
+})
