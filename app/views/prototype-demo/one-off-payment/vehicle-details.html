@@ -32,7 +32,7 @@
 
     {% endif %}
 
-    {% if data.vrm === 'LO61 NRO' or data.vrm === 'LO63 NRO' or data.vrm === 'LO64 NRO' %}
+    {% if data.vrm === 'LO61 NRO' or data.vrm === 'LO63 NRO' or data.vrm === 'LO64 NRO' or data.vrm === 'LO65 NRO' %}
     <table class="govuk-table ">
       <caption class="govuk-table__caption govuk-table__caption--m">Your vehicle</caption>
       
@@ -45,7 +45,7 @@
       
       <tr class="govuk-table__row">
         <td scope="col" class="govuk-table__header govuk-body ">Class</td>
-        {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO64 NRO') %}
+        {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO64 NRO') or (data.vrm === 'LO65 NRO') %}
         <td class="govuk-table__cell  govuk-body ">B</td>
         {% endif %}
         
@@ -53,29 +53,26 @@
         <td class="govuk-table__cell  govuk-body ">-</td>
         {% endif %}
         
-        {% if (data.vrm === 'LO63 NRO') or (data.vrm === 'LO64 NRO') %}
-        <td class="govuk-table__cell  govuk-body "> Change </td>
+        {% if (data.vrm === 'LO63 NRO') or (data.vrm === 'LO64 NRO') or (data.vrm === 'LO65 NRO') %}
+        <td class="govuk-table__cell  govuk-body "> <a href="javascript:void(0)" class="govuk-link" area-role="link">Change</a></td>
         {% endif %}
       </tr>
 
       <tr class="govuk-table__row">
         <td scope="col" class="govuk-table__header govuk-body ">Make</td>
-        {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO64 NRO') %}
+        {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO64 NRO') or (data.vrm === 'LO65 NRO') %}
         <td class="govuk-table__cell  govuk-body ">Audi</td>
         {% endif %}
         
-        {% if data.vrm === 'LO63 NRO' %}
-        <td class="govuk-table__cell  govuk-body ">-</td>
-        {% endif %}
-        
-        {% if (data.vrm === 'LO63 NRO') or (data.vrm === 'LO64 NRO') %}
-        <td class="govuk-table__cell  govuk-body "> Change </td>
+        <!-- <td class="govuk-table__cell  govuk-body ">-</td> -->
+        {% if (data.vrm === 'LO63 NRO') or (data.vrm === 'LO64 NRO') or (data.vrm === 'LO65 NRO') %}
+        <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link" area-role="link">Change</a></td>
         {% endif %}
       </tr>
 
       <tr class="govuk-table__row">
         <td scope="col" class="govuk-table__header govuk-body ">Model</td>
-        {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO64 NRO') %}
+        {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO64 NRO') or (data.vrm === 'LO65 NRO') %}
         <td class="govuk-table__cell  govuk-body ">RS4</td>
         {% endif %}
         
@@ -83,14 +80,14 @@
         <td class="govuk-table__cell  govuk-body ">-</td>
         {% endif %}
         
-        {% if (data.vrm === 'LO63 NRO') or (data.vrm === 'LO64 NRO') %}
-        <td class="govuk-table__cell  govuk-body "> Change </td>
+        {% if (data.vrm === 'LO63 NRO') or (data.vrm === 'LO64 NRO') or (data.vrm === 'LO65 NRO') %}
+        <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link" area-role="link">Change</a></td>
         {% endif %}
       </tr>
       
       <tr class="govuk-table__row">
         <td scope="col" class="govuk-table__header govuk-body ">Colour</td>
-        {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO64 NRO') %}
+        {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO64 NRO') or (data.vrm === 'LO65 NRO') %}
         <td class="govuk-table__cell  govuk-body ">Black</td>
         {% endif %}
         
@@ -98,16 +95,16 @@
         <td class="govuk-table__cell  govuk-body ">-</td>
         {% endif %}
         
-        {% if (data.vrm === 'LO63 NRO') or (data.vrm === 'LO64 NRO') %}
-        <td class="govuk-table__cell  govuk-body "> Change </td>
+        {% if (data.vrm === 'LO63 NRO') or (data.vrm === 'LO64 NRO') or (data.vrm === 'LO65 NRO') %}
+        <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link" area-role="link">Change</a></td>
         {% endif %}
       </tr>
 
-      {% if data.vrm === 'LO63 NRO' or  data.vrm === 'LO64 NRO' %}
+      {% if data.vrm === 'LO63 NRO' or  data.vrm === 'LO64 NRO' or (data.vrm === 'LO65 NRO') %}
       <tr class="govuk-table__row">
-        <td scope="col" class="govuk-table__header govuk-body ">Country Registration</td>
-        <td class="govuk-table__cell  govuk-body ">Non-UK</td>
-        <td class="govuk-table__cell  govuk-body "> Change </td>
+        <td scope="col" class="govuk-table__header govuk-body ">Country of registration</td>
+        <td class="govuk-table__cell  govuk-body ">-</td>
+        <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link" area-role="link">Change</a></td>
       </tr>
       {% endif %}
 
@@ -115,7 +112,7 @@
 
     {% if data.vrm === 'LO64 NRO' %}
     <div class="govuk-inset-text">
-      You vehicle is exempt from charges.<br/>
+      You vehicle is exempt from Dartford Crossing charges.<br/>
       Do you still want to make a payment?
     </div>
     {% endif %}
@@ -128,9 +125,23 @@
         >This is not your vehicle</button>
 
       {% elif (data.vrm === 'LO64 NRO') %}
-      <button onClick="location.href = '/one-off-payment/future-crossing-req'" class="govuk-button" data-module="govuk-button" role="button" aria-label="Proceed to payment"
-      >Proceed to payment</button>
+      <!-- <button onClick="location.href = '/one-off-payment/future-crossing-req'" class="govuk-button" data-module="govuk-button" role="button" aria-label="Proceed to payment"
+      >Continue</button> -->
+
+      <div class="govuk-form-group govuk-button-group" >
+        <button onClick="location.href = '/one-off-payment/future-crossing-req'" class="govuk-button" data-module="govuk-button" role="button" aria-label="Yes"
+        >Yes</button>
+          <button class="govuk-button govuk-button--secondary " data-module="govuk-button" role="button" aria-label="No"
+          >No</button>
+      </div>
       
+      {% elif (data.vrm === 'LO65 NRO') %}
+
+      <button onClick="location.href='./payment-info-single'" class="govuk-button" data-module="govuk-button" role="button" aria-label="Confirm a vehicle"
+        >Confirm</button>
+        <button class="govuk-button govuk-button--secondary reject_vehicle" data-module="govuk-button" role="button" aria-label="Not my a vehicle"
+        >This is not your vehicle</button>
+
       {% else %}
       <button onClick="location.href='./payment-info'" class="govuk-button" data-module="govuk-button" role="button" aria-label="Confirm a vehicle"
         >Confirm</button>
