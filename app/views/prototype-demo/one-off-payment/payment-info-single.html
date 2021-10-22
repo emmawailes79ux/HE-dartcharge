@@ -25,7 +25,7 @@
       </div>
 
   <div class="govuk-grid-column-full govuk-!-margin-top-6">
-    <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
+    <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing (Dart Charge)</h1>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
   </div>
 </div>
@@ -57,7 +57,7 @@
         </div>
 
       {% endif %}
-      <h5 class="govuk-heading-m"> VRM: {{data.vrm}}</h5>
+      <h5 class="govuk-heading-m"> Registration number: {{data.vrm}}</h5>
       <h5 class="govuk-heading-m govuk-!-margin-bottom-8"> Available balance: £0.00</h5>
      
   
@@ -93,19 +93,24 @@
           
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Future crossings</th>
-            <td class="govuk-table__cell">
-              <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
-                <label class="govuk-label" for="trips-future-crossing">
-                    <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips-future-crossing">
-                        <option value="1" selected >1</option>
-                        <option value="2" >2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select> 
-                </label>
-            </div>
-            </td>
-            <td id="future-amt" class="govuk-table__cell">£2.50</td>
+            
+              <td class="govuk-table__cell">
+                <div id="future-crossing-selectbox" class="govuk-form-group select-box govuk-!-margin-bottom-3" style="display: none">
+                  <label class="govuk-label" for="trips-future-crossing">
+                      <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips-future-crossing">
+                          <option value="1" selected >1</option>
+                          <option value="2" >2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                      </select> 
+                  </label>
+              </div>
+              </td>
+              <td id="future-amt" class="govuk-table__cell">
+                <span id="amt" style="display: none">£2.50</span>
+                <a style="cursor: pointer;" id="add-future-crossing" class="govuk-link">Add</a>
+              </td>
+            
           </tr>
          
         </tbody>

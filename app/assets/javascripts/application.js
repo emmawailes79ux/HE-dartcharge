@@ -163,7 +163,7 @@ $(document).ready(function () {
     } else if (radioVal === "make-oneoff-payment") {
 
       // $.fn.redirectPage("one-off-payment/find-vehicle");
-      $.fn.redirectPage("one-off-payment/multiple-vehicle-flow");
+      $.fn.redirectPage("one-off-payment/confirm-vehicle-details");
 
     }
   });
@@ -408,17 +408,13 @@ $(".find-vehicle-multiple-flow").click(() => {
 
 $(".add-vehicle-multiple-flow").click(() => {
   var newHead = '<tr class="govuk-table__row">' +
-    '<th scope="col" class="govuk-table__header">Registration No.</th>' +
-    '<th scope="col" class="govuk-table__header">Country registration</th>' +
+    '<th scope="col" class="govuk-table__header">Registration number</th>' +
+    
     '<th scope="col" class="govuk-table__header">Action</th>' + '<tr>';
   var newRow = '<tr class="govuk-table__row">' +
     '<td scope="row" class="govuk-table__header">' +
-    '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input" id="vehicle-no" name="one-quarter" type="text"></div></td>' +
-    '<td class="govuk-table__cell"> <div class="govuk-radios govuk-radios--inline">' +
-    '<div class="govuk-radios__item"><input class="govuk-radios__input checked" id="changed-name" name="changed-name" type="radio" value="UK" checked>' +
-    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label></div>' +
-    '<div class="govuk-radios govuk-radios--inline "><div class="govuk-radios__item govuk-!-margin-right-0"><input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="Non-UK">' +
-    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-Uk</label></div></td>' +
+    '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input" id="vehicle-no" name="one-quarter" type="text"></div></td>'
+    +
     '<td class="govuk-table__cell"> </td>' + '</tr>'
   // '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>'
 
@@ -426,12 +422,7 @@ $(".add-vehicle-multiple-flow").click(() => {
   $('#mytable thead').append(newHead);
   var vehicleNo = $("#vehicle-no").val();
   var rowCount = $('#mytable tbody>tr').length;
-  var td1 = '<td class="govuk-table__cell">' +
-    '<div class="govuk-radios govuk-radios--inline">' +
-    '<div class="govuk-radios__item">' +
-    '<input class="govuk-radios__input" id="changed-name" name="row' + rowCount + '" type="radio" value="UK" checked>' +
-    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label>' +
-    '</div>' +
+  var td1 = 
     '<div class="govuk-radios govuk-radios--inline ">' +
     '<div class="govuk-radios__item govuk-!-margin-right-0">' +
     '<input class="govuk-radios__input" id="changed-name" name="row' + rowCount + '" type="radio" value="Non-UK">' +
@@ -456,7 +447,7 @@ $(document).on('click', '#remove', function () {
   var rowlength = $('#mytable tbody>tr').length;
   if (rowlength == 2) {
     var newHead = '<tr class="govuk-table__row">' +
-      '<th scope="col" class="govuk-table__header">Registration No.</th>' +
+      '<th scope="col" class="govuk-table__header">Registration number</th>' +
       '<th scope="col" class="govuk-table__header">Country of registration</th>' + '<tr>';
     $('#mytable thead>tr').remove();
     $('#mytable thead').append(newHead);
@@ -489,4 +480,11 @@ $("[name='trips']").change((e)=> {
   $("#trip-amt").text("£" + val);
   let futureAmt = $("#future-amt").length ? $("#future-amt").html().split("£")[1] : 0;
   $("#amount").val((parseFloat(val) + parseFloat(futureAmt)).toFixed(2));
+})
+
+// On click of Add button add select box for future crossing
+$("#add-future-crossing").click(function(){
+  $(this).css("display", "none");
+  $("#future-crossing-selectbox").css("display", "block");
+  $("#amt").css("display", "block");
 })

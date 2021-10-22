@@ -1,8 +1,8 @@
 exports.chargeListHead = [
   "Type of vehicle",
   "One-off payment",
-  "PayG Service",
-  "Pre-pay Accounts",
+  "Pay as you go accounts",
+  "Pre-pay accounts",
 ];
 
 exports.chargeList = [

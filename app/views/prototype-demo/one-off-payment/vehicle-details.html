@@ -10,7 +10,7 @@
 <a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full govuk-!-margin-top-6">
-    <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
+    <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing (Dart Charge)</h1>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
   </div>
 </div>
@@ -19,10 +19,10 @@
   <div class="govuk-grid-column-two-thirds">
     {% if data.vrm === 'LO62 NRO' %}
     <div class="govuk-inset-text govuk-!-margin-bottom-5">
-      {{data.vrm}} has no unpaid crossing or PCN
+      {{data.vrm}} has no unpaid crossings or PCN
     </div>
 
-    <p class="govuk-heading-m govuk-!-margin-top-5">Would you like to pay for future crossing?</p>
+    <p class="govuk-heading-m govuk-!-margin-top-5">Would you like to pay for future crossings?</p>
     <div class="govuk-form-group govuk-button-group " >
       <button onClick="location.href='./payment-info-single'" class="govuk-button" data-module="govuk-button" role="button" aria-label="Yes"
       >Yes</button>
@@ -102,7 +102,14 @@
       {% if data.vrm === 'LO63 NRO' or  data.vrm === 'LO64 NRO' or (data.vrm === 'LO65 NRO') %}
       <tr class="govuk-table__row">
         <td scope="col" class="govuk-table__header govuk-body ">Country of registration</td>
-        <td class="govuk-table__cell  govuk-body ">-</td>
+        <td class="govuk-table__cell  govuk-body ">
+          <!-- Exempt vehicle should be UK else dash -->
+        {% if data.vrm === 'LO64 NRO' %} 
+          UK
+        {% else %}
+          -
+        {% endif %}
+        </td>
         <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link" area-role="link">Change</a></td>
       </tr>
       {% endif %}

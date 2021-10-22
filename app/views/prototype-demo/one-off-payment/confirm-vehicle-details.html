@@ -11,53 +11,31 @@ GOV.UK Prototype Kit
 <a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-margin-top-6">
-        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart
-            Charge)</h1>
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing (Dart Charge)</h1>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
     </div>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+        <div class="govuk-heading-m">Confirm vehicles details</div>
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <table class="govuk-table" id="mytable">
-                    <caption class="govuk-table__caption govuk-table__caption--m">Confirm vehicles details</caption>
+                
+                <table class="govuk-table " id="mytable">
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header">Registration No.</th>
-                            <th scope="col" class="govuk-table__header">Country of registration</th>
+                            <th scope="col" class="govuk-table__header">Registration number</th>
                         </tr>
                     </thead>
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                             <td scope="row" class="govuk-table__header">
                                 <div class="govuk-form-group govuk-!-margin-bottom-0">
-                                    <input class="govuk-input govuk-input" id="vehicle-no" name="one-quarter"
+                                    <input class="govuk-input govuk-input govuk-input--width-20" id="vehicle-no" name="one-quarter"
                                         type="text">
                                 </div>
                             </td>
-                            <td class="govuk-table__cell">
-                                <div class="govuk-radios govuk-radios--inline">
-                                    <div class="govuk-radios__item">
-                                        <input class="govuk-radios__input" id="changed-name" name="changed-name"
-                                            type="radio" value="UK" checked>
-                                        <label
-                                            class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
-                                            for="changed-name">
-                                            UK
-                                        </label>
-                                    </div>
-                                    <div class="govuk-radios__item govuk-!-margin-right-0">
-                                        <input class="govuk-radios__input" id="changed-name-2" name="changed-name"
-                                            type="radio" value="Non-UK">
-                                        <label
-                                            class="govuk-label govuk-radios__label govuk-!-padding-left-1 govuk-!-padding-right-0"
-                                            for="changed-name-2">
-                                            Non-UK
-                                        </label>
-                                    </div>
-                                </div>
-                            </td>
+                            
                             <!-- <td class="govuk-table__cell">
                                 <a href="javascript:void(0)">Remove</a>
                             </td> -->
@@ -66,17 +44,21 @@ GOV.UK Prototype Kit
                     </tbody>
                 </table>
 
-
-                <button class="govuk-button  find-vehicle-multiple-flow govuk-!-margin-right-2"
-                    data-module="govuk-button" role="button">
-                    Find your Vehicle
-                </button>
-
-                <button class="govuk-button govuk-button--secondary add-vehicle-multiple-flow "
-                    data-module="govuk-button" role="button">
-                    Add Vehicle
-                </button>
             </div>
+            </div>
+            <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <button class="govuk-button  find-vehicle-multiple-flow govuk-!-margin-right-2"
+                data-module="govuk-button" role="button">
+                Find your Vehicle
+            </button>
+
+            <button class="govuk-button govuk-button--secondary add-vehicle-multiple-flow "
+                data-module="govuk-button" role="button">
+                Add Vehicle
+            </button>
+            </div>
+            
         </div>
     </div>
 </div>
