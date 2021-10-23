@@ -1,6 +1,7 @@
 $bg_circle: #bfe3e0;
 
 .status-circle {
+
   /*
   &::before {
     content: "";
@@ -23,17 +24,19 @@ $bg_circle: #bfe3e0;
     background-color: #ff4500;
   }
   */
-  &.bg-active span{
+  &.bg-active span {
     background-color: $bg_circle;
     padding: 2px 8px 2px 6px;
     text-transform: uppercase;
   }
-  &.bg-suspended span{
+
+  &.bg-suspended span {
     background-color: black;
     padding: 2px 8px 2px 6px;
     text-transform: uppercase;
   }
-  &.bg-dormant span{
+
+  &.bg-dormant span {
     background-color: #ff4500;
     padding: 2px 8px 2px 6px;
     text-transform: uppercase;
@@ -50,7 +53,7 @@ $bg_circle: #bfe3e0;
   flex-wrap: wrap;
   flex-direction: row;
 
-  > .dashboard-card-heading {
+  >.dashboard-card-heading {
     -webkit-flex: auto;
     -ms-flex: auto;
     flex: auto;
@@ -139,21 +142,29 @@ $bg_circle: #bfe3e0;
 
 .table-header .govuk-table-list-cell {
   display: table-cell;
-  padding: 0.5rem 1rem 0.5rem 0; 
-  // color: #1d70b8;
+  padding: 0.5rem 1rem 0.5rem 0;
+  color: #1d70b8;
   font-weight: bold;
   border-bottom: 1px solid #b1b4b6;
 }
 
 .table-body .govuk-table-list-cell {
   display: table-cell;
-  padding: 1rem 1rem 1rem 0; 
+  padding: 1rem 1rem 1rem 0;
   border-bottom: 1px solid #b1b4b6;
-  a{
+
+  a {
     color: #1d70b8;
   }
 }
 
+.govuk-width-20 {
+  width: 20px;
+}
+
+.border-top {
+  border-top: 2px solid #1d70b8;
+}
 
 .govuk-tbl-column {
   table-layout: fixed;
@@ -167,7 +178,7 @@ $bg_circle: #bfe3e0;
   }
 
   .divider {
-    border-right: 1px solid #8f8f8f;   
+    border-right: 1px solid #8f8f8f;
     padding-right: 40px;
   }
 
@@ -187,8 +198,13 @@ $bg_circle: #bfe3e0;
 }
 
 
-.pull-left{float: left;}
-.pull-right{float: right;}
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
 
 
 .table-info-text {
@@ -212,22 +228,24 @@ $bg_circle: #bfe3e0;
   font-size: 20px;
 }
 
-.table-sort-box-block li{
+.table-sort-box-block li {
   width: 25%;
   float: left;
   list-style: none;
 }
-.table-sort-box-block li .govuk-radios{
+
+.table-sort-box-block li .govuk-radios {
   background: #ebeced;
-    margin-right: 10px;
-    padding: 5px 0px 5px 10px;
-    display: flex;
+  margin-right: 10px;
+  padding: 5px 0px 5px 10px;
+  display: flex;
 }
 
-.table-sort-box-block li .govuk-radios--small .govuk-radios__label:before{
-  top: 10px; left: 6px;
+.table-sort-box-block li .govuk-radios--small .govuk-radios__label:before {
+  top: 10px;
+  left: 6px;
   width: 18px;
-  height: 18px; 
+  height: 18px;
 }
 
 .table-sort-box-block li .govuk-radios--small .govuk-radios__label:after {
@@ -236,23 +254,43 @@ $bg_circle: #bfe3e0;
   border-width: 4px;
 }
 
-.table-sort-box-block li .govuk-radios--small .govuk-radios__input:focus + .govuk-radios__label:before{
+.table-sort-box-block li .govuk-radios--small .govuk-radios__input:focus+.govuk-radios__label:before {
   border-width: 3px;
 }
 
-.table-sort-box-block .govuk-radios--small .govuk-radios__label{padding-right: 0px;}
+.table-sort-box-block .govuk-radios--small .govuk-radios__label {
+  padding-right: 0px;
+}
 
 @media (max-width: 600px) {
-  .table-sort-box-block li{width: 50%;}
-  .table-sort-box-block li .govuk-radios { margin-right: 10px;  margin-bottom: 10px;
-    padding: 2px 0px 2px 5px;}
+  .table-sort-box-block li {
+    width: 50%;
+  }
+
+  .table-sort-box-block li .govuk-radios {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 2px 0px 2px 5px;
+  }
 }
-@media (min-width: 40.0625em) and (max-width: 56.0625em){
-  .table-sort-box-block li{width: 50%;}
-  .table-sort-box-block li .govuk-radios { margin-right: 10px;  margin-bottom: 10px;
-    padding: 2px 0px 2px 5px;}
+
+@media (min-width: 40.0625em) and (max-width: 56.0625em) {
+  .table-sort-box-block li {
+    width: 50%;
+  }
+
+  .table-sort-box-block li .govuk-radios {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 2px 0px 2px 5px;
+  }
 }
 
 
-.table-header .govuk-table-list-cell { padding: 0.5rem 1.1rem 0.5rem 0; }
-.table-body .govuk-table-list-cell { padding: 1rem 0.5rem 1rem 0; }
+.table-header .govuk-table-list-cell {
+  padding: 0.5rem 1.1rem 0.5rem 0;
+}
+
+.table-body .govuk-table-list-cell {
+  padding: 1rem 0.5rem 1rem 0;
+}

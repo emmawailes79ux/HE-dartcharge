@@ -377,7 +377,7 @@ router.get("/dashboard", function (req, res) {
 });
 
 router.get("/dashboard/vehicles", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicle-details", {
+  res.render("prototype-demo/dashboard/vehicles/vehicle-details", {
     dashboardData
   });
 });
@@ -387,6 +387,8 @@ router.get("/dashboard/crossings", function (req, res) {
     dashboardData
   });
 });
+
+
 
 router.get("/dashboard/payments", function (req, res) {
   res.render("prototype-demo/dashboard/payment-details", {
@@ -412,17 +414,37 @@ router.get("/dashboard/notification", function (req, res) {
   });
 });
 
-// dashboard / add - dashboard - vehicle
 
-// router.get("/dashboard/add-dashboard-vehicle", function (req, res) {
-//   res.render("prototype-demo/dashboard/add-dashboard-vehicle");
-// });
 
-// router.post("/dashboard/find-vehicle", function (req, res) {
-//   if (req.body.vrm) {
-//     res.redirect("/prototype-demo/dashboard/dashboard-confirm-vehicle-details");
-//   }
-// });
+router.get("/dashboard/add-dashboard-vehicle", function (req, res) {
+  res.render("prototype-demo/dashboard/vehicles/add-dashboard-vehicle");
+});
+
+router.post("/dashboard/vehicle/find-vehicle", function (req, res) {
+  if (req.body.vrm) {
+    res.redirect("/prototype-demo/dashboard/vehicles/dashboard-confirm-vehicle-details");
+  }
+});
+
+
+router.get("/dashboard/edit-vehicle", function (req, res) {
+  res.render("prototype-demo/dashboard/vehicles/edit-vehicle", {
+    dashboardData
+  });
+});
+
+
+router.get("/dashboard/vehicles/dashboard-confirm-vehicle-details", function (req, res) {
+  res.render("prototype-demo/dashboard/vehicles/dashboard-confirm-vehicle-details", {
+    dashboardData
+  });
+});
+
+
+
+router.get("/dashboard/vehicles/vehicle-success", function (req, res) {
+  res.render("prototype-demo/dashboard/vehicles/vehicle-success");
+});
 
 // Dashboaord section end
 
