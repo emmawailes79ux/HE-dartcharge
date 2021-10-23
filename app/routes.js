@@ -7,12 +7,15 @@ router.get("/home", function (req, res) {
   res.render("prototype-demo/home");
 });
 
+router.get("/charges-fines", function (req, res) {
+  res.render("prototype-demo/charges-fines");
+});
+
 router.get("/landing", function (req, res) {
   res.render("prototype-demo/landing", {
     landingData
   });
 });
-
 // Setup account section routes
 router.get("/create-account", function (req, res) {
   res.render("prototype-demo/setup-account/create-account", {
@@ -201,34 +204,46 @@ router.get("/one-off-payment/vehicle-details", function (req, res) {
 });
 
 router.get("/one-off-payment/payment-info/:value", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   console.log(req.params.value)
   if (req.params.value == 1)
-  data.vehicles= landingData.vehicles;
+    data.vehicles = landingData.vehicles;
   else {
-    data.vehicles =[{vrm:'LO61 NRO'}]
+    data.vehicles = [{
+      vrm: 'LO61 NRO'
+    }]
   }
   data.paymentConfirmhead = landingData.paymentConfirmhead;
   data.crossingList = landingData.crossingList;
   res.render("prototype-demo/one-off-payment/payment-info", data);
 });
 router.get("/one-off-payment/payment-info-confirm", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   res.render("prototype-demo/one-off-payment/payment-info-confirm", data);
 });
 
 router.get("/one-off-payment/payment-info-single", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   res.render("prototype-demo/one-off-payment/payment-info-single", data);
 });
 
 router.get("/one-off-payment/payment-info-multiple", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   res.render("prototype-demo/one-off-payment/payment-info-multiple", data);
 });
 
 router.get("/one-off-payment/pay-receipt-single", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   res.render("prototype-demo/one-off-payment/pay-receipt-single", data);
 });
 
@@ -386,14 +401,28 @@ router.get("/dashboard/vehicles/view", function (req, res) {
 });
 
 router.get("/dashboard/profile", function (req, res) {
-  res.render("prototype-demo/dashboard/account-update-profile", { dashboardData });
+  res.render("prototype-demo/dashboard/account-update-profile", {
+    dashboardData
+  });
 });
 
 router.get("/dashboard/notification", function (req, res) {
-  res.render("prototype-demo/dashboard/account-notification", { dashboardData });
+  res.render("prototype-demo/dashboard/account-notification", {
+    dashboardData
+  });
 });
 
+// dashboard / add - dashboard - vehicle
 
+// router.get("/dashboard/add-dashboard-vehicle", function (req, res) {
+//   res.render("prototype-demo/dashboard/add-dashboard-vehicle");
+// });
+
+// router.post("/dashboard/find-vehicle", function (req, res) {
+//   if (req.body.vrm) {
+//     res.redirect("/prototype-demo/dashboard/dashboard-confirm-vehicle-details");
+//   }
+// });
 
 // Dashboaord section end
 
