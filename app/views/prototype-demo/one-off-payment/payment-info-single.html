@@ -35,10 +35,10 @@
 
     <div class="govuk-grid-column-two-thirds ">
 
-      {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO63 NRO') or (data.vrm === 'LO65 NRO') %}
+      {% if (data['vrm-1'] === 'LO61 NRO') or (data['vrm-1'] === 'LO63 NRO') or (data['vrm-1'] === 'LO65 NRO') %}
         <div class="govuk-inset-text govuk-!-margin-top-0 ">
-         <p class="govuk-body">{{data.vrm}} has 3 unpaid Dartford crossing charges</p>
-            {% if (data.vrm === 'LO65 NRO') %}
+         <p class="govuk-body">{{data['vrm-1']}} has 3 unpaid Dartford Crossing charges</p>
+            {% if (data['vrm-1'] === 'LO65 NRO') %}
          <ul class="govuk-list govuk-list--bullet">
                 <li class="govuk-boyd">Number of payable charges: <b>2</b></li>
                 <li class="govuk-boyd">Number of charges missed payment deadline: <b>1</b></li>
@@ -46,21 +46,22 @@
           {% endif %}
         </div>
         
+        {% if (data['vrm-1'] !== 'LO61 NRO') %}
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
+          <strong class="govuk-warning-text__text govuk-!-font-weight-regular">
             <span class="govuk-warning-text__assistive">Warning</span>
             We suggest you clear the payable crossing first as it may miss the deadline.
             <br/>
             You can then resolve the charges which have already missed the deadline.
           </strong>
         </div>
+        {% endif %}
 
       {% endif %}
-      <h5 class="govuk-heading-m"> Registration number: {{data.vrm}}</h5>
-      <h5 class="govuk-heading-m govuk-!-margin-bottom-8"> Available balance: £0.00</h5>
+      <h5 class="govuk-heading-m"> Registration number: {{data['vrm-1']}}</h5>
+      <!-- <h5 class="govuk-heading-m govuk-!-margin-bottom-8"> Available balance: £0.00</h5> -->
      
-  
         <table class="govuk-table ">
         
         <thead class="govuk-table__head">
@@ -72,13 +73,13 @@
         </thead>
 
         <tbody class="govuk-table__body">
-          {% if (data.vrm === 'LO61 NRO') or (data.vrm === 'LO63 NRO') or (data.vrm === 'LO65 NRO') %}
+          {% if (data['vrm-1'] === 'LO61 NRO') or (data['vrm-1'] === 'LO63 NRO') or (data['vrm-1'] === 'LO65 NRO') %}
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Payable crossings</th>
             <td class="govuk-table__cell">
               <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
                 <label class="govuk-label" for="trips">
-                    <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips">
+                    <select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">
                         <option value="1"  >1</option>
                         <option value="2" selected >2</option>
                         <option value="3">3</option>
@@ -97,7 +98,7 @@
               <td class="govuk-table__cell">
                 <div id="future-crossing-selectbox" class="govuk-form-group select-box govuk-!-margin-bottom-3" style="display: none">
                   <label class="govuk-label" for="trips-future-crossing">
-                      <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips-future-crossing">
+                      <select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips-future-crossing">
                           <option value="1" selected >1</option>
                           <option value="2" >2</option>
                           <option value="3">3</option>
@@ -116,17 +117,15 @@
         </tbody>
       </table>
  
-   
-
       <div class="govuk-form-group ">
         <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">Payment amount</label>
            
         <div class="govuk-input__wrapper govuk-grid-column-two-third">
          <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
-         {% if (data.vrm === 'LO62 NRO') or (data.vrm === 'LO64 NRO') %}
+         {% if (data['vrm-1'] === 'LO62 NRO') or (data['vrm-1'] === 'LO64 NRO') %}
          <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount" name="amount" value="2.50" type="number" aria-describedby="amount" spellcheck="false">
          {% else %} 
-         <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount" name="amount" value="7.50" type="number" aria-describedby="amount" spellcheck="false">
+         <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount" name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false">
          {% endif %}
           
         </div>

@@ -1,44 +1,39 @@
-{% extends "prototype-layout.html" %}
+{% extends "../dashboard-layout.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
 
+
 {% block content %}
 
-
-{% include "./one-off-payment-body-head.html" %}
-  <a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
-
-
+<a href="#" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-top-0">Back</a>
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full govuk-!-margin-top-6">
-        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing (Dart Charge)</h1>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
-    </div>
-</div>
+    <div class="govuk-grid-column-full">
+      <div class="dashboard-card-container">
+        <div class="dashboard-card-heading">
+          <h1 class="govuk-heading-l">Manual top-up</h1>
+        </div>
+        <!-- <div class="govuk-!-margin-top-1"><a href="#" class="govuk-body-s govuk-!-margin-top-1">Notifications (2)</a></div> -->
+      </div>
+      </div>
 
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full ">
-        <div class="govuk-form-group ">
-            <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">
-              Payment amount</label>
+      <div class="govuk-grid-column-full ">
+        <div class="govuk-form-group govuk-!-margin-bottom-9">
+          <p class="govuk-!-font-weight-bold govuk-!-font-size-24">How much amount would you like to top-up?</p>
+            <label class="govuk-label govuk-body-l" for="amount">
+              Enter amount
+            </label>
                
             <div class="govuk-input__wrapper">
                 <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
-                <!-- <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3" id="amount" name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false" disabled> -->
-                {% if (data.vrm === 'LO62 NRO' ) or (data.vrm === 'LO64 NRO')  %} 
-                <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount" name="amount" value="2.50" type="number" aria-describedby="amount" spellcheck="false">
-                {% else %} 
                 <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount" name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false">
-              {% endif %}
             </div>
         </div>
 
         <div class="govuk-form-group">
             <div class="govuk-heading-m">
-               Please select the preferred payment method.
+               How would you like to pay?
             </div>
             <div class="govuk-tabs govuk-grid-column-two-thirds" data-module="govuk-tabs">
               <h2 class="govuk-tabs__title">
@@ -90,7 +85,7 @@
                 </div>
                 
                 <div class="govuk-button-group govuk-!-margin-top-6">
-                  <button data-module="govuk-button" class="govuk-button paymentoptionBtn" value="Proceed to payment" type="submit" role="button"
+                  <button onClick="location.href='./top-up/paypal'" data-module="govuk-button" class="govuk-button" value="Proceed to payment" type="submit" role="button"
                       aria-label="Proceed to payment">Proceed to payment</button>
               </div>
             
@@ -175,7 +170,7 @@
               </div>
               <p class="govuk-!-margin-top-2 govuk-body-s"><a href="#" >Read terms and conditions</a></p>
               <div class="govuk-button-group govuk-!-margin-top-6">
-                  <button data-module="govuk-button" class="govuk-button confirm-payment-btn" value="Proceed to payment" type="submit" role="button"
+                  <button onClick="location.href='./top-up/success'" data-module="govuk-button" class="govuk-button " value="Proceed to payment" type="submit" role="button"
                       aria-label="Proceed to payment">Proceed to payment</button>
                       <!-- onClick="location.href='./payment-failure'" -->
               </div>
@@ -183,6 +178,7 @@
               </div>
               <div class="govuk-tabs__panel govuk-tabs__panel--hidden " id="past-month">
                 
+                <p class="govuk-heading-m govuk-!-font-weight-bold">Please select the preferred payment method.</p>
                 <div class="govuk-form-group govuk-!-margin-bottom-5">
                   <label class="govuk-label govuk-!-font-weight-bold " for="card-number">Name on the account</label>
                   <span class="govuk-error-message card-number-error" style="display: none">
@@ -233,13 +229,16 @@
                 </div>
                   
                 <div class="govuk-button-group govuk-!-margin-top-6">
-                  <button onClick="location.href='./success'" data-module="govuk-button" class="govuk-button" value="Proceed to payment" type="submit" role="button"
+                  <button onClick="location.href='./top-up/success'" data-module="govuk-button" class="govuk-button" value="Proceed to payment" type="submit" role="button"
                       aria-label="Proceed to payment">Proceed to payment</button>
                 </div>
               </div>
             </div>
         </div>
     </div>
-</div>
+
+  </div>
+  
+
 
 {% endblock %}

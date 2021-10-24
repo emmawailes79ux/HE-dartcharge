@@ -146,10 +146,6 @@ $(document).ready(function () {
     $.fn.redirectPage("one-off-payment/payment-info");
   });
 
-  $("[name='selectlink']").change(() => {
-    $(".landingNxtBtn").prop("disabled", false);
-  });
-
   $(".landingNxtBtn").click(() => {
     let radioVal = $("[name='selectlink']:checked").val();
 
@@ -403,51 +399,43 @@ $(".confirm-payment-btn").click(() => {
 //muliple vehicle flow
 
 $(".find-vehicle-multiple-flow").click(() => {
-  $.fn.redirectPage("one-off-payment/multiple-vehicle-details");
+  // $.fn.redirectPage("one-off-payment/multiple-vehicle-details");
+
+  if ($("[name='vrm-1']").val() === '') {
+
+    $(".vrm-error").css("display", "block");
+    $(".error-summary").css("display", "block");
+    return false;
+  }
+
+  $(this.form.submit());
 })
 
 $(".add-vehicle-multiple-flow").click(() => {
+  var rowlength = $('#mytable tbody>tr').length;
   var newHead = '<tr class="govuk-table__row">' +
     '<th scope="col" class="govuk-table__header">Registration number</th>' +
-
-    '<th scope="col" class="govuk-table__header">Action</th>' + '<tr>';
+    '<th scope="col" class="govuk-table__header">Action</th>' +
+    '<tr>';
   var newRow = '<tr class="govuk-table__row">' +
     '<td scope="row" class="govuk-table__header">' +
-    '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input" id="vehicle-no" name="one-quarter" type="text"></div></td>' +
-    '<td class="govuk-table__cell"> </td>' + '</tr>'
-  // '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>'
-
-  $('#mytable thead>tr').remove();
-  $('#mytable thead').append(newHead);
-  var vehicleNo = $("#vehicle-no").val();
-  var rowCount = $('#mytable tbody>tr').length;
-  var td1 =
-    '<div class="govuk-radios govuk-radios--inline ">' +
-    '<div class="govuk-radios__item govuk-!-margin-right-0">' +
-    '<input class="govuk-radios__input" id="changed-name" name="row' + rowCount + '" type="radio" value="Non-UK">' +
-    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-UK</label>' +
-    '</div>' +
-    '</td>' + '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>'
-
-  if (length == 1) {
-    $('#mytable tbody>tr').remove();
-    var markup = '<tr id="row' + rowCount + '" class="govuk-table__row">' + '<td class=govuk-table__header>' + vehicleNo + "</td>" + td1 + '</tr>'
-    $('#mytable tbody').append(markup);
-  } else {
-    $('#mytable tbody>tr').last().remove();
-    var markup = '<tr class="govuk-table__row">' + '<td class=govuk-table__header>' + vehicleNo + "</td>" + td1 + '</tr>'
-    $('#mytable tbody').append(markup);
+    '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input--width-20" name="'+'vrm-'+(parseInt(rowlength) + 1)+'" type="text"></div></td>' +
+    '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>' + '</tr>'
+  
+  if (rowlength == 1) {
+    $('#mytable thead>tr').remove();
+    $('#mytable thead').append(newHead);
   }
-
+  $('#table tbody tr:last').clone().insertAfter('#table tbody tr:last');
   $('#mytable tbody>tr').last().after(newRow);
+  
 });
 //remove
 $(document).on('click', '#remove', function () {
   var rowlength = $('#mytable tbody>tr').length;
   if (rowlength == 2) {
     var newHead = '<tr class="govuk-table__row">' +
-      '<th scope="col" class="govuk-table__header">Registration number</th>' +
-      '<th scope="col" class="govuk-table__header">Country of registration</th>' + '<tr>';
+      '<th scope="col" class="govuk-table__header">Registration number</th><tr>';
     $('#mytable thead>tr').remove();
     $('#mytable thead').append(newHead);
   }
@@ -477,7 +465,7 @@ $("[name='trips-future-crossing']").change((e) => {
 $("[name='trips']").change((e) => {
   let val = (e.target.value * 2.5).toFixed(2);
   $("#trip-amt").text("£" + val);
-  let futureAmt = $("#future-amt").length ? $("#future-amt").html().split("£")[1] : 0;
+  let futureAmt = $("#future-amt").length > 0 ? $("#future-amt").html().split("£")[1] : 0;
   $("#amount").val((parseFloat(val) + parseFloat(futureAmt)).toFixed(2));
 })
 
@@ -513,3 +501,22 @@ $(document).on('click', '.remove-vehicle', function () {
   $(this).closest('.govuk-form-group').remove();
   return false;
 });
+$(".add-future-crossing").click(function(){
+  $(this).css("display", "none");
+  $(this).prev('span').css("display", "block");
+  $(this).parent('td').prev('td').find('.future-crossing').css("display", "block");
+})
+
+$(".future-crossing").change(function(e){
+  let val = (e.target.value * 2.5).toFixed(2);
+  $(this).parent('label').parent('div').parent('td').next('td').text("£" + val)
+  $("#amount").val($.fn.totalSum());
+})
+
+$.fn.totalSum = () => {
+  let sum = 0;
+  $(".crossing-amount").each(function () {
+    sum += parseFloat($(this).text().split("£")[1]);
+  })
+  return sum.toFixed(2);
+}

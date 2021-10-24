@@ -9,44 +9,29 @@
 {% include "./one-off-payment-body-head.html" %}
 <a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds error-summary" style="display: none; margin-bottom:-60px">
-        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-        <h2 class="govuk-error-summary__title" id="error-summary-title">
-          There is a problem
-        </h2>
-        <div class="govuk-error-summary__body">
-          <ul class="govuk-list govuk-error-summary__list">
-            <li>
-              <a href="#">Enter a valid email address</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      </div>
-
   <div class="govuk-grid-column-full govuk-!-margin-top-6">
     <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing (Dart Charge)</h1>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
   </div>
 </div>
 
-
 <div class="govuk-grid-row">
-
     <div class="govuk-grid-column-full">
-   
         <div class="govuk-inset-text govuk-!-margin-top-0">
-          LO62 NRO has 3 unpaid Dartford crossing charges
-          
-            <ul class="govuk-list govuk-list--bullet">
-                <li class="govuk-boyd">Number of payable charges: <b>2</b></li>
-                <li class="govuk-boyd">Number of charges missed payment deadline: <b>1</b></li>
-            </ul>
-          DO42 NRT has 3 unpaid Dartford crossing charges,
+          {{data['vrm-1']}} has 3 unpaid Dartford Crossing charges
+          {% if (data['vrm-1'] === 'LO65 NRO') %}
+          <ul class="govuk-list govuk-list--bullet">
+                 <li class="govuk-boyd">Number of payable charges: <b>2</b></li>
+                 <li class="govuk-boyd">Number of charges missed payment deadline: <b>1</b></li>
+           </ul>
+           {% endif %}
+            
+          <!-- DO42 NRT has 3 unpaid Dartford crossing charges,
           <br />
-          AB4 195 has 3 unpaid Dartford crossing charges
+          AB4 195 has 3 unpaid Dartford crossing charges -->
         </div>
-        
+
+        {% if (data['vrm-1'] !== 'LO61 NRO') %}
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <strong class="govuk-warning-text__text govuk-!-font-weight-regular">
@@ -56,159 +41,62 @@
             You can then resolve the charges which have already missed the deadline.
           </strong>
         </div>
+        {% endif %}
       </div>
       <div class="govuk-grid-column-two-thirds">
-      <h5 class="govuk-heading-m"> LO61 NRO</h5>
-        <table class="govuk-table ">
-        
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Crossings</th>
-            <th scope="col" class="govuk-table__header">Number of trips</th>
-            <th scope="col" class="govuk-table__header">Amount</th>
-            </tr>
-        </thead>
-
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Payable crossings</th>
-            <td class="govuk-table__cell">
-              <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
-                <label class="govuk-label" for="trips">
-                    <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips">
-                        <option value="1"  >1</option>
-                        <option value="2" selected >2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select> 
-                </label>
-            </div>
-            </td>
-            <td class="govuk-table__cell">£5.00</td>
-          </tr>
-          
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Future crossings</th>
-            <td class="govuk-table__cell">
-              <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
-                <label class="govuk-label" for="trips">
-                    <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips">
-                        <option value="1" selected >1</option>
-                        <option value="2"  >2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select> 
-                </label>
-            </div>
-            </td>
-            <td class="govuk-table__cell">£2.50</td>
-          </tr>
-         
-        </tbody>
-      </table>
-    
-      <h5 class="govuk-heading-m"> DO42 NRT</h5>
-        <table class="govuk-table ">
-        
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Crossings</th>
-            <th scope="col" class="govuk-table__header">Number of trips</th>
-            <th scope="col" class="govuk-table__header">Amount</th>
-            </tr>
-        </thead>
-
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Payable crossings</th>
-            <td class="govuk-table__cell">
-              <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
-                <label class="govuk-label" for="trips">
-                    <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips">
-                        <option value="1"  >1</option>
-                        <option value="2" selected >2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select> 
-                </label>
-            </div>
-            </td>
-            <td class="govuk-table__cell">£5.00</td>
-          </tr>
-          
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Future crossings</th>
-            <td class="govuk-table__cell">
-              <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
-                <label class="govuk-label" for="trips">
-                    <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips">
-                        <option value="1" selected >1</option>
-                        <option value="2"  >2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select> 
-                </label>
-            </div>
-            </td>
-            <td class="govuk-table__cell">£2.50</td>
-                      
-          </tr>
-          
-         
-        </tbody>
-      </table>
-    
-      <h5 class="govuk-heading-m"> AB4 195</h5>
-        <table class="govuk-table ">
-        
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Crossings</th>
-            <th scope="col" class="govuk-table__header">Number of trips</th>
-            <th scope="col" class="govuk-table__header">Amount</th>
-            </tr>
-        </thead>
-
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Payable crossings</th>
-            <td class="govuk-table__cell">
-              <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
-                <label class="govuk-label" for="trips">
-                    <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips">
-                        <option value="1"  >1</option>
-                        <option value="2" selected >2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select> 
-                </label>
-            </div>
-            </td>
-            <td class="govuk-table__cell">£5.00</td>
-          </tr>
-          
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Future crossings</th>
-            <td class="govuk-table__cell">
-              <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
-                <label class="govuk-label" for="trips">
-                    <select class="govuk-select govuk-!-margin-right-2" id="sort" name="trips">
-                        <option value="1" selected >1</option>
-                        <option value="2" >2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                    </select> 
-                </label>
-            </div>
-            </td>
-            <td class="govuk-table__cell">£2.50</td>
-          </tr>
-          
-         
-        </tbody>
-      </table>
- 
-   
+        {% for i, vrm in data %}
+          {% if data['vrm-' + loop.index] %}
+            <h5 class="govuk-heading-m"> {{data['vrm-' + loop.index]}} </h5>
+              <table class="govuk-table ">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Crossings</th>
+                  <th scope="col" class="govuk-table__header">Number of trips</th>
+                  <th scope="col" class="govuk-table__header">Amount</th>
+                  </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Payable crossings</th>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
+                      <label class="govuk-label" for="payable-crossings">
+                          <select class="govuk-select govuk-!-margin-right-2 multiple-payable-crossings future-crossing" id="sort" name="payable-crossings">
+                              <option value="1"  >1</option>
+                              <option value="2" selected >2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                          </select> 
+                      </label>
+                  </div>
+                  </td>
+                  <td class="govuk-table__cell crossing-amount">£5.00</td>
+                </tr>
+                
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">Future crossings</th>
+                  <td class="govuk-table__cell">
+                    <div class="govuk-form-group select-box govuk-!-margin-bottom-3">
+                      <label class="govuk-label" for="trips-future-crossing">
+                          <select class="govuk-select govuk-!-margin-right-2 future-crossing" id="trips-future-crossing" name="trips-future-crossing" style="display: none">
+                              <option value="1" selected >1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                          </select> 
+                      </label>
+                  </div>
+                  </td>
+                  <td class="govuk-table__cell crossing-amount">
+                    <span class="amt" style="display: none">£2.50</span>
+                    <a style="cursor: pointer;" class="add-future-crossing" class="govuk-link">Add</a>
+                  </td>
+                </tr>
+              
+              </tbody>
+            </table>
+          {% endif %}
+      {% endfor %}
 
       <div class="govuk-form-group ">
         <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">Payment amount</label>

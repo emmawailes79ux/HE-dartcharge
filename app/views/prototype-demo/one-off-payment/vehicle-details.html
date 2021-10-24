@@ -19,7 +19,7 @@
   <div class="govuk-grid-column-two-thirds">
     {% if data.vrm === 'LO62 NRO' %}
     <div class="govuk-inset-text govuk-!-margin-bottom-5">
-      {{data.vrm}} has no unpaid crossings or PCN
+      {{data['vrm-1']}} has no unpaid crossings or PCN
     </div>
 
     <p class="govuk-heading-m govuk-!-margin-top-5">Would you like to pay for future crossings?</p>
@@ -38,7 +38,7 @@
 
       <tr class="govuk-table__row">
         <td scope="col" class="govuk-table__header govuk-body ">Registration number</td>
-        <td class="govuk-table__cell  govuk-body ">{{data.vrm}}</td>
+        <td class="govuk-table__cell  govuk-body ">{{data['vrm-1']}}</td>
         <td class="govuk-table__cell  govuk-body "> </td>
       </tr>
       

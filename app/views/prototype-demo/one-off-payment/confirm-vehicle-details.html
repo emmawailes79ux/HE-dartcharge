@@ -10,6 +10,20 @@ GOV.UK Prototype Kit
 {% include "./one-off-payment-body-head.html" %}
 <a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds error-summary" style="display: none; margin-bottom:-60px">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#">Please enter vehicle registration number</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
     <div class="govuk-grid-column-full govuk-!-margin-top-6">
         <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing (Dart Charge)</h1>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
@@ -17,7 +31,8 @@ GOV.UK Prototype Kit
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <div class="govuk-heading-m">Confirm vehicles details</div>
+        <div class="govuk-heading-m">Confirm vehicle details</div>
+        <form method="post" action="/one-off-payment/confirm-vehicle-details">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 
@@ -31,14 +46,15 @@ GOV.UK Prototype Kit
                         <tr class="govuk-table__row">
                             <td scope="row" class="govuk-table__header">
                                 <div class="govuk-form-group govuk-!-margin-bottom-0">
-                                    <input class="govuk-input govuk-input govuk-input--width-20" id="vehicle-no" name="one-quarter"
+                                    <span class="govuk-error-message vrm-error" style="display: none" >
+                                        <span class="govuk-visually-hidden">Error:</span> Please enter vehicle registration number
+                                      </span>
+                                    <input class="govuk-input govuk-input govuk-input--width-20 vrms" id="vrm" name="vrm-1"
                                         type="text">
                                 </div>
                             </td>
                             
-                            <!-- <td class="govuk-table__cell">
-                                <a href="javascript:void(0)">Remove</a>
-                            </td> -->
+                            <td class="govuk-table__cell"></td>
                         </tr>
 
                     </tbody>
@@ -48,17 +64,16 @@ GOV.UK Prototype Kit
             </div>
             <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <button class="govuk-button  find-vehicle-multiple-flow govuk-!-margin-right-2"
-                data-module="govuk-button" role="button">
-                Find your Vehicle
+            <button  class="govuk-button find-vehicle-multiple-flow govuk-!-margin-right-2" data-module="govuk-button" role="button">
+                Find your vehicle
             </button>
 
-            <button class="govuk-button govuk-button--secondary add-vehicle-multiple-flow "
-                data-module="govuk-button" role="button">
-                Add Vehicle
+            <button type="button" class="govuk-button govuk-button--secondary add-vehicle-multiple-flow" data-module="govuk-button" role="button">
+                Add vehicle
             </button>
             </div>
-            
+        </form>
+
         </div>
     </div>
 </div>

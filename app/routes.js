@@ -152,12 +152,18 @@ router.get("/one-off-payment/find-vehicle", function (req, res) {
   });
 });
 
-
-
 router.get("/one-off-payment/confirm-vehicle-details", function (req, res) {
   res.render("prototype-demo/one-off-payment/confirm-vehicle-details", {
     section: "confirm-vehicle",
   });
+});
+
+router.post("/one-off-payment/confirm-vehicle-details", function (req, res) {
+  if (req.body['vrm-1'] && req.body['vrm-2']) {
+    res.redirect('./multiple-vehicle-details')
+  } else if( req.body['vrm-1'] || req.body['vrm-2'] === '') {
+    res.redirect("./payment-info-single");
+  }
 });
 
 router.get("/one-off-payment/multiple-vehicle-flow", function (req, res) {
@@ -169,9 +175,13 @@ router.get("/one-off-payment/multiple-vehicle-flow", function (req, res) {
 
 
 router.get("/one-off-payment/multiple-vehicle-details", function (req, res) {
-  res.render("prototype-demo/one-off-payment/multiple-vehicle-details", {
-    section: "multiple-vehicle-flow",
-  });
+  let sessionData = req.session;
+  if(sessionData.data._locals) {
+    delete req.session.data["_locals"]
+  }
+  const {data} =  sessionData;
+  
+  res.render("prototype-demo/one-off-payment/multiple-vehicle-details", data);
 });
 
 router.post("/find-vehicle", function (req, res) {
@@ -234,9 +244,11 @@ router.get("/one-off-payment/payment-info-single", function (req, res) {
 });
 
 router.get("/one-off-payment/payment-info-multiple", function (req, res) {
-  const {
-    data
-  } = req.session;
+  let sessionData = req.session;
+  if(sessionData.data._locals) {
+    delete req.session.data["_locals"]
+  }
+  const {data} =  sessionData;
   res.render("prototype-demo/one-off-payment/payment-info-multiple", data);
 });
 
@@ -414,6 +426,23 @@ router.get("/dashboard/notification", function (req, res) {
   });
 });
 
+router.get("/dashboard/top-up", function (req, res) {
+  res.render("prototype-demo/dashboard/topup/top-up");
+});
+
+router.get("/dashboard/top-up/success", function (req, res) {
+  res.render("prototype-demo/dashboard/topup/topup-success");
+});
+
+router.get("/dashboard/top-up/paypal", function (req, res) {
+  res.render("prototype-demo/dashboard/topup/paypal");
+});
+
+router.get("/dashboard/account/payment-method", function (req, res) {
+  res.render("prototype-demo/dashboard/account/payment-method");
+});
+
+// dashboard / add - dashboard - vehicle
 
 
 router.get("/dashboard/add-dashboard-vehicle", function (req, res) {
