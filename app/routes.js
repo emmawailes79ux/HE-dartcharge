@@ -462,17 +462,36 @@ router.get("/dashboard/edit-vehicle", function (req, res) {
   });
 });
 
-
 router.get("/dashboard/vehicles/dashboard-confirm-vehicle-details", function (req, res) {
   res.render("prototype-demo/dashboard/vehicles/dashboard-confirm-vehicle-details", {
     dashboardData
   });
 });
 
-
-
 router.get("/dashboard/vehicles/vehicle-success", function (req, res) {
   res.render("prototype-demo/dashboard/vehicles/vehicle-success");
+});
+
+// LRDS
+router.get("/lrds", function (req, res) {
+  res.render("prototype-demo/setup-account/step-2/personal/lrds/lrds-info", {
+    step: 2,
+    section: "lrds"
+  });
+});
+
+router.get("/lrds/step2", function (req, res) {
+  res.render("prototype-demo/setup-account/step-2/personal/lrds/lrds-info-step2", {
+    step: 2,
+    section: "lrds"
+  });
+});
+
+router.get("/lrds/user-info-form", function (req, res) {
+  res.render("prototype-demo/setup-account/step-2/personal/lrds/user-info-form", {
+    step: 2,
+    section: "lrds"
+  });
 });
 
 // Dashboaord section end

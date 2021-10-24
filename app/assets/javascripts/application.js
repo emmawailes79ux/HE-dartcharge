@@ -76,6 +76,10 @@ $(document).ready(function () {
       url = "pre-pay/prerequisites";
       $.fn.redirectPage(`create-account/step-2/${url}`);
     }
+    if (personalAccountType === "lrds") {
+      url = "lrds";
+      $.fn.redirectPage(`${url}`);
+    }
     // if (personalAccountType === 'payg') {
     //   url = 'payg/prerequisites';
     //   $.fn.redirectPage(`create-account/step-2/${url}`);
@@ -145,6 +149,12 @@ $(document).ready(function () {
   $(".multiple-vehicle").click(function () {
     $.fn.redirectPage("one-off-payment/payment-info");
   });
+
+  //*********** LRDS *************//
+  $(".lrds-info-next").click(function () {
+    $.fn.redirectPage("create-account/lrds/lrds-info-step2  ");
+  });
+  //************ /.LRDS ************//
 
   $(".landingNxtBtn").click(() => {
     let radioVal = $("[name='selectlink']:checked").val();
