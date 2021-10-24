@@ -401,7 +401,6 @@ router.get("/dashboard/crossings", function (req, res) {
 });
 
 
-
 router.get("/dashboard/payments", function (req, res) {
   res.render("prototype-demo/dashboard/payment-details", {
     dashboardData
@@ -442,8 +441,16 @@ router.get("/dashboard/account/payment-method", function (req, res) {
   res.render("prototype-demo/dashboard/account/payment-method");
 });
 
-// dashboard / add - dashboard - vehicle
+router.get("/dashboard/account/add-new-card", function (req, res) {
+  res.render("prototype-demo/dashboard/account/add-new-card");
+});
 
+router.get("/dashboard/account/save-card-success", function (req, res) {
+  res.render("prototype-demo/dashboard/account/save-card-success");
+});
+
+
+// dashboard / add - dashboard - vehicle
 
 router.get("/dashboard/add-dashboard-vehicle", function (req, res) {
   res.render("prototype-demo/dashboard/vehicles/add-dashboard-vehicle");
@@ -454,7 +461,6 @@ router.post("/dashboard/vehicle/find-vehicle", function (req, res) {
     res.redirect("/prototype-demo/dashboard/vehicles/dashboard-confirm-vehicle-details");
   }
 });
-
 
 router.get("/dashboard/edit-vehicle", function (req, res) {
   res.render("prototype-demo/dashboard/vehicles/edit-vehicle", {

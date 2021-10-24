@@ -76,10 +76,12 @@ $(document).ready(function () {
       url = "pre-pay/prerequisites";
       $.fn.redirectPage(`create-account/step-2/${url}`);
     }
-    if (personalAccountType === "lrds") {
-      url = "lrds";
-      $.fn.redirectPage(`${url}`);
-    }
+
+    // if (personalAccountType === "lrds") {
+    //   url = "lrds";
+    //   $.fn.redirectPage(`${url}`);
+    // }
+
     // if (personalAccountType === 'payg') {
     //   url = 'payg/prerequisites';
     //   $.fn.redirectPage(`create-account/step-2/${url}`);
