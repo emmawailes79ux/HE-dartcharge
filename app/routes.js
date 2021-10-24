@@ -500,6 +500,22 @@ router.get("/lrds/user-info-form", function (req, res) {
   });
 });
 
+// LRDS END
+
+//BUSINESS ACCOUNT
+
+router.get("/create-account/step-2/biz-topup-select", function (req, res) {
+  res.render("prototype-demo/setup-account/step-2/business/topup-select", {
+    step: 2
+  });
+});
+
+router.get("/create-account/step-2/business-account-type", function (req, res) {
+  res.render("prototype-demo/setup-account/step-2/business/initial-payment", {
+    step: 2
+  });
+});
+
 // Dashboaord section end
 
 module.exports = router;

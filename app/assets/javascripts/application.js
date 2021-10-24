@@ -66,7 +66,9 @@ $(document).ready(function () {
     let accoutTypeVal = $("[name='select-account']:checked").val();
     if (accoutTypeVal === "perosnal-account") {
       $.fn.redirectPage("create-account/step-2/personal-account-type");
-    }
+    } else if(accoutTypeVal === "business-account") {
+      $.fn.redirectPage("create-account/step-2/business-account-type");
+    } else return
   });
 
   $(".prsl-acct-type").click(function () {
@@ -154,7 +156,7 @@ $(document).ready(function () {
 
   //*********** LRDS *************//
   $(".lrds-info-next").click(function () {
-    $.fn.redirectPage("create-account/lrds/lrds-info-step2  ");
+    $.fn.redirectPage("create-account/lrds/lrds-info-step2");
   });
   //************ /.LRDS ************//
 
