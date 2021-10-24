@@ -14,13 +14,14 @@ GOV.UK Prototype Kit
       This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
     </span>
   </p>
-</div>
-<div class="govuk-grid-row" style="padding-top:40px">
+</div>  
+<div class="govuk-grid-row govuk-!-padding-top-7">
   <div class="govuk-grid-column-two-thirds">
+    
     <h2 class="govuk-heading-xl govuk-!-padding-top-1 govuk-!-margin-bottom-6">
-      Dartford Crossing <br>(Dart Charge)
+      Dartford Crossing <br/>(Dart Charge)
     </h2>
-    <p class="govuk-body govuk-!-margin-bottom-0">Use this service to:</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">Use this service to:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li class="govuk-!-margin-bottom-0"> pay for pre or post crossings</li>
       <li class="govuk-!-margin-bottom-0">pay or challenge a penalty charge notice (PCN)</li>
@@ -35,30 +36,44 @@ GOV.UK Prototype Kit
       </svg> -->
     </button>
 
+    
   </div>
-  <div class="govuk-grid-column-one-third ">
-    <div class="border-top">
-      <h2 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-2">
-        Related Content
-      </h2>
-      <ul class="govuk-list">
-        <li class="govuk-!-margin-bottom-2"> <a href="#" class="govuk-link">Make a one off payment</a></li>
-        <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link">Pay for penalty charge Notice(PCN)</a></li>
-        <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link">Charges and fines</a></li>
+  <div class="govuk-grid-column-one-third">
 
-      </ul>
-    </div>
+    <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="govuk-link" href="#">
+              Make a one off payment
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">
+              Pay for penalty charge notice (PCN)
+            </a>
+          </li>
+          <li>
+            <a href="#" class="govuk-link">
+              Charges and fines
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
 
   </div>
   <div class="govuk-grid-column-full">
-    <h3 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-2">Paying the charge</h3>
-    <p class="govuk-body govuk-!-margin-bottom-0">You must pay the Dartford Crossing charge by midnight the day after
-      you cross.</p>
-    <p class="govuk-body govuk-!-margin-bottom-1">You can get a fine if you're late or do not pay.</p>
-    <p class="govuk-!-margin-bottom-6 govuk-!-margin-top-2 govuk-body"> <a href="/charges-fines" class="govuk-link">Know
-        more
-        about charges
-        and fines</a></p>
+    <h3 class="govuk-heading-m govuk-!-margin-top-5">Paying the charge</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">You must pay the Dartford Crossing charge by midnight the day after you cross.</p>
+    <p class="govuk-body govuk-!-margin-bottom-2">You can get a fine if you're late or do not pay.</p>
+    <p class="govuk-body govuk-!-margin-bottom-6"><a class="govuk-link govuk-link--no-visited-state" href="charges" aria-label="from outside the UK">Know more about charges and fines</a></p>
+
 
     <h3 class="govuk-heading-m govuk-!-margin-bottom-3">Other ways to pay</h3>
     <ul class="govuk-list govuk-list--bullet">
@@ -73,7 +88,7 @@ GOV.UK Prototype Kit
 
 
     <div role="note" aria-label="Information" class="govuk-inset-text govuk-!-margin-top-2">
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Dart Charge contact centre</h3>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Dart Charge contact centre</h3>
       <ul class="govuk-list govuk-!-margin-bottom-0">
         <li>Phone: <a class="govuk-link govuk-link--no-visited-state" href="#" aria-label="phone number">0300 300
             0120</a></li>

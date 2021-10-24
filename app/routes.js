@@ -10,6 +10,9 @@ router.get("/home", function (req, res) {
 router.get("/charges-fines", function (req, res) {
   res.render("prototype-demo/charges-fines");
 });
+router.get("/charges", function (req, res) {
+  res.render("prototype-demo/charges");
+});
 
 router.get("/landing", function (req, res) {
   res.render("prototype-demo/landing", {
@@ -444,6 +447,9 @@ router.get("/dashboard/vehicles/dashboard-confirm-vehicle-details", function (re
 
 router.get("/dashboard/vehicles/vehicle-success", function (req, res) {
   res.render("prototype-demo/dashboard/vehicles/vehicle-success");
+});
+router.get("/dashboard/reminder", function (req, res) {
+  res.render("prototype-demo/dashboard/account-reminder", { dashboardData });
 });
 
 // Dashboaord section end
