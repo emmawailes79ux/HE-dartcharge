@@ -62,14 +62,14 @@ $(document).ready(function () {
     $.fn.redirectPage("create-account/step-2/select-account");
   });
 
-  $(".account-type").click(function () {
-    let accoutTypeVal = $("[name='select-account']:checked").val();
-    if (accoutTypeVal === "perosnal-account") {
-      $.fn.redirectPage("create-account/step-2/personal-account-type");
-    } else if(accoutTypeVal === "business-account") {
-      $.fn.redirectPage("create-account/step-2/business-account-type");
-    } else return
-  });
+  // $(".account-type").click(function () {
+  //   let accoutTypeVal = $("[name='select-account']:checked").val();
+  //   if (accoutTypeVal === "perosnal-account") {
+  //     $.fn.redirectPage("create-account/step-2/personal-account-type");
+  //   } else if(accoutTypeVal === "business-account") {
+  //     $.fn.redirectPage("create-account/step-2/business-account-type");
+  //   } else return
+  // });
 
   $(".prsl-acct-type").click(function () {
     let personalAccountType = $("[name='personal-account-type']:checked").val();

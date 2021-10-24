@@ -20,14 +20,29 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">
 <div class="govuk-panel govuk-panel--confirmation">
-  <h1 class="govuk-panel__title">
-    Account has been created successfully
-  </h1>
+  {% if data['select-account'] === 'business-account' %}
+    <h1 class="govuk-panel__title">
+      Business account has been created successfully
+    </h1>
+  {% else %}
+    <h1 class="govuk-panel__title">
+      Account has been created successfully
+    </h1>
+  {% endif %}
+  
   <div class="govuk-panel__body">
     Your reference number<br><strong>HDJ2123F</strong>
   </div>
 </div>
-<p>We have sent a confirmation email to <a href="#">johndoe@gmail.com</a></p>
+<p>We have sent a confirmation email to
+    <a href="#">
+    {% if data['select-account'] === 'business-account' %}
+        doeplumbers@gmail.com
+    {% else %}
+        johndoe@gmail.com
+    {% endif %}
+    </a>
+</p>
 </div>
 <div class="govuk-grid-column-full govuk-!-margin-top-4">
   <button class="govuk-button todashboard" data-module="govuk-button" role="button" aria-label="Go to dashboard"

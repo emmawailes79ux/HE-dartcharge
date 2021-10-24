@@ -45,6 +45,12 @@ router.get("/create-account/step-2/select-account", function (req, res) {
   });
 });
 
+router.post("/create-account/step-2/select-account", function (req, res) {
+  const {data} = req.session;
+  let redirect = data['select-account'] === 'business-account' ? 'business-account-type' : 'personal-account-type';
+  res.redirect(`${redirect}`);
+});
+
 router.get("/create-account/step-2/personal-account-type", function (req, res) {
   res.render("prototype-demo/setup-account/step-2/personal-account-type", {
     step: 2,
@@ -53,10 +59,10 @@ router.get("/create-account/step-2/personal-account-type", function (req, res) {
 });
 
 router.get("/create-account/step-2/pre-pay/prerequisites", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/prerequisite-content", {
-    step: 2,
-    section: "pre-pay-prerequisites",
-  });
+  const {data} = req.session;
+  data['step'] = 2;
+  data['section'] = "pre-pay-prerequisites"
+  res.render("prototype-demo/setup-account/step-2/prerequisite-content", data);
 });
 
 router.get("/create-account/step-2/payg/prerequisites", function (req, res) {
@@ -67,10 +73,10 @@ router.get("/create-account/step-2/payg/prerequisites", function (req, res) {
 });
 
 router.get("/create-account/step-2/pre-pay/user-info", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/user-info-form", {
-    step: 2,
-    section: "user-info",
-  });
+  const {data} = req.session;
+  data['step'] = 2;
+  data['section'] = "user-info"
+  res.render("prototype-demo/setup-account/step-2/user-info-form", data);
 });
 
 router.get(
@@ -92,17 +98,18 @@ router.get("/create-account/step-2/:accounttype/done", function (req, res) {
 
 // step-3 in account setup start
 router.get("/create-account/step-3/vehicle-register", function (req, res) {
-  res.render("prototype-demo/setup-account/step-3/vehicle-register", {
-    step: 3,
-    section: "vehicle-register",
-  });
+  const {data} = req.session;
+  data['step'] = 3;
+  data['section'] = "vehicle-register";
+  res.render("prototype-demo/setup-account/step-3/vehicle-register", data);
 });
 router.get("/create-account/step-3/vehicle-details", function (req, res) {
-  res.render("prototype-demo/setup-account/step-3/vehicle-details", {
-    step: 3,
-    section: "vehicle-details",
-    data: landingData.vehicleList,
-  });
+  const {data} = req.session;
+  data['step'] = 3;
+  data['section'] = "vehicle-details";
+  data['vehicleData'] = landingData.vehicleList;
+  console.log("vehicle-detail session",data);
+  res.render("prototype-demo/setup-account/step-3/vehicle-details", data);
 });
 router.get("/create-account/step-3/step-3-done", function (req, res) {
   res.render("prototype-demo/setup-account/step-3/step-3-done", {
@@ -129,10 +136,11 @@ router.get("/create-account/step-4/confirm-payment", function (req, res) {
 });
 
 router.get("/create-account/step-4/step-4-done", function (req, res) {
-  res.render("prototype-demo/setup-account/step-4/step-4-done", {
-    step: 4,
-    section: "step-4-done",
-  });
+  const {data} = req.session;
+  data['step'] = 4;
+  data['section'] = "step-4-done";
+  console.log(data['select-account']);
+  res.render("prototype-demo/setup-account/step-4/step-4-done", data);
 });
 // step-4 - account setup end
 
@@ -505,13 +513,20 @@ router.get("/lrds/user-info-form", function (req, res) {
 //BUSINESS ACCOUNT
 
 router.get("/create-account/step-2/biz-topup-select", function (req, res) {
+  const {data} = req.session;
   res.render("prototype-demo/setup-account/step-2/business/topup-select", {
     step: 2
   });
 });
 
 router.get("/create-account/step-2/business-account-type", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/business/initial-payment", {
+  const {data} = req.session;
+  console.log(data['select-account'])
+  res.render("prototype-demo/setup-account/step-2/business/initial-payment", data);
+});
+
+router.get("/create-account/step-2/business-prerequisites", function (req, res) {
+  res.render("prototype-demo/setup-account/step-2/business/topup-select", {
     step: 2
   });
 });
