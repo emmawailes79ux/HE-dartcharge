@@ -24,7 +24,7 @@
             <tbody class="govuk-table__body">
                <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">Registration number</th>
-                    <td class="govuk-table__cell">{{data.vrm}}</td>
+                    <td class="govuk-table__cell">{{data['vrm-1']}}</td>
                </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Date</th>
@@ -47,7 +47,7 @@
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
       <span class="govuk-warning-text__assistive">Warning</span>
-      {{data.vrm}} has 1 Penalty charge notice (PCN) to resolve.
+      {{data['vrm-1']}} has 1 Penalty charge notice (PCN) to resolve.
     </strong>
   </div>
   <p class="govuk-body">Do not ignore your PCN. Resolve a PCN before the due date to prevent any addiotional changes</p> 

@@ -10,39 +10,65 @@
     <div class="govuk-grid-column-three-quarters divider">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Notifications</h1>
-                <div class="bottom-line govuk-!-margin-bottom-3"></div>
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Account</h1>
                 <div class="dashboard-card-container">
-                    <div class="dashboard-card-heading">
-                        <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-top-0">Set Notifications</p>
-                    </div>
-                </div>
+                  <div class="dashboard-card-heading">
+                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2 pull-left">Notifications</p>
+                  </div>
+                  <a href="#" class="govuk-link govuk-!-margin-bottom-2">Update mobile number and e-mail address</a>
+                </div> 
+                <div class="bottom-line govuk-!-margin-bottom-3"></div>
+                
                 
             </div>
             
             <div class="govuk-grid-column-full">
-                
-                <table class="govuk-table  govuk-!-margin-bottom-7">
-                  <div class="dashboard-card-container">
-                    <div class="dashboard-card-heading">
-                        <p class="govuk-heading-m govuk-!-font-weight-bold govuk-!-margin-bottom-0">Dart charge activity</p>
-                    </div>
-                    <div class="govuk-!-margin-top-0" style="display: flex;align-items: center;">
-                      <a href="#" class="govuk-body govuk-!-margin-bottom-0">Add</a><a href="#" class="govuk-body govuk-!-margin-left-3 govuk-!-margin-bottom-0">Edit</a><a href="#" class="govuk-body govuk-!-margin-left-7 govuk-!-margin-bottom-0">Select all</a><button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 govuk-!-margin-left-7" data-module="govuk-button">Disable</button>
-                    </div>
-                  </div>                   
-                  <tbody class="govuk-table__body govuk-!-margin-top-4">
-                      <tr class="govuk-table__row">
-                        <td scope="row" class="govuk-table__cell govuk-table__header">Type</td>
-                        <td colspan="3" class="govuk-table__cell govuk-table__header">Mode</td>
-                      </tr>
+
+
+              <div class="govuk-tabs" data-module="govuk-tabs">
+                <h2 class="govuk-tabs__title">
+                 
+                </h2>
+                <ul class="govuk-tabs__list">
+                  <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#notifications">
+                      Notifications
+                    </a>
+                  </li>
+                  <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#setnotifications">
+                      Set notifications
+                    </a>
+                  </li>
+                </ul>
+                <div class="govuk-tabs__panel" id="notifications">
+                  
+                  <p class="govuk-body-s"><strong> 10.21AM</strong> : <a href="#">CR-02AU21-12_34</a> Crossing made today at 10.20AM</p>
+                  <p class="govuk-body-s"><strong> 11.01AM</strong> : Payment for crossing <a href="#">CR-02AU21-12_34</a> made 21 Oct 2010 at 11AM</p>
+              
+
+                </div>
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="setnotifications">
+                  
+                  
+                  <table class="govuk-table  govuk-!-margin-bottom-7">
+                    <div class="dashboard-card-container govuk-!-margin-bottom-2">
+                      <div class="dashboard-card-heading">
+                          <p class="govuk-heading-m govuk-!-font-weight-bold govuk-!-margin-bottom-0">Set notifications</p>
+                      </div>
+                      <div class="govuk-!-margin-top-0" style="display: flex;align-items: center;">
+                        <!-- <a href="#" class="govuk-body govuk-!-margin-bottom-0">Add</a><a href="#" class="govuk-body govuk-!-margin-left-3 govuk-!-margin-bottom-0">Edit</a>  --><button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 govuk-!-margin-left-7" data-module="govuk-button">Disable</button>
+                      </div>
+                     </div>
+                    <tbody class="govuk-table__body">
                       <tr class="govuk-table__row">
                         <td scope="row" class="govuk-table__cell"><div class="govuk-form-group govuk-!-margin-bottom-0">
                           <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
-                          <option value="1" selected>Crossing made</option>
-                          <option value="2">On crossing paid</option>
-                          <option value="3">Deadline missed</option>
-                          <option value="4">Received PCN</option>
+                            <option value="1" selected>When crossing made</option>
+                            <option value="2">PCN</option>
+                            <option value="3">When crossing paid</option>
+                            <option value="4">On payment deadline missed</option>
+                            <option value="5">Payment statements</option>
                           </select> 
                       </div></td>
                         <td class="govuk-table__cell">
@@ -65,24 +91,27 @@
                             </div>
                             </div>
                         </td>
+
                         <td class="govuk-table__cell">
                           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="post1" name="organisation" type="checkbox" value="hmrc">
+                            <input class="govuk-checkboxes__input" id="post1" name="post1" type="checkbox" value="">
                             <label class="govuk-label govuk-checkboxes__label" for="post1">
                               Post
                             </label>
                           </div>
                           </div>
-                        </td>
+                      </td>
+
                       </tr>
                       <tr class="govuk-table__row">
                         <td scope="row" class="govuk-table__cell"><div class="govuk-form-group govuk-!-margin-bottom-0">
                           <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
-                          <option value="1" >Crossing made</option>
-                          <option value="2" selected>On crossing paid</option>
-                          <option value="3">Deadline missed</option>
-                          <option value="4">Received PCN</option>
+                            <option value="1">When crossing made</option>
+                            <option value="2" selected>PCN</option>
+                            <option value="3">When crossing paid</option>
+                            <option value="4">On payment deadline missed</option>
+                            <option value="5">Payment statements</option>
                           </select> 
                       </div></td>
                         <td class="govuk-table__cell">
@@ -105,24 +134,28 @@
                             </div>
                             </div>
                         </td>
+
+                        
                         <td class="govuk-table__cell">
                           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="post2" name="organisation" type="checkbox" value="hmrc">
+                            <input class="govuk-checkboxes__input" id="post2" name="post2" type="checkbox" value="">
                             <label class="govuk-label govuk-checkboxes__label" for="post2">
                               Post
                             </label>
                           </div>
                           </div>
-                        </td>
+                      </td>
+
                       </tr>
                       <tr class="govuk-table__row">
                         <td scope="row" class="govuk-table__cell"><div class="govuk-form-group govuk-!-margin-bottom-0">
                           <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
-                          <option value="1" >Crossing made</option>
-                          <option value="2">On crossing paid</option>
-                          <option value="3" selected>Deadline missed</option>
-                          <option value="4">Received PCN</option>
+                            <option value="1">When crossing made</option>
+                            <option value="2">PCN</option>
+                            <option value="3" selected>When crossing paid</option>
+                            <option value="4">On payment deadline missed</option>
+                            <option value="5">Payment statements</option>
                           </select> 
                       </div></td>
                         <td class="govuk-table__cell">
@@ -145,24 +178,28 @@
                             </div>
                             </div>
                         </td>
+
+                        
                         <td class="govuk-table__cell">
                           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="post3" name="organisation" type="checkbox" value="hmrc">
+                            <input class="govuk-checkboxes__input" id="post3" name="post3" type="checkbox" value="">
                             <label class="govuk-label govuk-checkboxes__label" for="post3">
                               Post
                             </label>
                           </div>
                           </div>
-                        </td>
+                      </td>
+
                       </tr>
                       <tr class="govuk-table__row">
                         <td scope="row" class="govuk-table__cell"><div class="govuk-form-group govuk-!-margin-bottom-0">
                           <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
-                          <option value="1" >Crossing made</option>
-                          <option value="2">On crossing paid</option>
-                          <option value="3">Deadline missed</option>
-                          <option value="4" selected>Received PCN</option>
+                            <option value="1">When crossing made</option>
+                            <option value="2">PCN</option>
+                            <option value="3">When crossing paid</option>
+                            <option value="4" selected>On payment deadline missed</option>
+                            <option value="5">Payment statements</option>
                           </select> 
                       </div></td>
                         <td class="govuk-table__cell">
@@ -185,25 +222,68 @@
                             </div>
                             </div>
                         </td>
+
+                        
                         <td class="govuk-table__cell">
                           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="post4" name="organisation" type="checkbox" value="hmrc">
+                            <input class="govuk-checkboxes__input" id="post4" name="post4" type="checkbox" value="">
                             <label class="govuk-label govuk-checkboxes__label" for="post4">
                               Post
                             </label>
                           </div>
                           </div>
+                      </td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell"><div class="govuk-form-group govuk-!-margin-bottom-0">
+                          <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                          <option value="1">When crossing made</option>
+                          <option value="2">PCN</option>
+                          <option value="3">When crossing paid</option>
+                          <option value="4">On payment deadline missed</option>
+                          <option value="5" selected>Payment statements</option>
+                          </select> 
+                      </div></td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="email5" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="email5">
+                                Email
+                              </label>
+                            </div>
+                            </div>
                         </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="text5" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="text5">
+                                Text
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="post5" name="organisation" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="post5">
+                              Post
+                            </label>
+                          </div>
+                          </div>
+                      </td>
+
                       </tr>
                     </tbody>
                 </table>
-
-                  
-                
+                <!--
 
                   <table class="govuk-table govuk-!-margin-bottom-7">
-                    <div class="dashboard-card-container">
+                    <div class="dashboard-card-container govuk-!-margin-bottom-2">
                       <div class="dashboard-card-heading">
                           <p class="govuk-heading-m govuk-!-font-weight-bold govuk-!-margin-bottom-0">Statements</p>
                       </div>
@@ -212,11 +292,6 @@
                       </div>
                     </div>
                     <tbody class="govuk-table__body">
-                      <tr class="govuk-table__row">
-                        <td scope="row" class="govuk-table__cell govuk-table__header">Type</td>
-                        <td class="govuk-table__cell govuk-table__header">Occurrence</td>
-                        <td colspan="3" class="govuk-table__cell govuk-table__header">Mode</td>
-                      </tr>
                       <tr class="govuk-table__row">
                         <td scope="row" class="govuk-table__cell">
                           <div class="govuk-form-group govuk-!-margin-bottom-0">
@@ -424,6 +499,104 @@
                     </tbody>
                   </table>
 
+                -->
+
+                <table class="govuk-table  govuk-!-margin-bottom-22">
+                  <div class="dashboard-card-container  govuk-!-margin-bottom-2">
+                   <div class="dashboard-card-heading">
+                       <p class="govuk-heading-m govuk-!-font-weight-bold govuk-!-margin-bottom-0">Set reminders</p>
+                   </div>
+                   <div class="govuk-!-margin-top-0" style="display: flex;align-items: center;">                     
+                        <!-- <a href="#" class="govuk-body govuk-!-margin-bottom-0">Add</a><a href="#" class="govuk-body govuk-!-margin-left-3 govuk-!-margin-bottom-0">Edit</a>  --><button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 govuk-!-margin-left-7" data-module="govuk-button">Disable</button>
+                   </div>
+                  </div>
+                   <tbody class="govuk-table__body">
+                     <tr class="govuk-table__row">
+                       <td scope="row" class="govuk-table__cell"><div class="govuk-!-padding-top-2">When crossing made</div></td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric">
+                           <div class="govuk-form-group govuk-!-margin-bottom-0">
+                               <label class="govuk-label" for="sort">
+                                   Repeat every <select class="govuk-select govuk-!-margin-left-2" id="sort" name="sort">
+                                       <option value="1" selected>1</option>
+                                       <option value="2" >2</option>
+                                       <option value="3">3</option>
+                                       <option value="4">4</option>
+                                     </select> 
+                               </label>
+                               
+                           </div>
+                       </td>
+                       <td class="govuk-table__cell">
+                           <div class="govuk-form-group govuk-!-margin-bottom-0">
+                               <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                               <option value="1" selected>Hour</option>
+                               <option value="2" >Week</option>
+                               <option value="3">Month</option>
+                               </select> 
+                           </div>
+                       </td>
+                     </tr>
+                     <tr class="govuk-table__row">
+                       <td scope="row" class="govuk-table__cell"><div class="govuk-!-padding-top-2">PCN received</div></td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric">
+                           <div class="govuk-form-group govuk-!-margin-bottom-0">
+                               <label class="govuk-label" for="sort">
+                                   Repeat every <select class="govuk-select govuk-!-margin-left-2" id="sort" name="sort">
+                                       <option value="1" selected>1</option>
+                                       <option value="2" >2</option>
+                                       <option value="3">3</option>
+                                       <option value="4">4</option>
+                                     </select> 
+                               </label>
+                               
+                           </div>
+                       </td>
+                       <td class="govuk-table__cell">
+                           <div class="govuk-form-group govuk-!-margin-bottom-0">
+                               <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                               <option value="1" selected>Hour</option>
+                               <option value="2" >Week</option>
+                               <option value="3">Month</option>
+                               </select> 
+                           </div>
+                       </td>
+                     </tr>
+                     <tr class="govuk-table__row">
+                       <td scope="row" class="govuk-table__cell"><div class="govuk-!-padding-top-2">Payment dead line</div></td>
+                       <td class="govuk-table__cell govuk-table__cell--numeric">
+                           <div class="govuk-form-group govuk-!-margin-bottom-0">
+                               <label class="govuk-label" for="sort">
+                                   Before <select class="govuk-select govuk-!-margin-left-2" id="sort" name="sort">
+                                       <option value="1" selected>1</option>
+                                       <option value="2" >2</option>
+                                       <option value="3">3</option>
+                                       <option value="4">4</option>
+                                     </select> 
+                               </label>
+                               
+                           </div>
+                       </td>
+                       <td class="govuk-table__cell">
+                           <div class="govuk-form-group govuk-!-margin-bottom-0">
+                               <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                               <option value="1" selected>Hour</option>
+                               <option value="2" >Week</option>
+                               <option value="3">Month</option>
+                               </select> 
+                           </div>
+                       </td>
+                     </tr>
+                   </tbody>
+                 </table>
+              
+                </div>
+              </div>
+                
+                
+
+                  
+                
+
 
 
 
@@ -449,7 +622,7 @@
        
         
     </div>
-    {% include "./account-notification-link.html" %}
+    {% include "./account-setting-info.html" %}
 
 
 

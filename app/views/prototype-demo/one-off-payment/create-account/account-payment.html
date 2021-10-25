@@ -103,58 +103,31 @@
                 </div>
             
               </div>
-              <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
-                
-                <p class="govuk-heading-m govuk-!-font-weight-bold">Please select the preferred payment method.</p>
-                <div class="govuk-form-group govuk-!-margin-bottom-5">
-                  <label class="govuk-label govuk-!-font-weight-bold " for="card-number">Name on the account</label>
-                  <span class="govuk-error-message card-number-error" style="display: none">
-                      <span class="govuk-visually-hidden">Error:</span> Enter a card number
-                  </span>
-                  <input class="govuk-input govuk-input--width-20" id="card-number" name="card-number" type="text"
-                      aria-required="true" aria-label="Enter the card number" />
+              <div class="govuk-tabs__panel govuk-tabs__panel--hidden " id="past-month">
+                <div class='govuk-!-margin-bottom-5'>
+                    <p class="govuk-body govuk-!-font-weight-bold">Name of the bank:</p>
+                    <p>Barclays Bank</p>
                 </div>
-                
-
-                <div class="govuk-form-group govuk-!-margin-bottom-5">
-                  <div class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
-                      Sort code
-                  </div>
-                  <div class="govuk-caption-m govuk-!-margin-bottom-2">
-                      Must be 6 digits long
-                  </div>
-                  <div class="govuk-form-group">
-                      <input class="govuk-input govuk-input--width-5" id="cvv" name="cvv" type="text"
-                          aria-required="true" aria-label="Enter the card holder name"  />
-                  </div>
+                <div class='govuk-!-margin-bottom-5'>
+                    <p class="govuk-body govuk-!-font-weight-bold">Account number:</p>
+                    <p>12345678</p>
                 </div>
-
-                <div class="govuk-form-group govuk-!-margin-bottom-5">
-                  <div class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
-                      Account number 
-                  </div>
-                  <div class="govuk-caption-m govuk-!-margin-bottom-2">
-                      Must be between 6 and 8 digits long
-                  </div>
-                  <div class="govuk-form-group">
-                      <input class="govuk-input govuk-input--width-20" id="acc-numbber" name="account-number" type="text"
-                          aria-required="true" aria-label="Enter the card holder name"  />
-                  </div>
+                <div class='govuk-!-margin-bottom-5'>
+                    <p class="govuk-body govuk-!-font-weight-bold">Sort code:</p>
+                    <p>202122</p>
                 </div>
-
-                <div class="govuk-form-group govuk-!-margin-bottom-5">
-                  <div class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
-                    Building soceity roll number(if you have one)
-                  </div>
-                  <div class="govuk-caption-m govuk-!-margin-bottom-2">
-                    You can find it on your card, statement or passbook
-                  </div>
-                  <div class="govuk-form-group">
-                      <input class="govuk-input govuk-input--width-20" id="roll-number" name="roll-number" type="text"
-                          aria-required="true" aria-label="Enter the card holder name"  />
-                  </div>
+                <div class='govuk-!-margin-bottom-5'>
+                    <p class="govuk-body govuk-!-font-weight-bold">IBAN number:</p>
+                    <p>GB33BUKB20201555555555</p>
                 </div>
-            
+                <div class='govuk-!-margin-bottom-5'>
+                    <p class="govuk-body govuk-!-font-weight-bold">Reference number:</p>
+                    <p>HDJ2123F</p>
+                </div>
+                <div class="govuk-button-group govuk-!-margin-top-6">
+                  <button onClick="location.href='./success'" data-module="govuk-button" class="govuk-button" value="Proceed to payment" type="submit" role="button"
+                      aria-label="Proceed to payment">Proceed to payment</button>
+                </div>
               </div>
             </div>
 
