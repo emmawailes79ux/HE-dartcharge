@@ -49,7 +49,9 @@ router.get("/create-account/step-2/select-account", function (req, res) {
 });
 
 router.post("/create-account/step-2/select-account", function (req, res) {
-  const {data} = req.session;
+  const {
+    data
+  } = req.session;
   let redirect = data['select-account'] === 'business-account' ? 'business-account-type' : 'personal-account-type';
   res.redirect(`${redirect}`);
 });
@@ -62,7 +64,9 @@ router.get("/create-account/step-2/personal-account-type", function (req, res) {
 });
 
 router.get("/create-account/step-2/pre-pay/prerequisites", function (req, res) {
-  const {data} = req.session;
+  const {
+    data
+  } = req.session;
   data['step'] = 2;
   data['section'] = "pre-pay-prerequisites"
   res.render("prototype-demo/setup-account/step-2/prerequisite-content", data);
@@ -76,7 +80,9 @@ router.get("/create-account/step-2/payg/prerequisites", function (req, res) {
 });
 
 router.get("/create-account/step-2/pre-pay/user-info", function (req, res) {
-  const {data} = req.session;
+  const {
+    data
+  } = req.session;
   data['step'] = 2;
   data['section'] = "user-info"
   res.render("prototype-demo/setup-account/step-2/user-info-form", data);
@@ -101,17 +107,21 @@ router.get("/create-account/step-2/:accounttype/done", function (req, res) {
 
 // step-3 in account setup start
 router.get("/create-account/step-3/vehicle-register", function (req, res) {
-  const {data} = req.session;
+  const {
+    data
+  } = req.session;
   data['step'] = 3;
   data['section'] = "vehicle-register";
   res.render("prototype-demo/setup-account/step-3/vehicle-register", data);
 });
 router.get("/create-account/step-3/vehicle-details", function (req, res) {
-  const {data} = req.session;
+  const {
+    data
+  } = req.session;
   data['step'] = 3;
   data['section'] = "vehicle-details";
   data['vehicleData'] = landingData.vehicleList;
-  console.log("vehicle-detail session",data);
+  console.log("vehicle-detail session", data);
   res.render("prototype-demo/setup-account/step-3/vehicle-details", data);
 });
 router.get("/create-account/step-3/step-3-done", function (req, res) {
@@ -139,7 +149,9 @@ router.get("/create-account/step-4/confirm-payment", function (req, res) {
 });
 
 router.get("/create-account/step-4/step-4-done", function (req, res) {
-  const {data} = req.session;
+  const {
+    data
+  } = req.session;
   data['step'] = 4;
   data['section'] = "step-4-done";
   console.log(data['select-account']);
@@ -157,10 +169,19 @@ router.get("/one-off-payment", function (req, res) {
   });
 });
 
+
+
 router.get("/one-off-payment/find-vehicle", function (req, res) {
   res.render("prototype-demo/one-off-payment/find-vehicle", {
     section: "find-vehicle",
   });
+});
+
+
+
+
+router.get("/one-off-payment/pay-crossing", function (req, res) {
+  res.render("prototype-demo/one-off-payment/pay-crossing")
 });
 
 router.get("/one-off-payment/confirm-vehicle-details", function (req, res) {
@@ -172,7 +193,7 @@ router.get("/one-off-payment/confirm-vehicle-details", function (req, res) {
 router.post("/one-off-payment/confirm-vehicle-details", function (req, res) {
   if (req.body['vrm-1'] && req.body['vrm-2']) {
     res.redirect('./multiple-vehicle-details')
-  } else if( req.body['vrm-1'] || req.body['vrm-2'] === '') {
+  } else if (req.body['vrm-1'] || req.body['vrm-2'] === '') {
     res.redirect("./payment-info-single");
   }
 });
@@ -187,11 +208,13 @@ router.get("/one-off-payment/multiple-vehicle-flow", function (req, res) {
 
 router.get("/one-off-payment/multiple-vehicle-details", function (req, res) {
   let sessionData = req.session;
-  if(sessionData.data._locals) {
+  if (sessionData.data._locals) {
     delete req.session.data["_locals"]
   }
-  const {data} =  sessionData;
-  
+  const {
+    data
+  } = sessionData;
+
   res.render("prototype-demo/one-off-payment/multiple-vehicle-details", data);
 });
 
@@ -256,10 +279,12 @@ router.get("/one-off-payment/payment-info-single", function (req, res) {
 
 router.get("/one-off-payment/payment-info-multiple", function (req, res) {
   let sessionData = req.session;
-  if(sessionData.data._locals) {
+  if (sessionData.data._locals) {
     delete req.session.data["_locals"]
   }
-  const {data} =  sessionData;
+  const {
+    data
+  } = sessionData;
   res.render("prototype-demo/one-off-payment/payment-info-multiple", data);
 });
 
@@ -540,14 +565,18 @@ router.get("/lrds/user-info-form", function (req, res) {
 //BUSINESS ACCOUNT
 
 router.get("/create-account/step-2/biz-topup-select", function (req, res) {
-  const {data} = req.session;
+  const {
+    data
+  } = req.session;
   res.render("prototype-demo/setup-account/step-2/business/topup-select", {
     step: 2
   });
 });
 
 router.get("/create-account/step-2/business-account-type", function (req, res) {
-  const {data} = req.session;
+  const {
+    data
+  } = req.session;
   console.log(data['select-account'])
   res.render("prototype-demo/setup-account/step-2/business/initial-payment", data);
 });

@@ -175,12 +175,17 @@ $(document).ready(function () {
       $.fn.redirectPage("create-account");
 
     } else if (radioVal === "make-oneoff-payment") {
-
       // $.fn.redirectPage("one-off-payment/find-vehicle");
-      $.fn.redirectPage("one-off-payment/confirm-vehicle-details");
+      //$.fn.redirectPage("one-off-payment/confirm-vehicle-details");
+      $.fn.redirectPage("one-off-payment/pay-crossing");
 
     }
   });
+
+  $(".continue").click(() => {
+    $.fn.redirectPage("one-off-payment/confirm-vehicle-details");
+  })
+
   $("[name='vehicle-flow-type']").change(() => {
     $(".vehicle-flow").prop("disabled", false);
   });
@@ -437,16 +442,16 @@ $(".add-vehicle-multiple-flow").click(() => {
     '<tr>';
   var newRow = '<tr class="govuk-table__row">' +
     '<td scope="row" class="govuk-table__header">' +
-    '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input--width-20" name="'+'vrm-'+(parseInt(rowlength) + 1)+'" type="text"></div></td>' +
+    '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input--width-20" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="text"></div></td>' +
     '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>' + '</tr>'
-  
+
   if (rowlength == 1) {
     $('#mytable thead>tr').remove();
     $('#mytable thead').append(newHead);
   }
   $('#table tbody tr:last').clone().insertAfter('#table tbody tr:last');
   $('#mytable tbody>tr').last().after(newRow);
-  
+
 });
 //remove
 $(document).on('click', '#remove', function () {
@@ -519,13 +524,13 @@ $(document).on('click', '.remove-vehicle', function () {
   $(this).closest('.govuk-form-group').remove();
   return false;
 });
-$(".add-future-crossing").click(function(){
+$(".add-future-crossing").click(function () {
   $(this).css("display", "none");
   $(this).prev('span').css("display", "block");
   $(this).parent('td').prev('td').find('.future-crossing').css("display", "block");
 })
 
-$(".future-crossing").change(function(e){
+$(".future-crossing").change(function (e) {
   let val = (e.target.value * 2.5).toFixed(2);
   $(this).parent('label').parent('div').parent('td').next('td').text("£" + val)
   $("#amount").val($.fn.totalSum());
