@@ -7,6 +7,104 @@
 {% block content %}
 
 {% include "../setup-acct-head-container.html" %}
+{% if data['select-account'] === 'business-account' %}
+<!-- If it is a business account then render this form -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <h3 class="govuk-heading-m">Business account</h3>
+  </div>
+</div>
+
+<p class="govuk-body">
+  In order to set up your Dart Charge account, please provide
+  <br />
+   the below information.
+</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="company-name"> Company name </label>
+      <input
+        class="govuk-input govuk-!-width-one-half"
+        id="company-name"
+        name="company-name"
+        type="text"
+        aria-required="true"
+        value="Doeplumbers"
+      />
+    </div>
+
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="mobile-no"> Mobile telephone number (optional) </label>
+      <input
+        class="govuk-input govuk-!-width-one-half"
+        id="mobile-no"
+        name="mobile-no"
+        type="number"
+        aria-required="true"
+      />
+    </div>
+   
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="landline-no">Landline telephone number (optional)</label>
+      <input
+        class="govuk-input govuk-!-width-one-half"
+        id="landline-no"
+        name="landline-no"
+        type="number"
+        aria-required="true"
+      />
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="email">Company email address</label>
+      <input
+        class="govuk-input govuk-!-width-one-half"
+        id="email"
+        name="email"
+        type="email"
+        aria-required="true"
+      />
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="password"> Create password </label>
+      <!-- <label class="govuk-caption-m govuk-!-margin-bottom-1" > Password constraints placeholder</label> -->
+      <input
+        class="govuk-input govuk-!-width-one-half"
+        id="password"
+        name="password"
+        type="password"
+        aria-required="true"
+      />
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="password-1"> Confirm password </label>
+      <input
+        class="govuk-input govuk-!-width-one-half"
+        id="password-1"
+        name="password-1"
+        type="password-1"
+        aria-required="true"
+      />
+    </div>
+  </fieldset>
+</div>
+
+<button
+    onClick="location.href ='../../step-3/vehicle-register'"
+    class="govuk-button"
+    data-module="govuk-button"
+    role="button"
+    aria-label="Continue"
+  >
+    Continue
+</button>
+{% else %}
+<!-- If it is personal accound below written form will be rendered -->
 <div>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
@@ -103,5 +201,8 @@
     Continue
     </button>
   </div>
+
+{% endif %}
+
 {% include "../setup-acct-bottom-container.html" %}
 {% endblock %}

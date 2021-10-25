@@ -7,6 +7,10 @@
 
 {% block content %}
 
+{% if data['select-account'] === 'business-account' %}
+  {% include "./business-dashboard.html" %}
+{% else %}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters divider">
       <div class="dashboard-card-container">
@@ -19,11 +23,11 @@
       <div class="dashboard-card-container">
         <div class="dashboard-card-heading">
          
-            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your Balance</h3>
-            <p class="govuk-!-font-size-48 govuk-!-font-weight-regular govuk-!-margin-bottom-4 balance">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your balance</h3>
+            <p class="govuk-!-font-size-48 govuk-!-font-weight-regular balance">
               £ 14.00
               
-              <a href="dashboard/top-up" class="govuk-link govuk-!-font-size-19">Top-up</a>
+              <a href="dashboard/top-up" data-module="govuk-button" class="govuk-button">Top-up</a>
             </p>
          
         </div>
@@ -33,14 +37,10 @@
           <strong class="govuk-tag govuk-tag--red">
             DORMANT
           </strong>
-          <!-- <div class="status-circle bg-active">
-            <span class="status govuk-body govuk-!-font-size-16 govuk-!-font-weight-bold">
-              Open</span>
-          </div> -->
         </div>
       </div>
       <div class="bottom-line"></div>
-      <div class="govuk-inset-text">
+      <!-- <div class="govuk-inset-text">
         <div class="govuk-warning-text govuk-!-margin-bottom-2">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
           <div class="govuk-warning-text__text govuk-!-font-weight-regular">
@@ -52,7 +52,7 @@
           <li>LO62 NRO has 1 PCN and 1 unpaid crossings. <a href="#" class="govuk-link govuk-link--no-visited-state">Resolve a penalty charge notice</a></li>
           <li>Card has expired. <a href="https://dartford-crossing-charge.herokuapp.com/demo/flow1" class="govuk-link govuk-link--no-visited-state">Update card</a></li>
         </ul>
-      </div>
+      </div> -->
 
       
       <h3 class="govuk-heading-m govuk-!-margin-bottom-1 govuk-!-margin-top-7">Your crossings</h3>
@@ -108,164 +108,26 @@
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half govuk-!-margin-top-7 divider">
-          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your Vehicles</h3>
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your vehicles</h3>
           <div class="govuk-!-margin-bottom-3">
              <h3 class="govuk-heading-xl govuk-!-font-weight-regular govuk-!-margin-bottom-0">6 <span class="govuk-body">Vehicles</span></h3>
           </div>
           <div class="govuk-!-margin-top-3"><a class="govuk-link govuk-body govuk-link--no-visited-state" role="link"  href="/dashboard/vehicles" >View vehicles</a></div>
         </div>
         <div class="govuk-grid-column-one-half govuk-!-margin-top-7 govuk-!-margin-bottom-7 govuk-!-padding-left-8">
-          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your Savings</h3>
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your savings</h3>
           <div class="govuk-!-margin-bottom-3">
              <h3 class="govuk-heading-xl govuk-!-font-weight-regular govuk-!-margin-bottom-0">£ 10 <span class="govuk-body">Average saving/month</span></h3>
           </div>
           <div class="govuk-!-margin-top-3"><a class="govuk-link govuk-body govuk-link--no-visited-state" role="link"  href="/dashboard/payments" >View payment history</a></div>
         </div>
       </div>
-<!--       
-      <div class="dashboard-card-container" >
-        <div class="dashboard-card-heading">
-          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your last 30 days usage</h3>
-          <h3 class="govuk-heading-xl govuk-!-font-weight-regular govuk-!-margin-bottom-4">10 <span class="govuk-body">Trips</span></h3>
-        </div>
-        <div class="govuk-!-margin-top-1"><a class="govuk-link govuk-body govuk-link--no-visited-state" role="link"  href="/dashboard/crossings" >View crossing history</a></div>
-      </div>
-
-      <div class="table-scroll">
-      <div class="govuk-table-list-container" >
-        <div class="govuk-table-list-row table-header">
-            {% for head in dashboardData.crossingListHead %}
-          <div  class="govuk-table-list-cell govuk-body-s" >
-            {{ head }}
-          </div>
-          {% endfor %}
-        </div>
-        {% for crossingItem in dashboardData.transactionList %}
-     
-        <div
-          class="govuk-table-list-row table-body">
-          <h5 class="govuk-table-list-cell govuk-body-s">
-            {{ crossingItem.postingDate}}
-          </h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">
-            {{ crossingItem.exitTime }}
-          </h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">{{ crossingItem.direction }}</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">
-            <a href="/dashboard/vehicles/view" class="govuk-link">{{ crossingItem.number }}</a>
-          </h5>
-          <h5 class="govuk-table-list-cell govuk-body-s"> </h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">
-            {{ crossingItem.transactionDate }}
-          </h5>
-        </div>
-        {% endfor %}
-      </div>
     </div>
 
-      <div class="dashboard-card-container govuk-!-margin-top-8">
-        <div class="dashboard-card-heading">
-          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your vehicles</h3>
-          <h3 class="govuk-heading-xl govuk-!-font-weight-regular govuk-!-margin-bottom-4">2 <span class="govuk-body">Vehicles</span></h3>
-        </div> 
-        <div class="govuk-!-margin-top-1"><a class="govuk-link govuk-body govuk-link--no-visited-state" role="link"  href="/dashboard/vehicles" >View all vehicles</a></div>
-      </div>
+{% include "./dashboard-user-account-info.html" %}
 
-     <div class="table-scroll">
-      <div class="govuk-table-list-container">
-        <div class="govuk-table-list-row table-header">
-            {% for head in dashboardData.dashboardVehicleListHead %}
-          <div class="govuk-table-list-cell govuk-body-s" >
-            {{ head }}
-          </div>
-          {% endfor %}
-        </div>
-        <div class="govuk-table-list-row table-body">
-          <h5 class="govuk-table-list-cell govuk-body-s"><a href="/dashboard/vehicles/view" class="govuk-link">PMEZE171</a></h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">B</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">AUDI</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">TT FSI</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">Black</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">Standard</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">02 Sep 2021</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">
-            <div class="govuk-checkboxes--small table-remove-check">
-              <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
-                      value="DfT">
-                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4"></label>
-              </div>
-          </div>
-          </h5>
-        </div>
-        <div class="govuk-table-list-row table-body">
-          <h5 class="govuk-table-list-cell govuk-body-s"><a href="/dashboard/vehicles/view" class="govuk-link">ASIE843</a></h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">B</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">BMW</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">550</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">Red</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">Standard</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">18 Sep 2021</h5>
-          <h5 class="govuk-table-list-cell govuk-body-s">
-            <div class="govuk-checkboxes--small table-remove-check">
-              <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
-                      value="DfT">
-                  <label class="govuk-label govuk-checkboxes__label" for="organisation-4"></label>
-              </div>
-          </div>
-          </h5>
-        </div>
-      </div>
-    </div>
+</div>
 
-      <div  class="dashboard-card-container govuk-!-margin-top-8" >
-        <div class="dashboard-card-heading">
-          <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Your payments</h3>
-          <h3 class="govuk-body govuk-!-margin-bottom-2" >
-            Last 2 payments
-          </h3>
-        </div>
-        <div class="govuk-!-margin-top-1"><a class="govuk-link govuk-body govuk-link--no-visited-state" role="link"  href="/dashboard/payments" >View payment history</a></div>
-      </div>
-
-    <div class="table-scroll">
-      <div class="govuk-table-list-container govuk-tbl-column">
-        <div class="govuk-table-list-row table-header">
-          {% for head in dashboardData.paymentListHead %}
-          <div  class="govuk-table-list-cell govuk-body-s" >
-            {{ head }}
-          </div>
-          {% endfor %}
-        </div>
-        {% for paymentItem in dashboardData.paytransactionList %}
-        <div class="govuk-table-list-row table-body tabular-flex-row" >
-          <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
-            {{ paymentItem.postingDate }}
-          </h3>
-          <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
-            £ {{ paymentItem.amount}}
-          </h3>
-          <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
-            {{ paymentItem.refNumber}}
-          </h3>
-        </div>
-        {% endfor %}
-      </div>
-    </div> -->
-
-
-
-
-
-    </div>
-    
-
-    {% include "./dashboard-user-account-info.html" %}
-
-
-  </div>
-  
-
+{% endif %}  
 
 {% endblock %}

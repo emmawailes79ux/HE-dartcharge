@@ -27,14 +27,28 @@ router.get("/create-account", function (req, res) {
   });
 });
 
+router.post("/create-account", function (req, res) {
+  if(req.body.email) {
+    res.redirect("create-account/check-code");
+  }
+});
+
 router.get("/create-account/check-code", function (req, res) {
-  res.render("prototype-demo/setup-account/check-code", {
+  const {data} = req.session;
+  Object.assign(data, {
     step: 1,
     section: "check-code",
   });
+
+  res.render("prototype-demo/setup-account/check-code", );
 });
 
 router.get("/create-account/verification-confirmation", function (req, res) {
+  const {data} = req.session;
+  Object.assign(data, {
+    step: 1,
+    section: "verification-confirmation",
+  });
   res.render("prototype-demo/setup-account/verification-confirmation", {
     step: 1,
     section: "verification-confirmation",
@@ -121,24 +135,21 @@ router.get("/create-account/step-3/vehicle-details", function (req, res) {
   data['step'] = 3;
   data['section'] = "vehicle-details";
   data['vehicleData'] = landingData.vehicleList;
-  console.log("vehicle-detail session", data);
   res.render("prototype-demo/setup-account/step-3/vehicle-details", data);
 });
 router.get("/create-account/step-3/step-3-done", function (req, res) {
-  res.render("prototype-demo/setup-account/step-3/step-3-done", {
-    step: 3,
-    section: "step-3-done",
-  });
+  const {data} = req.session;
+  data['step'] = 3;
+  data['section'] = "step-3-done";
+  res.render("prototype-demo/setup-account/step-3/step-3-done",data);
 });
 
 // step-3 in account setup end
 
 // step-4 - account setup //
 router.get("/create-account/step-4/payments", function (req, res) {
-  res.render("prototype-demo/setup-account/step-4/payments", {
-    step: 4,
-    section: "payments",
-  });
+  const {data} = req.session;
+  res.render("prototype-demo/setup-account/step-4/payments", data);
 });
 
 router.get("/create-account/step-4/confirm-payment", function (req, res) {
@@ -360,6 +371,8 @@ router.get("/one-off-payment/create-account", function (req, res) {
     "prototype-demo/one-off-payment/create-account/email-verification"
   );
 });
+
+
 router.get("/one-off-payment/check-mail", function (req, res) {
   res.render("prototype-demo/one-off-payment/create-account/email-code");
 });
@@ -451,13 +464,15 @@ router.get("/dashboard/vehicles/view", function (req, res) {
 
 router.get("/dashboard/profile", function (req, res) {
   res.render("prototype-demo/dashboard/account-update-profile", {
-    dashboardData
+    dashboardData,
+    section:'profile'
   });
 });
 
 router.get("/dashboard/notification", function (req, res) {
   res.render("prototype-demo/dashboard/account-notification", {
-    dashboardData
+    dashboardData,
+    section:'notification'
   });
 });
 
@@ -474,7 +489,7 @@ router.get("/dashboard/top-up/paypal", function (req, res) {
 });
 
 router.get("/dashboard/account/payment-method", function (req, res) {
-  res.render("prototype-demo/dashboard/account/payment-method");
+  res.render("prototype-demo/dashboard/account/payment-method", {section: "payment-method"});
 });
 
 router.get("/dashboard/account/add-new-card", function (req, res) {

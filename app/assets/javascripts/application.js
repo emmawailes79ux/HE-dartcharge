@@ -50,10 +50,6 @@ $(document).ready(function () {
     $.fn.redirectPage("create-account");
   });
 
-  $(".send-code").click(function () {
-    $.fn.redirectPage("create-account/check-code");
-  });
-
   $(".email-verification").click(function () {
     $.fn.redirectPage("create-account/verification-confirmation");
   });
