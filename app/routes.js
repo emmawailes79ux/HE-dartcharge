@@ -204,6 +204,29 @@ router.post("/one-off-payment/confirm-vehicle-details", function (req, res) {
   }
 });
 
+router.post("/one-off-payment/confirm-vehicle-info", function (req, res) {
+  if (req.body['vrm-1'] && req.body['vrm-2']) {
+    res.redirect('./multiple-vehicle-details')
+  } else if (req.body['vrm-1'] || req.body['vrm-2'] === '') {
+    //res.redirect("/one-off-payment/payment-info-single");
+ 
+    // res.redirect("/one-off-payment/vehicle-details");
+    res.redirect("/one-off-payment/vehicle-info");
+  }
+});
+
+router.get("/one-off-payment/vehicle-info", function (req, res) {
+  const {
+    data
+  } = req.session;
+  const newData = {
+    vrm: data['vrm-1'][0]
+  };
+  data["vrm-1"] = newData.vrm;
+  //res.render("prototype-demo/one-off-payment/vehicle-details", data);
+  res.render("prototype-demo/one-off-payment/vehicle-info", data);
+});
+
 router.get("/one-off-payment/multiple-vehicle-flow", function (req, res) {
   res.render("prototype-demo/one-off-payment/multiple-vehicle-flow", {
     section: "multiple-vehicle-flow",
