@@ -13,9 +13,9 @@
                 <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Notifications</h1>
                 <div class="dashboard-card-container">
                   <div class="dashboard-card-heading">
-                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2 pull-left">Activity</p>
+                      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2 pull-left">Set notifications</p>
                   </div>
-                  <a href="#" class="govuk-link govuk-!-margin-bottom-2">Clear all notifications</a>
+                  <a href="#" class="govuk-link govuk-!-margin-bottom-2">Update mobile number and E-mail address</a>
                 </div> 
                 <div class="bottom-line govuk-!-margin-bottom-3"></div>
                 
@@ -24,52 +24,418 @@
             
             <div class="govuk-grid-column-full govuk-!-margin-top-3">
 
-              <div class="dashboard-card-container">
-                <div class="dashboard-card-heading">
-                    <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-4 pull-left">High priority</p>
-                </div>
-              </div> 
-              <p class="govuk-body govuk-!-margin-bottom-1">23 Oct 2021, 11.21AM</p>
-              <p class="govuk-body govuk-!-margin-bottom-1">Card **** **** 4567 will expire in 22 days.</p>
-
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-              <div class="dashboard-card-container">
-                <div class="dashboard-card-heading">
-                    <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-4 pull-left">New</p>
-                </div>
-                <a href="#" class="govuk-link govuk-!-margin-bottom-2">Mark all as read</a>
-              </div> 
-
-              <p class="govuk-body govuk-!-margin-bottom-1">23 Oct 2021, 11.21AM</p>
-              <p class="govuk-body govuk-!-margin-bottom-4 govuk-!-font-weight-bold">Payment for Dartford crossing made 21 Oct 2021 at 11.21AM</p>
-              
-              <p class="govuk-body govuk-!-margin-bottom-1">23 Oct 2021, 10.21AM</p>
-              <p class="govuk-body govuk-!-margin-bottom-4 govuk-!-font-weight-bold">Dartford crossing made today at 10.21AM</p>
-
-              <p class="govuk-body govuk-!-margin-bottom-1">22 Oct 2021, 09.21AM</p>
-              <p class="govuk-body govuk-!-margin-bottom-4 govuk-!-font-weight-bold">Dartford crossing made today at 09.21AM</p>
 
 
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <table class="govuk-table  govuk-!-margin-bottom-7">
+                    <div class="dashboard-card-container govuk-!-margin-bottom-0">
+                      <div class="dashboard-card-heading">
+                          <p class="govuk-heading-s govuk-!-font-weight-bold govuk-!-margin-bottom-0">Top-up</p>
+                      </div>
+                     </div>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Notification</div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="email1" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="email1">
+                                Email
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="text1" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="text1">
+                                Text
+                              </label>
+                            </div>
+                            </div>
+                        </td>
 
-              <div class="dashboard-card-container">
-                <div class="dashboard-card-heading">
-                    <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-4 pull-left">Old</p>
-                </div>
-                <a href="#" class="govuk-link govuk-!-margin-bottom-2">Clear old Notification</a>
-              </div> 
+                        <td class="govuk-table__cell">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="post1" name="post1" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="post1">
+                              Post
+                            </label>
+                          </div>
+                          </div>
+                      </td>
 
-              <p class="govuk-body govuk-!-margin-bottom-1">1 Oct 2021, 11.21AM</p>
-              <p class="govuk-body govuk-!-margin-bottom-4">Payment for Dartford crossings made 18 Oct 2021  at )9.21AM</p>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Remind Every</div>
+                        </td>
+                        <td colspan="2" class="govuk-table__cell">
+                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                                  <option value="1">Minutes</option>
+                                  <option value="2">Hour</option>
+                                  <option value="3" selected>Day</option>
+                                  <option value="4">Week</option>
+                                  <option value="5">Monthly</option>
+                                </select> 
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                                  <option value="1" selected>Once</option>
+                                  <option value="2">Twice</option>
+                                </select> 
+                            </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
 
-              <p class="govuk-body govuk-!-margin-bottom-1">19 Oct 2021, 11.21AM</p>
-              <p class="govuk-body govuk-!-margin-bottom-4">Dartford crossings made on 19 Oct 2021 at 06:21AM</p>
+
+                <table class="govuk-table  govuk-!-margin-bottom-7">
+                    <div class="dashboard-card-container govuk-!-margin-bottom-0">
+                      <div class="dashboard-card-heading">
+                          <p class="govuk-heading-s govuk-!-font-weight-bold govuk-!-margin-bottom-0">Negative balance</p>
+                      </div>
+                     </div>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Notification</div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="email2" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="email2">
+                                Email
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="text2" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="text2">
+                                Text
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="post2" name="organisation" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="post2">
+                              Post
+                            </label>
+                          </div>
+                          </div>
+                      </td>
+
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Remind Every</div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                                  <option value="1" selected>1</option>
+                                  <option value="2">2</option>
+                                </select> 
+                            </div>
+                        </td>
+                        <td colspan="2" class="govuk-table__cell">
+                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                                  <option value="1">Minutes</option>
+                                  <option value="2" selected>Hour</option>
+                                  <option value="3" >Day</option>
+                                  <option value="4">Week</option>
+                                  <option value="5">Monthly</option>
+                                </select> 
+                            </div>
+                        </td>
+                        
+                      </tr>
+                    </tbody>
+                </table>
+
+                <table class="govuk-table  govuk-!-margin-bottom-7">
+                    <div class="dashboard-card-container govuk-!-margin-bottom-0">
+                      <div class="dashboard-card-heading">
+                          <p class="govuk-heading-s govuk-!-font-weight-bold govuk-!-margin-bottom-0">Unpaid crossings</p>
+                      </div>
+                     </div>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Notification</div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="email3" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="email3">
+                                Email
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="text3" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="text3">
+                                Text
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="post3" name="organisation" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="post3">
+                              Post
+                            </label>
+                          </div>
+                          </div>
+                      </td>
+
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Remind Every</div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                                  <option value="1" selected>1</option>
+                                  <option value="2">2</option>
+                                </select> 
+                            </div>
+                        </td>
+                        <td colspan="2" class="govuk-table__cell">
+                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                                  <option value="1">Minutes</option>
+                                  <option value="2" selected>Hour</option>
+                                  <option value="3" >Day</option>
+                                  <option value="4">Week</option>
+                                  <option value="5">Monthly</option>
+                                </select> 
+                            </div>
+                        </td>
+                        
+                      </tr>
+                    </tbody>
+                </table>
+
+                <table class="govuk-table  govuk-!-margin-bottom-7">
+                    <div class="dashboard-card-container govuk-!-margin-bottom-0">
+                      <div class="dashboard-card-heading">
+                          <p class="govuk-heading-s govuk-!-font-weight-bold govuk-!-margin-bottom-0">PCN</p>
+                      </div>
+                     </div>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Notification</div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="email4" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="email4">
+                                Email
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="text4" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="text4">
+                                Text
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="post4" name="organisation" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="post4">
+                              Post
+                            </label>
+                          </div>
+                          </div>
+                      </td>
+
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Remind Every</div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                                  <option value="1" selected>1</option>
+                                  <option value="2">2</option>
+                                </select> 
+                            </div>
+                        </td>
+                        <td colspan="2" class="govuk-table__cell">
+                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                                  <option value="1">Minutes</option>
+                                  <option value="2" selected>Hour</option>
+                                  <option value="3" >Day</option>
+                                  <option value="4">Week</option>
+                                  <option value="5">Monthly</option>
+                                </select> 
+                            </div>
+                        </td>
+                        
+                      </tr>
+                    </tbody>
+                </table>
+
+                <table class="govuk-table  govuk-!-margin-bottom-7">
+                    <div class="dashboard-card-container govuk-!-margin-bottom-0">
+                      <div class="dashboard-card-heading">
+                          <p class="govuk-heading-s govuk-!-font-weight-bold govuk-!-margin-bottom-0">Paymennt statements</p>
+                      </div>
+                     </div>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Notification</div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="email5" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="email5">
+                                Email
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="text5" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="text5">
+                                Text
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="post5" name="organisation" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="post5">
+                              Post
+                            </label>
+                          </div>
+                          </div>
+                      </td>
+
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Send</div>
+                        </td>
+                        <td class="govuk-table__cell">
+                           
+                        </td>
+                        <td colspan="2" class="govuk-table__cell">
+                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                <select class="govuk-select govuk-grid-column-full" id="sort" name="sort">
+                                  <option value="1">Minutes</option>
+                                  <option value="2" selected>Hour</option>
+                                  <option value="3" >Day</option>
+                                  <option value="4">Week</option>
+                                  <option value="5">Monthly</option>
+                                </select> 
+                            </div>
+                        </td>
+                        
+                      </tr>
+                    </tbody>
+                </table>
+
+
+                <table class="govuk-table  govuk-!-margin-bottom-7">
+                    <div class="dashboard-card-container govuk-!-margin-bottom-0">
+                      <div class="dashboard-card-heading">
+                          <p class="govuk-heading-s govuk-!-font-weight-bold govuk-!-margin-bottom-0">Crossings</p>
+                      </div>
+                     </div>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__cell">
+                            <div class="govuk-!-padding-top-2">Notification</div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="email6" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="email6">
+                                Email
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="text6" name="organisation" type="checkbox" value="hmrc">
+                              <label class="govuk-label govuk-checkboxes__label" for="text6">
+                                Text
+                              </label>
+                            </div>
+                            </div>
+                        </td>
+
+                        <td class="govuk-table__cell">
+                          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="post6" name="organisation" type="checkbox" value="">
+                            <label class="govuk-label govuk-checkboxes__label" for="post6">
+                              Post
+                            </label>
+                          </div>
+                          </div>
+                      </td>
+
+                      </tr>
+                      
+                    </tbody>
+                </table>
 
 
 
 
-              <!-- <div class="govuk-tabs" data-module="govuk-tabs">
+
+
+               <!-- <div class="govuk-tabs" data-module="govuk-tabs">
                 <h2 class="govuk-tabs__title">
                  
                 </h2>
@@ -634,12 +1000,12 @@
                  </table>
               
                 </div>
-              </div> 
+              </div>  -->
                 
 
 
 
-                <div class="govuk-button-group">
+                <!-- <div class="govuk-button-group">
                     <button class="govuk-button" data-module="govuk-button">
                       Save changes
                     </button>
@@ -647,10 +1013,10 @@
                     <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                       Set to default
                     </button>
-                </div>
+                </div> -->
 
 
-                -->
+                
 
             </div>
 

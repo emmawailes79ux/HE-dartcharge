@@ -78,6 +78,14 @@ router.get("/create-account/step-2/personal-account-type", function (req, res) {
   });
 });
 
+// router.post("/create-account/step-2/personal-account-type", function (req, res) {
+//   const {
+//     data
+//   } = req.session;
+//   let redirect = data['select-account-type'] === 'pre-pay' ? 'pre-pay/prerequisites' : 'lrds';
+//   res.redirect(`${redirect}`);
+// });
+
 router.get("/create-account/step-2/pre-pay/prerequisites", function (req, res) {
   const { data } = req.session;
   data["step"] = 2;
@@ -142,6 +150,7 @@ router.get("/create-account/step-3/step-3-done", function (req, res) {
 // step-4 - account setup //
 router.get("/create-account/step-4/payments", function (req, res) {
   const { data } = req.session;
+  data["step"] = 4;
   res.render("prototype-demo/setup-account/step-4/payments", data);
 });
 
@@ -413,6 +422,22 @@ router.get("/dashboard/vehicles/bulk-upload", function (req, res) {
   res.render("prototype-demo/dashboard/vehicles/bulk-upload-vehicle");
 });
 
+router.get("/dashboard/vehicles/apply-lrds", function (req, res) {
+  res.render("prototype-demo/dashboard/vehicles/apply-lrds");
+});
+
+router.get("/dashboard/vehicles/online-submit", function (req, res) {
+  res.render("prototype-demo/dashboard/vehicles/lrds-online");
+});
+
+router.get("/dashboard/vehicles/post-submit", function (req, res) {
+  res.render("prototype-demo/dashboard/vehicles/lrds-post");
+});
+
+router.get("/dashboard/vehicles/success-lrds", function (req, res) {
+  res.render("prototype-demo/dashboard/vehicles/success-lrds");
+});
+
 router.get("/dashboard/crossings", function (req, res) {
   res.render("prototype-demo/dashboard/crossing-details", {
     dashboardData,
@@ -442,6 +467,12 @@ router.get("/dashboard/notification", function (req, res) {
   res.render("prototype-demo/dashboard/account-notification", {
     dashboardData,
     section: "notification",
+  });
+});
+
+router.get("/dashboard/set-notification", function (req, res) {
+  res.render("prototype-demo/dashboard/account-set-notification", {
+    dashboardData
   });
 });
 

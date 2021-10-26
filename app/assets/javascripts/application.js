@@ -67,6 +67,8 @@ $(document).ready(function () {
   //   } else return
   // });
 
+
+
   $(".prsl-acct-type").click(function () {
     let personalAccountType = $("[name='personal-account-type']:checked").val();
 
@@ -86,6 +88,9 @@ $(document).ready(function () {
     // }
   });
 
+
+
+  
   $(".prereq").click(function () {
     $.fn.redirectPage("create-account/step-2/pre-pay/user-info");
   });
@@ -134,12 +139,36 @@ $(document).ready(function () {
     $.fn.goBack();
   });
 
+
+
+  $("[name='lrds-submit-type']").change(function () {
+    $(".lrds-submit-type").prop("disabled", false);
+  });
+
+
+  $(".lrds-submit-type").click(function () {
+    let personalAccountType = $("[name='lrds-submit-type']:checked").val();
+    if (personalAccountType === "lrds-online") {
+      url = "online-submit";
+      $.fn.redirectPage(`dashboard/vehicles/${url}`);
+    }
+    if (personalAccountType === "lrds-post") {
+      url = "post-submit";
+      $.fn.redirectPage(`dashboard/vehicles/${url}`);
+    }
+  });
+
+
   $("#login-btn").click(function () {
     $.fn.redirectPage("login");
   });
 
   $(".todashboard").click(function () {
     $.fn.redirectPage("dashboard");
+  });
+  
+  $(".touploaddoc").click(function () {
+    $.fn.redirectPage("dashboard/vehicles/apply-lrds");
   });
 
   // $(".multiple-vehicle").click(function () {
