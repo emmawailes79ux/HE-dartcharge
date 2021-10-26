@@ -458,6 +458,10 @@ router.get("/dashboard/vehicles", function (req, res) {
   });
 });
 
+router.get("/dashboard/vehicles/bulk-upload", function (req, res) {
+  res.render("prototype-demo/dashboard/vehicles/bulk-upload-vehicle");
+});
+
 router.get("/dashboard/crossings", function (req, res) {
   res.render("prototype-demo/dashboard/crossing-details", {
     dashboardData

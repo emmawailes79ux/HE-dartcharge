@@ -75,10 +75,6 @@ $(document).ready(function () {
       $.fn.redirectPage(`create-account/step-2/${url}`);
     }
 
-    // if (personalAccountType === "lrds") {
-    //   url = "lrds";
-    //   $.fn.redirectPage(`${url}`);
-    // }
     if (personalAccountType === "lrds") {
       url = "lrds";
       $.fn.redirectPage(`${url}`);
