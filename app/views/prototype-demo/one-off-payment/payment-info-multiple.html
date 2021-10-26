@@ -75,7 +75,7 @@ GOV.UK Prototype Kit
     {% for i, vrm in data %}
     {% if data['vrm-' + loop.index] %}
     <h5 class="govuk-heading-m">Registration number: {{data['vrm-' + loop.index][0]}} </h5>
-    <table class="govuk-table ">
+    <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Crossings</th>
@@ -126,7 +126,7 @@ GOV.UK Prototype Kit
     </table>
     {% if data['vrm-' + loop.index] !== 'LO63 NRO' %}
     <div class="govuk-!-padding-bottom-5">
-      <a href="javascript:void(0)" class="govuk-link" role="link">Add future crossings</a>
+      <a href="javascript:void(0)" class="govuk-link add-multiple-future" role="link">Add future crossings</a>
     </div>
     {% endif %}
     {% endif %}

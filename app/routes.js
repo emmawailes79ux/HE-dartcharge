@@ -242,6 +242,12 @@ router.get("/one-off-payment/vehicle-crossmade", function (req, res) {
   res.render("prototype-demo/one-off-payment/vehicle-cross-made");
 });
 
+
+
+router.get("/one-off-payment/confirm-method", function (req, res) {
+  res.render("prototype-demo/one-off-payment/confirm-payment-method");
+});
+
 router.get("/one-off-payment/vehicle-details", function (req, res) {
   const {
     data
@@ -333,6 +339,8 @@ router.get("/one-off-payment/payment-options", function (req, res) {
 router.get("/one-off-payment/payment", function (req, res) {
   res.render("prototype-demo/one-off-payment/crossing-payment");
 });
+
+
 
 router.get("/one-off-payment/confirm-payment", function (req, res) {
   res.render("prototype-demo/one-off-payment/confirm-payment");
@@ -525,9 +533,10 @@ router.get("/dashboard/add-dashboard-vehicle", function (req, res) {
 });
 
 router.post("/dashboard/vehicle/find-vehicle", function (req, res) {
-  if (req.body.vrm) {
-    res.redirect("/prototype-demo/dashboard/vehicles/dashboard-confirm-vehicle-details");
-  }
+
+
+  res.redirect("/prototype-demo/dashboard/vehicles/dashboard-confirm-vehicle-details");
+
 });
 
 router.get("/dashboard/edit-vehicle", function (req, res) {

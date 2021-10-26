@@ -285,14 +285,19 @@ $("[name='option-payment']").change(() => {
 $(".paymentoptionBtn").click(() => {
   let radioVal = $("[name='option-payment']:checked").val();
 
-  if (radioVal === "card-payment") {
-    $.fn.redirectPage("one-off-payment/payment");
-  } else if (radioVal === "paypal") {
-    $.fn.redirectPage("one-off-payment/paypal");
-  } else {
-    $.fn.redirectPage("one-off-payment/bank-transfer");
-  }
+  // if (radioVal === "card-payment") {
+  //   $.fn.redirectPage("one-off-payment/payment");
+  // } else if (radioVal === "paypal") {
+  //   $.fn.redirectPage("one-off-payment/paypal");
+  // } else {
+  //   $.fn.redirectPage("one-off-payment/bank-transfer");
+  // }
+  $.fn.redirectPage("one-off-payment/confirm-method");
 });
+
+$(".pay-now").click(() => {
+  $.fn.redirectPage("one-off-payment/paypal");
+})
 
 $("[name='vehilce-crossinfo']").change(() => {
   $(".vehicle-flowtype").prop("disabled", false);
@@ -520,11 +525,58 @@ $(".vehicle-success").click(() => {
 $(".edit-vehicle-confirm").click(() => {
   $.fn.redirectPage("dashboard/vehicles/dashboard-confirm-vehicle-details");
 })
+$(".add-future-crossings-row").click(() => {
+  let newRow = ' <tr class="govuk-table__row">' +
+    '<td scope="row" class="govuk-table__header">Future Crossings</td>' +
+    '<td class="govuk-table__cell">' +
+    '<div class="govuk-form-group select-box govuk-!-margin-bottom-1">' +
+    '<label class="govuk-label" for="trips">' +
+    '<select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">' +
+    '<option value="1">1</option>' +
+    '<option value="2" selected>2</option>' +
+    '<option value="3">3</option>' +
+    '<option value="4">4</option>' +
+    ' </select></label></div>' + '</td>' +
+    '<td id="trip-amt" class="govuk-table__cell">£5.00</td>' + '</tr>'
+  $(".payment-table tbody>tr").last().after(newRow);
+  $('.add-future-crossings-row').hide();
+});
+
 $(".dashboard-add-vehicle").click(() => {
-  var newRow = ' <div class="govuk-form-group ">' +
-    '<input class="govuk-input govuk-input--width-10" id="vrm" name="vrm" type="text" />' +
-    '<a href="#" class="govuk-!-margin-left-2 remove-vehicle">Remove</a>'
-  $(".dashboard-vehicle-form").before(newRow);
+  // var newRow = ' <div class="govuk-form-group ">' +
+  //   '<input class="govuk-input govuk-input--width-10" id="vrm" name="vrm" type="text" />' +
+  //   '<a href="#" class="govuk-!-margin-left-2 remove-vehicle">Remove</a>'
+  // $(".dashboard-vehicle-form").before(newRow);
+  var rowlength = $('#mytable tbody>tr').length;
+  var newHead = '<tr class="govuk-table__row">' +
+    '<th scope="col" class="govuk-table__header">Registration number</th>' +
+    '<th scope="col" class="govuk-table__header">Country registration</th>' +
+    '<th scope="col" class="govuk-table__header">Action</th>' +
+    '<tr>';
+  var newRow = '<tr class="govuk-table__row">' +
+    '<td scope="row" class="govuk-table__header">' +
+    '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input--width-20" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="text"></div></td>' +
+    '<td class="govuk-table__cell">' +
+    '<div class="govuk-radios govuk-radios--inline">' +
+    '<div class="govuk-radios__item">' +
+    '<input class="govuk-radios__input" id="changed-name" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="UK" checked>' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label>' +
+    '</div>' +
+    '<div class="govuk-radios govuk-radios--inline ">' +
+    '<div class="govuk-radios__item govuk-!-margin-right-0">' +
+    '<input class="govuk-radios__input" id="changed-name" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="Non-UK" >' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-Uk</label>' +
+    '</div>' +
+    '</td>' +
+    '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>' + '</tr>'
+
+  if (rowlength == 1) {
+    $('#mytable thead>tr').remove();
+    $('#mytable thead').append(newHead);
+  }
+  $('#table tbody tr:last').clone().insertAfter('#table tbody tr:last');
+  $('#mytable tbody>tr').last().after(newRow);
+
 });
 
 $(document).on('click', '.remove-vehicle', function () {
@@ -535,6 +587,23 @@ $(".add-future-crossing").click(function () {
   $(this).css("display", "none");
   $(this).prev('span').css("display", "block");
   $(this).parent('td').prev('td').find('.future-crossing').css("display", "block");
+})
+
+$('.add-multiple-future').click(function () {
+  let newRow = ' <tr class="govuk-table__row">' +
+    '<td scope="row" class="govuk-table__header">Future Crossings</td>' +
+    '<td class="govuk-table__cell">' +
+    '<div class="govuk-form-group select-box govuk-!-margin-bottom-1">' +
+    '<label class="govuk-label" for="trips">' +
+    '<select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">' +
+    '<option value="1">1</option>' +
+    '<option value="2" selected>2</option>' +
+    '<option value="3">3</option>' +
+    '<option value="4">4</option>' +
+    ' </select></label></div>' + '</td>' +
+    '<td id="trip-amt" class="govuk-table__cell">£5.00</td>' + '</tr>'
+  $(this).parent('div').prev('table').find('tbody>tr').last().after(newRow);
+  $(this).hide();
 })
 
 $(".future-crossing").change(function (e) {
