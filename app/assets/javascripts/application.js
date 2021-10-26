@@ -419,7 +419,7 @@ $(".confirm-payment-btn").click(() => {
 
 $(".find-vehicle-multiple-flow").click(() => {
   // $.fn.redirectPage("one-off-payment/multiple-vehicle-details");
-
+  console.log('working');
   if ($("[name='vrm-1']").val() === '') {
 
     $(".vrm-error").css("display", "block");
@@ -434,11 +434,24 @@ $(".add-vehicle-multiple-flow").click(() => {
   var rowlength = $('#mytable tbody>tr').length;
   var newHead = '<tr class="govuk-table__row">' +
     '<th scope="col" class="govuk-table__header">Registration number</th>' +
+    '<th scope="col" class="govuk-table__header">Country registration</th>' +
     '<th scope="col" class="govuk-table__header">Action</th>' +
     '<tr>';
   var newRow = '<tr class="govuk-table__row">' +
     '<td scope="row" class="govuk-table__header">' +
     '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input--width-20" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="text"></div></td>' +
+    '<td class="govuk-table__cell">' +
+    '<div class="govuk-radios govuk-radios--inline">' +
+    '<div class="govuk-radios__item">' +
+    '<input class="govuk-radios__input" id="changed-name" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="UK" checked>' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label>' +
+    '</div>' +
+    '<div class="govuk-radios govuk-radios--inline ">' +
+    '<div class="govuk-radios__item govuk-!-margin-right-0">' +
+    '<input class="govuk-radios__input" id="changed-name" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="Non-UK" >' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-Uk</label>' +
+    '</div>' +
+    '</td>' +
     '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>' + '</tr>'
 
   if (rowlength == 1) {
@@ -454,7 +467,9 @@ $(document).on('click', '#remove', function () {
   var rowlength = $('#mytable tbody>tr').length;
   if (rowlength == 2) {
     var newHead = '<tr class="govuk-table__row">' +
-      '<th scope="col" class="govuk-table__header">Registration number</th><tr>';
+      '<th scope="col" class="govuk-table__header">Registration number</th>' +
+      '<th scope="col" class="govuk-table__header">Country registration</th>' +
+      '<tr>';
     $('#mytable thead>tr').remove();
     $('#mytable thead').append(newHead);
   }

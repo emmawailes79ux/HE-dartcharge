@@ -27,28 +27,14 @@ router.get("/create-account", function (req, res) {
   });
 });
 
-router.post("/create-account", function (req, res) {
-  if(req.body.email) {
-    res.redirect("create-account/check-code");
-  }
-});
-
 router.get("/create-account/check-code", function (req, res) {
-  const {data} = req.session;
-  Object.assign(data, {
+  res.render("prototype-demo/setup-account/check-code", {
     step: 1,
     section: "check-code",
   });
-
-  res.render("prototype-demo/setup-account/check-code", );
 });
 
 router.get("/create-account/verification-confirmation", function (req, res) {
-  const {data} = req.session;
-  Object.assign(data, {
-    step: 1,
-    section: "verification-confirmation",
-  });
   res.render("prototype-demo/setup-account/verification-confirmation", {
     step: 1,
     section: "verification-confirmation",
@@ -135,21 +121,24 @@ router.get("/create-account/step-3/vehicle-details", function (req, res) {
   data['step'] = 3;
   data['section'] = "vehicle-details";
   data['vehicleData'] = landingData.vehicleList;
+  console.log("vehicle-detail session", data);
   res.render("prototype-demo/setup-account/step-3/vehicle-details", data);
 });
 router.get("/create-account/step-3/step-3-done", function (req, res) {
-  const {data} = req.session;
-  data['step'] = 3;
-  data['section'] = "step-3-done";
-  res.render("prototype-demo/setup-account/step-3/step-3-done",data);
+  res.render("prototype-demo/setup-account/step-3/step-3-done", {
+    step: 3,
+    section: "step-3-done",
+  });
 });
 
 // step-3 in account setup end
 
 // step-4 - account setup //
 router.get("/create-account/step-4/payments", function (req, res) {
-  const {data} = req.session;
-  res.render("prototype-demo/setup-account/step-4/payments", data);
+  res.render("prototype-demo/setup-account/step-4/payments", {
+    step: 4,
+    section: "payments",
+  });
 });
 
 router.get("/create-account/step-4/confirm-payment", function (req, res) {
@@ -201,11 +190,14 @@ router.get("/one-off-payment/confirm-vehicle-details", function (req, res) {
   });
 });
 
-router.post("/one-off-payment/confirm-vehicle-details", function (req, res) {
+router.post("/one-off-payment/confirm-vehicle-info", function (req, res) {
   if (req.body['vrm-1'] && req.body['vrm-2']) {
     res.redirect('./multiple-vehicle-details')
   } else if (req.body['vrm-1'] || req.body['vrm-2'] === '') {
-    res.redirect("./payment-info-single");
+    //res.redirect("/one-off-payment/payment-info-single");
+
+    // res.redirect("/one-off-payment/vehicle-details");
+    res.redirect("/one-off-payment/vehicle-info");
   }
 });
 
@@ -254,15 +246,31 @@ router.get("/one-off-payment/vehicle-details", function (req, res) {
   const {
     data
   } = req.session;
-  data["vehicleData"] = landingData.vehicleList;
+  console.log(data);
+  const newData = data['vrm-1'][0];
+  console.log(newData);
+  // data["vehicleData"] = landingData.vehicleList;
+
   res.render("prototype-demo/one-off-payment/vehicle-details", data);
+});
+
+router.get("/one-off-payment/vehicle-info", function (req, res) {
+  const {
+    data
+  } = req.session;
+  const newData = {
+    vrm: data['vrm-1'][0]
+  };
+  data["vrm-1"] = newData.vrm;
+  //res.render("prototype-demo/one-off-payment/vehicle-details", data);
+  res.render("prototype-demo/one-off-payment/vehicle-info", data);
 });
 
 router.get("/one-off-payment/payment-info/:value", function (req, res) {
   const {
     data
   } = req.session;
-  console.log(req.params.value)
+
   if (req.params.value == 1)
     data.vehicles = landingData.vehicles;
   else {
@@ -285,7 +293,16 @@ router.get("/one-off-payment/payment-info-single", function (req, res) {
   const {
     data
   } = req.session;
+  console.log(data);
   res.render("prototype-demo/one-off-payment/payment-info-single", data);
+});
+
+router.get("/one-off-payment/vehicle-details", function (req, res) {
+  const {
+    data
+  } = req.session;
+  console.log(data);
+  res.render("prototype-demo/one-off-payment/vehicle-details", data);
 });
 
 router.get("/one-off-payment/payment-info-multiple", function (req, res) {
@@ -371,8 +388,6 @@ router.get("/one-off-payment/create-account", function (req, res) {
     "prototype-demo/one-off-payment/create-account/email-verification"
   );
 });
-
-
 router.get("/one-off-payment/check-mail", function (req, res) {
   res.render("prototype-demo/one-off-payment/create-account/email-code");
 });
@@ -464,15 +479,13 @@ router.get("/dashboard/vehicles/view", function (req, res) {
 
 router.get("/dashboard/profile", function (req, res) {
   res.render("prototype-demo/dashboard/account-update-profile", {
-    dashboardData,
-    section:'profile'
+    dashboardData
   });
 });
 
 router.get("/dashboard/notification", function (req, res) {
   res.render("prototype-demo/dashboard/account-notification", {
-    dashboardData,
-    section:'notification'
+    dashboardData
   });
 });
 
@@ -489,7 +502,7 @@ router.get("/dashboard/top-up/paypal", function (req, res) {
 });
 
 router.get("/dashboard/account/payment-method", function (req, res) {
-  res.render("prototype-demo/dashboard/account/payment-method", {section: "payment-method"});
+  res.render("prototype-demo/dashboard/account/payment-method");
 });
 
 router.get("/dashboard/account/add-new-card", function (req, res) {
@@ -529,7 +542,9 @@ router.get("/dashboard/vehicles/vehicle-success", function (req, res) {
   res.render("prototype-demo/dashboard/vehicles/vehicle-success");
 });
 router.get("/dashboard/reminder", function (req, res) {
-  res.render("prototype-demo/dashboard/account-reminder", { dashboardData });
+  res.render("prototype-demo/dashboard/account-reminder", {
+    dashboardData
+  });
 });
 
 // LRDS
