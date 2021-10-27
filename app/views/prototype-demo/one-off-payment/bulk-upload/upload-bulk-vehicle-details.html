@@ -102,8 +102,13 @@ GOV.UK Prototype Kit
         </table>
 
         <div class="govuk-!-margin-top-6">
-            <button type="button" class="govuk-button bulk-vehicle-confirm" data-module="govuk-button" role="button"
+            {% if data['select-account'] === 'business-account' %}
+            <button onClick="location.href='/create-account/step-3/step-3-done'" type="button" class="govuk-button" data-module="govuk-button" role="button"
                 aria-label="confirm">Confirm</button>
+            {% else %}
+            <button type="button" class="govuk-button bulk-vehicle-confirm" data-module="govuk-button" role="button"
+            aria-label="confirm">Confirm</button>
+            {% endif %}
         </div>
 
     </div>

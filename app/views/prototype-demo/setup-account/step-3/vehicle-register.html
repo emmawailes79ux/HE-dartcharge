@@ -8,17 +8,71 @@
 
 {% include "../setup-acct-head-container.html" %}
 
-        <div class="govuk-form-group ">
-          <label class="govuk-label govuk-!-font-weight-bold" for="registration_number"> Enter your vehicle registration number </label>
-          <input class="govuk-input govuk-input--width-10" id="registration_number" name="registration_number"
-            type="text" />
+      <div style="display: flex">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="registration_number"> 
+              {% if data['select-account'] === 'business-account' %}
+              Enter your company vehicle registration number 
+              {% else %}
+              Enter your vehicle registration number 
+              {% endif %}
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="registration_number" name="registration_number"
+              type="text" />
+          </div>
+          
+          <div class="govuk-form-group govuk-!-padding-left-7">
+            <label class="govuk-label govuk-!-font-weight-bold" > 
+              Contry of registration</label>
+            <div class="govuk-radios govuk-radios--inline pull-left">
+              <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name" name="vrm-1"
+                      type="radio" value="UK" checked>
+                  <label
+                      class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+                      for="changed-name"> UK</label>
+              </div>
+            </div>
+              <div class="govuk-radios govuk-radios--inline pull-left">
+                  <div class="govuk-radios__item govuk-!-margin-right-0">
+                      <input class="govuk-radios__input" id="changed-name" name="vrm-1"
+                          type="radio" value="Non-UK">
+                      <label
+                          class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+                          for="changed-name"> Non-UK</label>
+                  </div>
+              </div>
+          </div>
         </div>
+
         <div class="govuk-form-group">
           <button class="govuk-button vehicle_details" data-module="govuk-button" role="button" aria-label="Find a vehicle"
           >Find your vehicle</button>
         </div>
+
+        <!-- Bulk upload -->
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+              <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                          Bulk upload
+                      </span>
+                  </summary>
+                  <p class="govuk-body govuk-!-margin-top-2">Use the Bulk Upload functionality to manage your gorup names, along with
+                      adding <br>
+                      and deleting vehicles. See the <a href="javascript:void(0)" class="govuk-link">Bulk Upload Guide</a> for
+                      details.</p>
+                  </p>
+                  <button data-module="govuk-button" class="govuk-button bulk-upload-btn" type="button" role="button"
+                      aria-label="bulk-upload-vehicle">Bulk upload vehicle details</button>
+                  <p class="govuk-body">You can use the bulk upload template to add multiple vehicles to your account.<br>
+                      <a href="javascript:void(0)" class="govuk-link"> Download bulk upload template (CSV)</a> </p>
+              </details>
+          </div>
+      </div>
+       
     
-      
  
 {% include "../setup-acct-bottom-container.html" %}
 

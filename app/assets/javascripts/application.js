@@ -51,22 +51,12 @@ $(document).ready(function () {
   });
 
   $(".email-verification").click(function () {
-    $.fn.redirectPage("create-account/verification-confirmation");
+    $.fn.redirectPage("create-account/step-2/select-account");
   });
 
   $(".confirm-verification").click(function () {
     $.fn.redirectPage("create-account/step-2/select-account");
   });
-
-  // $(".account-type").click(function () {
-  //   let accoutTypeVal = $("[name='select-account']:checked").val();
-  //   if (accoutTypeVal === "perosnal-account") {
-  //     $.fn.redirectPage("create-account/step-2/personal-account-type");
-  //   } else if(accoutTypeVal === "business-account") {
-  //     $.fn.redirectPage("create-account/step-2/business-account-type");
-  //   } else return
-  // });
-
 
 
   $(".prsl-acct-type").click(function () {
@@ -385,7 +375,20 @@ $(".successNxt").click(function () {
 
 $("[name='select-account']").change(function () {
   $(".oneoff-account-type").prop("disabled", false);
+  let val = $(this).val();
+  $("#"+val+"-hint").css("display", "block");
+  console.log(val);
+  if(val === 'perosnal-account') {
+    $("#business-account-hint").css("display", "none");  
+  } else if(val === 'business-account') {
+    $("#personal-account-hint").css("display", "none");  
+  }
 });
+
+$(".account-type").click(function () {
+  $(this.form.submit());
+});
+
 $(".oneoff-account-type").click(function () {
   let accoutTypeVal = $("[name='select-account']:checked").val();
   if (accoutTypeVal === "perosnal-account") {

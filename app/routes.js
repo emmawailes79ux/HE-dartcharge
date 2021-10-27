@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const landingData = require("./data/landingData");
 const dashboardData = require("./data/dashboard-data");
+const { red } = require("ansi-colors");
 
 router.get("/home", function (req, res) {
   res.render("prototype-demo/home");
@@ -71,10 +72,14 @@ router.post("/create-account/step-2/select-account", function (req, res) {
     data
   } = req.session;
   let redirect =
-    data["select-account"] === "business-account" ?
-    "business-account-type" :
-    "personal-account-type";
+    data["select-account"] === "business-account"
+      ? "initial-deposit"
+      : "personal-account-type";
   res.redirect(`${redirect}`);
+});
+
+router.get("/create-account/step-2/initial-deposit", function (req, res) {
+  res.render("prototype-demo/setup-account/step-2/initial-deposit", {step: 2});
 });
 
 router.get("/create-account/step-2/personal-account-type", function (req, res) {
@@ -115,6 +120,13 @@ router.get("/create-account/step-2/pre-pay/user-info", function (req, res) {
   data["step"] = 2;
   data["section"] = "user-info";
   res.render("prototype-demo/setup-account/step-2/user-info-form", data);
+});
+
+router.get("/create-account/step-2/nominate-user-confirmation", function (req, res) {
+  const { data } = req.session;
+  data["step"] = 2;
+  data["section"] = "nominate-user";
+  res.render("prototype-demo/setup-account/step-2/nominate-user-confirmation", data);
 });
 
 router.get(
@@ -185,7 +197,6 @@ router.get("/create-account/step-4/step-4-done", function (req, res) {
   } = req.session;
   data["step"] = 4;
   data["section"] = "step-4-done";
-  console.log(data["select-account"]);
   res.render("prototype-demo/setup-account/step-4/step-4-done", data);
 });
 // step-4 - account setup end
@@ -271,6 +282,8 @@ router.get("/one-off-payment/bulk-upload", function (req, res) {
 });
 
 router.get("/one-off-payment/upload-bulk-vehicle", function (req, res) {
+  
+  console.log("checking flow", req.session.flow);
   res.render("prototype-demo/one-off-payment/bulk-upload/upload-bulk-vehicle-details");
 });
 
@@ -297,7 +310,6 @@ router.get("/one-off-payment/vehicle-payinfo", function (req, res) {
 });
 
 router.get("/one-off-payment/confirm-method", function (req, res) {
-  console.log(req.session);
   if (req.session.data['vrm-1']) {
     res.render("prototype-demo/one-off-payment/confirm-payment-method");
   } else {
@@ -693,7 +705,6 @@ router.get("/create-account/step-2/business-account-type", function (req, res) {
   const {
     data
   } = req.session;
-  console.log(data["select-account"]);
   res.render(
     "prototype-demo/setup-account/step-2/business/initial-payment",
     data
