@@ -90,7 +90,7 @@ $(document).ready(function () {
 
 
 
-  
+
   $(".prereq").click(function () {
     $.fn.redirectPage("create-account/step-2/pre-pay/user-info");
   });
@@ -166,7 +166,7 @@ $(document).ready(function () {
   $(".todashboard").click(function () {
     $.fn.redirectPage("dashboard");
   });
-  
+
   $(".touploaddoc").click(function () {
     $.fn.redirectPage("dashboard/vehicles/apply-lrds");
   });
@@ -463,7 +463,7 @@ $(".find-vehicle-multiple-flow").click(() => {
 $(".add-vehicle-multiple-flow").click(() => {
   var rowlength = $('#mytable tbody>tr').length;
   var newHead = '<tr class="govuk-table__row">' +
-    '<th scope="col" class="govuk-table__header">Registration number</th>' +
+    '<th scope="col" class="govuk-table__header">Enter your vehicle registration number</th>' +
     '<th scope="col" class="govuk-table__header">Country registration</th>' +
     '<th scope="col" class="govuk-table__header">Action</th>' +
     '<tr>';
@@ -497,7 +497,7 @@ $(document).on('click', '#remove', function () {
   var rowlength = $('#mytable tbody>tr').length;
   if (rowlength == 2) {
     var newHead = '<tr class="govuk-table__row">' +
-      '<th scope="col" class="govuk-table__header">Registration number</th>' +
+      '<th scope="col" class="govuk-table__header">Enter your vehicle registration number</th>' +
       '<th scope="col" class="govuk-table__header">Country registration</th>' +
       '<tr>';
     $('#mytable thead>tr').remove();
@@ -648,3 +648,16 @@ $.fn.totalSum = () => {
   })
   return sum.toFixed(2);
 }
+
+//bulk-upload
+$(".bulk-upload-btn").click(() => {
+  $.fn.redirectPage("one-off-payment/bulk-upload");
+})
+
+$(".upload-find-vehicle").click(() => {
+  $.fn.redirectPage("one-off-payment/upload-bulk-vehicle");
+})
+
+$(".bulk-vehicle-confirm").click(() => {
+  $.fn.redirectPage("one-off-payment/bulk-vehicle-confirm");
+})

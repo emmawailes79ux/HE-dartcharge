@@ -1,0 +1,94 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "../one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing (Dart Charge)
+        </h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-inset-text govuk-!-margin-top-0 " style="display: flex;">
+            <p class="govuk-body govuk-!-margin-bottom-0"> Dartford Crossing charges.
+                <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            7 Vehicles
+                        </span>
+                    </summary>
+                    <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
+                    <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO63NRO</p>
+                    <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">MN62NRO</p>
+                    <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO62NRO</p>
+                    <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">GJ71KRO</p>
+                    <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
+                    <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p>
+                </details>
+
+            </p>
+        </div>
+    </div>
+
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <table class="govuk-table payment-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Crossings</th>
+                    <th scope="col" class="govuk-table__header">Number of trips</th>
+                    <th scope="col" class="govuk-table__header">Amount</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Future crossings</th>
+                    <td class="govuk-table__cell">
+                        <div id="future-crossing-selectbox" class="govuk-form-group select-box govuk-!-margin-bottom-1">
+                            <label class="govuk-label" for="trips-future-crossing">
+                                <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                    name="trips-future-crossing">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </label>
+                        </div>
+                    </td>
+                    <td id="future-amt" class="govuk-table__cell">
+                        £2.50
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">Payment
+                amount</label>
+            <div class="govuk-input__wrapper govuk-grid-column-two-third">
+                <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3"
+                    id="amount" name="amount" value="17.50" type="number" aria-describedby="amount" spellcheck="false">
+            </div>
+        </div>
+        <div class="govuk-!-margin-top-6">
+            <button type="button" class="govuk-button bulk-vehicle-continue"
+                onClick="location.href='./pay-receipt-single'" data-module="govuk-button" role="button"
+                aria-label="bulk-vehicle-continue">Contine</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

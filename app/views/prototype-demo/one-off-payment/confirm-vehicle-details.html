@@ -31,16 +31,16 @@ GOV.UK Prototype Kit
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
     </div>
 </div>
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-full">
-        <div class="govuk-heading-m">Confirm vehicle details</div>
+        <!-- <div class="govuk-heading-m">Confirm vehicle details</div> -->
         <form method="post" action="/one-off-payment/confirm-vehicle-info">
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-grid-column-three-quarters">
                     <table class="govuk-table " id="mytable">
                         <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
-                                <th scope="col" class="govuk-table__header">Registration number</th>
+                                <th scope="col" class="govuk-table__header">Enter your vehicle registration number</th>
                                 <th scope="col" class="govuk-table__header">Country registration</th>
                                 <th scope="col" class="govuk-table__header"></th>
                             </tr>
@@ -98,11 +98,35 @@ GOV.UK Prototype Kit
                         Add vehicle
                     </button>
                 </div>
+            </div>
         </form>
-
     </div>
 </div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Bulk Future Payment
+                </span>
+            </summary>
+            <p class="govuk-body govuk-!-margin-top-2">Use the Bulk Upload functionality to manage your names,along with
+                adding <br>
+                and deleting Vehicles.See the <a href="javascript:void(0)" class="govuk-link">Bulk Upload Guide</a> for
+                details.</p>
+            </p>
+            <button data-module="govuk-button" class="govuk-button bulk-upload-btn" type="button" role="button"
+                aria-label="bulk-upload-vehicle">Bulk upload vehicle details</button>
+            <p class="govuk-body">You can use the bulk upload template to add multiple vehicle to your account.<br>
+                <a href="javascript:void(0)" class="govuk-link"> Download bulk upload template (CSV)</a> </p>
+        </details>
+    </div>
 </div>
+
+</div>
+
+
 
 
 {% endblock %}
