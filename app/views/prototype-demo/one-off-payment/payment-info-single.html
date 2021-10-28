@@ -102,10 +102,10 @@ GOV.UK Prototype Kit
       <tbody class="govuk-table__body">
         {% if (data['vrm-1'][0] === 'LO61 NRO') or (data['vrm-1'][0] === 'LO62 NRO') %}
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Payable crossings</th>
+          <th scope="row" class="govuk-table__header govuk-!-padding-top-3">Payable crossings</th>
           <td class="govuk-table__cell">
-            <div class="govuk-form-group select-box govuk-!-margin-bottom-1">
-              <label class="govuk-label" for="trips">
+            <div class="govuk-form-group select-box govuk-!-margin-bottom-0">
+              <label class="govuk-label govuk-!-margin-bottom-0" for="trips">
                 <select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">
                   <option value="1">1</option>
                   <option value="2" selected>2</option>
@@ -115,16 +115,16 @@ GOV.UK Prototype Kit
               </label>
             </div>
           </td>
-          <td id="trip-amt" class="govuk-table__cell">£5.00</td>
+          <td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£5.00</td>
         </tr>
         {% endif %}
         {% if (data['vrm-1'][0] === 'LO63 NRO') %}
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Future crossings</th>
+          <th scope="row" class="govuk-table__header govuk-!-padding-top-3">Future crossings</th>
 
           <td class="govuk-table__cell">
-            <div id="future-crossing-selectbox" class="govuk-form-group select-box govuk-!-margin-bottom-1">
-              <label class="govuk-label" for="trips-future-crossing">
+            <div id="future-crossing-selectbox" class="govuk-form-group select-box govuk-!-margin-bottom-0">
+              <label class="govuk-label govuk-!-margin-bottom-0" for="trips-future-crossing">
                 <select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips-future-crossing">
                   <option value="1" selected>1</option>
                   <option value="2">2</option>
@@ -134,7 +134,7 @@ GOV.UK Prototype Kit
               </label>
             </div>
           </td>
-          <td id="future-amt" class="govuk-table__cell">
+          <td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3">
             £2.50
           </td>
 

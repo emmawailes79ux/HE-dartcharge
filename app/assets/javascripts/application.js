@@ -475,17 +475,17 @@ $(".add-vehicle-multiple-flow").click(() => {
     '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input--width-20" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="text"></div></td>' +
     '<td class="govuk-table__cell">' +
     '<div class="govuk-radios govuk-radios--inline">' +
-    '<div class="govuk-radios__item">' +
+    '<div class="govuk-radios__item govuk-!-margin-bottom-0">' +
     '<input class="govuk-radios__input" id="changed-name" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="UK" checked>' +
     '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label>' +
     '</div>' +
     '<div class="govuk-radios govuk-radios--inline ">' +
     '<div class="govuk-radios__item govuk-!-margin-right-0">' +
     '<input class="govuk-radios__input" id="changed-name" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="Non-UK" >' +
-    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-Uk</label>' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-UK</label>' +
     '</div>' +
     '</td>' +
-    '<td class="govuk-table__cell"><a href="javascript:void(0)" id="remove">Remove</a></td>' + '</tr>'
+    '<td class="govuk-table__cell govuk-!-padding-top-3"><a href="javascript:void(0)" id="remove">Remove</a></td>' + '</tr>'
 
   if (rowlength == 1) {
     $('#mytable thead>tr').remove();
@@ -559,17 +559,17 @@ $(".edit-vehicle-confirm").click(() => {
 })
 $(".add-future-crossings-row").click(() => {
   let newRow = ' <tr class="govuk-table__row">' +
-    '<td scope="row" class="govuk-table__header">Future Crossings</td>' +
+    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future Crossings</td>' +
     '<td class="govuk-table__cell">' +
-    '<div class="govuk-form-group select-box govuk-!-margin-bottom-1">' +
-    '<label class="govuk-label" for="trips">' +
+    '<div class="govuk-form-group select-box govuk-!-margin-bottom-0">' +
+    '<label class="govuk-label govuk-!-margin-bottom-0" for="trips">' +
     '<select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">' +
     '<option value="1">1</option>' +
     '<option value="2" selected>2</option>' +
     '<option value="3">3</option>' +
     '<option value="4">4</option>' +
     ' </select></label></div>' + '</td>' +
-    '<td id="trip-amt" class="govuk-table__cell">£5.00</td>' + '</tr>'
+    '<td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£5.00</td>' + '</tr>'
   $(".payment-table tbody>tr").last().after(newRow);
   $('.add-future-crossings-row').hide();
 });
@@ -623,17 +623,17 @@ $(".add-future-crossing").click(function () {
 
 $('.add-multiple-future').click(function () {
   let newRow = ' <tr class="govuk-table__row">' +
-    '<td scope="row" class="govuk-table__header">Future Crossings</td>' +
+    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future Crossings</td>' +
     '<td class="govuk-table__cell">' +
-    '<div class="govuk-form-group select-box govuk-!-margin-bottom-1">' +
-    '<label class="govuk-label" for="trips">' +
+    '<div class="govuk-form-group select-box govuk-!-margin-bottom-0">' +
+    '<label class="govuk-label govuk-!-margin-bottom-0" for="trips">' +
     '<select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">' +
     '<option value="1">1</option>' +
     '<option value="2" selected>2</option>' +
     '<option value="3">3</option>' +
     '<option value="4">4</option>' +
     ' </select></label></div>' + '</td>' +
-    '<td id="trip-amt" class="govuk-table__cell">£5.00</td>' + '</tr>'
+    '<td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£5.00</td>' + '</tr>'
   $(this).parent('div').prev('table').find('tbody>tr').last().after(newRow);
   $(this).hide();
 })
