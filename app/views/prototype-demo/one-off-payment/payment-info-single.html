@@ -107,15 +107,15 @@ GOV.UK Prototype Kit
             <div class="govuk-form-group select-box govuk-!-margin-bottom-0">
               <label class="govuk-label govuk-!-margin-bottom-0" for="trips">
                 <select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">
-                  <option value="1">1</option>
-                  <option value="2" selected>2</option>
+                  <option value="1" selected>1</option>
+                  <option value="2" >2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
                 </select>
               </label>
             </div>
           </td>
-          <td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£5.00</td>
+          <td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£2.50</td>
         </tr>
         {% endif %}
         {% if (data['vrm-1'][0] === 'LO63 NRO') %}
@@ -160,7 +160,7 @@ GOV.UK Prototype Kit
           name="amount" value="2.50" type="number" aria-describedby="amount" spellcheck="false">
         {% else %}
         <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount"
-          name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false">
+          name="amount" value="2.50" type="number" aria-describedby="amount" spellcheck="false">
         {% endif %}
 
       </div>

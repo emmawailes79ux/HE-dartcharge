@@ -564,12 +564,12 @@ $(".add-future-crossings-row").click(() => {
     '<div class="govuk-form-group select-box govuk-!-margin-bottom-0">' +
     '<label class="govuk-label govuk-!-margin-bottom-0" for="trips">' +
     '<select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">' +
-    '<option value="1">1</option>' +
-    '<option value="2" selected>2</option>' +
+    '<option value="1" selected>1</option>' +
+    '<option value="2">2</option>' +
     '<option value="3">3</option>' +
     '<option value="4">4</option>' +
     ' </select></label></div>' + '</td>' +
-    '<td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£5.00</td>' + '</tr>'
+    '<td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£2.50</td>' + '</tr>'
   $(".payment-table tbody>tr").last().after(newRow);
   $('.add-future-crossings-row').hide();
 });
@@ -628,12 +628,12 @@ $('.add-multiple-future').click(function () {
     '<div class="govuk-form-group select-box govuk-!-margin-bottom-0">' +
     '<label class="govuk-label govuk-!-margin-bottom-0" for="trips">' +
     '<select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">' +
-    '<option value="1">1</option>' +
-    '<option value="2" selected>2</option>' +
+    '<option value="1" selected>1</option>' +
+    '<option value="2">2</option>' +
     '<option value="3">3</option>' +
     '<option value="4">4</option>' +
     ' </select></label></div>' + '</td>' +
-    '<td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£5.00</td>' + '</tr>'
+    '<td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£2.50</td>' + '</tr>'
   $(this).parent('div').prev('table').find('tbody>tr').last().after(newRow);
   $(this).hide();
 })

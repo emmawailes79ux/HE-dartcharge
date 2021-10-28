@@ -95,7 +95,6 @@ router.get("/create-account/step-2/personal-account-type", function (req, res) {
 
 router.post("/create-account/step-2/personal-account-type", function (req, res) {
   
-  console.log(req.body['personal-account-type']);
   let redirect = req.body['personal-account-type'] === 'pre-pay' ? 'pre-pay/prerequisites' : '../../lrds';
   res.redirect(`${redirect}`);
 });
@@ -173,7 +172,6 @@ router.get("/create-account/step-3/step-3-done", function (req, res) {
   const {
     data
   } = req.session;
-  console.log(req.session.data)
   data["step"] = 3;
   data["section"] = "step-3-done";
   res.render("prototype-demo/setup-account/step-3/step-3-done", data);
@@ -268,7 +266,6 @@ router.get("/one-off-payment/vehicle-info", function (req, res) {
   //   vrm: data['vrm-1'][0]
   // };
   // data["vrm-1"] = newData.vrm;
-  console.log(data);
   //res.render("prototype-demo/one-off-payment/vehicle-details", data);
   res.render("prototype-demo/one-off-payment/vehicle-info", data);
 });
@@ -292,7 +289,6 @@ router.get("/one-off-payment/multiple-vehicle-details", function (req, res) {
 });
 
 router.get("/one-off-payment/bulk-upload", function (req, res) {
-  console.log(req.session.data['select-account']);
   res.render("prototype-demo/one-off-payment/bulk-upload/upload-vehicle");
 });
 
@@ -388,6 +384,7 @@ router.get("/one-off-payment/payment-info-multiple", function (req, res) {
   const {
     data
   } = sessionData;
+
   res.render("prototype-demo/one-off-payment/payment-info-multiple", data);
 });
 
@@ -661,7 +658,6 @@ router.get("/dashboard/reminder", function (req, res) {
 // LRDS
 router.get("/lrds", function (req, res) {
   const {data} = req.session;
-  console.log(data['personal-account-type'])
   res.render("prototype-demo/setup-account/step-2/personal/lrds/lrds-info", {
     step: 2,
     section: "lrds",
