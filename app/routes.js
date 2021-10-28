@@ -227,6 +227,14 @@ router.get("/one-off-payment/pay-crossing", function (req, res) {
   res.render("prototype-demo/one-off-payment/pay-crossing");
 });
 
+router.post("/one-off-payment/pay-crossing", function (req, res) {
+  delete req.session.data['select-account'];
+  for(let i = 0; i < Object.keys(req.session.data).length; i++) {
+    delete req.session.data['vrm-'+(i+1)+''];
+  }
+  res.redirect("confirm-vehicle-details");
+});
+
 router.get("/one-off-payment/confirm-vehicle-details", function (req, res) {
   res.render("prototype-demo/one-off-payment/confirm-vehicle-details", {
     section: "confirm-vehicle",
@@ -284,13 +292,14 @@ router.get("/one-off-payment/multiple-vehicle-details", function (req, res) {
 });
 
 router.get("/one-off-payment/bulk-upload", function (req, res) {
-
+  console.log(req.session.data['select-account']);
   res.render("prototype-demo/one-off-payment/bulk-upload/upload-vehicle");
 });
 
 router.get("/one-off-payment/upload-bulk-vehicle", function (req, res) {
-  req.session.destroy();
-  console.log(req.session);
+  
+  
+  
   res.render("prototype-demo/one-off-payment/bulk-upload/upload-bulk-vehicle-details");
 });
 
