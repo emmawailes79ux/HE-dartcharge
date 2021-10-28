@@ -48,17 +48,23 @@
         Your email address has been verified successfully
       </p>
     </div>
-    <div class="pull-right">
+    <!-- <div class="pull-right">
       <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
-    </div>
+    </div> -->
   </div>
   
   <div class="govuk-grid-column-full govuk-!-padding-0">
     <div class="pull-left">
-      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="check-icon"></span> You have selected</p>
+      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="check-icon"></span>
+        {% if data['personal-account-type'] === 'lrds' %}
+        LRDS - 10
+        {% elif (data['select-account'] === 'business-account') %}
+        You have selected
+        {% endif %}
+         </p>
       <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
         {% if data['personal-account-type'] === 'lrds' %}
-        Local residents discount account
+        You have selected a local residents discount account (LRDS)
         {% elif (data['select-account'] === 'business-account') %}
         Business account
         <br>
@@ -67,9 +73,9 @@
         
       </p>
     </div>
-    <div class="pull-right">
+    <!-- <div class="pull-right">
       <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
-    </div>
+    </div> -->
   </div>
   
   <div class="govuk-grid-column-full govuk-!-padding-0">
@@ -77,15 +83,15 @@
       <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="check-icon"></span> LO62 NRO</p>
       <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
         {% if data['personal-account-type'] === 'lrds' %}
-        Your vehicle has beed added
+        Your selected vehicle
         {% elif (data['select-account'] === 'business-account') %}
         Your company vehicle has beed added
         {% endif %}
       </p>
     </div>
-    <div class="pull-right">
+    <!-- <div class="pull-right">
       <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
-    </div>
+    </div> -->
   </div>
  
   
