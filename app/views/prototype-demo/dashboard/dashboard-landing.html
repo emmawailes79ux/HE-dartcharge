@@ -9,6 +9,8 @@
 
 {% if data['select-account'] === 'business-account' %}
   {% include "./business-dashboard.html" %}
+  {% elif data['personal-account-type'] === 'lrds' %}
+  {% include "./lrds-dashboard.html" %}
 {% else %}
 
 <div class="govuk-grid-row">

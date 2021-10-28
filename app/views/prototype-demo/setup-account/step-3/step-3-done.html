@@ -32,11 +32,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">
 
-  {% if data['select-account'] === 'business-account' %}
+  {% if data['select-account'] === 'business-account' or data['personal-account-type'] === 'lrds' %}
   <div class="govuk-grid-column-full govuk-!-padding-0">
     <div class="pull-left">
       <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1">
-        <span class="check-icon"></span> doeplumbers@gmail.com
+        <span class="check-icon"></span> 
+        {% if data['personal-account-type'] === 'lrds' %}
+        johndoe@gmail.com
+        {% elif (data['select-account'] === 'business-account') %}
+        doeplumbers@gmail.com
+        {% endif %}
+ 
       </p>
       <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
         Your email address has been verified successfully
@@ -51,9 +57,14 @@
     <div class="pull-left">
       <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="check-icon"></span> You have selected</p>
       <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
+        {% if data['personal-account-type'] === 'lrds' %}
+        Local residents discount account
+        {% elif (data['select-account'] === 'business-account') %}
         Business account
         <br>
         Auto top-up: by £200, when balance falls below £50
+        {% endif %}
+        
       </p>
     </div>
     <div class="pull-right">
@@ -65,7 +76,11 @@
     <div class="pull-left">
       <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="check-icon"></span> LO62 NRO</p>
       <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
+        {% if data['personal-account-type'] === 'lrds' %}
+        Your vehicle has beed added
+        {% elif (data['select-account'] === 'business-account') %}
         Your company vehicle has beed added
+        {% endif %}
       </p>
     </div>
     <div class="pull-right">

@@ -45,11 +45,16 @@
 </p>
 </div>
 <div class="govuk-grid-column-full govuk-!-margin-top-4">
+{% if (data['select-account'] === 'business-account') or (data['personal-account-type'] === 'pre-pay') %}
   <button class="govuk-button todashboard" data-module="govuk-button" role="button" aria-label="Go to dashboard"
   >Go to dashboard</button>
-<br/><br/>
-  <button class="govuk-button touploaddoc" data-module="govuk-button" role="button" aria-label="Go to dashboard"
-  >Upload documents</button>
+{% endif %}
+
+{% if data['personal-account-type'] === 'lrds' and (data['select-account'] !== 'business-account') %}
+<button class="govuk-button touploaddoc" data-module="govuk-button" role="button" 
+>Upload documents</button>
+{% endif %}
+  
 
 </div>
 </div>

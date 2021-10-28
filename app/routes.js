@@ -93,13 +93,12 @@ router.get("/create-account/step-2/personal-account-type", function (req, res) {
   });
 });
 
-// router.post("/create-account/step-2/personal-account-type", function (req, res) {
-//   const {
-//     data
-//   } = req.session;
-//   let redirect = data['select-account-type'] === 'pre-pay' ? 'pre-pay/prerequisites' : 'lrds';
-//   res.redirect(`${redirect}`);
-// });
+router.post("/create-account/step-2/personal-account-type", function (req, res) {
+  
+  console.log(req.body['personal-account-type']);
+  let redirect = req.body['personal-account-type'] === 'pre-pay' ? 'pre-pay/prerequisites' : '../../lrds';
+  res.redirect(`${redirect}`);
+});
 
 router.get("/create-account/step-2/pre-pay/prerequisites", function (req, res) {
   const {
@@ -661,6 +660,8 @@ router.get("/dashboard/reminder", function (req, res) {
 
 // LRDS
 router.get("/lrds", function (req, res) {
+  const {data} = req.session;
+  console.log(data['personal-account-type'])
   res.render("prototype-demo/setup-account/step-2/personal/lrds/lrds-info", {
     step: 2,
     section: "lrds",
