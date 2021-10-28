@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 const landingData = require("./data/landingData");
 const dashboardData = require("./data/dashboard-data");
-const { red } = require("ansi-colors");
+const {
+  red
+} = require("ansi-colors");
 
 router.get("/home", function (req, res) {
   res.render("prototype-demo/home");
@@ -72,14 +74,16 @@ router.post("/create-account/step-2/select-account", function (req, res) {
     data
   } = req.session;
   let redirect =
-    data["select-account"] === "business-account"
-      ? "initial-deposit"
-      : "personal-account-type";
+    data["select-account"] === "business-account" ?
+    "initial-deposit" :
+    "personal-account-type";
   res.redirect(`${redirect}`);
 });
 
 router.get("/create-account/step-2/initial-deposit", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/initial-deposit", {step: 2});
+  res.render("prototype-demo/setup-account/step-2/initial-deposit", {
+    step: 2
+  });
 });
 
 router.get("/create-account/step-2/personal-account-type", function (req, res) {
@@ -123,7 +127,9 @@ router.get("/create-account/step-2/pre-pay/user-info", function (req, res) {
 });
 
 router.get("/create-account/step-2/nominate-user-confirmation", function (req, res) {
-  const { data } = req.session;
+  const {
+    data
+  } = req.session;
   data["step"] = 2;
   data["section"] = "nominate-user";
   res.render("prototype-demo/setup-account/step-2/nominate-user-confirmation", data);
@@ -250,10 +256,11 @@ router.get("/one-off-payment/vehicle-info", function (req, res) {
   const {
     data
   } = req.session;
-  const newData = {
-    vrm: data['vrm-1'][0]
-  };
-  data["vrm-1"] = newData.vrm;
+  // const newData = {
+  //   vrm: data['vrm-1'][0]
+  // };
+  // data["vrm-1"] = newData.vrm;
+  console.log(data);
   //res.render("prototype-demo/one-off-payment/vehicle-details", data);
   res.render("prototype-demo/one-off-payment/vehicle-info", data);
 });
@@ -282,8 +289,8 @@ router.get("/one-off-payment/bulk-upload", function (req, res) {
 });
 
 router.get("/one-off-payment/upload-bulk-vehicle", function (req, res) {
-  
-  console.log("checking flow", req.session.flow);
+  req.session.destroy();
+  console.log(req.session);
   res.render("prototype-demo/one-off-payment/bulk-upload/upload-bulk-vehicle-details");
 });
 
@@ -310,11 +317,14 @@ router.get("/one-off-payment/vehicle-payinfo", function (req, res) {
 });
 
 router.get("/one-off-payment/confirm-method", function (req, res) {
-  if (req.session.data['vrm-1']) {
-    res.render("prototype-demo/one-off-payment/confirm-payment-method");
-  } else {
-    res.render("prototype-demo/one-off-payment/bulk-upload/bulk-confirm-method");
-  }
+  // if (req.session.data['vrm-1']) {
+  //   res.render("prototype-demo/one-off-payment/confirm-payment-method");
+  // } else {
+  //   res.render("prototype-demo/one-off-payment/bulk-upload/bulk-confirm-method");
+  // }
+  // console.log(req.session);
+  res.render("prototype-demo/one-off-payment/confirm-payment-method");
+
 });
 
 
@@ -336,7 +346,7 @@ router.get("/one-off-payment/payment-info/:value", function (req, res) {
   const {
     data
   } = req.session;
-  console.log(req.params.value);
+
   if (req.params.value == 1) data.vehicles = landingData.vehicles;
   else {
     data.vehicles = [{

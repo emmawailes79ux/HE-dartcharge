@@ -27,10 +27,42 @@ GOV.UK Prototype Kit
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
+                    {% if data['vrm-1'] | length%}
                     <th scope="row" class="govuk-table__header">Registration numbers</th>
-                    <td class="govuk-table__cell"><span class="govuk-caption-l">
-                            {{data['vrm-1'][0]}}</span>
+                    {%else%}
+                    <th scope="row" class="govuk-table__header">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Registration numbers
+                                </span>
+                            </summary>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO63NRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">MN62NRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO62NRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">GJ71KRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p>
+                        </details>
+                    </th>
+                    {% endif %}
+                    {% if data['vrm-1'] | length%}
+                    <td class="govuk-table__cell">
+                        {% for i, vrm in data %}
+                        {% if (loop.index > 0) %}
+                        <span class="govuk-caption-l">
+                            {{data['vrm-' + loop.index][0]}}
+                        </span>
+                        {% endif %}
+                        {% endfor %}
                     </td>
+                    {% else %}
+                    <td class="govuk-table__cell">
+                        7 Vehicles
+                    </td>
+                    {%endif%}
+
                     <td class="govuk-table__cell"><a href="javascript:void(0)">change</a>
                     </td>
                 </tr>

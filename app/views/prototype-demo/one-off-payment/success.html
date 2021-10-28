@@ -23,18 +23,14 @@ GOV.UK Prototype Kit
         <table class="govuk-table govuk-!-margin-bottom-2">
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">Registration number</th>
-                    {% if data['vrm-1'] %}
-
-                    <td class="govuk-table__cell">
-                        {{data['vrm-1'][0]}}
-                    </td>
+                    {% if data['vrm-1'] | length%}
+                    <th scope="row" class="govuk-table__header">Registration numbers</th>
                     {%else%}
-                    <td class="govuk-table__cell">
-                        <details class="govuk-details" data-module="govuk-details">
+                    <th scope="row" class="govuk-table__header">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                             <summary class="govuk-details__summary">
                                 <span class="govuk-details__summary-text">
-                                    7 Vehicles
+                                    Registration numbers
                                 </span>
                             </summary>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
@@ -45,6 +41,21 @@ GOV.UK Prototype Kit
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p>
                         </details>
+                    </th>
+                    {% endif %}
+                    {% if data['vrm-1'] | length%}
+                    <td class="govuk-table__cell">
+                        {% for i, vrm in data %}
+                        {% if (loop.index > 0) %}
+                        <span class="govuk-caption-l">
+                            {{data['vrm-' + loop.index][0]}}
+                        </span>
+                        {% endif %}
+                        {% endfor %}
+                    </td>
+                    {% else %}
+                    <td class="govuk-table__cell">
+                        7 Vehicles
                     </td>
                     {%endif%}
                 </tr>
@@ -84,7 +95,7 @@ GOV.UK Prototype Kit
             notifications for when you make the crossings.</p>
 
         <div class="govuk-heading-m">What would you like to do next?</div>
-        <div class="govuk-radios">
+        <div class="govuk-radios govuk-!-margin-bottom-3">
             <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="create-account" name="successnextoption" type="radio"
                     value="create-account">
@@ -100,15 +111,19 @@ GOV.UK Prototype Kit
                 </label>
             </div>
         </div>
-
+        {% if data['vrm-1'] | length%}
         <div class="govuk-button-group successNxt govuk-!-margin-top-5">
             <input data-module="govuk-button" class="govuk-button" value="Continue" type="submit" role="button"
                 aria-label="Next" />
         </div>
-        <p>You can <a href="javascript:void(0)">make another payment</a> or close the window to finish.</p>
+        {%endif%}
+        <p class="govuk-body">You can <a href="javascript:void(0)">make another payment</a> or close the window to
+            finish.</p>
+        {% if data['vrm-1'] | length%}
         <div class="govuk-button-group successNxt govuk-!-margin-top-3">
             <a href="#" class="govuk-button" aria-label="Next">Make another payment</a>
         </div>
+        {%endif%}
         {% endif %}
 
 
