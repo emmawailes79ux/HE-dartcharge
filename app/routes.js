@@ -174,6 +174,7 @@ router.get("/create-account/step-3/step-3-done", function (req, res) {
   const {
     data
   } = req.session;
+  console.log(req.session.data)
   data["step"] = 3;
   data["section"] = "step-3-done";
   res.render("prototype-demo/setup-account/step-3/step-3-done", data);

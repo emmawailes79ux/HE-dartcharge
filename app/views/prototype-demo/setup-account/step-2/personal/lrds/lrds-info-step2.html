@@ -10,6 +10,55 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h3 class="govuk-heading-m">Local resident discount (LRDS)</h3>
+        <div class="govuk-!-padding-right-9">
+          <h2 class="govuk-heading-s">Initial deposit to your account</h2>
+          <p class="govuk-body">You need to make an initial minimum deposit of £10 to open your account.
+          </p>
+          <h2 class="govuk-heading-s">Manual top-up</h2>
+          <p class="govuk-body">You will need to remember to add funds to your account yourself when your balance is low.
+          </p>
+          <p class="govuk-body">If your account balance goes below zero, you will have 24 hours to add funds after that the account will be closed and you may receive a penalty charge if you use the crossing and do not pay.
+          </p>
+          <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <p class=" govuk-heading-s govuk-!-margin-bottom-0">
+                      Select the LRDS account you wish to apply for
+                  </p>
+                </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="lrds10" name="lrds" type="radio" value="lrds10" aria-selected="true" checked>
+                    <label class="govuk-label govuk-radios__label" for="lrds10">
+                      LRDS 10
+                    </label>
+                    <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
+                        <li>This account allows you to make 50 crossings in any one year</li>
+                    </ul>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="lrds20" name="lrds" type="radio" value="lrds20">
+                    <label class="govuk-label govuk-radios__label" for="lrds20">
+                      LRDS 20
+                    </label>
+                    <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
+                      <li>This account allows you to make unlimited crossings in any one year</li>
+                      </ul>
+                  </div>
+                </div>
+            
+              </fieldset>
+          </div>
+  
+          <button
+              class="govuk-button"
+              data-module="govuk-button"
+              role="button"
+              onclick="location.href='/lrds/user-info-form'" 
+              >
+              Continue
+          </button>
+      </div>
       </div>
 
       <!-- <div class="govuk-grid-column-one-third govuk-!-padding-top-1">
@@ -18,55 +67,7 @@
     
     </div>
     
-    <div class="govuk-!-padding-right-9">
-        <h2 class="govuk-heading-s">Initial deposit to your account</h2>
-        <p class="govuk-body">You need to make an initial minimum deposit of £10 to open your account.
-        </p>
-        <h2 class="govuk-heading-s">Manual top-up</h2>
-        <p class="govuk-body">You will need to remember to add funds to your account yourself when your balance is low.
-        </p>
-        <p class="govuk-body">If your account balance goes below zero, you will have 24 hours to add funds after that the account will be closed and you may receive a penalty charge if you use the crossing and do not pay.
-        </p>
-        <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <p class=" govuk-heading-s govuk-!-margin-bottom-0">
-                    Select the LRDS account you wish to apply for
-                </p>
-              </legend>
-              <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="lrds10" name="lrds" type="radio" value="lrds10" aria-selected="true" checked>
-                  <label class="govuk-label govuk-radios__label" for="lrds10">
-                    LRDS 10
-                  </label>
-                  <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
-                      <li>This account allows you to make 50 crossings in any one year</li>
-                  </ul>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="lrds20" name="lrds" type="radio" value="lrds20">
-                  <label class="govuk-label govuk-radios__label" for="lrds20">
-                    LRDS 20
-                  </label>
-                  <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
-                    <li>This account allows you to make unlimited crossings in any one year</li>
-                    </ul>
-                </div>
-              </div>
-          
-            </fieldset>
-        </div>
-
-        <button
-            class="govuk-button"
-            data-module="govuk-button"
-            role="button"
-            onclick="location.href='/lrds/user-info-form'" 
-            >
-            Continue
-        </button>
-    </div>
+    
     
     
 {% include "../../../setup-acct-bottom-container.html" %}
