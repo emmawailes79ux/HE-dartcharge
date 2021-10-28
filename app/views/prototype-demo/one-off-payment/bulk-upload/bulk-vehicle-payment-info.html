@@ -44,42 +44,42 @@ GOV.UK Prototype Kit
                                     Unpaid Crossings
                                 </span>
                             </summary>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
+                            <!-- <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO63NRO</p>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">MN62NRO</p>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO62NRO</p>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">GJ71KRO</p>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p> -->
                         </details>
                     </th>
                     <td class="govuk-table__cell">
                         <strong>10</strong>
                     </td>
                     <td id="future-amt" class="govuk-table__cell">
-                        £2.50
+                        £ 22.50
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">
-                        <details class="govuk-details" data-module="govuk-details">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
                             <summary class="govuk-details__summary">
                                 <span class="govuk-details__summary-text">
                                     Future Crossings
                                 </span>
                             </summary>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
+                            <!-- <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO63NRO</p>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">MN62NRO</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO62NRO</p>
+                            <p class="govuk-caption-m govu  k-!-margin-bottom-2 govuk-!-margin-left-4">LO62NRO</p>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">GJ71KRO</p>
                             <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p> -->
                         </details>
                     </th>
                     <td class="govuk-table__cell">
                         <div id="future-crossing-selectbox" class="govuk-form-group select-box govuk-!-margin-bottom-0">
-                            <label class="govuk-label govuk-!-margin-bottom-0" for="trips-future-crossing">
+                            <label class="govuk-label govuk-!-margin-bottom-1" for="trips-future-crossing">
                                 <select class="govuk-select govuk-!-margin-right-2 " id="sort"
                                     name="trips-future-crossing">
                                     <option value="1" selected>1</option>
@@ -91,7 +91,7 @@ GOV.UK Prototype Kit
                         </div>
                     </td>
                     <td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3">
-                        £2.50
+                        £ 18.50
                     </td>
                 </tr>
             </tbody>
@@ -104,23 +104,24 @@ GOV.UK Prototype Kit
             <div class="govuk-input__wrapper govuk-grid-column-two-third">
                 <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
                 <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3"
-                    id="amount" name="amount" value="17.50" type="number" aria-describedby="amount" spellcheck="false">
+                    id="amount" name="amount" value="41.00" type="number" aria-describedby="amount" spellcheck="false">
             </div>
         </div>
         <div class="pull-right">
-            <a href="#" class="govuk-link">DownloadPDF</a>
+            <a href="#" class="govuk-link">Download PDF</a>
         </div>
+    </div>
 
-    </div>
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            <div class="govuk-!-margin-top-6">
-                <button type="button" class="govuk-button bulk-vehicle-continue"
-                    onClick="location.href='./pay-receipt-single'" data-module="govuk-button" role="button"
-                    aria-label="bulk-vehicle-continue">Contine</button>
-            </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-!-margin-top-2">
+            <button type="button" class="govuk-button bulk-vehicle-continue"
+                onClick="location.href='./pay-receipt-single'" data-module="govuk-button" role="button"
+                aria-label="bulk-vehicle-continue">Continue</button>
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}
