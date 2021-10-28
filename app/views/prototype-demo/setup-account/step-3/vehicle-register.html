@@ -51,6 +51,7 @@
         </div>
 
         <!-- Bulk upload -->
+        {% if data['select-account'] === 'business-account' %}
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
               <details class="govuk-details" data-module="govuk-details">
@@ -70,7 +71,8 @@
                       <a href="javascript:void(0)" class="govuk-link"> Download bulk upload template (CSV)</a> </p>
               </details>
           </div>
-      </div>
+        </div>
+        {% endif %}
        
     
  
