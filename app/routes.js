@@ -95,7 +95,21 @@ router.get("/create-account/step-2/personal-account-type", function (req, res) {
 
 router.post("/create-account/step-2/personal-account-type", function (req, res) {
   
-  let redirect = req.body['personal-account-type'] === 'pre-pay' ? 'pre-pay/prerequisites' : '../../lrds';
+  let redirect = '';
+
+  if(req.body['personal-account-type'] === 'pre-pay' ) {
+
+    redirect = 'pre-pay/prerequisites'
+
+  } else if(req.body['personal-account-type'] === 'lrds') {
+
+    redirect = '../../lrds';
+
+  } else {
+
+    return false;
+
+  }
   res.redirect(`${redirect}`);
 });
 
