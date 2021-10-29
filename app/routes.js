@@ -705,6 +705,52 @@ router.get("/lrds/user-info-form", function (req, res) {
   );
 });
 
+router.get("/lrds/vehcile-register", function (req, res) {
+  res.render(
+    "prototype-demo/setup-account/step-2/personal/lrds/lrds-vehicle-register", {
+      step: 3,
+      section: "lrds",
+    }
+  );
+});
+
+router.get("/lrds/vehcile-details", function (req, res) {
+  res.render(
+    "prototype-demo/setup-account/step-2/personal/lrds/lrds-vehicle-details", {
+      landingData,
+      step: 3,
+      section: "lrds",
+    });
+});
+
+router.get("/lrds/lrds-summary", function (req, res) {
+  res.render(
+    "prototype-demo/setup-account/step-2/personal/lrds/lrds-summary", {
+      step: 3,
+      section: "lrds",
+    }
+  );
+});
+
+router.get("/lrds/lrds-payment", function (req, res) {
+  res.render(
+    "prototype-demo/setup-account/step-2/personal/lrds/lrds-payment", {
+      step: 4,
+      section: "lrds",
+    }
+  );
+});
+
+router.get("/lrds/lrds-success", function (req, res) {
+  res.render(
+    "prototype-demo/setup-account/step-2/personal/lrds/lrds-success", {
+      step: 4,
+      section: "lrds",
+    }
+  );
+});
+
+
 // LRDS END
 
 //BUSINESS ACCOUNT
