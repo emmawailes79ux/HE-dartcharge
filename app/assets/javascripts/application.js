@@ -376,12 +376,12 @@ $(".successNxt").click(function () {
 $("[name='select-account']").change(function () {
   $(".oneoff-account-type").prop("disabled", false);
   let val = $(this).val();
-  $("#"+val+"-hint").css("display", "block");
+  $("#" + val + "-hint").css("display", "block");
   console.log(val);
-  if(val === 'perosnal-account') {
-    $("#business-account-hint").css("display", "none");  
-  } else if(val === 'business-account') {
-    $("#personal-account-hint").css("display", "none");  
+  if (val === 'perosnal-account') {
+    $("#business-account-hint").css("display", "none");
+  } else if (val === 'business-account') {
+    $("#personal-account-hint").css("display", "none");
   }
 });
 
@@ -509,6 +509,53 @@ $(document).on('click', '#remove', function () {
   $(this).closest('tr').remove();
   return false;
 });
+
+
+
+$(".create-flow-add-vehicle").click(() => {
+  var name = ""
+  var buttonname = $('.bulk-upload-btn').length;
+  console.log(buttonname);
+  if (buttonname > 0) {
+    name = "Enter your company vehicle registration number";
+  } else {
+    name = "Enter your vehicle registration number";
+  }
+  var rowlength = $('#vehicle-column .govuk-grid-column-full').length;
+  // console.log(rowlength);
+  var newRow = '<div class="govuk-grid-column-full">' +
+    '<div class="govuk-form-group pull-left">' +
+    '<label class="govuk-label govuk-!-font-weight-bold" for="registration_number">' +
+    name + '</label>' +
+    '<input class="govuk-input govuk-input--width-10" id="registration_number" name="registration_number"  type="text" />' +
+    '</div>' +
+    ' <div class="govuk-form-group pull-left govuk-!-margin-left-7">' +
+    '<label class="govuk-label govuk-!-font-weight-bold">' +
+    ' Country of registration</label>' +
+    '<div class="govuk-radios govuk-radios--inline pull-left">' +
+    '<div class="govuk-radios__item">' +
+    '<input class="govuk-radios__input" id="changed-name"  name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="UK" checked>' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label>' +
+    '</div></div>' +
+    '<div class="govuk-radios govuk-radios--inline pull-left">' +
+    '<div class="govuk-radios__item govuk-!-margin-right-0">' +
+    '<input class="govuk-radios__input" id="changed-name"  name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="Non-UK">' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"  for="changed-name"> Non-UK</label>' +
+    '</div></div>' +
+    '<div class="form-group pull-left govuk-!-margin-left-7 govuk-!-margin-top-1">' +
+    '<a href="javascript:void(0)" id="remove-create-flow" class="govuk-link govuk-body">Remove</a></div>' +
+    '</div></div>'
+
+  $('#vehicle-column').append(newRow);
+
+});
+
+$(document).on('click', '#remove-create-flow', function () {
+  $(this).parent('div').parent('div').parent('div').remove();
+  return false;
+});
+
+
 
 $('#select-all').click(function () {
   if (this.checked) {
