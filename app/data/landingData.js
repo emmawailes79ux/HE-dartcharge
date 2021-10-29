@@ -1,13 +1,13 @@
 exports.chargeListHead = [
   "Type of vehicle",
-  "One-off payment",
-  "Pay as you go accounts",
-  "Pre-pay accounts",
+  "One off payment",
+  "PayG service",
+  "Pre-pay service",
 ];
 
 exports.chargeList = [
   {
-    title: "Motorcycles, mopeds, quad bikes",
+    title: "Motorcycle, mopeds, quad bikes",
     oneOff: "Free",
     payG: "Free",
     prePay: "Free",
