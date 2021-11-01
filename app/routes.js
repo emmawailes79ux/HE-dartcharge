@@ -230,6 +230,13 @@ router.get("/create-account/step-4/payments", function (req, res) {
   res.render("prototype-demo/setup-account/step-4/payments", data);
 });
 
+router.get("/create-account/step-4/initial-deposit", function (req, res) {
+  res.render("prototype-demo/setup-account/step-4/initial-deposit", {
+    step: 4,
+    section: "initial-deposit",
+  });
+});
+
 router.get("/create-account/step-4/confirm-payment", function (req, res) {
   res.render("prototype-demo/setup-account/step-4/confirm-payment", {
     step: 4,

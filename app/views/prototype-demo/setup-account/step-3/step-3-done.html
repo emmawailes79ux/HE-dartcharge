@@ -59,16 +59,14 @@ GOV.UK Prototype Kit
             {% if data['personal-account-type'] === 'lrds' %}
             LRDS - 10
             {% elif (data['select-account'] === 'business-account') %}
-            You have selected
+            Business account
             {% endif %}
           </p>
           <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
             {% if data['personal-account-type'] === 'lrds' %}
             You have selected a local residents discount account (LRDS)
             {% elif (data['select-account'] === 'business-account') %}
-            Business account
-            <br>
-            Auto top-up: by £200, when balance falls below £50
+            Auto top-up
             {% endif %}
 
           </p>
@@ -86,7 +84,7 @@ GOV.UK Prototype Kit
             {% if data['personal-account-type'] === 'lrds' %}
             Your selected vehicle
             {% elif (data['select-account'] === 'business-account') %}
-            Your company vehicle has beed added
+            Your selected vehicle
             {% endif %}
           </p>
         </div>
@@ -106,10 +104,18 @@ GOV.UK Prototype Kit
       {% endif %}
 
 
+      {% if (data['select-account'] === 'business-account') %}
+      <div class="govuk-form-group">
+        <button class="govuk-button" onclick="location.href='../step-4/initial-deposit'" data-module="govuk-button"
+          role="button" aria-label="Move to payment">Proceed to payment</button>
+      </div>
+      {% else %}
       <div class="govuk-form-group">
         <button class="govuk-button" onclick="location.href='../step-2/initial-deposit'" data-module="govuk-button"
           role="button" aria-label="Move to payment">Proceed to payment</button>
       </div>
+      {% endif %}
+
     </div>
     {% include "../setup-acct-bottom-container.html" %}
     {% endblock %}

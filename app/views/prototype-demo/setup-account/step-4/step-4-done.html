@@ -53,8 +53,8 @@
 </div>
 <div class="govuk-grid-column-full govuk-!-margin-top-4">
 {% if (data['select-account'] === 'business-account') or (data['personal-account-type'] === 'pre-pay') %}
-  <button class="govuk-button todashboard" data-module="govuk-button" role="button" aria-label="Go to dashboard"
-  >Go to dashboard</button>
+  <button class="govuk-button todashboard" data-module="govuk-button" role="button" aria-label="Go to account summary page"
+  >Go to account summary page</button>
 {% endif %}
 
 {% if data['personal-account-type'] === 'lrds' and (data['select-account'] !== 'business-account') %}

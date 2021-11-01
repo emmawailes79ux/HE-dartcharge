@@ -13,9 +13,9 @@ GOV.UK Prototype Kit
     <div class="govuk-form-group pull-left">
       <label class="govuk-label govuk-!-font-weight-bold" for="registration_number">
         {% if data['select-account'] === 'business-account' %}
-        Enter your company vehicle registration number
+        Company vehicle registration number
         {% else %}
-        Enter your vehicle registration number
+        Vehicle registration number
         {% endif %}
       </label>
       <input class="govuk-input govuk-input--width-10" id="registration_number" name="registration_number"
@@ -61,8 +61,8 @@ GOV.UK Prototype Kit
 </div>
 
 <!-- Bulk upload -->
-{% if data['select-account'] === 'business-account' %}
-<div class="govuk-grid-row">
+
+<!-- <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
@@ -82,8 +82,8 @@ GOV.UK Prototype Kit
         <a href="javascript:void(0)" class="govuk-link"> Download bulk upload template (CSV)</a> </p>
     </details>
   </div>
-</div>
-{% endif %}
+</div> -->
+
 
 
 

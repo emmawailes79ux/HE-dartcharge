@@ -474,7 +474,7 @@ $(".find-vehicle-multiple-flow").click(() => {
 $(".add-vehicle-multiple-flow").click(() => {
   var rowlength = $('#mytable tbody>tr').length;
   var newHead = '<tr class="govuk-table__row">' +
-    '<th scope="col" class="govuk-table__header">Enter your vehicle registration number</th>' +
+    '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
     '<th scope="col" class="govuk-table__header">Country registration</th>' +
     '<th scope="col" class="govuk-table__header">Action</th>' +
     '<tr>';
@@ -508,7 +508,7 @@ $(document).on('click', '#remove', function () {
   var rowlength = $('#mytable tbody>tr').length;
   if (rowlength == 2) {
     var newHead = '<tr class="govuk-table__row">' +
-      '<th scope="col" class="govuk-table__header">Enter your vehicle registration number</th>' +
+      '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
       '<th scope="col" class="govuk-table__header">Country registration</th>' +
       '<tr>';
     $('#mytable thead>tr').remove();
@@ -525,9 +525,9 @@ $(".create-flow-add-vehicle").click(() => {
   var buttonname = $('.bulk-upload-btn').length;
   console.log(buttonname);
   if (buttonname > 0) {
-    name = "Enter your company vehicle registration number";
+    name = "Company vehicle registration number";
   } else {
-    name = "Enter your vehicle registration number";
+    name = "Vehicle registration number";
   }
   var rowlength = $('#vehicle-column .govuk-grid-column-full').length;
   // console.log(rowlength);
