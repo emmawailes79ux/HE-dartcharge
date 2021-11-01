@@ -385,7 +385,7 @@ $("[name='select-account']").change(function () {
   $("#" + val + "-hint").css("display", "block");
   console.log(val);
   if (val === 'perosnal-account') {
-    $("#business-account-hint").css("display", "none");    
+    $("#business-account-hint").css("display", "none");
     $("#personal-account-hint").css("display", "block");
   } else if (val === 'business-account') {
     $("#personal-account-hint").css("display", "none");
@@ -521,40 +521,39 @@ $(document).on('click', '#remove', function () {
 
 
 $(".create-flow-add-vehicle").click(() => {
-  var name = ""
-  var buttonname = $('.bulk-upload-btn').length;
-  console.log(buttonname);
-  if (buttonname > 0) {
-    name = "Company vehicle registration number";
-  } else {
-    name = "Vehicle registration number";
-  }
-  var rowlength = $('#vehicle-column .govuk-grid-column-full').length;
-  // console.log(rowlength);
-  var newRow = '<div class="govuk-grid-column-full">' +
-    '<div class="govuk-form-group pull-left">' +
-    '<label class="govuk-label govuk-!-font-weight-bold" for="registration_number">' +
-    name + '</label>' +
-    '<input class="govuk-input govuk-input--width-10" id="registration_number" name="registration_number"  type="text" />' +
-    '</div>' +
-    ' <div class="govuk-form-group pull-left govuk-!-margin-left-7">' +
-    '<label class="govuk-label govuk-!-font-weight-bold">' +
-    ' Country of registration</label>' +
-    '<div class="govuk-radios govuk-radios--inline pull-left">' +
-    '<div class="govuk-radios__item">' +
-    '<input class="govuk-radios__input" id="changed-name"  name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="UK" checked>' +
-    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label>' +
-    '</div></div>' +
-    '<div class="govuk-radios govuk-radios--inline pull-left">' +
-    '<div class="govuk-radios__item govuk-!-margin-right-0">' +
-    '<input class="govuk-radios__input" id="changed-name"  name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="Non-UK">' +
-    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"  for="changed-name"> Non-UK</label>' +
-    '</div></div>' +
-    '<div class="form-group pull-left govuk-!-margin-left-7 govuk-!-margin-top-1">' +
-    '<a href="javascript:void(0)" id="remove-create-flow" class="govuk-link govuk-body">Remove</a></div>' +
-    '</div></div>'
 
-  $('#vehicle-column').append(newRow);
+  var name = $("#vehicle-table thead>tr>th").first().text();
+
+  var rowlength = $('#vehicle-table tbody>tr').length;
+  var newHead = '<tr class="govuk-table__row">' +
+    '<th scope="col" class="govuk-table__header">' + name + '</th>' +
+    '<th scope="col" class="govuk-table__header">Country registration</th>' +
+    '<th scope="col" class="govuk-table__header">Action</th>' +
+    '<tr>';
+  var newRow = '<tr class="govuk-table__row">' +
+    '<td scope="row" class="govuk-table__header">' +
+    '<div class="govuk-form-group govuk-!-margin-bottom-0"> <input class="govuk-input govuk-input--width-20" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="text"></div></td>' +
+    '<td class="govuk-table__cell">' +
+    '<div class="govuk-radios govuk-radios--inline">' +
+    '<div class="govuk-radios__item govuk-!-margin-bottom-0">' +
+    '<input class="govuk-radios__input" id="changed-name" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="UK" checked>' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> UK</label>' +
+    '</div>' +
+    '<div class="govuk-radios govuk-radios--inline ">' +
+    '<div class="govuk-radios__item govuk-!-margin-right-0">' +
+    '<input class="govuk-radios__input" id="changed-name" name="' + 'vrm-' + (parseInt(rowlength) + 1) + '" type="radio" value="Non-UK" >' +
+    '<label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1" for="changed-name"> Non-UK</label>' +
+    '</div>' +
+    '</td>' +
+    '<td class="govuk-table__cell govuk-!-padding-top-3"><a href="javascript:void(0)" id="remove">Remove</a></td>' + '</tr>'
+
+  if (rowlength == 1) {
+    $('#vehicle-table thead>tr').remove();
+    $('#vehicle-table thead').append(newHead);
+  }
+  // $('#vehicle-table tbody tr:last').clone().insertAfter('#vehicle-table tbody tr:last');
+  $('#vehicle-table tbody>tr').last().after(newRow);
+
 
 });
 
