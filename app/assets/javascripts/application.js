@@ -149,6 +149,8 @@ $(document).ready(function () {
   });
 
 
+
+
   $("#login-btn").click(function () {
     $.fn.redirectPage("login");
   });
@@ -160,6 +162,10 @@ $(document).ready(function () {
   $(".touploaddoc").click(function () {
     $.fn.redirectPage("dashboard/vehicles/apply-lrds");
   });
+
+  $(".business-vehicles").click(function () {
+    $.fn.redirectPage("create-account/step-2/business-vehicles");
+  })
 
   // $(".multiple-vehicle").click(function () {
   //   $.fn.redirectPage("one-off-payment/payment-info/1");
@@ -710,4 +716,18 @@ $(".upload-find-vehicle").click(() => {
 
 $(".bulk-vehicle-confirm").click(() => {
   $.fn.redirectPage("one-off-payment/bulk-vehicle-confirm");
+})
+$("[name='no-of-vehicles']").change(() => {
+  $(".number-of-vehicles").prop("disabled", false);
+})
+
+$('.number-of-vehicles').click(() => {
+  let radioVal = $("[name='no-of-vehicles']:checked").val();
+  console.log(radioVal);
+  if (radioVal === "5") {
+
+    $.fn.redirectPage("create-account/step-3/vehicle-register");
+  } else if (radioVal === "10") {
+    $.fn.redirectPage("one-off-payment/bulk-upload");
+  }
 })

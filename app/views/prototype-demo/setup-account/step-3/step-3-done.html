@@ -1,7 +1,7 @@
 {% extends "prototype-layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -15,14 +15,14 @@
       This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
     </span>
   </p>
-</div>    
+</div>
 <a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper" id="main-content" role="main">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-0">
         Create an account - Summary
-      
+
       </h1>
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">
         You have selected
@@ -32,82 +32,84 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters govuk-!-padding-top-5">
 
-  {% if data['select-account'] === 'business-account' or data['personal-account-type'] === 'lrds' %}
-  <div class="govuk-grid-column-full govuk-!-padding-0">
-    <div class="pull-left">
-      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1">
-        <span class="check-icon"></span> 
-        {% if data['personal-account-type'] === 'lrds' %}
-        johndoe@gmail.com
-        {% elif (data['select-account'] === 'business-account') %}
-        doeplumbers@gmail.com
-        {% endif %}
- 
+      {% if data['select-account'] === 'business-account' or data['personal-account-type'] === 'lrds' %}
+      <div class="govuk-grid-column-full govuk-!-padding-0">
+        <div class="pull-left">
+          <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1">
+            <span class="check-icon"></span>
+            {% if data['personal-account-type'] === 'lrds' %}
+            johndoe@gmail.com
+            {% elif (data['select-account'] === 'business-account') %}
+            doeplumbers@gmail.com
+            {% endif %}
+
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
+            Your email address has been verified successfully
+          </p>
+        </div>
+        <div class="pull-right">
+          <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-full govuk-!-padding-0">
+        <div class="pull-left">
+          <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="check-icon"></span>
+            {% if data['personal-account-type'] === 'lrds' %}
+            LRDS - 10
+            {% elif (data['select-account'] === 'business-account') %}
+            You have selected
+            {% endif %}
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
+            {% if data['personal-account-type'] === 'lrds' %}
+            You have selected a local residents discount account (LRDS)
+            {% elif (data['select-account'] === 'business-account') %}
+            Business account
+            <br>
+            Auto top-up: by £200, when balance falls below £50
+            {% endif %}
+
+          </p>
+        </div>
+        <div class="pull-right">
+          <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-full govuk-!-padding-0">
+        <div class="pull-left">
+          <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="check-icon"></span> LO62
+            NRO</p>
+          <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
+            {% if data['personal-account-type'] === 'lrds' %}
+            Your selected vehicle
+            {% elif (data['select-account'] === 'business-account') %}
+            Your company vehicle has beed added
+            {% endif %}
+          </p>
+        </div>
+        <div class="pull-right">
+          <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
+        </div>
+      </div>
+
+
+      {% else %}
+      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-3"><span class="check-icon"></span> LO62 NRO
       </p>
-      <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
-        Your email address has been verified successfully
+      <p class="govuk-body govuk-!-margin-bottom-7">
+        Your vehicle has been added
       </p>
+
+      {% endif %}
+
+
+      <div class="govuk-form-group">
+        <button class="govuk-button" onclick="location.href='../step-2/initial-deposit'" data-module="govuk-button"
+          role="button" aria-label="Move to payment">Proceed to payment</button>
+      </div>
     </div>
-    <div class="pull-right">
-      <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
-    </div>
-  </div>
-  
-  <div class="govuk-grid-column-full govuk-!-padding-0">
-    <div class="pull-left">
-      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="check-icon"></span>
-        {% if data['personal-account-type'] === 'lrds' %}
-        LRDS - 10
-        {% elif (data['select-account'] === 'business-account') %}
-        You have selected
-        {% endif %}
-         </p>
-      <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
-        {% if data['personal-account-type'] === 'lrds' %}
-        You have selected a local residents discount account (LRDS)
-        {% elif (data['select-account'] === 'business-account') %}
-        Business account
-        <br>
-        Auto top-up: by £200, when balance falls below £50
-        {% endif %}
-        
-      </p>
-    </div>
-    <div class="pull-right">
-      <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
-    </div>
-  </div>
-  
-  <div class="govuk-grid-column-full govuk-!-padding-0">
-    <div class="pull-left">
-      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="check-icon"></span> LO62 NRO</p>
-      <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
-        {% if data['personal-account-type'] === 'lrds' %}
-        Your selected vehicle
-        {% elif (data['select-account'] === 'business-account') %}
-        Your company vehicle has beed added
-        {% endif %}
-      </p>
-    </div>
-    <div class="pull-right">
-      <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
-    </div>
-  </div>
- 
-  
-    {% else %}
-    <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-3"><span class="check-icon"></span> LO62 NRO</p>
-    <p class="govuk-body govuk-!-margin-bottom-7">
-      Your vehicle has been added 
-    </p>
-    
-    {% endif %}
-  
-  
-  <div class="govuk-form-group">
-    <button class="govuk-button payments" data-module="govuk-button" role="button" aria-label="Move to payment"
-      >Proceed to payment</button>
-  </div>
-</div>
-{% include "../setup-acct-bottom-container.html" %}
-{% endblock %}
+    {% include "../setup-acct-bottom-container.html" %}
+    {% endblock %}

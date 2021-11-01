@@ -35,7 +35,32 @@ GOV.UK Prototype Kit
         </button>
     </div>
 
+
 </div>
+{% if data['select-account'] === 'business-account' %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Bulk upload
+                </span>
+            </summary>
+            <p class="govuk-body govuk-!-margin-top-2">Use the Bulk Upload functionality to manage your group names,
+                along
+                with
+                adding <br>
+                and deleting vehicles. See the <a href="javascript:void(0)" class="govuk-link">Bulk Upload Guide</a> for
+                details.</p>
+            </p>
+
+            <p class="govuk-body">You can use the bulk upload template to add multiple vehicles to your account.<br>
+                <a href="javascript:void(0)" class="govuk-link"> Download bulk upload template (CSV)</a> </p>
+        </details>
+    </div>
+</div>
+{% endif %}
+
 </div>
 
 
