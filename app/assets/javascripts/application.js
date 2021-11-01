@@ -385,9 +385,11 @@ $("[name='select-account']").change(function () {
   $("#" + val + "-hint").css("display", "block");
   console.log(val);
   if (val === 'perosnal-account') {
-    $("#business-account-hint").css("display", "none");
+    $("#business-account-hint").css("display", "none");    
+    $("#personal-account-hint").css("display", "block");
   } else if (val === 'business-account') {
     $("#personal-account-hint").css("display", "none");
+    $("#business-account-hint").css("display", "block");
   }
 });
 

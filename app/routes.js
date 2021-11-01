@@ -82,7 +82,7 @@ router.post("/create-account/step-2/select-account", function (req, res) {
 
 router.get("/create-account/step-2/initial-deposit", function (req, res) {
   res.render("prototype-demo/setup-account/step-2/initial-deposit", {
-    step: 2
+    step: 4
   });
 });
 
@@ -189,6 +189,34 @@ router.get("/create-account/step-3/step-3-done", function (req, res) {
   data["step"] = 3;
   data["section"] = "step-3-done";
   res.render("prototype-demo/setup-account/step-3/step-3-done", data);
+});
+
+
+router.get("/create-account/step-3/vehicle-upload-details", function (req, res) {
+  const {
+    data
+  } = req.session;
+  data["step"] = 3;
+  data["section"] = "vehicle-upload-details";
+  res.render("prototype-demo/setup-account/step-3/vehicle-upload-details", data);
+});
+
+router.get("/create-account/step-3/vehicle-upload-edit", function (req, res) {
+  const {
+    data
+  } = req.session;
+  data["step"] = 3;
+  data["section"] = "vehicle-upload-edit";
+  res.render("prototype-demo/setup-account/step-3/vehicle-upload-edit", data);
+});
+
+router.get("/create-account/step-3/vehicle-upload-confirm", function (req, res) {
+  const {
+    data
+  } = req.session;
+  data["step"] = 3;
+  data["section"] = "vehicle-upload-confirm";
+  res.render("prototype-demo/setup-account/step-3/vehicle-upload-confirm", data);
 });
 
 // step-3 in account setup end
