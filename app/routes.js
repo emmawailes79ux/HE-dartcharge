@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const landingData = require("./data/landingData");
+const landingData = require("./data/landing-data");
 const dashboardData = require("./data/dashboard-data");
 const {
   red

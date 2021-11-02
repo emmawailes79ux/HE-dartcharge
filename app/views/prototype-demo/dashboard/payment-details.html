@@ -7,14 +7,14 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 divider">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
                 <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Payments</h1>
                 <p class="govuk-body">Payments can take up to 48 hours to appear on your account</p>
             </div>
             <div class="govuk-grid-column-full govuk-!-margin-bottom-7">
-                <ul class="table-sort-box-block govuk-!-margin-0  govuk-!-padding-0 govuk-grid-row">
+                <ul class="app-!-table-sort-box-block govuk-!-margin-0  govuk-!-padding-0 govuk-grid-row">
                     <li>
                         <div class="govuk-radios govuk-radios--small">
                             <div class="govuk-radios__item">
@@ -63,25 +63,25 @@
                 </ul>
             </div>
             <div class="govuk-grid-column-full">
-                <p class="table-info-text govuk-body-s">Clicking on columns headers will refresh the data sorted by the chosen heading</p>
-                <div class="table-scroll">
-                  <div class="govuk-table-list-container govuk-tbl-column">
-                    <div class="govuk-table-list-row table-header">
+                <p class="app-!-table-info-text govuk-body-s">Clicking on columns headers will refresh the data sorted by the chosen heading</p>
+                <div class="app-!-table-scroll">
+                  <div class="app-!-table-list-container app-!-tbl-column">
+                    <div class="app-!-table-list-row app-!-table-header">
                       {% for head in dashboardData.paymentListHead %}
-                      <div  class="govuk-table-list-cell govuk-body-s" >
+                      <div  class="app-!-table-list-cell govuk-body-s" >
                         {{ head }}
                       </div>
                       {% endfor %}
                     </div>
                     {% for paymentItem in dashboardData.paytransactionList %}
-                    <div class="govuk-table-list-row table-body tabular-flex-row" >
-                        <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+                    <div class="app-!-table-list-row app-!-table-body app-!-tabular-flex-row" >
+                        <h3 class="app-!-table-list-cell app-!-tabular-flex-col govuk-body-s">
                           {{ paymentItem.postingDate }}
                         </h3>
-                        <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+                        <h3 class="app-!-table-list-cell app-!-tabular-flex-col govuk-body-s">
                           £ {{ paymentItem.amount}}
                         </h3>
-                        <h3 class="govuk-table-list-cell tabular-flex-col govuk-body-s">
+                        <h3 class="app-!-table-list-cell app-!-tabular-flex-col govuk-body-s">
                           {{ paymentItem.refNumber}}
                         </h3>
                     </div>

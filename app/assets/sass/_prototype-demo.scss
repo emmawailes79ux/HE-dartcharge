@@ -1,76 +1,9 @@
-.govuk-panel--card{
-    color: #ffffff;
-    background: #f2f2f2;
-    text-align: left;
-    padding: 20px;
-    border: 1px solid #cbcbcb;
-    margin: 15px;
-  }
-  
-  .govuk-panel--card-button{width: 100%;}
-  .govuk-grid-cardpanel-1{width: 40%; float: left; }
-  .govuk-grid-cardpanel-2{width: 30%; float: left;}
-  .govuk-grid-cardpanel-3{width: 30%; float: left; }
-  .govuk-panel--card-cotent { min-height: 270px; }
-  
-   @media only screen and (max-width: 768px) {
-    .govuk-grid-cardpanel-1, .govuk-grid-cardpanel-2, .govuk-grid-cardpanel-3{width: 100%; }
-    .govuk-panel--card-cotent { min-height: auto; }
-  }
-
-
-/* right verification steps css */
-
-.account-steps-block{
-  overflow: hidden;
-}
-.account-step{ 
-  position: relative; padding-left: 50px; height: 36px; display: inline-table;  width: 100%;  margin-top: 10px;
-  .step{
-      position: absolute;  left: 0;  width: 36px; height: 36px; background: #ffffff;  border: 1px solid #9e9e9e;  border-radius: 50px;  font-size: 18px;  font-family: "GDS Transport", arial, sans-serif;  font-weight: bold;  text-align: center;  line-height: 34px;
-  }
-  .step-name{ 
-      border-bottom: 1px solid #9e9e9e; padding-bottom: 10px;
-  }
-  .step-name *{
-      margin-bottom: 0px; line-height: 1.9;
-  }   
-  .step-title{
-     color: #555555;
-  }
-}
-.account-step.active{
-  .step{ 
-      background: #1b1b1b; border: 1px solid #9e9e9e; color: #ffffff;
-      .step-title{font-weight: 700;}
-  } 
-  .step-title{
-      color: #000000;
-  }
-}
-.account-step.complete{
-  .step{
-       border: 2px solid #128b48; font-size: 0px; background: #00703c;
-  }    
-}
-.account-step::before { 
-  content: "";  width: 1px;  height: 130%; background: #ccc;  position: absolute;   display: block;  left: 17px; 
-}
-.account-step.complete .step::after{ 
-  content: ""; display: inline-block; transform: rotate(45deg);  height: var(--height);  width: var(--width);  border-bottom: var(--borderWidth) solid var(--borderColor);    border-right: var(--borderWidth) solid var(--borderColor); --borderWidth: 3px;  --height: 12px;    --width: 4px;  --borderColor: #ffffff; margin-left: 0px;  margin-top: 10px;  
-}
-
-/* end - right verification steps css */
-
-
-/*Confirm verification component icon css*/ 
-
-.check-icon {
+.app-\!-check-icon {
   position: relative; width: 44px;
   height: 24px;
   display: inline-block;
 }
-.check-icon::before {
+.app-\!-check-icon::before {
   position: absolute;
   content: "";
   background: #00703c;
@@ -78,7 +11,7 @@
   width: 36px;
   height: 36px;
 }
-.check-icon::after {
+.app-\!-check-icon::after {
   display: inline-block;
   transform: rotate(45deg);
   height: var(--height);
@@ -96,11 +29,8 @@
   left: 0;
 }
 
-/*Confirm verification component icon css*/ 
-
-
-.topup-methods .radio-select-content{  position: relative; }
-.topup-methods .radio-select::before {
+.app-\!-topup-methods .app-\!-radio-select-content{  position: relative; }
+.app-\!-topup-methods .app-\!-radio-select::before {
     content: "";
     width: 4px;
     height: 100%;
@@ -111,37 +41,40 @@
 }
 
 
-.detail-inner-page-margin {
+.app-\!-detail-inner-page-margin {
   margin-top: -50px;
 }
 
-.table-remove-check{position: relative;}
-.govuk-checkboxes--small.table-remove-check .govuk-checkboxes__label:before {
-  top: 8px;
-  width: 18px;
-  height: 18px;
+.app-\!-table-remove-check{
+  position: relative;
+  .govuk-checkboxes__label:before {
+    top: 8px;
+    width: 18px;
+    height: 18px;
+  }
+  .govuk-checkboxes__label:after {
+    top: 13px;
+    left: 4px;
+    width: 10px;
+    height: 5.5px;
+    border-width: 0 0 2px 2px;
+  }
+  .govuk-checkboxes__item{
+    position: absolute;
+    top: -22px;
+  }
 }
-.govuk-checkboxes--small.table-remove-check .govuk-checkboxes__label:after {
-  top: 13px;
-  left: 4px;
-  width: 10px;
-  height: 5.5px;
-  border-width: 0 0 2px 2px;
-}
-.govuk-checkboxes--small.table-remove-check .govuk-checkboxes__item{
-  position: absolute;
-  top: -22px;
-}
-.table-remove-check .govuk-checkboxes__input:focus + .govuk-checkboxes__label:before {
+
+.app-\!-table-remove-check .govuk-checkboxes__input:focus + .govuk-checkboxes__label:before {
   border-width: 2px;
   box-shadow: 0 0 0 2px #ffdd00;
 }
 
 @media (max-width: 40.0625em) {
-.table-scroll{overflow-x: scroll;}
+.app-\!-table-scroll{overflow-x: scroll;}
 }
 
-.label-img {
+.app-\!-payment-option-label {
   display: flex;
   align-items: center;
   img{
@@ -149,7 +82,5 @@
     margin-right: 10px;
     border: 1px solid #ccc;
     padding: 2px 5px;
-  }
-  > * {
   }
 }

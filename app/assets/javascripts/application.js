@@ -12,7 +12,7 @@ $(document).ready(function () {
     $(".account-type").prop("disabled", false);
   });
 
-  $("#navigation li:last").addClass("welcomemenu");
+  $("#navigation li:last").addClass("app-!-welcomemenu");
 
   $("[name='personal-account-type']").change(function () {
     $(".prsl-acct-type").prop("disabled", false);
