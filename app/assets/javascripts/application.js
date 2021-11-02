@@ -728,13 +728,13 @@ $("[name='no-of-vehicles']").change(() => {
   $(".number-of-vehicles").prop("disabled", false);
 })
 
-$('.number-of-vehicles').click(() => {
-  let radioVal = $("[name='no-of-vehicles']:checked").val();
-  console.log(radioVal);
-  if (radioVal === "5") {
+// $('.number-of-vehicles').click(() => {
+//   let radioVal = $("[name='no-of-vehicles']:checked").val();
+//   console.log(radioVal);
+//   if (radioVal === "5") {
 
-    $.fn.redirectPage("create-account/step-3/vehicle-register");
-  } else if (radioVal === "10") {
-    $.fn.redirectPage("one-off-payment/bulk-upload");
-  }
-})
+//     $.fn.redirectPage("create-account/step-3/vehicle-register");
+//   } else if (radioVal === "10") {
+//     $.fn.redirectPage("one-off-payment/bulk-upload");
+//   }
+// })

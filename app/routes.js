@@ -832,10 +832,20 @@ router.get("/create-account/step-2/business-vehicles", function (req, res) {
   const {
     data
   } = req.session;
-
+  
   res.render("prototype-demo/setup-account/step-2/number-of-vehicles", {
     step: 3,
   });
+});
+
+router.post("/create-account/step-2/business-vehicles", function (req, res) {
+  if(req.body['no-of-vehicles']) {
+    if(req.body['no-of-vehicles'] === '5') {
+      res.redirect("../step-3/vehicle-register")
+    } else if(req.body['no-of-vehicles'] === '10') {
+      res.redirect("../../one-off-payment/bulk-upload");
+    }
+  }
 });
 
 router.get(
