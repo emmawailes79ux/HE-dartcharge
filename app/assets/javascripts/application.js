@@ -303,6 +303,14 @@ $(".proceed-to-pay-continue").click(() => {
   $.fn.redirectPage("one-off-payment/payment-info-confirm");
 
 });
+$(".nominate-contact").click(() => {
+  $.fn.redirectPage("dashboard/nominated-user/nominated-user-form");
+
+});
+$(".nominated-user-form").click(() => {
+  $.fn.redirectPage("dashboard/nominated-user/nominated-user-detail");
+
+});
 $("[name='option-payment']").change(() => {
   $(".paymentoptionBtn").prop("disabled", false);
 });

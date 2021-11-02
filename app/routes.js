@@ -659,6 +659,22 @@ router.get("/dashboard/account/payment-method", function (req, res) {
   });
 });
 
+router.get("/dashboard/nominated-user/nominated-user-form", function (req, res) {
+  res.render("prototype-demo/dashboard/nominated-user/nominated-user-form", {
+    section: "nominated-user",
+  });
+});
+router.get("/dashboard/nominated-user/nominated-user", function (req, res) {
+  res.render("prototype-demo/dashboard/nominated-user/nominated-user", {
+    section: "nominated-user",
+  });
+});
+router.get("/dashboard/nominated-user/nominated-user-detail", function (req, res) {
+  res.render("prototype-demo/dashboard/nominated-user/nominated-user-detail", {
+    section: "nominated-user",
+  });
+});
+
 router.get("/dashboard/account/add-new-card", function (req, res) {
   res.render("prototype-demo/dashboard/account/add-new-card");
 });
