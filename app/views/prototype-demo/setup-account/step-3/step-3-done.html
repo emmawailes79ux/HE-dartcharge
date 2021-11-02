@@ -109,9 +109,14 @@ GOV.UK Prototype Kit
         <button class="govuk-button" onclick="location.href='../step-4/initial-deposit'" data-module="govuk-button"
           role="button" aria-label="Move to payment">Proceed to payment</button>
       </div>
-      {% else %}
+      {% elif (data['personal-account-type'] === 'lrds') %}
       <div class="govuk-form-group">
         <button class="govuk-button" onclick="location.href='../step-2/initial-deposit'" data-module="govuk-button"
+          role="button" aria-label="Move to payment">Proceed to payment</button>
+      </div>
+      {% else %}
+      <div class="govuk-form-group">
+        <button class="govuk-button" onclick="location.href='../step-4/payments'" data-module="govuk-button"
           role="button" aria-label="Move to payment">Proceed to payment</button>
       </div>
       {% endif %}
