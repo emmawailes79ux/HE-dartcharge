@@ -22,15 +22,19 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="govuk-inset-text govuk-!-margin-top-0">
-            <p class="govuk-body govuk-!-margin-bottom-0"> Dartford Crossing charges for 7 vehicles.
+            <p class="govuk-body govuk-!-margin-bottom-1"> <strong>5 vehicles</strong> has 5 <strong>unpaid
+                </strong>Dartford Crossing charges.
             </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Number of <strong>payable</strong> Dartford Crossing:5</li>
+            </ul>
         </div>
     </div>
 
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <table class="govuk-table payment-table">
+        <table class="govuk-table payment-table" id="future-test">
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header">Crossings</th>
@@ -41,64 +45,315 @@ GOV.UK Prototype Kit
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">
-                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
-                            <summary class="govuk-details__summary">
-                                <span class="govuk-details__summary-text">
-                                    Unpaid Crossings
-                                </span>
-                            </summary>
-                            <!-- <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO63NRO</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">MN62NRO</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO62NRO</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">GJ71KRO</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p> -->
-                        </details>
+                        Unpaid Crossings
                     </th>
                     <td class="govuk-table__cell">
-                        <strong>10</strong>
+                        <strong>05</strong>
                     </td>
-                    <td id="future-amt" class="govuk-table__cell">
-                        £ 22.50
+                    <td id="future-amt" class="govuk-table__cell govuk-!-padding-left-2">
+                        £ 12.5
                     </td>
                 </tr>
                 <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header">
-                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                    <td colspan="3">
+                        <details
+                            class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-4 govuk-!-margin-bottom-3"
+                            data-module="govuk-details">
                             <summary class="govuk-details__summary">
                                 <span class="govuk-details__summary-text">
-                                    Future Crossings
+                                    5 Vehicles
                                 </span>
                             </summary>
-                            <!-- <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO63NRO</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">MN62NRO</p>
-                            <p class="govuk-caption-m govu  k-!-margin-bottom-2 govuk-!-margin-left-4">LO62NRO</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">GJ71KRO</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
-                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p> -->
+                            <table class="govuk-table">
+                                <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell" style="width: 250px;">
+                                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">
+                                                NA62ROP</p>
+                                        </td>
+                                        <td class="govuk-table__cell govuk-!-margin-left-6">
+                                            <div id="future-crossing-selectbox"
+                                                class="govuk-form-group select-box govuk-!-margin-bottom-0">
+                                                <label class="govuk-label govuk-!-margin-bottom-1"
+                                                    for="trips-future-crossing">
+                                                    <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                                        name="trips-future-crossing">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell" style="text-align: center;">
+                                            £ 2.50
+                                        </td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-!-padding-right-2">
+                                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">
+                                                LO62NRO</p>
+                                        </td>
+                                        <td class="govuk-table__cell govuk-!-margin-left-6">
+                                            <div id="future-crossing-selectbox"
+                                                class="govuk-form-group select-box govuk-!-margin-bottom-0">
+                                                <label class="govuk-label govuk-!-margin-bottom-1"
+                                                    for="trips-future-crossing">
+                                                    <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                                        name="trips-future-crossing">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell" style="text-align: center;">
+                                            £ 2.50
+                                        </td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-!-padding-right-2">
+                                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">
+                                                GJ71KRO</p>
+                                        </td>
+                                        <td class="govuk-table__cell govuk-!-margin-left-6">
+                                            <div id="future-crossing-selectbox"
+                                                class="govuk-form-group select-box govuk-!-margin-bottom-0">
+                                                <label class="govuk-label govuk-!-margin-bottom-1"
+                                                    for="trips-future-crossing">
+                                                    <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                                        name="trips-future-crossing">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell" style="text-align: center;">
+                                            £ 2.50
+                                        </td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-!-padding-right-2">
+                                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">
+                                                CK16NRH</p>
+                                        </td>
+                                        <td class="govuk-table__cell govuk-!-margin-left-6">
+                                            <div id="future-crossing-selectbox"
+                                                class="govuk-form-group select-box govuk-!-margin-bottom-0">
+                                                <label class="govuk-label govuk-!-margin-bottom-1"
+                                                    for="trips-future-crossing">
+                                                    <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                                        name="trips-future-crossing">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell" style="text-align: center;">
+                                            £ 2.50
+                                        </td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-!-padding-right-2">
+                                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">
+                                                LO6ANBG</p>
+                                        </td>
+                                        <td class="govuk-table__cell govuk-!-margin-left-6">
+                                            <div id="future-crossing-selectbox"
+                                                class="govuk-form-group select-box govuk-!-margin-bottom-0">
+                                                <label class="govuk-label govuk-!-margin-bottom-1"
+                                                    for="trips-future-crossing">
+                                                    <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                                        name="trips-future-crossing">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell" style="text-align: center;">
+                                            £ 2.50
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
                         </details>
-                    </th>
-                    <td class="govuk-table__cell">
-                        <div id="future-crossing-selectbox" class="govuk-form-group select-box govuk-!-margin-bottom-0">
-                            <label class="govuk-label govuk-!-margin-bottom-1" for="trips-future-crossing">
-                                <select class="govuk-select govuk-!-margin-right-2 " id="sort"
-                                    name="trips-future-crossing">
-                                    <option value="1" selected>1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </label>
-                        </div>
-                    </td>
-                    <td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3">
-                        £ 18.50
                     </td>
                 </tr>
+                <tr class="govuk-table__row" id="future-old">
+                    <th scope="row" class="govuk-table__header"> Future Crossings
+                    </th>
+                    <td class="govuk-table__cell">
+                        00
+                    </td>
+                    <td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3 govuk-!-padding-left-2">
+                        £ 00
+                    </td>
+                </tr>
+                <tr class="govuk-table__row future-new" style="display: none;">
+                    <th scope="row" class="govuk-table__header"> Future Crossings
+                    </th>
+                    <td class="govuk-table__cell">
+                        05
+                    </td>
+                    <td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3 govuk-!-padding-left-2">
+                        £ 12.5
+                    </td>
+                </tr>
+                <tr class="govuk-table__row future-new" style="display: none;">
+                    <td colspan="3">
+                        <details class="govuk-details govuk-!-margin-bottom-0 govuk-!-margin-top-3"
+                            data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    5 Vehicles
+                                </span>
+                            </summary>
+                            <table class="govuk-table">
+                                <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-!-padding-right-2" style="width: 250px;">
+                                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">
+                                                NA62ROP</p>
+                                        </td>
+                                        <td class="govuk-table__cell govuk-!-margin-left-6">
+                                            <div id="future-crossing-selectbox"
+                                                class="govuk-form-group select-box govuk-!-margin-bottom-0">
+                                                <label class="govuk-label govuk-!-margin-bottom-1"
+                                                    for="trips-future-crossing">
+                                                    <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                                        name="trips-future-crossing">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell" style="text-align: center;">
+                                            £ 2.50
+                                        </td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-!-padding-right-2">
+                                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">
+                                                LO62NRO</p>
+                                        </td>
+                                        <td class="govuk-table__cell govuk-!-margin-left-6">
+                                            <div id="future-crossing-selectbox"
+                                                class="govuk-form-group select-box govuk-!-margin-bottom-0">
+                                                <label class="govuk-label govuk-!-margin-bottom-1"
+                                                    for="trips-future-crossing">
+                                                    <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                                        name="trips-future-crossing">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell" style="text-align: center;">
+                                            £ 2.50
+                                        </td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-!-padding-right-2">
+                                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">
+                                                GJ71KRO</p>
+                                        </td>
+                                        <td class="govuk-table__cell govuk-!-margin-left-6">
+                                            <div id="future-crossing-selectbox"
+                                                class="govuk-form-group select-box govuk-!-margin-bottom-0">
+                                                <label class="govuk-label govuk-!-margin-bottom-1"
+                                                    for="trips-future-crossing">
+                                                    <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                                        name="trips-future-crossing">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell" style="text-align: center;">
+                                            £ 2.50
+                                        </td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-!-padding-right-2">
+                                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">
+                                                CK16NRH</p>
+                                        </td>
+                                        <td class="govuk-table__cell govuk-!-margin-left-6">
+                                            <div id="future-crossing-selectbox"
+                                                class="govuk-form-group select-box govuk-!-margin-bottom-0">
+                                                <label class="govuk-label govuk-!-margin-bottom-1"
+                                                    for="trips-future-crossing">
+                                                    <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                                        name="trips-future-crossing">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell" style="text-align: center;">
+                                            £ 2.50
+                                        </td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell govuk-!-padding-right-2">
+                                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">
+                                                LO6ANBG</p>
+                                        </td>
+                                        <td class="govuk-table__cell govuk-!-margin-left-6">
+                                            <div id="future-crossing-selectbox"
+                                                class="govuk-form-group select-box govuk-!-margin-bottom-0">
+                                                <label class="govuk-label govuk-!-margin-bottom-1"
+                                                    for="trips-future-crossing">
+                                                    <select class="govuk-select govuk-!-margin-right-2 " id="sort"
+                                                        name="trips-future-crossing">
+                                                        <option value="1" selected>1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell" style="text-align: center;">
+                                            £ 2.50
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </details>
+                    </td>
+                </tr>
+
             </tbody>
         </table>
+        <div class="govuk-!-margin-bottom-4"><a href="javascript:void(0)"
+                class="govuk-link govuk-body future-crossing ">Add</a></div>
     </div>
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-form-group app-!-pull-left">
@@ -107,11 +362,11 @@ GOV.UK Prototype Kit
             <div class="govuk-input__wrapper govuk-grid-column-two-third">
                 <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
                 <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3"
-                    id="amount" name="amount" value="41.00" type="number" aria-describedby="amount" spellcheck="false">
+                    id="amount" name="amount" value="12.50" type="number" aria-describedby="amount" spellcheck="false">
             </div>
         </div>
-        <div class="app-!-pull-left">
-            <a href="#" class="govuk-link">Download PDF</a>
+        <div class="app-!-pull-right">
+            <a href="javascript:void(0)" class="govuk-link govuk-body">Download PDF</a>
         </div>
     </div>
 

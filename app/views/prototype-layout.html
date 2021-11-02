@@ -33,16 +33,16 @@
 
 
 {% block head %}
-  {% include "includes/head.html" %}
+{% include "includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
+{# Set serviceName in config.js. #}
+{{ govukHeader({
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "/home",
@@ -56,10 +56,14 @@
 
 
 {% if useAutoStoreData %}
-  {% block footer %}
-    {{ govukFooter({
+{% block footer %}
+{{ govukFooter({
       meta: {
         items: [
+        {
+          href: "/prototype-demo/faq",
+          text: "FAQ"
+        },
           {
             href: "https://govuk-prototype-kit.herokuapp.com/",
             text: "GOV.UK Prototype Kit " + releaseVersion
@@ -71,13 +75,13 @@
         ]
       }
     }) }}
-  {% endblock %}
+{% endblock %}
 {% endif %}
 
 {% block bodyEnd %}
-  {% block scripts %}
-    {% include "includes/scripts.html" %}
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% block scripts %}
+{% include "includes/scripts.html" %}
+{% block pageScripts %}{% endblock %}
+{% endblock %}
+<!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}

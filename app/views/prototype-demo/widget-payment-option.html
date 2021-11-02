@@ -1,8 +1,10 @@
+
 <div class="govuk-form-group">
-    <div class="govuk-heading-m">
-       Please select the preferred payment method.
-    </div>
-    <div class="govuk-tabs govuk-grid-column-two-thirds govuk-!-padding-0" data-module="govuk-tabs">
+  <div class="govuk-heading-m">
+     Please select the preferred payment method.
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-tabs govuk-grid-column-two-thirds" data-module="govuk-tabs">
       <h2 class="govuk-tabs__title">
         Contents
       </h2>
@@ -29,15 +31,15 @@
           <input class="govuk-radios__input" id="paypal" name="option-payment" type="radio"
               value="paypal" >
           
-          <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 .app-!-payment-option-label" for="paypal">
+          <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 app-!-payment-option-label" for="paypal">
             <img src="/public/images/paypal_icon.png"  alt="paypal" />
-              <span>Paypal</span>
+              <span>PayPal</span>
           </label>
         </div>
         <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="google-pay" name="option-payment" type="radio"
                 value="google-pay" >
-            <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 .app-!-payment-option-label" for="google-pay">
+            <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 app-!-payment-option-label" for="google-pay">
               <img src="/public/images/gpay_icon.png"  alt="Google pay" />
                 <span>Google pay</span>
             </label>
@@ -60,7 +62,7 @@
 
 
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
-       
+      
         <div class="govuk-form-group govuk-!-margin-bottom-2">
           <label class="govuk-label govuk-!-font-weight-bold " for="card-number">Card number</label>
           <span class="govuk-error-message card-number-error" style="display: none">
@@ -169,5 +171,8 @@
               aria-label="Proceed to payment">Proceed to payment</button>
         </div>
       </div>
+    
+    
     </div>
+  </div>
 </div>

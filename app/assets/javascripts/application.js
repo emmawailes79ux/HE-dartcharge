@@ -565,6 +565,12 @@ $(".create-flow-add-vehicle").click(() => {
 
 });
 
+$('.future-crossing').click(() => {
+  $("#future-test >tbody").find('.future-new').show();
+  $("#future-test >tbody").find('#future-old').hide();
+
+})
+
 $(document).on('click', '#remove-create-flow', function () {
   $(this).parent('div').parent('div').parent('div').remove();
   return false;
@@ -730,13 +736,13 @@ $("[name='no-of-vehicles']").change(() => {
   $(".number-of-vehicles").prop("disabled", false);
 })
 
-$('.number-of-vehicles').click(() => {
-  let radioVal = $("[name='no-of-vehicles']:checked").val();
-  console.log(radioVal);
-  if (radioVal === "5") {
+// $('.number-of-vehicles').click(() => {
+//   let radioVal = $("[name='no-of-vehicles']:checked").val();
+//   console.log(radioVal);
+//   if (radioVal === "5") {
 
-    $.fn.redirectPage("create-account/step-3/vehicle-register");
-  } else if (radioVal === "10") {
-    $.fn.redirectPage("one-off-payment/bulk-upload");
-  }
-})
+//     $.fn.redirectPage("create-account/step-3/vehicle-register");
+//   } else if (radioVal === "10") {
+//     $.fn.redirectPage("one-off-payment/bulk-upload");
+//   }
+// })
