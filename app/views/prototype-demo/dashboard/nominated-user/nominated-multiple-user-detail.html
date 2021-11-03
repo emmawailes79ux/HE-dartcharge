@@ -1,194 +1,209 @@
 {% extends "../dashboard-layout.html" %}
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters app-!-divider">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
-                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Profile</h1>
-                <div class="dashboard-card-container">
-                    <div class="dashboard-card-heading">
-                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2 pull-left">Nominated contact</p>
-                    </div>
-                </div>
-                <div class="app-!-bottom-line"></div>
-            </div>
-            <div class="govuk-grid-column-full">
-
-            
-                <div class="govuk-body govuk-!-margin-bottom-4">You can nominate an additional 2 of 5 users for your account</div>
-         
-                  <div class="govuk-button-group govuk-!-margin-top-2 govuk-!-margin-bottom-7">
-                    <button  data-module="govuk-button" class="govuk-button" value="Nominate contact" type="submit" role="button"
-                        aria-label="Nominate contact" >Nominate contact</button>
-                  </div>
-               
-
-                 
-
-
-
-                  <div class="govuk-tabs" data-module="govuk-tabs">
-               
-                    <ul class="govuk-tabs__list">
-                      <li class="govuk-tabs__list-item ">
-                        <a class="govuk-tabs__tab" href="#nominatedusers">
-                          Nominated contacts
-                        </a>
-                      </li>
-                      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-                        <a class="govuk-tabs__tab" href="#activitylog">
-                          Activity log
-                        </a>
-                      </li>
-                    </ul>
-                    <div class="govuk-tabs__panel  govuk-tabs__panel--hidden" id="nominatedusers">
-    
-    
-                      <div class="govuk-!-margin-bottom-7">
-                        <div class="app-!-dashboard-card-container">
-                          <div class="app-!-dashboard-card-heading">
-                              <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-0 app-!-pull-left">Peter Paul</p>
-                          </div>
-                          <p><strong class="govuk-tag govuk-tag--green">ACTIVE</strong></p>                    
-                        </div> 
-                        <table class="govuk-table govuk-!-margin-bottom-4">
-                          <tbody class="govuk-table__body">
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Email ID</th>
-                              <td class="govuk-table__cell">peter.paul@gmail.com</td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Mobile Number</th>
-                              <td class="govuk-table__cell">0123456</td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Rights</th>
-                              <td class="govuk-table__cell">Account Data</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <div class="govuk-button-group">
-                          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Edit
-                          </button>
-                          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Disable
-                          </button>
-                          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Remove
-                          </button>
-                        </div>
-                      </div> 
-
-                      <div class="govuk-!-margin-bottom-7">
-                        <div class="app-!-dashboard-card-container">
-                          <div class="app-!-dashboard-card-heading">
-                              <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-0 app-!-pull-left">Adam Paul</p>
-                          </div>
-                          <p><strong class="govuk-tag govuk-tag--yellow">PENDING</strong></p>                    
-                        </div> 
-                        <table class="govuk-table govuk-!-margin-bottom-4">
-                          <tbody class="govuk-table__body">
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Email ID</th>
-                              <td class="govuk-table__cell">adam.paul@gmail.com</td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Mobile Number</th>
-                              <td class="govuk-table__cell">0123456</td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Rights</th>
-                              <td class="govuk-table__cell">Account Data</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <div class="govuk-button-group">
-                          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Edit
-                          </button>
-                          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Resend
-                          </button>
-                          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Revoke request
-                          </button>
-                        </div>
-                      </div>
-
-
-                      <div class="govuk-!-margin-bottom-7">
-                        <div class="app-!-dashboard-card-container">
-                          <div class="app-!-dashboard-card-heading">
-                              <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-0 app-!-pull-left">John</p>
-                          </div>
-                          <p><strong class="govuk-tag govuk-tag--orange">DECLINED</strong></p>                    
-                        </div> 
-                        <table class="govuk-table govuk-!-margin-bottom-4">
-                          <tbody class="govuk-table__body">
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Email ID</th>
-                              <td class="govuk-table__cell">john@gmail.com</td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Mobile Number</th>
-                              <td class="govuk-table__cell">0123456</td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                              <th scope="row" class="govuk-table__header">Rights</th>
-                              <td class="govuk-table__cell">Account Data</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                        <div class="govuk-button-group">
-                          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Resend
-                          </button>
-                          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Remove
-                          </button>
-                        </div>
-                      </div> 
-        
-    
-                    </div>
-                    <div class="govuk-tabs__panel" id="activitylog">
-                      
-                      <div class="govuk-form-group">
-                        <select class="govuk-select" id="sort" name="sort">
-                          <option value="sort" selected>Sort by</option>
-                          <option value="month">Month updated</option>
-                        </select>
-                      </div>
-                      
-                      <p class="govuk-body govuk-!-margin-bottom-1">23 Oct 2021, 11.21AM</p>
-                      <p class="govuk-body govuk-!-margin-bottom-4">Peter Paul has added a <a href="#" class="govuk-link">FE23GDF</a> to vehicle list</p>
-                      
-                      <p class="govuk-body govuk-!-margin-bottom-1">23 Oct 2021, 10.21AM</p>
-                      <p class="govuk-body govuk-!-margin-bottom-4">Peter Paul has made a <a href="#" class="govuk-link">payment for 3 vehicles</a></p>
-        
-                      <p class="govuk-body govuk-!-margin-bottom-1">22 Oct 2021, 09.21AM</p>
-                      <p class="govuk-body govuk-!-margin-bottom-4">Peter Paul has changed the <a href="#" class="govuk-link">payment method</a></p>
-        
-        
-                  
-                    </div>
-                  </div> 
-
-
-
-
-            </div>
-            
+  <div class="govuk-grid-column-three-quarters app-!-divider">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Profile</h1>
+        <div class="dashboard-card-container">
+          <div class="dashboard-card-heading">
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2 pull-left">Nominated contact</p>
+          </div>
         </div>
-        
+        <div class="app-!-bottom-line"></div>
+      </div>
+      <div class="govuk-grid-column-full">
+
+
+        <div class="govuk-body govuk-!-margin-bottom-4">You can nominate an additional 2 of 5 users for your account
+        </div>
+
+        <div class="govuk-button-group govuk-!-margin-top-2 govuk-!-margin-bottom-7">
+          <button data-module="govuk-button" class="govuk-button" value="Nominate contact" type="submit" role="button"
+            aria-label="Nominate contact">Nominate contact</button>
+        </div>
+
+
+
+
+
+
+        <div class="govuk-tabs" data-module="govuk-tabs">
+
+          <ul class="govuk-tabs__list">
+            <li class="govuk-tabs__list-item ">
+              <a class="govuk-tabs__tab" href="#nominatedusers">
+                Nominated contacts
+              </a>
+            </li>
+            <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+              <a class="govuk-tabs__tab" href="#activitylog">
+                Activity log
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-tabs__panel  govuk-tabs__panel--hidden" id="nominatedusers">
+
+
+            <div class="govuk-!-margin-bottom-7 card">
+              <div class="app-!-dashboard-card-container">
+                <div class="app-!-dashboard-card-heading">
+                  <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-0 app-!-pull-left">Peter Paul
+                  </p>
+                </div>
+                <p><strong class="govuk-tag govuk-tag--green">ACTIVE</strong></p>
+              </div>
+              <table class="govuk-table govuk-!-margin-bottom-4">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Email ID</th>
+                    <td class="govuk-table__cell">peter.paul@gmail.com</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Mobile Number</th>
+                    <td class="govuk-table__cell">0123456</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Rights</th>
+                    <td class="govuk-table__cell">Account Data</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="govuk-button-group">
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Edit
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Disable
+                </button>
+                <button class="govuk-button govuk-button--secondary" id="remove-contacts" data-module="govuk-button">
+                  Remove
+                </button>
+              </div>
+
+              <!-- <div class="govuk-button-group">
+                <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+                  Remove
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  cancel
+                </button>
+              </div> -->
+
+            </div>
+
+            <div class="govuk-!-margin-bottom-7 card">
+              <div class="app-!-dashboard-card-container">
+                <div class="app-!-dashboard-card-heading">
+                  <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-0 app-!-pull-left">Adam Paul</p>
+                </div>
+                <p><strong class="govuk-tag govuk-tag--yellow">PENDING</strong></p>
+              </div>
+              <table class="govuk-table govuk-!-margin-bottom-4">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Email ID</th>
+                    <td class="govuk-table__cell">adam.paul@gmail.com</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Mobile Number</th>
+                    <td class="govuk-table__cell">0123456</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Rights</th>
+                    <td class="govuk-table__cell">Account Data</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="govuk-button-group">
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Edit
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Resend
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Revoke request
+                </button>
+              </div>
+            </div>
+
+
+            <div class="govuk-!-margin-bottom-7 card">
+              <div class="app-!-dashboard-card-container">
+                <div class="app-!-dashboard-card-heading">
+                  <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-0 app-!-pull-left">John</p>
+                </div>
+                <p><strong class="govuk-tag govuk-tag--orange">DECLINED</strong></p>
+              </div>
+              <table class="govuk-table govuk-!-margin-bottom-4">
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Email ID</th>
+                    <td class="govuk-table__cell">john@gmail.com</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Mobile Number</th>
+                    <td class="govuk-table__cell">0123456</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Rights</th>
+                    <td class="govuk-table__cell">Account Data</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="govuk-button-group">
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Resend
+                </button>
+                <button class="govuk-button govuk-button--secondary" id="remove-contacts" data-module="govuk-button">
+                  Remove
+                </button>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="govuk-tabs__panel" id="activitylog">
+
+            <div class="govuk-form-group">
+              <select class="govuk-select" id="sort" name="sort">
+                <option value="sort" selected>Sort by</option>
+                <option value="month">Month updated</option>
+              </select>
+            </div>
+
+            <p class="govuk-body govuk-!-margin-bottom-1">23 Oct 2021, 11.21AM</p>
+            <p class="govuk-body govuk-!-margin-bottom-4">Peter Paul has added a <a href="#"
+                class="govuk-link">FE23GDF</a> to vehicle list</p>
+
+            <p class="govuk-body govuk-!-margin-bottom-1">23 Oct 2021, 10.21AM</p>
+            <p class="govuk-body govuk-!-margin-bottom-4">Peter Paul has made a <a href="#" class="govuk-link">payment
+                for 3 vehicles</a></p>
+
+            <p class="govuk-body govuk-!-margin-bottom-1">22 Oct 2021, 09.21AM</p>
+            <p class="govuk-body govuk-!-margin-bottom-4">Peter Paul has changed the <a href="#"
+                class="govuk-link">payment method</a></p>
+
+
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+
     </div>
-    {% include "../account-setting-info.html" %}
+
+  </div>
+  {% include "../account-setting-info.html" %}
 
 </div>
 

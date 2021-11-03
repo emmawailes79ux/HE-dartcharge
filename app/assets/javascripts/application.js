@@ -565,6 +565,37 @@ $(".create-flow-add-vehicle").click(() => {
 
 });
 
+
+$(document).on('click', '#remove-contacts', function () {
+  var name = $(this).parent('div').parent('div').find('p').first().text();
+  var newtext = '<div class="govuk-warning-text govuk-!-margin-bottom-2">' +
+    '<span class="govuk-warning-text__icon" aria-hidden="true">!</span>' +
+    '<strong class="govuk-warning-text__text">' +
+    '<span class="govuk-warning-text__assistive">Warning</span>' +
+    '<p class="govuk-body">Do you want to remove <strong>' + name + '</strong> from nominated contacts?</p>' +
+    '</strong></div>' +
+    '<div class="govuk-button-group">' +
+    ' <button class="govuk-button govuk-button--warning" id="remove-card" data-module="govuk-button">Remove</button>' +
+    '<button class="govuk-button govuk-button--secondary" id="cancel-card" data-module="govuk-button">cancel</button></div>'
+
+
+  $(this).parent('div').hide();
+  $(this).parent('div').after(newtext);
+});
+
+$(document).on('click', '#remove-card', function () {
+  $(this).parent('div').parent('div').remove();
+});
+
+$(document).on('click', '#cancel-card', function () {
+  console.log('working');
+  console.log($(this).parent('div').html())
+  $(this).parent('div').hide();
+  $(this).parent('div').prev('div').hide();
+  $(this).parent('div').prev('div').prev('div').show();
+});
+
+
 $('.future-crossing').click(() => {
   $("#future-test >tbody").find('.future-new').show();
   $("#future-test >tbody").find('#future-old').hide();
