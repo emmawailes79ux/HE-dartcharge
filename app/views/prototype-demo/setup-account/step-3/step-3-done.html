@@ -95,7 +95,10 @@ GOV.UK Prototype Kit
           </details>
           <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">Your vehicle has been added</p>
             {% elif data['personal-account-type'] === 'lrds' %}
-            <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="app-!-check-icon"></span> LO62NRO</p>
+            <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="app-!-check-icon"></span> LO61NRO</p>
+            <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">Your selected vehicle</p>
+            {% elif data['no-of-vehicles'] === '5' %}
+            <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="app-!-check-icon"></span> LO61NRO</p>
             <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">Your selected vehicle</p>
             {% endif %}
 

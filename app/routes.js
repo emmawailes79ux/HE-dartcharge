@@ -30,6 +30,12 @@ router.get("/create-account", function (req, res) {
   });
 });
 
+router.get("/faq", function (req, res) {
+
+  res.render("prototype-demo/faq");
+});
+
+
 router.post("/create-account", function (req, res) {
   if (req.body.email) {
     res.redirect("create-account/check-code");
