@@ -129,10 +129,34 @@
     </div>
     <div class="govuk-form-group">
         <label class="govuk-label" for="event-name">
-         Colour
+         Country of registration
         </label>
-        <input class="govuk-input govuk-input--width-10"  type="text">
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item govuk-!-margin-bottom-0">
+            <input class="govuk-radios__input" id="changed-name" name="vrm-1" type="radio" value="UK" checked>
+            <label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+              for="changed-name"> UK</label>
+          </div>
+          <div class="govuk-radios govuk-radios--inline ">
+            <div class="govuk-radios__item govuk-!-margin-right-0">
+              <input class="govuk-radios__input" id="changed-name" name="vrm-1" type="radio" value="Non-UK">
+              <label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+                for="changed-name"> Non-UK</label>
+            </div>
+          </div>
+        </div>
     </div>
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="selfDeclare" name="organisation" type="checkbox"
+                  value="selfDeclare" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="selfDeclare">
+                  I confirm that the above details are correct.
+              </label>
+          </div>
+      </div>
+  </div>
    
     
     <div class="govuk-form-group govuk-button-group">
