@@ -196,6 +196,10 @@ $(document).ready(function () {
       //$.fn.redirectPage("one-off-payment/confirm-vehicle-details");
       $.fn.redirectPage("one-off-payment/pay-crossing");
 
+    } else if (radioVal === "login") {
+
+      $.fn.redirectPage("login");
+
     }
   });
 
@@ -572,7 +576,7 @@ $(document).on('click', '#remove-contacts', function () {
     '<span class="govuk-warning-text__icon" aria-hidden="true">!</span>' +
     '<strong class="govuk-warning-text__text">' +
     '<span class="govuk-warning-text__assistive">Warning</span>' +
-    '<p class="govuk-body">Do you want to remove <strong>' + name + '</strong> from nominated contacts?</p>' +
+    '<p class="govuk-body"><strong>Do you want to remove ' + name + ' as a nominated contact?</strong></p>' +
     '</strong></div>' +
     '<div class="govuk-button-group">' +
     ' <button class="govuk-button govuk-button--warning" id="remove-card" data-module="govuk-button">Remove</button>' +

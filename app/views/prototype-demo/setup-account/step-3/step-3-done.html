@@ -57,14 +57,14 @@ GOV.UK Prototype Kit
         <div class="app-!-pull-left">
           <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="app-!-check-icon"></span>
             {% if (data['no-of-vehicles']) and (data['select-account'] === 'business-account') %}
-            Business account
+            Business account - Auto top-up
             {% elif data['personal-account-type'] === 'lrds' %}
             LRDS - 10 
             {% endif %}
           </p>
           <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
             {% if (data['no-of-vehicles']) and (data['select-account'] === 'business-account') %}
-            Auto top-up
+            Business account - Auto top-up
             {% elif data['personal-account-type'] === 'lrds' %}
             You have selected a local residents discount account (LRDS)
             {% endif %}
@@ -93,7 +93,7 @@ GOV.UK Prototype Kit
               <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
               <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p>
           </details>
-          <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">Your vehicle has been added</p>
+          <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">Your selected vehicles</p>
             {% elif data['personal-account-type'] === 'lrds' %}
             <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="app-!-check-icon"></span> LO61NRO</p>
             <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">Your selected vehicle</p>
