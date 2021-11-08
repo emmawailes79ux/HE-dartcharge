@@ -662,7 +662,7 @@ $(".edit-vehicle-confirm").click(() => {
 })
 $(".add-future-crossings-row").click(() => {
   let newRow = ' <tr class="govuk-table__row">' +
-    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future Crossings</td>' +
+    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future crossings</td>' +
     '<td class="govuk-table__cell">' +
     '<div class="govuk-form-group select-box govuk-!-margin-bottom-0">' +
     '<label class="govuk-label govuk-!-margin-bottom-0" for="trips">' +
@@ -726,7 +726,7 @@ $(".add-future-crossing").click(function () {
 
 $('.add-multiple-future').click(function () {
   let newRow = ' <tr class="govuk-table__row">' +
-    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future Crossings</td>' +
+    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future crossings</td>' +
     '<td class="govuk-table__cell">' +
     '<div class="govuk-form-group select-box govuk-!-margin-bottom-0">' +
     '<label class="govuk-label govuk-!-margin-bottom-0" for="trips">' +
