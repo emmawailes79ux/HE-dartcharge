@@ -487,7 +487,7 @@ $(".add-vehicle-multiple-flow").click(() => {
   var rowlength = $('#mytable tbody>tr').length;
   var newHead = '<tr class="govuk-table__row">' +
     '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
-    '<th scope="col" class="govuk-table__header">Country registration</th>' +
+    '<th scope="col" class="govuk-table__header">Country of registration</th>' +
     '<th scope="col" class="govuk-table__header">Action</th>' +
     '<tr>';
   var newRow = '<tr class="govuk-table__row">' +
@@ -521,7 +521,7 @@ $(document).on('click', '#remove', function () {
   if (rowlength == 2) {
     var newHead = '<tr class="govuk-table__row">' +
       '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
-      '<th scope="col" class="govuk-table__header">Country registration</th>' +
+      '<th scope="col" class="govuk-table__header">Country of registration</th>' +
       '<tr>';
     $('#mytable thead>tr').remove();
     $('#mytable thead').append(newHead);
@@ -539,7 +539,7 @@ $(".create-flow-add-vehicle").click(() => {
   var rowlength = $('#vehicle-table tbody>tr').length;
   var newHead = '<tr class="govuk-table__row">' +
     '<th scope="col" class="govuk-table__header">' + name + '</th>' +
-    '<th scope="col" class="govuk-table__header">Country registration</th>' +
+    '<th scope="col" class="govuk-table__header">Country of registration</th>' +
     '<th scope="col" class="govuk-table__header">Action</th>' +
     '<tr>';
   var newRow = '<tr class="govuk-table__row">' +
@@ -685,7 +685,7 @@ $(".dashboard-add-vehicle").click(() => {
   var rowlength = $('#mytable tbody>tr').length;
   var newHead = '<tr class="govuk-table__row">' +
     '<th scope="col" class="govuk-table__header">Registration number</th>' +
-    '<th scope="col" class="govuk-table__header">Country registration</th>' +
+    '<th scope="col" class="govuk-table__header">Country of registration</th>' +
     '<th scope="col" class="govuk-table__header">Action</th>' +
     '<tr>';
   var newRow = '<tr class="govuk-table__row">' +
