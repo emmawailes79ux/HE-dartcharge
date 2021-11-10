@@ -5,18 +5,29 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
-
+<div class="govuk-phase-banner govuk-!-margin-bottom-7" style="margin-top: -50px;">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
                 <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicles</h1>
-                <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Add vehicle</h1>
-                <div class="app-!-bottom-line"></div>
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Add vehicles</h1>
+                <!-- <div class="app-!-bottom-line"></div> -->
+                <hr>
             </div>
         </div>
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
+                <p class="govuk-body-s govuk-!-margin-bottom-2 govuk-!-margin-top-2">Vehicles details </p>
                 <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Vehicle registration number</h1> -->
                 <form method="post" action="/dashboard/vehicle/find-vehicle" id="dashboard-add-vehicle-form">
 
