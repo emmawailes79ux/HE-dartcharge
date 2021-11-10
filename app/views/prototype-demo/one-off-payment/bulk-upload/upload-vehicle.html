@@ -22,20 +22,34 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Upload vehicle details</h1>
-        {% if data['select-account'] === 'business-account' %}
-        <p class="govuk-body govuk-!-margin-top-2">Use the Bulk Upload functionality to manage your group names, along with adding and deleting vehicles.
-        <br/>
-        See the <a href="javascript:void(0)" class="govuk-link">Bulk Upload Guide</a> for details.</p>
-        <p class="govuk-body">You can use the bulk upload template to add multiple vehicles to your account.<br>
-        <a href="javascript:void(0)" class="govuk-link"> Download bulk upload template (CSV)</a> </p>
-        {% endif %}
+
         <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6"><strong>Choose a file </strong> <br> Supported file format (.xlsx)</p>
         <button data-module="govuk-button" class="govuk-button govuk-button--secondary app-!-pull-left " type="button"
             role="button" aria-label="bulk-upload-file">Upload</button>
         <div class="govuk-body-s govuk-!-margin-top-2  govuk-!-margin-left-2 app-!-pull-left">
             <strong>VehicleDetilas.xlsx</strong></div>
-    </div>
+     
 
+    </div>
+<div class="govuk-grid-column-full">
+    
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+Bulk upload                  </span>
+            </summary>
+            <div class="govuk-details__text">
+                {% if data['select-account'] === 'business-account' %}
+                <p class="govuk-body govuk-!-margin-top-2">Use the Bulk Upload functionality to manage your group names, along with adding <br/> and deleting vehicles.
+               
+                See the <a href="javascript:void(0)" class="govuk-link">Bulk Upload Guide</a> for details.</p>
+                <p class="govuk-body">You can use the bulk upload template to add multiple vehicles to your account.<br>
+                <a href="javascript:void(0)" class="govuk-link"> Download bulk upload template (CSV)</a> </p>
+                {% endif %}
+            </div>
+          </details>
+          
+</div>
     {% if (data['select-account'] === 'business-account') %}
     <div class="govuk-grid-column-full govuk-!-margin-top-2">
         <button onClick="location.href='../../create-account/step-3/vehicle-upload-details'" class="govuk-button govuk-!-margin-right-2" data-module="govuk-button"
