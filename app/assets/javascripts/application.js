@@ -384,8 +384,8 @@ $(".successNxt").click(function () {
     $.fn.redirectPage("one-off-payment/create-account");
   } else if (SuccessNext === "vrm-notifi") {
     $.fn.redirectPage("one-off-payment/notification");
-  } else if (SuccessNext === "finish") {
-    $.fn.redirectPage("home");
+  } else if (SuccessNext === "oneoff-pay") {
+    $.fn.redirectPage("one-off-payment/pay-crossing");
   }
 });
 
@@ -486,8 +486,8 @@ $(".find-vehicle-multiple-flow").click(() => {
 $(".add-vehicle-multiple-flow").click(() => {
   var rowlength = $('#mytable tbody>tr').length;
   var newHead = '<tr class="govuk-table__row">' +
-    '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
-    '<th scope="col" class="govuk-table__header">Country of registration</th>' +
+    '<th scope="col" class="govuk-table__header">Registration number</th>' +
+    '<th scope="col" class="govuk-table__header">Country registration</th>' +
     '<th scope="col" class="govuk-table__header">Action</th>' +
     '<tr>';
   var newRow = '<tr class="govuk-table__row">' +
@@ -520,8 +520,8 @@ $(document).on('click', '#remove', function () {
   var rowlength = $('#mytable tbody>tr').length;
   if (rowlength == 2) {
     var newHead = '<tr class="govuk-table__row">' +
-      '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
-      '<th scope="col" class="govuk-table__header">Country of registration</th>' +
+      '<th scope="col" class="govuk-table__header">Registration number</th>' +
+      '<th scope="col" class="govuk-table__header">Country registration</th>' +
       '<tr>';
     $('#mytable thead>tr').remove();
     $('#mytable thead').append(newHead);
@@ -662,7 +662,7 @@ $(".edit-vehicle-confirm").click(() => {
 })
 $(".add-future-crossings-row").click(() => {
   let newRow = ' <tr class="govuk-table__row">' +
-    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future crossings</td>' +
+    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future Crossings</td>' +
     '<td class="govuk-table__cell">' +
     '<div class="govuk-form-group select-box govuk-!-margin-bottom-0">' +
     '<label class="govuk-label govuk-!-margin-bottom-0" for="trips">' +
@@ -726,7 +726,7 @@ $(".add-future-crossing").click(function () {
 
 $('.add-multiple-future').click(function () {
   let newRow = ' <tr class="govuk-table__row">' +
-    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future crossings</td>' +
+    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future Crossings</td>' +
     '<td class="govuk-table__cell">' +
     '<div class="govuk-form-group select-box govuk-!-margin-bottom-0">' +
     '<label class="govuk-label govuk-!-margin-bottom-0" for="trips">' +
