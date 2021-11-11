@@ -285,8 +285,33 @@ router.post("/one-off-payment/pay-crossing", function (req, res) {
   for (let i = 0; i < Object.keys(req.session.data).length; i++) {
     delete req.session.data['vrm-' + (i + 1) + ''];
   }
-  res.redirect("confirm-vehicle-details");
+  //res.redirect("confirm-vehicle-details");
+  res.redirect("no-of-vehicles");
 });
+
+router.get("/one-off-payment/no-of-vehicles", function (req, res) {
+  res.render("prototype-demo/one-off-payment/one-off-payment-no-of-vehicles", {
+    section: "confirm-vehicle",
+  });
+});
+
+router.post("/one-off-payment/no-of-vehicles", function (req, res) {
+  // res.render("prototype-demo/one-off-payment/one-off-payment-no-of-vehicles", {
+  //   section: "confirm-vehicle",
+  // });
+  console.log(req.body['make-oneoff-no-of-vehicles']);
+  if (req.body['make-oneoff-no-of-vehicles']) {
+    if (req.body['make-oneoff-no-of-vehicles'] === '5') {
+      res.redirect("confirm-vehicle-details");
+    } else if (req.body['make-oneoff-no-of-vehicles'] === '10') {
+      res.redirect("../../one-off-payment/bulk-upload");
+    }
+  }
+});
+
+
+
+
 
 router.get("/one-off-payment/confirm-vehicle-details", function (req, res) {
   res.render("prototype-demo/one-off-payment/confirm-vehicle-details", {
@@ -868,17 +893,17 @@ router.get("/create-account/step-2/business-vehicles", function (req, res) {
   const {
     data
   } = req.session;
-  
+
   res.render("prototype-demo/setup-account/step-2/number-of-vehicles", {
     step: 3,
   });
 });
 
 router.post("/create-account/step-2/business-vehicles", function (req, res) {
-  if(req.body['no-of-vehicles']) {
-    if(req.body['no-of-vehicles'] === '5') {
+  if (req.body['no-of-vehicles']) {
+    if (req.body['no-of-vehicles'] === '5') {
       res.redirect("../step-3/vehicle-register")
-    } else if(req.body['no-of-vehicles'] === '10') {
+    } else if (req.body['no-of-vehicles'] === '10') {
       res.redirect("../../one-off-payment/bulk-upload");
     }
   }

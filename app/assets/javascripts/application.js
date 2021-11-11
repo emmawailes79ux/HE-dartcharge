@@ -771,6 +771,10 @@ $("[name='no-of-vehicles']").change(() => {
   $(".number-of-vehicles").prop("disabled", false);
 })
 
+$("[name='make-oneoff-no-of-vehicles']").change(() => {
+  $(".make-oneoff-number-of-vehicles").prop("disabled", false);
+})
+
 // $('.number-of-vehicles').click(() => {
 //   let radioVal = $("[name='no-of-vehicles']:checked").val();
 //   console.log(radioVal);
