@@ -372,10 +372,15 @@ router.get("/one-off-payment/bulk-upload", function (req, res) {
   res.render("prototype-demo/one-off-payment/bulk-upload/upload-vehicle");
 });
 
+router.get("/one-off-payment/upload-edit-vehicles", function (req, res) {
+  res.render("prototype-demo/one-off-payment/bulk-upload/bulk-upload-edit-details");
+});
+
+router.get("/one-off-payment/upload-oneoff-vehicle-edit", function (req, res) {
+  res.render("prototype-demo/one-off-payment/bulk-upload/bulk-oneoff-edit-vehicle");
+});
+
 router.get("/one-off-payment/upload-bulk-vehicle", function (req, res) {
-
-
-
   res.render("prototype-demo/one-off-payment/bulk-upload/upload-bulk-vehicle-details");
 });
 

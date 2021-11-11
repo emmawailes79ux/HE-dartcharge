@@ -761,7 +761,7 @@ $(".bulk-upload-btn").click(() => {
 })
 
 $(".upload-find-vehicle").click(() => {
-  $.fn.redirectPage("one-off-payment/upload-bulk-vehicle");
+  $.fn.redirectPage("one-off-payment/upload-edit-vehicles");
 })
 
 $(".bulk-vehicle-confirm").click(() => {

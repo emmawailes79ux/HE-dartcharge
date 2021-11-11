@@ -15,6 +15,8 @@ GOV.UK Prototype Kit
         <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Create an account - Step 3 of 4</h1>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Add a vehicle</h1>
         {% else %}
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart
+            Charge)</h1>
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
         {% endif %}
     </div>
@@ -38,15 +40,16 @@ GOV.UK Prototype Kit
               <span class="govuk-details__summary-text">
 Bulk upload                  </span>
             </summary>
-            <div class="govuk-details__text">
-                {% if data['select-account'] === 'business-account' %}
                 <p class="govuk-body govuk-!-margin-top-2">Use the Bulk Upload functionality to manage your group names, along with adding <br/> and deleting vehicles.
                
                 See the <a href="javascript:void(0)" class="govuk-link">Bulk Upload Guide</a> for details.</p>
                 <p class="govuk-body">You can use the bulk upload template to add multiple vehicles to your account.<br>
                 <a href="javascript:void(0)" class="govuk-link"> Download bulk upload template (CSV)</a> </p>
-                {% endif %}
-            </div>
+            <!-- <div class="govuk-details__text"> -->
+                <!-- {% if data['select-account'] === 'business-account' %} -->
+               
+                <!-- {% endif %} -->
+            <!-- </div> -->
           </details>
           
 </div>
