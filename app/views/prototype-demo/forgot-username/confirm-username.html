@@ -1,0 +1,32 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-6">
+        Forgot username
+      </h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">
+          Your username
+      </h2>
+      <p>Please find your username based on your account number and postcode</p>
+      <p class="govuk-!-font-size-24 govuk-!-font-weight-bold">j******@g****.com</p>
+    
+      <div class="govuk-!-padding-top-6">
+      <button onClick="location.href='./login'" data-module="govuk-button " class="govuk-button" value="Login" type="submit" role="button"
+      aria-label="Login">Log in</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

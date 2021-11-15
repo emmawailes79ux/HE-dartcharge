@@ -605,7 +605,7 @@ router.get("/login", function (req, res) {
   res.render("prototype-demo/login");
 });
 
-// Forget password
+// Forgot password
 router.get("/enter-detail", function (req, res) {
   res.render("prototype-demo/forgot-password/detail");
 });
@@ -620,6 +620,14 @@ router.get("/create-password", function (req, res) {
 });
 router.get("/success", function (req, res) {
   res.render("prototype-demo/forgot-password/success");
+});
+
+// Forgot username
+router.get("/user-detail", function (req, res) {
+  res.render("prototype-demo/forgot-username/username-detail");
+});
+router.get("/confirm-user", function (req, res) {
+  res.render("prototype-demo/forgot-username/confirm-username");
 });
 // Dashboaord section start
 
