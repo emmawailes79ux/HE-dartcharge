@@ -1,0 +1,56 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-6">
+        Forgot password
+      </h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">
+        Choose the method to get your link
+      </h2>
+
+      <div class="govuk-form-group ">
+        <fieldset class="govuk-fieldset">
+   
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="email" name="link" type="radio" value="link">
+              <label class="govuk-label govuk-radios__label" for="email">
+                Email - j****@g****.com
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="text-message" name="link" type="radio" value="text-message">
+              <label class="govuk-label govuk-radios__label" for="text-message">
+                Text message - (xxxx) xxxx - 1678
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="post-mail" name="link" type="radio" value="post-mail">
+              <label class="govuk-label govuk-radios__label" for="post-mail">
+                Post mail - 3113 *********, Ap***, NC, **02
+              </label>
+            </div>
+      
+          </div>
+      
+        </fieldset>
+      </div>
+      
+      <button onClick="location.href='./check'" data-module="govuk-button" class="govuk-button" value="Proceed to payment" type="submit" role="button"
+      aria-label="check">Continue</button>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

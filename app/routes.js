@@ -605,6 +605,22 @@ router.get("/login", function (req, res) {
   res.render("prototype-demo/login");
 });
 
+// Forget password
+router.get("/enter-detail", function (req, res) {
+  res.render("prototype-demo/forgot-password/detail");
+});
+router.get("/link", function (req, res) {
+  res.render("prototype-demo/forgot-password/link");
+});
+router.get("/check", function (req, res) {
+  res.render("prototype-demo/forgot-password/check");
+});
+router.get("/create-password", function (req, res) {
+  res.render("prototype-demo/forgot-password/create-password");
+});
+router.get("/success", function (req, res) {
+  res.render("prototype-demo/forgot-password/success");
+});
 // Dashboaord section start
 
 router.get("/dashboard", function (req, res) {
