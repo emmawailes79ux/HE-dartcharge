@@ -135,7 +135,6 @@ $(document).ready(function () {
     $(".lrds-submit-type").prop("disabled", false);
   });
 
-
   $(".lrds-submit-type").click(function () {
     let personalAccountType = $("[name='lrds-submit-type']:checked").val();
     if (personalAccountType === "lrds-online") {
@@ -150,6 +149,18 @@ $(document).ready(function () {
 
 
 
+
+
+  $(".resendpassword").click(() => {
+    let radioVal = $("[name='selectlink']:checked").val();
+    if (radioVal === "emailmessage") {
+      $.fn.redirectPage("email-password");
+    } else if (radioVal === "textmessage") {
+      $.fn.redirectPage("text-password");
+    } else if (radioVal === "postmessage") {
+      $.fn.redirectPage("post-password");
+    }
+  });
 
   $("#login-btn").click(function () {
     $.fn.redirectPage("login");
@@ -485,8 +496,16 @@ $(".find-vehicle-multiple-flow").click(() => {
 
 $(".add-vehicle-multiple-flow").click(() => {
   var rowlength = $('#mytable tbody>tr').length;
+  var count = $('#mytable tbody>tr').length + 1;
+  console.log(count);
+  $("#vehicle-paragraph").text(count);
+  if (count == 5) {
+
+    $(".add-vehicle-multiple-flow").hide();
+
+  }
   var newHead = '<tr class="govuk-table__row">' +
-    '<th scope="col" class="govuk-table__header">Registration number</th>' +
+    '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
     '<th scope="col" class="govuk-table__header">Country of registration</th>' +
     '<th scope="col" class="govuk-table__header">Action</th>' +
     '<tr>';
@@ -518,9 +537,15 @@ $(".add-vehicle-multiple-flow").click(() => {
 //remove
 $(document).on('click', '#remove', function () {
   var rowlength = $('#mytable tbody>tr').length;
+  var count = $('#mytable tbody>tr').length - 1;
+  if (count < 5) {
+    $(".add-vehicle-multiple-flow").show();
+  }
+  console.log(count);
+  $("#vehicle-paragraph").text(count);
   if (rowlength == 2) {
     var newHead = '<tr class="govuk-table__row">' +
-      '<th scope="col" class="govuk-table__header">Registration number</th>' +
+      '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
       '<th scope="col" class="govuk-table__header">Country of registration</th>' +
       '<tr>';
     $('#mytable thead>tr').remove();
@@ -685,7 +710,7 @@ $(".dashboard-add-vehicle").click(() => {
   // $(".dashboard-vehicle-form").before(newRow);
   var rowlength = $('#mytable tbody>tr').length;
   var newHead = '<tr class="govuk-table__row">' +
-    '<th scope="col" class="govuk-table__header">Registration number</th>' +
+    '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
     '<th scope="col" class="govuk-table__header">Country of registration</th>' +
     '<th scope="col" class="govuk-table__header">Action</th>' +
     '<tr>';

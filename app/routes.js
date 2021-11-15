@@ -31,9 +31,38 @@ router.get("/create-account", function (req, res) {
 });
 
 router.get("/faq", function (req, res) {
-
   res.render("prototype-demo/faq");
 });
+
+
+router.get("/forgot-password", function (req, res) {
+  res.render("prototype-demo/password/forgot-password");
+});
+
+router.get("/resend-password", function (req, res) {
+  res.render("prototype-demo/password/resend-password");
+});
+
+router.get("/email-password", function (req, res) {
+  res.render("prototype-demo/password/email-password");
+});
+
+router.get("/text-password", function (req, res) {
+  res.render("prototype-demo/password/text-password");
+});
+
+router.get("/post-password", function (req, res) {
+  res.render("prototype-demo/password/post-password");
+});
+
+router.get("/reset-password", function (req, res) {
+  res.render("prototype-demo/password/reset-password");
+});
+
+router.get("/password-successful", function (req, res) {
+  res.render("prototype-demo/password/password-successful");
+});
+
 
 
 router.post("/create-account", function (req, res) {
@@ -299,18 +328,39 @@ router.post("/one-off-payment/no-of-vehicles", function (req, res) {
   // res.render("prototype-demo/one-off-payment/one-off-payment-no-of-vehicles", {
   //   section: "confirm-vehicle",
   // });
+  // console.log(req.body['make-oneoff-no-of-vehicles']);
+  // if (req.body['make-oneoff-no-of-vehicles']) {
+  //   if (req.body['make-oneoff-no-of-vehicles'] === '5') {
+  //     res.redirect("confirm-vehicle-details");
+  //   } else if (req.body['make-oneoff-no-of-vehicles'] === '10') {
+  //     res.redirect("../../one-off-payment/bulk-upload");
+  //   }
+  // }
+
   console.log(req.body['make-oneoff-no-of-vehicles']);
   if (req.body['make-oneoff-no-of-vehicles']) {
     if (req.body['make-oneoff-no-of-vehicles'] === '5') {
-      res.redirect("confirm-vehicle-details");
+      res.redirect("confirm-singlevehicle-details");
     } else if (req.body['make-oneoff-no-of-vehicles'] === '10') {
-      res.redirect("../../one-off-payment/bulk-upload");
+      res.redirect("confirm-vehicle-details");
     }
   }
 });
 
 
+router.get("/one-off-payment/confirm-singlevehicle-details", function (req, res) {
+  res.render("prototype-demo/one-off-payment/confirm-singlevehcile-details", {
+    section: "confirm-vehicle",
+  });
+});
 
+router.post("/one-off-payment/confirm-singlevehicle-details", function (req, res) {
+  if (req.body["vrm-1"] && req.body["vrm-2"]) {
+    res.redirect("./multiple-vehicle-details");
+  } else if (req.body["vrm-1"] || req.body["vrm-2"] === "") {
+    res.redirect("./payment-info-single");
+  }
+});
 
 
 router.get("/one-off-payment/confirm-vehicle-details", function (req, res) {
@@ -412,7 +462,7 @@ router.get("/one-off-payment/confirm-method", function (req, res) {
   // } else {
   //   res.render("prototype-demo/one-off-payment/bulk-upload/bulk-confirm-method");
   // }
-  // console.log(req.session);
+  console.log(req.session.data);
   res.render("prototype-demo/one-off-payment/confirm-payment-method");
 
 });

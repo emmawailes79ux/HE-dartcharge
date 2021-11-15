@@ -32,16 +32,76 @@ GOV.UK Prototype Kit
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
     </div>
 </div>
+<!-- 
 <div class="govuk-grid-row govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-full">
         <div class="govuk-heading-m">Vehicle details</div>
         <form method="post" action="/one-off-payment/confirm-vehicle-info">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-three-quarters">
+                    
+                                    <div class="govuk-body-m govuk-!-margin-bottom-1">Vehicle registration number</div>
+                                    <div class="govuk-form-group govuk-!-margin-bottom-5">
+                                        <span class="govuk-error-message vrm-error" style="display: none">
+                                            <span class="govuk-visually-hidden">Error:</span> Please enter vehicle
+                                            registration number
+                                        </span>
+                                        <input class="govuk-input govuk-input govuk-input--width-20 vrms" id="vrm"
+                                            name="vrm-1" type="text">
+                                    </div>
+                                    <div  class="govuk-body-m govuk-!-margin-bottom-1">Country of registration</div>
+                                    <div class="govuk-radios govuk-radios--inline govuk-!-margin-bottom-5">
+                                        <div class="govuk-radios__item govuk-!-margin-bottom-0">
+                                            <input class="govuk-radios__input" id="changed-name" name="vrm-1"
+                                                type="radio" value="UK" checked>
+                                            <label
+                                                class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+                                                for="changed-name"> UK</label>
+                                        </div>
+                                        <div class="govuk-radios govuk-radios--inline ">
+                                            <div class="govuk-radios__item govuk-!-margin-right-0">
+                                                <input class="govuk-radios__input" id="changed-name" name="vrm-1"
+                                                    type="radio" value="Non-UK">
+                                                <label
+                                                    class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+                                                    for="changed-name"> Non-UK</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                               
+
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <button class="govuk-button find-vehicle-multiple-flow govuk-!-margin-right-2"
+                        data-module="govuk-button" role="button">
+                        Find your vehicle
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+ -->
+
+
+<div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-heading-m">Vehicle details</div>
+        <div role="note" aria-label="Information" class="govuk-inset-text govuk-!-margin-top-2">
+
+            <p class="govuk-body">You are making the charge for <span id="vehicle-paragraph">1</span> of 5 vehicles</p>
+
+        </div>
+        <!-- <form method="post" action="/one-off-payment/confirm-vehicle-info"> -->
+        <form method="post" action="/one-off-payment/upload-edit-vehicles">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
                     <table class="govuk-table " id="mytable">
                         <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
-                                <th scope="col" class="govuk-table__header">Registration number</th>
+                                <th scope="col" class="govuk-table__header">Vehicle registration number</th>
                                 <th scope="col" class="govuk-table__header">Country of registration</th>
                                 <th scope="col" class="govuk-table__header"></th>
                             </tr>
@@ -90,9 +150,10 @@ GOV.UK Prototype Kit
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     <button class="govuk-button find-vehicle-multiple-flow govuk-!-margin-right-2"
-                        data-module="govuk-button" role="button">
+                        data-module="govuk-button" role="button" >
                         Find your vehicle
                     </button>
+                   
 
                     <button type="button" class="govuk-button govuk-button--secondary add-vehicle-multiple-flow"
                         data-module="govuk-button" role="button">
@@ -101,6 +162,10 @@ GOV.UK Prototype Kit
                 </div>
             </div>
         </form>
+
+
+      
+        
     </div>
 </div>
 
