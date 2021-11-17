@@ -454,7 +454,7 @@ $(".accountpaymentoptionBtn").click(() => {
 
 $("[name='card-number']").click(() => {
   $("[name='name-on-card']").val("John Doe");
-  $("[name='card-number']").val("John Doe");
+  $("[name='card-number']").val("4562123498763456");
   $("[name='account-number']").val("12345678");
   $("[name='month']").val("12");
   $("[name='year']").val("21");
@@ -698,7 +698,7 @@ $(".add-future-crossings-row").click(() => {
     '<option value="3">3</option>' +
     '<option value="4">4</option>' +
     ' </select></label></div>' + '</td>' +
-    '<td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3">£2.50</td>' + '</tr>'
+    '<td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3 govuk-table__header--numeric">£2.50</td>' + '</tr>'
   $(".payment-table tbody>tr").last().after(newRow);
   $('.add-future-crossings-row').hide();
 });
@@ -763,7 +763,7 @@ $('.add-multiple-future').click(function () {
     '<option value="3">3</option>' +
     '<option value="4">4</option>' +
     ' </select></label></div>' + '</td>' +
-    '<td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3">£2.50</td>' + '</tr>'
+    '<td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3 govuk-table__header--numeric">£2.50</td>' + '</tr>'
   $(this).parent('div').prev('table').find('tbody>tr').last().after(newRow);
   $(this).hide();
 })

@@ -99,19 +99,19 @@ GOV.UK Prototype Kit
 
         {% if data['vrm-1'][0] === 'LO61 NRO' or data['vrm-1'][0] === 'LO62 NRO' and data['vrm-2'] === undefined %}
 
-        <div class="govuk-warning-text govuk-!-margin-top-7">
+        <!-- <div class="govuk-warning-text govuk-!-margin-top-7">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
                 <span class="govuk-warning-text__assistive">Warning</span>
                 {{data['vrm-1'][0]}} has 1 Dartford Crossing charge, which missed the payment deadline, check if there is a penalty assigned to it.
             </strong>
-        </div>
+        </div> -->
         <!-- <p class="govuk-body">Do not ignore your PCN. Resolve a PCN before the due date to prevent any addiotional
             changes</p> -->
-        <div class="govuk-button-group govuk-!-margin-top-3">
+        <!-- <div class="govuk-button-group govuk-!-margin-top-3">
             <button onClick="location.href='https://dartford-crossing-charge.herokuapp.com/demo/flow1'"
                 class="govuk-button" aria-label="Next">Check for penalty</button>
-        </div>
+        </div> -->
 
         {% else %}
         

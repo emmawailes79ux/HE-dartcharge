@@ -95,7 +95,7 @@ GOV.UK Prototype Kit
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Crossings</th>
           <th scope="col" class="govuk-table__header">Number of trips</th>
-          <th scope="col" class="govuk-table__header">Amount</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th>
         </tr>
       </thead>
 
@@ -104,7 +104,8 @@ GOV.UK Prototype Kit
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header govuk-!-padding-top-3">Payable Crossings</th>
           <td class="govuk-table__cell">
-            <div class="govuk-form-group select-box govuk-!-margin-bottom-0">
+            <div class="govuk-!-padding-top-1">1</div>
+            <!-- <div class="govuk-form-group select-box govuk-!-margin-bottom-0">
               <label class="govuk-label govuk-!-margin-bottom-0" for="trips">
                 <select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">
                   <option value="1" selected>1</option>
@@ -113,9 +114,9 @@ GOV.UK Prototype Kit
                   <option value="4">4</option>
                 </select>
               </label>
-            </div>
+            </div> -->
           </td>
-          <td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£2.50</td>
+          <td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3 govuk-table__header--numeric">£2.50</td>
         </tr>
         {% endif %}
         {% if (data['vrm-1'][0] === 'LO63 NRO') %}
@@ -135,7 +136,7 @@ GOV.UK Prototype Kit
               </label>
             </div>
           </td>
-          <td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3">
+          <td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3 govuk-table__header--numeric">
             £2.50
           </td>
 
