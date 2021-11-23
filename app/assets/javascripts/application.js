@@ -257,6 +257,9 @@ $("[name='changed-name']").change(() => {
 $("[name='vrm']").click(() => {
   $("[name='vrm']").val("LO62 NRO");
 });
+$("[id='vrn']").click(() => {
+  $("[id='vrn']").val("LO62 NRO");
+});
 // FIND VEHICLE
 
 $("[name='payment']").change(() => {
@@ -482,6 +485,8 @@ $(".find-vehicle-multiple-flow").click(() => {
 
   $(this.form.submit());
 })
+
+
 
 $(".add-vehicle-multiple-flow").click(() => {
   var rowlength = $('#mytable tbody>tr').length;
