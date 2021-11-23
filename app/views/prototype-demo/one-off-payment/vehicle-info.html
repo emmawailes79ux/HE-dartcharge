@@ -10,56 +10,69 @@ GOV.UK Prototype Kit
 <a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full govuk-!-margin-top-6">
-        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing Charge (Dart Charge)
         </h1>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Your vehicle</h1>
     </div>
 </div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+        <p class="gov-uk-body">Please check details below to confirm they're correct</p>
         <table class="govuk-table ">
-            <caption class="govuk-table__caption govuk-table__caption--m">Your vehicle</caption>
+           
 
             <tr class="govuk-table__row">
-                <td scope="col" class="govuk-table__header govuk-body ">Registration number</td>
-                <td class="govuk-table__cell  govuk-body "><b>{{data['vrm-1'][0]}}</b></td>
-                <td class="govuk-table__cell  govuk-body "> </td>
+                <td scope="col" class="govuk-table__header govuk-body ">Number plate</td>
+                <!-- <td class="govuk-table__cell  govuk-body "><b>{{data['vrm-1'][0]}}</b></td> -->
+                <td class="govuk-table__cell  govuk-body ">{{data['vrn']}}</td>
+                <!-- <td class="govuk-table__cell  govuk-body "> </td> -->
             </tr>
 
             <tr class="govuk-table__row">
-                <td scope="col" class="govuk-table__header govuk-body ">Class</td>
+                <td scope="col" class="govuk-table__header govuk-body ">Class
+                    <!-- <br> <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        What does this mean?
+                      </span>
+                    </summary> -->
+                     <!-- <div class="govuk-details__text">
+                      Lorem Ipsum
+                    </div> -->
+                  <!-- </details> -->
+                </td>
                 <td class="govuk-table__cell  govuk-body ">B</td>
-                <td class="govuk-table__cell  govuk-body "> <a href="javascript:void(0)" class="govuk-link"
-                        area-role="link">Change</a></td>
+                <!-- <td class="govuk-table__cell  govuk-body "> <a href="javascript:void(0)" class="govuk-link"
+                        area-role="link">Change</a></td> -->
             </tr>
             <tr class="govuk-table__row">
                 <td scope="col" class="govuk-table__header govuk-body ">Make</td>
                 <td class="govuk-table__cell  govuk-body ">Audi</td>
-                <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
-                        area-role="link">Change</a></td>
+                <!-- <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
+                        area-role="link">Change</a></td> -->
             </tr>
 
             <tr class="govuk-table__row">
                 <td scope="col" class="govuk-table__header govuk-body ">Model</td>
                 <td class="govuk-table__cell  govuk-body ">RS4</td>
-                <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
-                        area-role="link">Change</a></td>
+                <!-- <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
+                        area-role="link">Change</a></td> -->
             </tr>
 
             <tr class="govuk-table__row">
                 <td scope="col" class="govuk-table__header govuk-body ">Colour</td>
                 <td class="govuk-table__cell  govuk-body ">Black</td>
-                <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
-                        area-role="link">Change</a></td>
+                <!-- <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
+                        area-role="link">Change</a></td> -->
             </tr>
-            <tr class="govuk-table__row">
+            <!-- <tr class="govuk-table__row">
                 <td scope="col" class="govuk-table__header govuk-body ">Country of registration</td>
                 <td class="govuk-table__cell  govuk-body ">UK
-                </td>
-                <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
+                </td> -->
+                <!-- <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
                         area-role="link">Change</a></td>
-            </tr>
+            </tr> -->
         </table>
 
         {% if data['vrm-1'][0] === 'LO63 NRO' %}
@@ -68,12 +81,29 @@ GOV.UK Prototype Kit
             Do you still want to make a payment?
         </div>
         {% endif %}
+        <div id="your-vehicle" class="govuk-body">
+            Is this your vehicle?
+          </div>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="vehicle-owner" name="vehicle-owner" type="radio" value="Yes" checked>
+              <label class="govuk-label govuk-radios__label" for="vehicle-owner">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="vehicle-owner-2" name="vehicle-owner" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="vehicle-owner-2">
+                No
+              </label>
+            </div>
+          </div>
 
-        <div class="govuk-form-group govuk-button-group">
+        <div class="govuk-form-group govuk-button-group  govuk-!-margin-top-6">
             <button onClick="location.href='./payment-info-single'" class="govuk-button" data-module="govuk-button"
-                role="button" aria-label="Confirm a vehicle">Confirm</button>
+                role="button" aria-label="Confirm a vehicle">Continue</button>
             <button class="govuk-button govuk-button--secondary reject_vehicle" data-module="govuk-button" role="button"
-                aria-label="Not my a vehicle">This is not your vehicle</button>
+                aria-label="Not my a vehicle">This is not my vehicle</button>
         </div>
     </div>
 </div>
