@@ -8,6 +8,16 @@ GOV.UK Prototype Kit
 
 {% include "./one-off-payment-body-head.html" %}
 <a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<!-- <style>
+     .gem-c-contextual-sidebar__brexit-cta {text-size-adjust: 100%;
+    font-family: "GDS Transport",arial,sans-serif;
+    margin-bottom: 30px;
+    background-color: #f3f2f1;
+    border-top: 2px solid #ff003b;
+    display: block;
+    padding: 0 15px 15px;
+    text-decoration: none;}
+</style> -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds error-summary" style="display: none; margin-bottom:-60px">
     <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
@@ -25,22 +35,58 @@ GOV.UK Prototype Kit
     </div>
   </div>
 
-  <div class="govuk-grid-column-full govuk-!-margin-top-6">
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
     <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)
     </h1>
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">How many crossings would you like to pay for?</h1>
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You have 2 unpaid crossings. If you do not pay for a crossing you could get a penalty charge notice (PCN).
+      </strong>
+    </div>
+    <div class="govuk-inset-text">
+      You can add additional crossings below to cover future Dart Charge payments (within the next 12 months). A return journey consists of 2 crossings. To save money on future crossings you may want to create an account once you have made this payment.    </div>
+    <div class="govuk-body">It will cost <b>£6 per crossing</b> for your vehicle (Class B) </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Number of crossings
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="govuk-inset-text govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-top-0 govuk-!-margin-bottom-9">
+      <h3 class="govuk-body-xl govuk-!-margin-top-0 govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">Payment amount</h3>
+      <h1 id = "charge" class="govuk-body-xl govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0 govuk-!-margin-top-0">£105</h1>
+    </div>
+    <button onClick="location.href='./payment-options'" id="confirmPay"  class="govuk-button" data-module="govuk-button">
+      Proceed to payment
+    </button>
   </div>
+  <!-- <div class="gem-c-contextual-sidebar__brexit-cta">
+    <h2 class="gem-c-contextual-sidebar__brexit-heading govuk-heading-s">Brexit</h2>
+    <p class="gem-c-contextual-sidebar__brexit-text govuk-body">
+      <a class="govuk-link" data-module="gem-track-click" data-track-category="relatedLinkClicked" data-track-action="1.0 Transition" data-track-label="/brexit" data-track-dimension="Check what you need to do" data-track-dimension-index="29" lang="en" href="/brexit">Check what you need to do</a>
+  </p>
+  </div>  -->
+  
 </div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h5 class="govuk-heading-m"> Registration number: {{data['vrm-1'][0]}}</h5>
-    {% if (data['vrm-1'][0] === 'LO61 NRO') %}
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h5 class="govuk-heading-m"> Registration number: {{data['vrn']}}</h5>
+    {% if (data['vrn'] === 'LO61 NRO') %}
     <div class="govuk-inset-text govuk-!-margin-top-0 ">
       <p class="govuk-body"><b>{{data['vrm-1'][0]}}</b> has 1 unpaid Dartford Crossing charges.</p>
     </div>
 
     {% endif %}
-    {% if (data['vrm-1'][0] === 'LO62 NRO') %}
+    {% if (data['vrn'] === 'LO62 NRO') %}
     <div class="govuk-inset-text govuk-!-margin-top-0 ">
       <p class="govuk-body"><b>{{data['vrm-1'][0]}}</b> has <b>2 unpaid</b> Dartford Crossing charges.</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -84,8 +130,8 @@ GOV.UK Prototype Kit
     {% endif %}
 
   </div>
-</div>
-<div class="govuk-grid-row">
+</div> -->
+<!-- <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     {% if (data['vrm-1'][0] === 'LO61 NRO') or (data['vrm-1'][0] === 'LO62 NRO') or (data['vrm-1'][0] === 'LO63 NRO') %}
@@ -176,6 +222,6 @@ GOV.UK Prototype Kit
       {% endif %}
     </div>
   </div>
-</div>
+</div> -->
 </div>
 {% endblock %}
