@@ -40,7 +40,7 @@
 </p>
 <p class="gem-c-contextual-sidebar__brexit-text govuk-body govuk-!-margin-bottom-1">
   Total amount: <br>
-  <h1 class="govuk-heading-xl govuk-!-margin-top-1">£10</h1>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-1 govuk-!-margin-bottom-1">£10</h1>
 </p>
   </div>
   <div class="govuk-form-group govuk-!-margin-bottom-3">
@@ -357,9 +357,28 @@
         </button>       -->
         <!-- <a id="nextPage" href="flow7"> -->
           <!-- onclick="window.location.href='flow7'" -->
-           <button onClick="location.href='./confirm-card-payment'" id="confirmPay"  class="govuk-button" data-module="govuk-button">
-          Confirm and pay
-        </button>
+          <div class="govuk-form-group govuk-!-margin-bottom-1">
+            <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
+                        value="DfT" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                        I accept the terms and conditions
+                    </label>
+                </div>
+            </div>
+        </div>
+        <p class="govuk-!-margin-top-2 govuk-body-s"><a href="#" >Read terms and conditions</a></p>
+        <div class="govuk-button-group govuk-!-margin-top-6">
+            <!--<button onClick="location.href='./confirm-card-payment'" data-module="govuk-button" class="govuk-button confirm-payment-btn" value="Proceed to payment" type="submit" role="button"
+                aria-label="Proceed to payment">Proceed to payment</button>-->
+                <!-- onClick="location.href='./payment-failure'" -->
+                <button onClick="location.href='./confirm-card-payment'" id="confirmPay"  class="govuk-button" data-module="govuk-button">
+                  Proceed to payment
+                </button>
+        </div>  
+          
+         
         <!-- </a>  -->
     </div>
 </div>
@@ -381,7 +400,7 @@
               {% endif %}
             </div>
         </div>
-        {% include "./../widget-payment-option.html" %}
+        {  % include "./../widget-payment-option.html" %}
     </div>
 </div> -->
 
