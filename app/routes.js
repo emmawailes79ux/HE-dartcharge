@@ -280,12 +280,20 @@ router.get("/one-off-payment/pay-crossing", function (req, res) {
   res.render("prototype-demo/one-off-payment/pay-crossing");
 });
 
+// router.post("/one-off-payment/pay-crossing", function (req, res) {
+//   delete req.session.data['select-account'];
+//   for (let i = 0; i < Object.keys(req.session.data).length; i++) {
+//     delete req.session.data['vrm-' + (i + 1) + ''];
+//   }
+//   res.redirect("confirm-vehicle-details");
+// });
+
 router.post("/one-off-payment/pay-crossing", function (req, res) {
   delete req.session.data['select-account'];
   for (let i = 0; i < Object.keys(req.session.data).length; i++) {
     delete req.session.data['vrm-' + (i + 1) + ''];
   }
-  res.redirect("confirm-vehicle-details");
+  res.redirect("vehicle-info");
 });
 
 router.get("/one-off-payment/confirm-vehicle-details", function (req, res) {
@@ -363,6 +371,9 @@ router.post("/find-vehicle", function (req, res) {
   if (req.body.vrm) {
     res.redirect("/one-off-payment/vehicle-details");
   }
+});
+router.get("/one-off-payment/confirm-card-payment", function (req, res) {
+  res.render("prototype-demo/one-off-payment/confirm-card-payment");
 });
 
 router.get("/one-off-payment/vehicle-crossinfo", function (req, res) {
@@ -491,6 +502,10 @@ router.get("/one-off-payment/late-payment", function (req, res) {
 
 router.get("/one-off-payment/late-payment2", function (req, res) {
   res.render("prototype-demo/one-off-payment/late-payment2");
+});
+
+router.get("/one-off-payment/payment-success", function (req, res) {
+  res.render("prototype-demo/one-off-payment/payment-success");
 });
 
 router.get("/one-off-payment/notification", function (req, res) {
