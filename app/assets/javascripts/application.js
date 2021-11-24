@@ -260,6 +260,9 @@ $("[name='vrm']").click(() => {
 $("[id='vrn']").click(() => {
   $("[id='vrn']").val("LO62 NRO");
 });
+$("[id='plateSubmit']").mouseover(() => {
+  $("[id='vrn']").val("LO62 NRO");
+});
 // FIND VEHICLE
 
 $("[name='payment']").change(() => {
