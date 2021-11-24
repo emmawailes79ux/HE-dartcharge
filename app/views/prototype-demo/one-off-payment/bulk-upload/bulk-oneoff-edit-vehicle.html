@@ -1,0 +1,228 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart
+            Charge)</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Make a one off payment</h1>
+    </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <!-- <div class="govuk-form-group govuk-form-group--error">
+      <div class="govuk-error-message govuk-!-font-size-24 govuk-!-margin-bottom-2">
+        Vehicle not found
+      </div>
+      <div class="govuk-body">
+        Your vehicle registration number <strong>MN62 VRO</strong> could not be found.
+      </div>
+
+    </div> -->
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="event-name">
+        Country of registration
+      </label>
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-radios__item govuk-!-margin-bottom-0">
+          <input class="govuk-radios__input" id="changed-name" name="vrm-1" type="radio" value="UK" checked>
+          <label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+            for="changed-name"> UK</label>
+        </div>
+        <div class="govuk-radios govuk-radios--inline ">
+          <div class="govuk-radios__item govuk-!-margin-right-0">
+            <input class="govuk-radios__input" id="changed-name" name="vrm-1" type="radio" value="Non-UK">
+            <label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+              for="changed-name"> Non-UK</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-form-group">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              Make
+            </label>
+            <input class="govuk-input govuk-input--width-10" type="text">
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              Model
+            </label>
+            <input class="govuk-input govuk-input--width-10" type="text">
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              Colour
+            </label>
+            <input class="govuk-input govuk-input--width-10" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <caption class="govuk-table__caption govuk-table__caption--m">What is your vehicle’s class?</caption>
+        </legend>
+        <hr class="govuk-!-margin-bottom-3"/>
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+          <!-- CLASS A -->
+          <div class="govuk-radios__item">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <input class="govuk-radios__input" id="vehicle-1" name="vehicle" type="radio" value="motor"
+                  data-aria-controls="motor">
+                <label class="govuk-label govuk-radios__label govuk-!-padding-top-0" for="vehicle-1">
+                  <span class="govuk-hint govuk-!-margin-bottom-0">
+                    Class A
+                  </span>
+                  Motorcycles, quadricycles
+                </label>
+              </div>
+              <div class="govuk-grid-column-two-thirds">
+                <img height="50px" src="/public/images/bike-img.png" />
+              </div>
+            </div>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="motor">
+            <div class="govuk-form-group">
+              <p class="govuk-body"> Motorcycles with 2 or 3 wheels / 3 wheel cars / Quadricycles / Quad bikes.
+              </p>
+            </div>
+          </div>
+          <hr class="govuk-!-margin-bottom-3"/>
+
+          <!-- CLASS B -->
+          <div class="govuk-radios__item">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <input class="govuk-radios__input" id="vehicle-2" name="vehicle" type="radio" value="van"
+                  data-aria-controls="van">
+                <label class="govuk-label govuk-radios__label govuk-!-padding-top-0" for="vehicle-2">
+                  <span class="govuk-hint govuk-!-margin-bottom-0">
+                    Class B
+                  </span>
+                  Goods Van / Car-based vans
+                </label>
+              </div>
+              <div class="govuk-grid-column-two-thirds">
+                <img height="50px" src="/public/images/car-img.png" />
+              </div>
+            </div>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="van">
+            <div class="govuk-form-group">
+              <p class="govuk-body">Cars with or without trailers / caravans / 
+                Motorhomes / Passenger vans and buses with no more than 8 seats in addition to driver's seat.
+              </p>
+            </div>
+          </div>
+          <hr class="govuk-!-margin-bottom-3"/>
+          <!-- CLASS C -->
+          <div class="govuk-radios__item">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <input class="govuk-radios__input" id="vehicle-3" name="vehicle" type="radio" value="axle"
+                  data-aria-controls="axle">
+                <label class="govuk-label govuk-radios__label govuk-!-padding-top-0" for="vehicle-3">
+                  <span class="govuk-hint govuk-!-margin-bottom-0">
+                    Class C
+                  </span>
+                 Axle vehicles
+                </label>
+              </div>
+              <div class="govuk-grid-column-two-thirds">
+                <img height="50px" src="/public/images/truck-img.png" />
+              </div>
+            </div>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="axle">
+            <div class="govuk-form-group">
+              <p class="govuk-body"> Goods vehicles with two axles. A two axle goods vehicle with a drawbar trailer
+                is charged as a two axle goods vehicle.
+              </p>
+            </div>
+          </div>
+          <hr class="govuk-!-margin-bottom-3"/>
+          <!-- CLASS D -->
+          <div class="govuk-radios__item">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <input class="govuk-radios__input" id="vehicle-4" name="vehicle" type="radio" value="email"
+                  data-aria-controls="axles">
+                <label class="govuk-label govuk-radios__label govuk-!-padding-top-0" for="vehicle-4">
+                  <span class="govuk-hint govuk-!-margin-bottom-0">
+                    Class D
+                  </span>
+                  2+ Axle vehicles
+                </label>
+              </div>
+              <div class="govuk-grid-column-two-thirds">
+                <img height="50px" src="/public/images/fulltruck-img.png" />
+              </div>
+            </div>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="axles">
+            <div class="govuk-form-group">
+              <p class="govuk-body"> Goods vehicles with more than two axles (whether dropped or not).
+                Buses and coaches with more than two axles.
+              </p>
+            </div>
+          </div>
+          <hr />
+
+        </div>
+
+      </fieldset>
+    </div>
+    
+
+    <!-- <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+         Make
+        </label>
+        <input class="govuk-input govuk-input--width-10"  type="text">
+    </div> -->
+    <!-- <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+         Model
+        </label>
+        <input class="govuk-input govuk-input--width-10"  type="text">
+    </div> -->
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="selfDeclare" name="organisation" type="checkbox"
+            value="selfDeclare" checked>
+          <label class="govuk-label govuk-checkboxes__label" for="selfDeclare">
+            I declare that the information given above is correct
+          </label>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="govuk-form-group govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button" role="button" aria-label="Confirm a vehicle"
+        onclick="location.href='/one-off-payment/upload-bulk-vehicle'">Continue</button>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

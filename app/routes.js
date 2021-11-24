@@ -31,9 +31,38 @@ router.get("/create-account", function (req, res) {
 });
 
 router.get("/faq", function (req, res) {
-
   res.render("prototype-demo/faq");
 });
+
+
+router.get("/forgot-password", function (req, res) {
+  res.render("prototype-demo/password/forgot-password");
+});
+
+router.get("/resend-password", function (req, res) {
+  res.render("prototype-demo/password/resend-password");
+});
+
+router.get("/email-password", function (req, res) {
+  res.render("prototype-demo/password/email-password");
+});
+
+router.get("/text-password", function (req, res) {
+  res.render("prototype-demo/password/text-password");
+});
+
+router.get("/post-password", function (req, res) {
+  res.render("prototype-demo/password/post-password");
+});
+
+router.get("/reset-password", function (req, res) {
+  res.render("prototype-demo/password/reset-password");
+});
+
+router.get("/password-successful", function (req, res) {
+  res.render("prototype-demo/password/password-successful");
+});
+
 
 
 router.post("/create-account", function (req, res) {
@@ -296,6 +325,22 @@ router.post("/one-off-payment/pay-crossing", function (req, res) {
   res.redirect("vehicle-info");
 });
 
+
+router.get("/one-off-payment/confirm-singlevehicle-details", function (req, res) {
+  res.render("prototype-demo/one-off-payment/confirm-singlevehcile-details", {
+    section: "confirm-vehicle",
+  });
+});
+
+router.post("/one-off-payment/confirm-singlevehicle-details", function (req, res) {
+  if (req.body["vrm-1"] && req.body["vrm-2"]) {
+    res.redirect("./multiple-vehicle-details");
+  } else if (req.body["vrm-1"] || req.body["vrm-2"] === "") {
+    res.redirect("./payment-info-single");
+  }
+});
+
+
 router.get("/one-off-payment/confirm-vehicle-details", function (req, res) {
   res.render("prototype-demo/one-off-payment/confirm-vehicle-details", {
     section: "confirm-vehicle",
@@ -355,10 +400,15 @@ router.get("/one-off-payment/bulk-upload", function (req, res) {
   res.render("prototype-demo/one-off-payment/bulk-upload/upload-vehicle");
 });
 
+router.get("/one-off-payment/upload-edit-vehicles", function (req, res) {
+  res.render("prototype-demo/one-off-payment/bulk-upload/bulk-upload-edit-details");
+});
+
+router.get("/one-off-payment/upload-oneoff-vehicle-edit", function (req, res) {
+  res.render("prototype-demo/one-off-payment/bulk-upload/bulk-oneoff-edit-vehicle");
+});
+
 router.get("/one-off-payment/upload-bulk-vehicle", function (req, res) {
-
-
-
   res.render("prototype-demo/one-off-payment/bulk-upload/upload-bulk-vehicle-details");
 });
 
@@ -393,7 +443,7 @@ router.get("/one-off-payment/confirm-method", function (req, res) {
   // } else {
   //   res.render("prototype-demo/one-off-payment/bulk-upload/bulk-confirm-method");
   // }
-  // console.log(req.session);
+  console.log(req.session.data);
   res.render("prototype-demo/one-off-payment/confirm-payment-method");
 
 });
@@ -590,6 +640,30 @@ router.get("/login", function (req, res) {
   res.render("prototype-demo/login");
 });
 
+// Forgot password
+router.get("/enter-detail", function (req, res) {
+  res.render("prototype-demo/forgot-password/detail");
+});
+router.get("/link", function (req, res) {
+  res.render("prototype-demo/forgot-password/link");
+});
+router.get("/check", function (req, res) {
+  res.render("prototype-demo/forgot-password/check");
+});
+router.get("/create-password", function (req, res) {
+  res.render("prototype-demo/forgot-password/create-password");
+});
+router.get("/success", function (req, res) {
+  res.render("prototype-demo/forgot-password/success");
+});
+
+// Forgot username
+router.get("/user-detail", function (req, res) {
+  res.render("prototype-demo/forgot-username/username-detail");
+});
+router.get("/confirm-user", function (req, res) {
+  res.render("prototype-demo/forgot-username/confirm-username");
+});
 // Dashboaord section start
 
 router.get("/dashboard", function (req, res) {
@@ -883,17 +957,17 @@ router.get("/create-account/step-2/business-vehicles", function (req, res) {
   const {
     data
   } = req.session;
-  
+
   res.render("prototype-demo/setup-account/step-2/number-of-vehicles", {
     step: 3,
   });
 });
 
 router.post("/create-account/step-2/business-vehicles", function (req, res) {
-  if(req.body['no-of-vehicles']) {
-    if(req.body['no-of-vehicles'] === '5') {
+  if (req.body['no-of-vehicles']) {
+    if (req.body['no-of-vehicles'] === '5') {
       res.redirect("../step-3/vehicle-register")
-    } else if(req.body['no-of-vehicles'] === '10') {
+    } else if (req.body['no-of-vehicles'] === '10') {
       res.redirect("../../one-off-payment/bulk-upload");
     }
   }

@@ -23,7 +23,7 @@ GOV.UK Prototype Kit
             <caption class="govuk-table__caption govuk-table__caption--m">Confirm vehicle details</caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header govuk-!-padding-0">
+                    <!-- <th scope="col" class="govuk-table__header govuk-!-padding-0">
                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
                             <div class="govuk-checkboxes__item">
@@ -33,22 +33,22 @@ GOV.UK Prototype Kit
                                 </label>
                             </div>
                         </div>
-                    </th>
+                    </th> -->
                     <th scope="col" class="govuk-table__header">Registration number</th>
                     <th scope="col" class="govuk-table__header">Class</th>
                     <th scope="col" class="govuk-table__header">Make</th>
                     <th scope="col" class="govuk-table__header">Model</th>
                     <th scope="col" class="govuk-table__header">Colour</th>
                     <th scope="col" class="govuk-table__header">Country of registration</th>
-                    <th scope="col" class="govuk-table__header"> </th>
-                    <th scope="col" class="govuk-table__header"> </th>
+                    <th scope="col" class="govuk-table__header">Change </th>
+                    <th scope="col" class="govuk-table__header">Remove </th>
                 </tr>
             </thead>
             <tbody class="govuk-table__body">
                 {% for i, vrm in data %}
                 {% if data['vrm-' + loop.index] %}
                 <tr class="govuk-table__row">
-                    <td scope="row" class="govuk-table__header govuk-!-padding-0">
+                    <!-- <td scope="row" class="govuk-table__header govuk-!-padding-0">
                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
                             <div class="govuk-checkboxes__item">
@@ -59,7 +59,7 @@ GOV.UK Prototype Kit
                                 </label>
                             </div>
                         </div>
-                    </td>
+                    </td> -->
                     <td class="govuk-table__cell">{{data['vrm-' + loop.index][0]}}</td>
                     <td class="govuk-table__cell">B</td>
                     <td class="govuk-table__cell">Audi</td>

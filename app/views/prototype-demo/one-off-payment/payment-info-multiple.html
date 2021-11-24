@@ -86,7 +86,7 @@ GOV.UK Prototype Kit
       <tbody class="govuk-table__body">
         {% if data['vrm-' + loop.index] !== 'LO63 NRO' %}
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header govuk-!-padding-top-3">Payable crossings</th>
+          <th scope="row" class="govuk-table__header govuk-!-padding-top-3">Payable Crossings</th>
           <td class="govuk-table__cell">
             <div class="govuk-form-group select-box govuk-!-margin-bottom-0">
               <label class="govuk-label govuk-!-margin-bottom-0" for="payable-crossings">
@@ -111,6 +111,7 @@ GOV.UK Prototype Kit
               <label class="govuk-label govuk-!-margin-bottom-0" for="payable-crossings">
                 <select class="govuk-select govuk-!-margin-right-2 multiple-payable-crossings future-crossing" id="sort"
                   name="payable-crossings">
+                  <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2" selected>2</option>
                   <option value="3">3</option>
@@ -126,7 +127,7 @@ GOV.UK Prototype Kit
     </table>
     {% if data['vrm-' + loop.index] !== 'LO63 NRO' %}
     <div class="govuk-!-padding-bottom-7">
-      <a href="javascript:void(0)" class="govuk-link add-multiple-future" role="link">Add future crossings</a>
+      <a href="javascript:void(0)" class="govuk-link add-multiple-future" role="link">Add Future Crossings</a>
     </div>
     {% endif %}
     {% endif %}

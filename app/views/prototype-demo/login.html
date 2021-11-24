@@ -23,7 +23,7 @@
             <div class="govuk-form-group  govuk-!-margin-bottom-3">
                 <label class="govuk-label" for="username"> Username </label>
                 <input
-                class="govuk-input"
+                class="govuk-input  govuk-input--width-20"
                 id="username"
                 name="username"
                 type="text"
@@ -38,7 +38,7 @@
                 <a
                     class="govuk-link govuk-body-s forgetUsrname"
                     href="javascript:void(0)"
-                    (click)="navigatePage('forgetUsername')" aria-label="Forgot username"
+                    onClick="location.href='./user-detail'" aria-label="Forgot username"
                 >
                     Forgot username
                 </a>
@@ -48,7 +48,7 @@
             <div class="govuk-form-group govuk-!-margin-bottom-3">
                 <label class="govuk-label" for="password"> Password </label>
                 <input
-                class="govuk-input"
+                class="govuk-input  govuk-input--width-20"
                 id="password"
                 name="password"
                 type="password"
@@ -61,13 +61,17 @@
                 
                 </p>
                 <p class="govuk-!-margin-top-0">
-                <a
+                <a  class="govuk-link govuk-body-s forgetPassword"
+                    href="forgot-password" aria-label="Forgot password" >
+                    Forgot password</a>
+
+                <!-- <a
                     class="govuk-link govuk-body-s forgetPassword"
                     href="javascript:void(0)"
+                    onClick="location.href='./enter-detail'" aria-label="Forgot password"
+                    href="forgot-password"
                     (click)="navigatePage('forgetPassword')" aria-label="Forgot password"
-                >
-                    Forgot password</a
-                >
+                >    Forgot password</a> -->
                 </p>
             </div>
             <div class="govuk-button-group govuk-!-margin-top-6 todashboard">

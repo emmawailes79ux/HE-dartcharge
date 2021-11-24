@@ -9,23 +9,23 @@
           Contents
         </h2>
         <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <!-- <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
             <a class="govuk-tabs__tab" href="#past-day">
               Quick payment
             </a>
-          </li>
+          </li> -->
           <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#past-week">
               Debit/Credit Card
             </a>
           </li>
-          <li class="govuk-tabs__list-item">
+          <!-- <li class="govuk-tabs__list-item">
             <a class="govuk-tabs__tab" href="#past-month">
               Bank transfer
             </a>
-          </li>
+          </li> -->
         </ul>
-        <div class="govuk-tabs__panel" id="past-day">
+        <!-- <div class="govuk-tabs__panel" id="past-day">
           
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="paypal" name="option-payment" type="radio"
@@ -58,7 +58,7 @@
                 aria-label="Proceed to payment">Proceed to payment</button>
         </div>
       
-        </div>
+        </div> -->
 
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
@@ -121,7 +121,7 @@
         
         
         <!-- Terms and Condition Starts-->
-        <div class="govuk-form-group govuk-!-margin-bottom-2" >
+        <!-- <div class="govuk-form-group govuk-!-margin-bottom-2" >
             <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-0" for="Terms and conditions">You must agree to the service terms and conditions
             </p>
         
@@ -132,15 +132,15 @@
                     <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
                         value="DfT" checked>
                     <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
-                        I accept the terms and conditions
+                        I accept the <a href="#">terms and conditions</a>
                     </label>
                 </div>
             </div>
-        </div>
-        <p class="govuk-!-margin-top-2 govuk-body-s"><a href="#" >Read terms and conditions</a></p>
-        <div class="govuk-button-group govuk-!-margin-top-6">
+        </div> -->
+        <!-- <p class="govuk-!-margin-top-2 govuk-body">Read terms and conditions (links opens in a new window)</p>
+        <div class="govuk-button-group govuk-!-margin-top-6"> -->
             <button onClick="location.href='./step-4-done'" data-module="govuk-button" class="govuk-button" value="Proceed to payment" type="submit" role="button"
-                aria-label="Proceed to payment">Proceed to payment</button>
+                aria-label="Proceed to payment">Continue</button>
                 <!-- onClick="location.href='./payment-failure'" -->
         </div>
 
