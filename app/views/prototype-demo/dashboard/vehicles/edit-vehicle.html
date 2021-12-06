@@ -8,15 +8,14 @@ GOV.UK Prototype Kit
 
 
 {% include "../../one-off-payment/one-off-payment-body-head.html" %}
-<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<a href="/home" style="cursor: pointer;" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
                 <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicles</h1>
                 <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Add Vehicle</h1>
-                <!-- <div class="app-!-bottom-line"></div> -->
-                <hr class="govuk-!-margin-bottom-4">
+                <div class="app-!-bottom-line"></div>
             </div>
         </div>
         <div class="govuk-grid-row">
@@ -52,27 +51,10 @@ GOV.UK Prototype Kit
                         </tr>
                     </tbody>
                 </table>
-
-            </div>
-        </div>
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
-                <div class="govuk-form-group">
-                    <div class="govuk-checkboxes">
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="selfDeclare" name="organisation" type="checkbox"
-                                value="selfDeclare" checked>
-                            <label class="govuk-label govuk-checkboxes__label" for="selfDeclare">
-                                I declare that the information given above is correct
-                            </label>
-                        </div>
-                    </div>
-                </div>
                 <button type="button" class="govuk-button edit-vehicle-confirm" data-module="govuk-button" role="button"
                     aria-label="save and proceed">Save and proceed</button>
             </div>
         </div>
-
     </div>
     {% include "./dashboard-vehicle-info.html" %}
 </div>
