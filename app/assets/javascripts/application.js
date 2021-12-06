@@ -135,6 +135,7 @@ $(document).ready(function () {
     $(".lrds-submit-type").prop("disabled", false);
   });
 
+
   $(".lrds-submit-type").click(function () {
     let personalAccountType = $("[name='lrds-submit-type']:checked").val();
     if (personalAccountType === "lrds-online") {
@@ -149,18 +150,6 @@ $(document).ready(function () {
 
 
 
-
-
-  $(".resendpassword").click(() => {
-    let radioVal = $("[name='selectlink']:checked").val();
-    if (radioVal === "emailmessage") {
-      $.fn.redirectPage("email-password");
-    } else if (radioVal === "textmessage") {
-      $.fn.redirectPage("text-password");
-    } else if (radioVal === "postmessage") {
-      $.fn.redirectPage("post-password");
-    }
-  });
 
   $("#login-btn").click(function () {
     $.fn.redirectPage("login");
@@ -267,12 +256,6 @@ $("[name='changed-name']").change(() => {
 
 $("[name='vrm']").click(() => {
   $("[name='vrm']").val("LO62 NRO");
-});
-$("[id='vrn']").click(() => {
-  $("[id='vrn']").val("LO62 NRO");
-});
-$("[id='plateSubmit']").mouseover(() => {
-  $("[id='vrn']").val("LO62 NRO");
 });
 // FIND VEHICLE
 
@@ -401,8 +384,8 @@ $(".successNxt").click(function () {
     $.fn.redirectPage("one-off-payment/create-account");
   } else if (SuccessNext === "vrm-notifi") {
     $.fn.redirectPage("one-off-payment/notification");
-  } else if (SuccessNext === "oneoff-pay") {
-    $.fn.redirectPage("one-off-payment/pay-crossing");
+  } else if (SuccessNext === "finish") {
+    $.fn.redirectPage("home");
   }
 });
 
@@ -460,7 +443,7 @@ $(".accountpaymentoptionBtn").click(() => {
 
 $("[name='card-number']").click(() => {
   $("[name='name-on-card']").val("John Doe");
-  $("[name='card-number']").val("4562123498763456");
+  $("[name='card-number']").val("John Doe");
   $("[name='account-number']").val("12345678");
   $("[name='month']").val("12");
   $("[name='year']").val("21");
@@ -500,18 +483,8 @@ $(".find-vehicle-multiple-flow").click(() => {
   $(this.form.submit());
 })
 
-
-
 $(".add-vehicle-multiple-flow").click(() => {
   var rowlength = $('#mytable tbody>tr').length;
-  var count = $('#mytable tbody>tr').length + 1;
-  console.log(count);
-  $("#vehicle-paragraph").text(count);
-  if (count == 5) {
-
-    $(".add-vehicle-multiple-flow").hide();
-
-  }
   var newHead = '<tr class="govuk-table__row">' +
     '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
     '<th scope="col" class="govuk-table__header">Country of registration</th>' +
@@ -545,12 +518,6 @@ $(".add-vehicle-multiple-flow").click(() => {
 //remove
 $(document).on('click', '#remove', function () {
   var rowlength = $('#mytable tbody>tr').length;
-  var count = $('#mytable tbody>tr').length - 1;
-  if (count < 5) {
-    $(".add-vehicle-multiple-flow").show();
-  }
-  console.log(count);
-  $("#vehicle-paragraph").text(count);
   if (rowlength == 2) {
     var newHead = '<tr class="govuk-table__row">' +
       '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
@@ -695,18 +662,17 @@ $(".edit-vehicle-confirm").click(() => {
 })
 $(".add-future-crossings-row").click(() => {
   let newRow = ' <tr class="govuk-table__row">' +
-    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future Crossings</td>' +
+    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future crossings</td>' +
     '<td class="govuk-table__cell">' +
     '<div class="govuk-form-group select-box govuk-!-margin-bottom-0">' +
     '<label class="govuk-label govuk-!-margin-bottom-0" for="trips">' +
     '<select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">' +
-    '<option value="0">0</option>' +
     '<option value="1" selected>1</option>' +
     '<option value="2">2</option>' +
     '<option value="3">3</option>' +
     '<option value="4">4</option>' +
     ' </select></label></div>' + '</td>' +
-    '<td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3 govuk-table__header--numeric">£2.50</td>' + '</tr>'
+    '<td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£2.50</td>' + '</tr>'
   $(".payment-table tbody>tr").last().after(newRow);
   $('.add-future-crossings-row').hide();
 });
@@ -718,7 +684,7 @@ $(".dashboard-add-vehicle").click(() => {
   // $(".dashboard-vehicle-form").before(newRow);
   var rowlength = $('#mytable tbody>tr').length;
   var newHead = '<tr class="govuk-table__row">' +
-    '<th scope="col" class="govuk-table__header">Vehicle registration number</th>' +
+    '<th scope="col" class="govuk-table__header">Registration number</th>' +
     '<th scope="col" class="govuk-table__header">Country of registration</th>' +
     '<th scope="col" class="govuk-table__header">Action</th>' +
     '<tr>';
@@ -760,18 +726,17 @@ $(".add-future-crossing").click(function () {
 
 $('.add-multiple-future').click(function () {
   let newRow = ' <tr class="govuk-table__row">' +
-    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future Crossings</td>' +
+    '<td scope="row" class="govuk-table__header govuk-!-padding-top-3">Future crossings</td>' +
     '<td class="govuk-table__cell">' +
     '<div class="govuk-form-group select-box govuk-!-margin-bottom-0">' +
     '<label class="govuk-label govuk-!-margin-bottom-0" for="trips">' +
     '<select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">' +
-    '<option value="0">0</option>' +
     '<option value="1" selected>1</option>' +
     '<option value="2">2</option>' +
     '<option value="3">3</option>' +
     '<option value="4">4</option>' +
     ' </select></label></div>' + '</td>' +
-    '<td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3 govuk-table__header--numeric">£2.50</td>' + '</tr>'
+    '<td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£2.50</td>' + '</tr>'
   $(this).parent('div').prev('table').find('tbody>tr').last().after(newRow);
   $(this).hide();
 })
@@ -796,7 +761,7 @@ $(".bulk-upload-btn").click(() => {
 })
 
 $(".upload-find-vehicle").click(() => {
-  $.fn.redirectPage("one-off-payment/upload-edit-vehicles");
+  $.fn.redirectPage("one-off-payment/upload-bulk-vehicle");
 })
 
 $(".bulk-vehicle-confirm").click(() => {
@@ -804,10 +769,6 @@ $(".bulk-vehicle-confirm").click(() => {
 })
 $("[name='no-of-vehicles']").change(() => {
   $(".number-of-vehicles").prop("disabled", false);
-})
-
-$("[name='make-oneoff-no-of-vehicles']").change(() => {
-  $(".make-oneoff-number-of-vehicles").prop("disabled", false);
 })
 
 // $('.number-of-vehicles').click(() => {
