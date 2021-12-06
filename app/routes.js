@@ -309,20 +309,42 @@ router.get("/one-off-payment/pay-crossing", function (req, res) {
   res.render("prototype-demo/one-off-payment/pay-crossing");
 });
 
-// router.post("/one-off-payment/pay-crossing", function (req, res) {
-//   delete req.session.data['select-account'];
-//   for (let i = 0; i < Object.keys(req.session.data).length; i++) {
-//     delete req.session.data['vrm-' + (i + 1) + ''];
-//   }
-//   res.redirect("confirm-vehicle-details");
-// });
-
 router.post("/one-off-payment/pay-crossing", function (req, res) {
   delete req.session.data['select-account'];
   for (let i = 0; i < Object.keys(req.session.data).length; i++) {
     delete req.session.data['vrm-' + (i + 1) + ''];
   }
-  res.redirect("vehicle-info");
+  //res.redirect("confirm-vehicle-details");
+  res.redirect("no-of-vehicles");
+});
+
+router.get("/one-off-payment/no-of-vehicles", function (req, res) {
+  res.render("prototype-demo/one-off-payment/one-off-payment-no-of-vehicles", {
+    section: "confirm-vehicle",
+  });
+});
+
+router.post("/one-off-payment/no-of-vehicles", function (req, res) {
+  // res.render("prototype-demo/one-off-payment/one-off-payment-no-of-vehicles", {
+  //   section: "confirm-vehicle",
+  // });
+  // console.log(req.body['make-oneoff-no-of-vehicles']);
+  // if (req.body['make-oneoff-no-of-vehicles']) {
+  //   if (req.body['make-oneoff-no-of-vehicles'] === '5') {
+  //     res.redirect("confirm-vehicle-details");
+  //   } else if (req.body['make-oneoff-no-of-vehicles'] === '10') {
+  //     res.redirect("../../one-off-payment/bulk-upload");
+  //   }
+  // }
+
+  console.log(req.body['make-oneoff-no-of-vehicles']);
+  if (req.body['make-oneoff-no-of-vehicles']) {
+    if (req.body['make-oneoff-no-of-vehicles'] === '5') {
+      res.redirect("confirm-singlevehicle-details");
+    } else if (req.body['make-oneoff-no-of-vehicles'] === '10') {
+      res.redirect("confirm-vehicle-details");
+    }
+  }
 });
 
 
@@ -421,9 +443,6 @@ router.post("/find-vehicle", function (req, res) {
   if (req.body.vrm) {
     res.redirect("/one-off-payment/vehicle-details");
   }
-});
-router.get("/one-off-payment/confirm-card-payment", function (req, res) {
-  res.render("prototype-demo/one-off-payment/confirm-card-payment");
 });
 
 router.get("/one-off-payment/vehicle-crossinfo", function (req, res) {
@@ -552,10 +571,6 @@ router.get("/one-off-payment/late-payment", function (req, res) {
 
 router.get("/one-off-payment/late-payment2", function (req, res) {
   res.render("prototype-demo/one-off-payment/late-payment2");
-});
-
-router.get("/one-off-payment/payment-success", function (req, res) {
-  res.render("prototype-demo/one-off-payment/payment-success");
 });
 
 router.get("/one-off-payment/notification", function (req, res) {
