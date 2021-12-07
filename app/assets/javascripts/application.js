@@ -5,7 +5,10 @@ if (window.console && window.console.info) {
   window.console.info("GOV.UK Prototype Kit - do not use for production");
 }
 
+window.version = 'v1.1';
 $(document).ready(function () {
+  version = window.location.pathname.split("/")[2] || version;
+
   window.GOVUKFrontend.initAll();
 
   $("[name='select-account']").change(function () {
@@ -32,6 +35,9 @@ $(document).ready(function () {
     window.location.href = `/${uri}`;
   };
 
+  // Get the version from the url for navigation 
+  
+  
   $.fn.slideToTop = () => {
     $("html, body").animate({
       scrollTop: 0
@@ -179,11 +185,11 @@ $(document).ready(function () {
   })
 
   // $(".multiple-vehicle").click(function () {
-  //   $.fn.redirectPage("one-off-payment/payment-info/1");
+  //   $.fn.redirectPage("one-off-payment/${version}/payment-info/1");
   // });
 
   $(".multiple-vehicle").click(function () {
-    $.fn.redirectPage("one-off-payment/payment-info");
+    $.fn.redirectPage(`one-off-payment/${version}/payment-info`);
   });
 
   //*********** LRDS *************//
@@ -193,6 +199,7 @@ $(document).ready(function () {
   //************ /.LRDS ************//
 
   $(".landingNxtBtn").click(() => {
+    
     let radioVal = $("[name='selectlink']:checked").val();
 
     if (radioVal === "pcn") {
@@ -203,9 +210,9 @@ $(document).ready(function () {
       $.fn.redirectPage("create-account");
 
     } else if (radioVal === "make-oneoff-payment") {
-      // $.fn.redirectPage("one-off-payment/find-vehicle");
-      //$.fn.redirectPage("one-off-payment/confirm-vehicle-details");
-      $.fn.redirectPage("one-off-payment/pay-crossing");
+      // $.fn.redirectPage("one-off-payment/${version}/find-vehicle");
+      //$.fn.redirectPage("one-off-payment/${version}/confirm-vehicle-details");
+      $.fn.redirectPage(`one-off-payment/${version}/pay-crossing`);
 
     } else if (radioVal === "login") {
 
@@ -215,7 +222,7 @@ $(document).ready(function () {
   });
 
   $(".continue").click(() => {
-    $.fn.redirectPage("one-off-payment/confirm-vehicle-details");
+    $.fn.redirectPage(`one-off-payment/${version}/confirm-vehicle-details`);
   })
 
   $("[name='vehicle-flow-type']").change(() => {
@@ -226,9 +233,9 @@ $(document).ready(function () {
     let radioVal = $("[name='vehicle-flow-type']:checked").val();
     console.log(radioVal);
     if (radioVal === "single") {
-      $.fn.redirectPage("one-off-payment/find-vehicle");
+      $.fn.redirectPage(`one-off-payment/${version}/find-vehicle`);
     } else if (radioVal === "multiple") {
-      $.fn.redirectPage("one-off-payment/confirm-vehicle-details");
+      $.fn.redirectPage(`one-off-payment/${version}/confirm-vehicle-details`);
     }
   });
 
@@ -255,9 +262,9 @@ $(document).ready(function () {
 $(".pay-for-crossings").click(function () {
   let makePayment = $("[name='crossingsPayment']:checked").val();
   if (makePayment === "yes") {
-    $.fn.redirectPage("one-off-payment/find-vehicle");
+    $.fn.redirectPage(`one-off-payment/${version}/find-vehicle`);
   } else if (makePayment === "no") {
-    $.fn.redirectPage("one-off-payment/late-payment");
+    $.fn.redirectPage(`one-off-payment/${version}/late-payment`);
   }
 });
 
@@ -277,7 +284,7 @@ $("[name='payment']").change(() => {
 $(".payment-madecross").click(function () {
   let makePayment = $("[name='payment']:checked").val();
   if (makePayment === "pay") {
-    $.fn.redirectPage("one-off-payment/payment-info-single");
+    $.fn.redirectPage(`one-off-payment/${version}/payment-info-single`);
   } else if (makePayment === "penalty") {
     document.location.href =
       "https://dartford-crossing-charge.herokuapp.com/demo/flow1";
@@ -287,7 +294,7 @@ $(".find-vehicle").click(() => {
   let inputVal = $("[name='vrm']").val();
   if (inputVal === "LO62 NRO") {
     // $.fn.redirectPage('one-off-payment/vehicle-details');
-    $.fn.redirectPage("one-off-payment/late-payment2");
+    $.fn.redirectPage(`one-off-payment/${version}/late-payment2`);
   } else {
     $("#vrm-error").css("display", "block");
     $("#vrm").parent().addClass("govuk-form-group--error");
@@ -303,9 +310,10 @@ $("[name='email']").click(() => {
 });
 
 $(".proceed-to-pay").click(() => {
+  
   let inputVal = $("[name='email']").val();
   if (inputVal === "johndoe@gmail.com") {
-    $.fn.redirectPage("one-off-payment/payment-options");
+    $.fn.redirectPage(`one-off-payment/${version}/payment-options`);
   } else {
     $(".email-error").css("display", "block");
     $(".email-address").parent().addClass("govuk-form-group--error");
@@ -315,7 +323,7 @@ $(".proceed-to-pay").click(() => {
   }
 });
 $(".proceed-to-pay-continue").click(() => {
-  $.fn.redirectPage("one-off-payment/payment-info-confirm");
+  $.fn.redirectPage(`one-off-payment/${version}/payment-info-confirm`);
 
 });
 $(".nominate-contact").click(() => {
@@ -334,17 +342,17 @@ $(".paymentoptionBtn").click(() => {
   let radioVal = $("[name='option-payment']:checked").val();
 
   // if (radioVal === "card-payment") {
-  //   $.fn.redirectPage("one-off-payment/payment");
+  //   $.fn.redirectPage("one-off-payment/${version}/payment");
   // } else if (radioVal === "paypal") {
-  //   $.fn.redirectPage("one-off-payment/paypal");
+  //   $.fn.redirectPage("one-off-payment/${version}/paypal");
   // } else {
-  //   $.fn.redirectPage("one-off-payment/bank-transfer");
+  //   $.fn.redirectPage("one-off-payment/${version}/bank-transfer");
   // }
-  $.fn.redirectPage("one-off-payment/confirm-method");
+  $.fn.redirectPage(`one-off-payment/${version}/confirm-method`);
 });
 
 $(".pay-now").click(() => {
-  $.fn.redirectPage("one-off-payment/paypal");
+  $.fn.redirectPage(`one-off-payment/${version}/paypal`);
 })
 
 $("[name='vehilce-crossinfo']").change(() => {
@@ -355,9 +363,9 @@ $(".vehicle-flowtype").click(() => {
   let radioVal = $("[name='vehilce-crossinfo']:checked").val();
 
   if (radioVal === "resolve-penalty") {
-    $.fn.redirectPage("one-off-payment/late-payment");
+    $.fn.redirectPage(`one-off-payment/${version}/late-payment`);
   } else if (radioVal === "pay-crossing") {
-    $.fn.redirectPage("one-off-payment/vehicle-payinfo");
+    $.fn.redirectPage(`one-off-payment/${version}/vehicle-payinfo`);
   }
 });
 
@@ -369,9 +377,9 @@ $(".vehicle-crossing").click(() => {
   let radioVal = $("[name='pay-crossinfo']:checked").val();
 
   if (radioVal === "pay-mcrossing") {
-    $.fn.redirectPage("one-off-payment/vehicle-crossmade");
+    $.fn.redirectPage(`one-off-payment/${version}/vehicle-crossmade`);
   } else if (radioVal === "pay-fcrossing") {
-    $.fn.redirectPage("one-off-payment/find-vehicle");
+    $.fn.redirectPage(`one-off-payment/${version}/find-vehicle`);
   }
 });
 
@@ -383,20 +391,20 @@ $(".vehicle-madecross").click(() => {
   let radioVal = $("[name='pay-madecross']:checked").val();
 
   if (radioVal === "yes") {
-    $.fn.redirectPage("one-off-payment/find-vehicle");
+    $.fn.redirectPage(`one-off-payment/${version}/find-vehicle`);
   } else if (radioVal === "no") {
-    $.fn.redirectPage("one-off-payment/late-payment");
+    $.fn.redirectPage(`one-off-payment/${version}/late-payment`);
   }
 });
 
 $(".successNxt").click(function () {
   let SuccessNext = $("[name='successnextoption']:checked").val();
   if (SuccessNext === "create-account") {
-    $.fn.redirectPage("one-off-payment/create-account");
+    $.fn.redirectPage(`one-off-payment/${version}/create-account`);
   } else if (SuccessNext === "vrm-notifi") {
-    $.fn.redirectPage("one-off-payment/notification");
+    $.fn.redirectPage(`one-off-payment/${version}/notification`);
   } else if (SuccessNext === "oneoff-pay") {
-    $.fn.redirectPage("one-off-payment/pay-crossing");
+    $.fn.redirectPage(`one-off-payment/${version}/pay-crossing`);
   }
 });
 
@@ -423,7 +431,7 @@ $(".account-type").click(function () {
 $(".oneoff-account-type").click(function () {
   let accoutTypeVal = $("[name='select-account']:checked").val();
   if (accoutTypeVal === "perosnal-account") {
-    $.fn.redirectPage("one-off-payment/personal-type");
+    $.fn.redirectPage(`one-off-payment/${version}/personal-type`);
   }
 });
 
@@ -442,11 +450,11 @@ $(".accountpaymentoptionBtn").click(() => {
   let radioVal = $("[name='option-payment']:checked").val();
 
   if (radioVal === "card-payment") {
-    $.fn.redirectPage("one-off-payment/account-account-success");
+    $.fn.redirectPage(`one-off-payment/${version}/account-account-success`);
   } else if (radioVal === "paypal") {
-    $.fn.redirectPage("one-off-payment/account-create-done");
+    $.fn.redirectPage(`one-off-payment/${version}/account-create-done`);
   } else {
-    $.fn.redirectPage("one-off-payment/account-create-done");
+    $.fn.redirectPage(`one-off-payment/${version}/account-create-done`);
   }
 });
 
@@ -474,7 +482,7 @@ $(".confirm-payment-btn").click(() => {
     $.fn.slideToTop();
     return;
   }
-  $.fn.redirectPage("one-off-payment/payment-failure");
+  $.fn.redirectPage(`one-off-payment/${version}/payment-failure`);
 });
 
 // One off payment's payment page validation
@@ -482,16 +490,16 @@ $(".confirm-payment-btn").click(() => {
 //muliple vehicle flow
 
 $(".find-vehicle-multiple-flow").click(() => {
-  // $.fn.redirectPage("one-off-payment/multiple-vehicle-details");
-  console.log('working');
+  
   if ($("[name='vrm-1']").val() === '') {
-
+    
     $(".vrm-error").css("display", "block");
     $(".error-summary").css("display", "block");
     return false;
   }
+  $.fn.redirectPage(`one-off-payment/${version}/upload-edit-vehicles`);
 
-  $(this.form.submit());
+  // $(this.form.submit());
 })
 
 $(".add-vehicle-multiple-flow").click(() => {
@@ -784,15 +792,15 @@ $.fn.totalSum = () => {
 
 //bulk-upload
 $(".bulk-upload-btn").click(() => {
-  $.fn.redirectPage("one-off-payment/bulk-upload");
+  $.fn.redirectPage(`one-off-payment/${version}/bulk-upload`);
 })
 
 $(".upload-find-vehicle").click(() => {
-  $.fn.redirectPage("one-off-payment/upload-edit-vehicles");
+  $.fn.redirectPage(`one-off-payment/${version}/upload-edit-vehicles`);
 })
 
 $(".bulk-vehicle-confirm").click(() => {
-  $.fn.redirectPage("one-off-payment/bulk-vehicle-confirm");
+  $.fn.redirectPage(`one-off-payment/v1.1/bulk-vehicle-confirm`);
 })
 $("[name='no-of-vehicles']").change(() => {
   $(".number-of-vehicles").prop("disabled", false);
@@ -802,6 +810,16 @@ $("[name='make-oneoff-no-of-vehicles']").change(() => {
   $(".make-oneoff-number-of-vehicles").prop("disabled", false);
 })
 
+$("[name='vrm']").click(() => {
+  $("[name='vrm']").val("LO62 NRO");
+});
+$("[id='vrn']").click(() => {
+  $("[id='vrn']").val("LO62 NRO");
+});
+$("[id='plateSubmit']").mouseover(() => {
+  $("[id='vrn']").val("LO62 NRO");
+});
+
 // $('.number-of-vehicles').click(() => {
 //   let radioVal = $("[name='no-of-vehicles']:checked").val();
 //   console.log(radioVal);
@@ -809,6 +827,6 @@ $("[name='make-oneoff-no-of-vehicles']").change(() => {
 
 //     $.fn.redirectPage("create-account/step-3/vehicle-register");
 //   } else if (radioVal === "10") {
-//     $.fn.redirectPage("one-off-payment/bulk-upload");
+//     $.fn.redirectPage("one-off-payment/${version}/bulk-upload");
 //   }
 // })

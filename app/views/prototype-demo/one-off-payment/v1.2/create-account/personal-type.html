@@ -1,0 +1,104 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "../one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-6">
+        Create an account step 2 of 4
+      </h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+          Select an account type
+      </h2>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="select-account-type">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="pre-pay"
+                name="personal-account-type"
+                type="radio"
+                value="pre-pay"
+                aria-describedby="pre-pay-hint"
+              />
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pre-pay">
+                Pre-pay
+              </label>
+              <div id="pre-pay-item-hint" class="govuk-hint">
+                <ul class="govuk-!-margin-top-1 govuk-!-margin-bottom-1">
+                  <li>A discount is applied to every crossing made.</li>
+                  <li>A minimum of £10 deposit is required.</li>
+                  <li>Payment is taken automatically from your account balance.</li>
+                  <li>The registered card will be debited when the balance goes below a limit set by you.</li>
+                </ul>
+              </div>
+            </div>
+  
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="payg"
+                name="personal-account-type"
+                type="radio"
+                value="payg"
+                aria-describedby="payg-hint"
+              />
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="payg">
+                Pay as you go
+              </label>
+              <div id="payg-item-hint" class="govuk-hint ">
+                <ul class="govuk-!-margin-top-1 govuk-!-margin-bottom-1">
+                  <li>No discount is available.</li>
+                  <li>No initial deposit is required.</li>
+                  <li>Payment will be taken automatically from the registered card after the crossing is made.</li>
+                </ul>
+              </div>
+            </div>
+  
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="lrds"
+                name="personal-account-type"
+                type="radio"
+                value="lrds"
+                aria-describedby="lrds-hint"
+              />
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="lrds">
+                Local resident discount scheme
+              </label>
+              <div id="lrds-item-hint" class="govuk-hint">
+                <ul class="govuk-!-margin-top-1 govuk-!-margin-bottom-1">
+                  <li>Provides discounted journeys for Dartford or Thurrock residents.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button
+        class="govuk-button oneoff-prsl-acct-type"
+        data-module="govuk-button"
+        role="button"
+        disabled
+      >
+      Continue
+      </button>
+
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}
