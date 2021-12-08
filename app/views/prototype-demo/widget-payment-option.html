@@ -8,60 +8,7 @@
       <h2 class="govuk-tabs__title">
         Contents
       </h2>
-      <ul class="govuk-tabs__list">
-        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#past-day">
-            Quick payment
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#past-week">
-            Debit/Credit Card
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#past-month">
-            Bank transfer
-          </a>
-        </li>
-      </ul>
-      <div class="govuk-tabs__panel" id="past-day">
-        
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="paypal" name="option-payment" type="radio"
-              value="paypal" >
-          
-          <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 app-!-payment-option-label" for="paypal">
-            <img src="/public/images/paypal_icon.png"  alt="paypal" />
-              <span>PayPal</span>
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="google-pay" name="option-payment" type="radio"
-                value="google-pay" >
-            <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 app-!-payment-option-label" for="google-pay">
-              <img src="/public/images/gpay_icon.png"  alt="Google pay" />
-                <span>Google pay</span>
-            </label>
-        </div>
-        <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="apple-pay" name="option-payment" type="radio"
-                value="apple-pay" >
-            <label class="govuk-label govuk-radios__label govuk-!-padding-top-0 app-!-payment-option-label" for="apple-pay">
-              <img src="/public/images/apple_pay.png"  alt="Google pay" />
-                <span>Apple pay</span>
-            </label>
-        </div>
-        
-        <div class="govuk-button-group govuk-!-margin-top-6">
-          <button data-module="govuk-button" class="govuk-button paymentoptionBtn" value="Proceed to payment" type="submit" role="button"
-              aria-label="Proceed to payment">Proceed to payment</button>
-      </div>
-    
-      </div>
-
-
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+     
       
         <div class="govuk-form-group govuk-!-margin-bottom-2">
           <label class="govuk-label govuk-!-font-weight-bold " for="card-number">Card number</label>
@@ -139,39 +86,11 @@
       </div>
       <p class="govuk-!-margin-top-2 govuk-body-s"><a href="#" >Read terms and conditions</a></p>
       <div class="govuk-button-group govuk-!-margin-top-6">
-          <button data-module="govuk-button" class="govuk-button confirm-payment-btn" value="Proceed to payment" type="submit" role="button"
+          <button data-module="govuk-button" onClick="location.href='./success'" class="govuk-button" value="Proceed to payment" type="submit" role="button"
               aria-label="Proceed to payment">Proceed to payment</button>
-              <!-- onClick="location.href='./payment-failure'" -->
+             
       </div>
 
-      </div>
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden " id="past-month">
-        <div class='govuk-!-margin-bottom-5'>
-            <p class="govuk-body govuk-!-font-weight-bold">Name of the bank:</p>
-            <p>Barclays Bank</p>
-        </div>
-        <div class='govuk-!-margin-bottom-5'>
-            <p class="govuk-body govuk-!-font-weight-bold">Account number:</p>
-            <p>12345678</p>
-        </div>
-        <div class='govuk-!-margin-bottom-5'>
-            <p class="govuk-body govuk-!-font-weight-bold">Sort code:</p>
-            <p>202122</p>
-        </div>
-        <div class='govuk-!-margin-bottom-5'>
-            <p class="govuk-body govuk-!-font-weight-bold">IBAN number:</p>
-            <p>GB33BUKB20201555555555</p>
-        </div>
-        <div class='govuk-!-margin-bottom-5'>
-            <p class="govuk-body govuk-!-font-weight-bold">Reference number:</p>
-            <p>HDJ2123F</p>
-        </div>
-        <div class="govuk-button-group govuk-!-margin-top-6">
-          <button onClick="location.href='./success'" data-module="govuk-button" class="govuk-button" value="Proceed to payment" type="submit" role="button"
-              aria-label="Proceed to payment">Proceed to payment</button>
-        </div>
-      </div>
-    
     
     </div>
   </div>
