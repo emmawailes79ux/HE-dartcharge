@@ -26,13 +26,19 @@
             <input class="govuk-input govuk-input--width-5" id="postcode_number" name="postcode_number" value="DA1 DR0"
               type="text" />
           </div>
+          <div class="govuk-form-group ">
+            <label class="govuk-label govuk-!-font-weight-bold" for="lrds_address">Select the address</label>
+            <select class="govuk-select" id="lrds_address" name="lrds_address">
+              <option value="published">Home Gardens, Dartford DA1 DR0</option>
+              <option value="updated" selected>Home Gardens, Dartford DA1 DR0</option>
+            </select>
+          </div>
         <button
-            class="govuk-button"
+            class="govuk-button lrds-address-confirm"
             data-module="govuk-button"
             role="button"
-            onclick="location.href='/lrds/address'" 
             >
-            Find address
+            Continue
         </button>
     </div>
     

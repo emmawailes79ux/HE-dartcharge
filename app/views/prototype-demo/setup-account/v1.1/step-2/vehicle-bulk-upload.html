@@ -1,0 +1,54 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+
+<!-- If it is a business account then render this form -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">Upload vehicle details</h1>
+
+        <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6"><strong>Choose a file </strong> <br> Supported file format (.xlsx)</p>
+        <button data-module="govuk-button" class="govuk-button govuk-button--secondary app-!-pull-left " type="button"
+            role="button" aria-label="bulk-upload-file">Upload</button>
+        <div class="govuk-body-s govuk-!-margin-top-2  govuk-!-margin-left-2 app-!-pull-left">
+            <strong>VehicleDetails.xlsx</strong></div>
+     
+
+    </div>
+<div class="govuk-grid-column-full">
+    
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+Bulk upload                  </span>
+            </summary>
+                <p class="govuk-body govuk-!-margin-top-2">Use the Bulk Upload functionality to manage your group names, along with adding <br/> and deleting vehicles.
+               
+                See the <a href="javascript:void(0)" class="govuk-link">Bulk Upload Guide</a> for details.</p>
+                <p class="govuk-body">You can use the bulk upload template to add multiple vehicles to your account.<br>
+                <a href="javascript:void(0)" class="govuk-link"> Download bulk upload template (CSV)</a> </p>
+            <!-- <div class="govuk-details__text"> -->
+                <!-- {% if data['select-account'] === 'business-account' %} -->
+               
+                <!-- {% endif %} -->
+            <!-- </div> -->
+          </details>
+          
+</div>
+   
+    <div class="govuk-grid-column-full govuk-!-margin-top-2">
+        <button class="govuk-button create-account-bulk-vehicle govuk-!-margin-right-2" data-module="govuk-button"
+            role="button">
+            Find your vehicles
+        </button>
+    </div>
+   
+</div>
+
+{% endblock %}
