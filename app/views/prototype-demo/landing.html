@@ -17,7 +17,7 @@
       </span>
     </p>
   </div>  
-    <!-- <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
           <p class="govuk-body govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-2">Already have an account?
           <a class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold" href="javascript:void(0)" id="login-btn" data-module="govuk-button" role="button"
@@ -26,11 +26,11 @@
           </a></p>
       </div>
     </div>
-    <hr class="govuk-section-break govuk-section-break--visible"> -->
+    <hr class="govuk-section-break govuk-section-break--visible">
     <main class="govuk-main-wrapper" id="main-content">
 
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
+        <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
           <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">What would you like to do?</h1>
 
@@ -51,7 +51,28 @@
                     Make a one off payment
                   </label>
                   <div class="govuk-body-s govuk-!-padding-left-3">
-                    <p>Make a pre or post crossing payment without creating an account</p>
+                    <p>Make a payment for recent or future crossings without creating an account. This is not for paying a penalty charge notice.</p>
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="create-account"
+                    type="radio"
+                    value="create-account"
+                    aria-describedby="create-account-hint"
+                    name="selectlink"
+                  />
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="create-account">
+                   Create or manage an account
+                  </label>
+                  <div class="govuk-body-s govuk-!-padding-left-3 govuk-!-margin-top-1">
+                    <p style="margin: -10px 0 0 0;">Account types include:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>pre-pay (discounted crossings for personal and business use)</li>
+            <li>pay as you go (never forget to pay for a crossing)</li>
+            <li>discount scheme for residents of Dartford and Thurrock</li>
+          </ul>
                   </div>
                 </div>
       
@@ -68,30 +89,11 @@
                     Resolve a penalty charge notice (PCN)
                   </label>
                   <div class="govuk-body-s govuk-!-padding-left-3">
-                    <p>Pay or challenge a Penalty Charge Notice</p>
+                    <p>Pay or challenge a penalty charge notice.</p>
                   </div>
                 </div>
       
-                <div class="govuk-radios__item">
-                  <input
-                    class="govuk-radios__input"
-                    id="create-account"
-                    type="radio"
-                    value="create-account"
-                    aria-describedby="create-account-hint"
-                    name="selectlink"
-                  />
-                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="create-account">
-                   Create an account
-                  </label>
-                  <div class="govuk-body-s govuk-!-padding-left-3">
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>Local resident's discount account</li>
-                      <li>Personal and business accounts</li>  
-                      <li>Pay as you go services</li>
-                    </ul>
-                  </div>
-                </div>
+                
 
                 <div class="govuk-radios__item">
                   <input
@@ -103,14 +105,14 @@
                     name="selectlink"
                   />
                   <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="paid-crossing">
-                    Check for paid crossing
+                    Check my vehicle
                   </label>
                   <div id="lrds-item-hint" class="govuk-body-s govuk-!-padding-left-3">
-                    <p>Check your payment made against your vehicle registration number</p>
+                    <p>Find out the charge for a vehicle and check recent payments.</p>
                   </div>
                 </div>
 
-                <div class="govuk-radios__item">
+                <!-- <div class="govuk-radios__item">
                   <input
                     class="govuk-radios__input"
                     id="login"
@@ -125,7 +127,8 @@
                   <div class="govuk-body-s govuk-!-padding-left-3">
                     <p>Log in to Dart Charge</p>
                   </div>
-                </div>
+                </div> -->
+
               </div>
             </fieldset>
           </div>
@@ -143,7 +146,7 @@
       </div>
         
       <!---table start-->
-      <div class="govuk-grid-row">
+      <!-- <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
           <table class="govuk-table govuk-!-margin-top-5 govuk-!-margin-bottom-0" role="table">
             <caption class="govuk-table__caption govuk-table__caption--m">
@@ -155,11 +158,11 @@
                 <th scope="col" class="govuk-table__header">
                   {{ head }}
                 </th> 
-                {% endfor %}
+                {% endfor %} -->
                 <!-- <th scope="col" class="govuk-table__header" *ngFor="let head of chargeListHead">
                   {{ head }}
                 </th> -->
-              </tr>
+              <!-- </tr>
             </thead>
             <tbody class="govuk-table__body">
 
@@ -175,7 +178,7 @@
             </tbody>
           </table>
         </div>
-      </div>
+      </div> -->
   
       <!----table end-->
     </main>
