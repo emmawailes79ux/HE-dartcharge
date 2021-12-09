@@ -5,7 +5,7 @@ if (window.console && window.console.info) {
   window.console.info("GOV.UK Prototype Kit - do not use for production");
 }
 
-window.version = 'v1.1';
+window.version = 'v1.3';
 $(document).ready(function () {
   version = window.location.pathname.split("/")[2] || version;
 
