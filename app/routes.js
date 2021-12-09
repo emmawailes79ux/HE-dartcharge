@@ -286,7 +286,7 @@ router.post("/one-off-payment/:version/pay-crossing", function (req, res) {
   //res.redirect("confirm-vehicle-details");
   if(req.params.version === 'v1.1') {
     res.redirect("no-of-vehicles");
-  } else if(req.params.version === 'v1.2'){
+  } else if(req.params.version === 'v1.2'||req.params.version==='v1.3'){
     res.redirect("vehicle-info");
   }
 });
