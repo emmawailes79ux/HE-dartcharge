@@ -1,0 +1,158 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "./one-off-payment/v1.1/one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-xl govuk-!-padding-top-1 govuk-!-margin-bottom-6">
+                    Dartford Crossing <br>(Dart Charge)
+                </h2>
+                <h2 class="govuk-heading-m govuk-!-padding-top-1 govuk-!-margin-bottom-6">
+                    Charges and fines
+                </h2>
+                <p class="govuk-body">You must pay the charge if you use the Dartford Crossing between 6am and 10pm.
+                    Charges apply every day - including weekends and bank holidays.</p>
+                <p class="govuk-body">How much you pay to cross depends on the type of vehicle you’re driving and if you
+                    already have an account.</p>
+                <h2 class="govuk-heading-m govuk-!-padding-top-1 govuk-!-margin-bottom-6">
+                    Cars and motorcycles
+                </h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Type of Vehicle</th>
+                            <th scope="col" class="govuk-table__header">Class</th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-half">One-off payment</th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-half"> Pre-pay account</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell govuk-body-s">Motorcycles, mopeds and quad
+                                bikes</td>
+                            <td class="govuk-table__cell govuk-body-s">A</td>
+                            <td class="govuk-table__cell govuk-body-s">Free</td>
+                            <td class="govuk-table__cell govuk-body-s">Free</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell govuk-body-s">cars,motorhomes,minibuses</td>
+                            <td class="govuk-table__cell govuk-body-s">B</td>
+                            <td class="govuk-table__cell govuk-body-s">£2.50</td>
+                            <td class="govuk-table__cell govuk-body-s">£2.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2 class="govuk-heading-m govuk-!-padding-top-1 govuk-!-margin-bottom-6">
+                    Buses, coaches, vans and other goods vehicles
+                </h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header ">Type of Vehicle</th>
+                            <th scope="col" class="govuk-table__header">Class</th>
+                            <th scope="col" class="govuk-table__header ">One-off payment</th>
+                            <th scope="col" class="govuk-table__header"> Pre-pay account</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell govuk-body-s">Vehicles with 2 axles</td>
+                            <td class="govuk-table__cell govuk-body-s">A</td>
+                            <td class="govuk-table__cell govuk-body-s">£3.00</td>
+                            <td class="govuk-table__cell govuk-body-s">£2.63</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell govuk-body-s">Vehicles with more than 2 axles</td>
+                            <td class="govuk-table__cell govuk-body-s">B</td>
+                            <td class="govuk-table__cell govuk-body-s">£6.00</td>
+                            <td class="govuk-table__cell govuk-body-s">£5.19</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="govuk-body">Count droppable axles whether they’re up or down. Only count trailer axles for
+                    articulated vehicles.</p>
+                <h2 class="govuk-heading-m govuk-!-padding-top-1 govuk-!-margin-bottom-6">
+                    If you’re disabled
+                </h2>
+                <p class="govuk-body">You do not need to pay the charge if you get free UK vehicle tax because of a
+                    disability.</p>
+                <p class="govuk-body">
+                    Your vehicle will be checked automatically when you cross - you do not need to do anything. </p>
+                <p class="govuk-body">Find out how to <a href="#">get free vehicle tax if you’re a driver with a
+                        disability</a></p>
+
+                <h2 class="govuk-heading-m govuk-!-margin-top-2 govuk-!-margin-bottom-3">
+                    Local resident discount
+                </h2>
+                <p class="govuk-body">
+                    You can apply for a discount if you pay Council Tax to Dartford borough council or Thurrock council.
+                    <a href="#">You can find out which is your local council.</a>
+                </p>
+                <p class="govuk-body">You can either:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>pay £20 a year to use the Dartford Crossing as many times as you want</li>
+                    <li>pay £10 for 50 crossings, plus 20p for each additional crossing </li>
+                </ul>
+                <p class="govuk-body"><a href="#">Apply for a local resident discount online</a> or <a href="#">by
+                        post.</a></p>
+                <h2 class="govuk-heading-m govuk-!-margin-top-2 govuk-!-margin-bottom-3">
+                    Fines
+                </h2>
+                <p class="govuk-body">You can get a £70 fine if you do not pay the charge. You must pay it within 28
+                    days.</p>
+
+                <p class="govuk-body">The fine will be:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>reduced to £35 if you pay within 14 days</li>
+                    <li>increased to £105 if you do not pay it - you’ll also have to pay the crossing charge </li>
+                </ul>
+                <p class="govuk-body">You can<a href="#"> pay or challenge the fine online </a> or all the Dart Charge
+                    contact centre.</p>
+                <div role="note" aria-label="Information" class="govuk-inset-text govuk-!-margin-top-2">
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Dart Charge contact centre</h3>
+                    <ul class="govuk-list govuk-!-margin-bottom-0">
+                        <li>Phone: <a class="govuk-link govuk-link--no-visited-state" href="#"
+                                aria-label="phone number">0300 300
+                                0120</a></li>
+                        <li>
+                            From outside the UK:
+                            <a class="govuk-link govuk-link--no-visited-state" href="#"
+                                aria-label="from outside the UK">+44 (0) 300 300
+                                0120</a>
+                        </li>
+                        <li>
+                            Textphone: <a class="govuk-link govuk-link--no-visited-state" href="#"
+                                aria-label="text-phone">18001 0300 300
+                                0120</a>
+                        </li>
+                        <li>Monday to Sunday, 8am to 10pm (excluding public holidays)</li>
+                    </ul>
+              
+        </div>
+
+    </div>
+    <div class="govuk-grid-column-one-third ">
+        <!-- <div class="border-top">
+            <h2 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-2">
+                Related Content
+            </h2>
+            <ul class="govuk-list">
+                <li class="govuk-!-margin-bottom-2"> <a href="/one-off-payment/confirm-vehicle-details" class="govuk-link">Make a one off payment</a></li>
+                <li class="govuk-!-margin-bottom-2"><a href="https://dartford-crossing-charge.herokuapp.com/demo/flow1" class="govuk-link">Pay for penalty charge
+                        Notice(PCN)</a></li>
+                <li class="govuk-!-margin-bottom-2"><a href="/home" class="govuk-link">Paying the charge</a></li>
+                <li class="govuk-!-margin-bottom-2"><a href="#" class="govuk-link">Sign in</a></li>
+
+            </ul>
+        </div> -->
+
+    </div>
+</div>
+
+{% endblock %}
