@@ -44,9 +44,14 @@ $(document).ready(function () {
     }, "slow");
   };
 
+  //$.fn.goBack = (event) => {
+    //window.history.back();
+    //event.preventDefault();
+  //};
+
   $.fn.goBack = () => {
-    window.history.back();
-  };
+    history.go(-1); event.preventDefault();
+  }; 
 
   $(".redirectLanding").click(function () {
     $.fn.redirectPage("landing");
