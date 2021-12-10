@@ -197,8 +197,9 @@ $(document).ready(function () {
     let radioVal = $("[name='selectlink']:checked").val();
 
     if (radioVal === "pcn") {
-      document.location.href =
-        "https://dartford-crossing-charge.herokuapp.com/demo/flow1";
+      //document.location.href =
+        //"https://dartford-crossing-charge.herokuapp.com/demo/flow1";
+        $.fn.redirectPage(`resolve-pcn/${version}/flow1`);
     } else if (radioVal === "create-account") {
 
       $.fn.redirectPage("create-account");
