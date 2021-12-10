@@ -44,8 +44,8 @@ overflow:hidden;
     <meta property="og:image" content="/govuk/assets/images/govuk-opengraph-image.png">
     <script src="/public/javascripts/jquery-1.11.3.js"></script>
     <script type="text/javascript">
-    // let pcnDetailsTable = JSON.parse(localStorage.getItem("pcnDetailsTable"));
-    
+    let pcnDetailsTable = JSON.parse(localStorage.getItem("pcnDetailsTable"));
+    let cardEntriesChange = JSON.parse(localStorage.getItem("cardEntriesPCN"));
       $(document).ready(function(){
          // This is an attempt in JQuery
          // let cardNumInput = $("#cardset");
@@ -58,21 +58,33 @@ overflow:hidden;
          //  charCounter.textContent = `You have entered ${e.target.value.length} characters in the input field`;
          // }
          // Trying same code above in Vanilla
-         
 
          let cardNumInput = document.getElementById("cardset");
          let bgCardset = document.getElementById("bgCardset");
          let fgCardset = document.getElementById("fgCardset");
          let charCount = document.getElementById("charCount");
-
-         cardNumInput.oninput = handleInput;
-         function handleInput(e) {
-
-            if (e.target.value.length==1){
+         
+         if (cardNumInput.value.length==1){
              bgCardset.style.opacity="0.2";
              fgCardset.style.opacity="0";
              }
-             else if (e.target.value.length>1) {
+             else if (cardNumInput.value.length>1) {
+                bgCardset.style.opacity="0.2";
+                fgCardset.style.opacity="1";
+            }
+            else {
+               bgCardset.style.opacity="1";
+                fgCardset.style.opacity="1";
+            }
+         
+            cardNumInput.oninput = handleInput;
+            function handleInput(e) {
+
+            if ((e.target.value.length==1)||(cardNumInput.value.length==1)){
+             bgCardset.style.opacity="0.2";
+             fgCardset.style.opacity="0";
+             }
+             else if ((e.target.value.length>1) || (cardNumInput.value.length>1)) {
                 bgCardset.style.opacity="0.2";
                 fgCardset.style.opacity="1";
             }
@@ -83,7 +95,8 @@ overflow:hidden;
             
              // charCount.textContent = `You have entered ${e.target.value.length} characters in the input field and ${e.target.value} is what you are typing`;
           }
- 
+          
+
 // This is an example in vanilla 
 // 					let input = document.querySelector('input');
 // 					let log = document.getElementById('log');
@@ -96,55 +109,8 @@ overflow:hidden;
 // 					}
 
 				})
-			</script>
-      <style>
-        .gem-c-contextual-sidebar__brexit-cta {text-size-adjust: 100%;
-       font-family: "GDS Transport",arial,sans-serif;
-       margin-bottom: 30px;
-       background-color: #f3f2f1;
-       border-top: 2px solid #0a3d66;
-       display: block;
-       padding: 0 15px 15px;
-       text-decoration: none;}
-      </style>
-<style>
-  .hr-text {
-  line-height: 1em;
-  position: relative;
-  outline: 0;
-  border: 0;
-  color: black;
-  text-align: center;
-  font-weight: bolder;
-  font-size: 1.3em;
-  font-family: "GDS Transport", arial, sans-serif;
-  height: 1.5em;
-  opacity: 0.5;}
-  .hr-text:before {
-    content: '';
-    /* // use the linear-gradient for the fading effect */
-    /* // use a solid background color for a solid bar */
-    background: linear-gradient(to right, transparent, #818078, transparent);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    height: 1px;
-  }
-  .hr-text:after {
-    content: attr(data-content);
-    position: relative;
-    display: inline-block;
-    color: black;
+			</script> -->
 
-    padding: 0 .5em;
-    line-height: 1.5em;
-    /* // this is really the only tricky part, you need to specify the background color of the container element... */
-    color: #1a1919;
-    background-color: #fcfcfa;
-  }
-
-</style>
 
   </head>
   <body class="govuk-template__body "><script id="__bs_script__">//<![CDATA[
@@ -219,6 +185,7 @@ overflow:hidden;
           </p>
         </div>     
         <a href="flow4" class="govuk-back-link">Back</a></div>
+
         
         <div title="Error" class="govuk-error-summary govuk-!-display-none" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
           <h2 class="govuk-error-summary__title" id="error-summary-title">
@@ -236,10 +203,10 @@ overflow:hidden;
                 <a href="#yearError">Enter a valid expiry year</a>
               </li> 
               <li class="govuk-!-display-none" id="cardError4">
-                <a href="#nameError">Enter the name shown on your card</a>
+                <a href="#nameError">Enter a valid name</a>
               </li> 
               <li class="govuk-!-display-none" id="cardError5">
-                <a href="#cvvError">Enter a valid card security number</a>
+                <a href="#cvvError">Enter a valid cvv</a>
               </li> 
               <li class="govuk-!-display-none" id="cardError6">
                 <a href="#postcodeError">Enter a valid postcode</a>
@@ -249,8 +216,7 @@ overflow:hidden;
               </li> 
             </ul>
           </div>
-        </div>         
-       
+        </div> 
           
 
 
@@ -264,27 +230,9 @@ overflow:hidden;
 
   
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-column-full">
           <h1 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-0">Pay a penalty charge notice (PCN)</h1>
           <h1 class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-5">Payment details</h1>
-          <div class="gem-c-contextual-sidebar__brexit-cta govuk-!-margin-bottom-1 govuk-!-padding-bottom-0">
-            <h2 class="gem-c-contextual-sidebar__brexit-heading govuk-heading-m govuk-!-margin-bottom-0 -2 govuk-!-margin-top-1">Payment summary</h2>
-            <p class="gem-c-contextual-sidebar__brexit-text govuk-body">
-              Penalty charge notice payment
-          </p>
-          <p class="gem-c-contextual-sidebar__brexit-text govuk-body">
-           <b>Number plate</b> <br>
-           <span id="plateNom">{{data['vrn']}}</span>
-        </p>
-        <p class="gem-c-contextual-sidebar__brexit-text govuk-body">
-          <b>Number of pcns</b> <br>
-          <span id="countPCNs">4</span>
-        </p>
-        <p class="gem-c-contextual-sidebar__brexit-text govuk-body govuk-!-margin-bottom-1">
-          Total amount: <br>
-          <h1 id="charge" class="govuk-heading-xl govuk-!-margin-top-1 govuk-!-margin-bottom-1">£10</h1>
-        </p>
-          </div>
         </div>
         
         <div class="govuk-grid-column-three-quarters">
@@ -293,7 +241,7 @@ overflow:hidden;
           <!-- <p class="govuk-body">This page gives a view of the PCNs you have provided</p>
           <p class="govuk-body"><b>Registration number:</b> LO69 NRO    <a class="govuk-link" href="flow1">Change</a> </p> -->
 
-          <table class="govuk-table govuk-!-display-none">
+          <table class="govuk-table">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <!-- <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter" style="text-align: center;">Time left till
@@ -360,17 +308,15 @@ overflow:hidden;
           <!-- <a href="flow2"><button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="float: right;">
             Add another PCN
          </button></a> <br><br><br><br> -->
-         <!-- <div class="govuk-inset-text govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-top-0 govuk-!-margin-bottom-9">
+         <div class="govuk-inset-text govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-top-0 govuk-!-margin-bottom-9">
           <h3 class="govuk-body-xl govuk-!-margin-top-0 govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">Payment amount</h3>
           <h1 id = "charge" class="govuk-body-xl govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0 govuk-!-margin-top-0">£105</h1>
-        </div> -->
-        <img id=applePay class=" govuk-!-width-two-thirds govuk-!-display-none govuk-!-margin-bottom-3" src="\public\images\appleDefault.png" alt="apple Pay">
-        <hr id="appleSection"class="govuk-body-xl govuk-!-width-two-thirds govuk-!-display-none govuk-section-break govuk-section-break--xl govuk-section-break--visible hr-text" data-content="OR">
+        </div>
         
-        <h2 class="govuk-heading-l">Enter card details</h2>
+        <img id=applePay class=" govuk-!-width-two-thirds govuk-!-display-none govuk-!-margin-bottom-3" src="\public\images\applePayDefault.png" alt="apple Pay">
         <div class="govuk-form-group govuk-!-margin-bottom-3">
           <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
-            Card number
+            Enter card details
             </label>
           </h3>
           <span id="cardNumError" class="govuk-error-message govuk-!-display-none pcnError">
@@ -411,23 +357,23 @@ overflow:hidden;
           <input class="govuk-input govuk-input--width-4 cardFields" id="year" name="width-4" type="text" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
         </div>  
           <div class="govuk-form-group govuk-!-margin-top-0">
-            <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="width-2">
+            <label class="govuk-label" for="width-2">
               Name on card
               
-            </label></h3>
+            </label>
             <span id="nameError" class="govuk-error-message govuk-!-display-none pcnError">
-              <span class="govuk-visually-hidden">Error:</span> Enter the name as shown on your credit card
+              <span class="govuk-visually-hidden">Error:</span> Enter a valid name
             </span>
             <input class="govuk-input govuk-!-width-one-half cardFields" id="userName" type="text"></div> 
           <div class="govuk-form-group govuk-!-margin-top-0 govuk-!-margin-right-2 govuk-!-display-inline-block" >
-            <label class="govuk-label govuk-label--m" for="width-5">
+            <label class="govuk-label" for="width-5">
                 Card security code
                 <div id="event-name-hint" class="govuk-hint govuk-!-margin-top-0" >
                   The last three digits on the back of the card
                 </div>
               </label>
               <span id="cvvError" class="govuk-error-message govuk-!-display-none pcnError">
-                <span class="govuk-visually-hidden">Error:</span> Enter a valid card security code
+                <span class="govuk-visually-hidden">Error:</span> Enter a valid cvv
               </span>
               <input class="govuk-input govuk-input--width-4 cardFields" id="cvv" type="text" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>              
               <div class="govuk-!-display-inline-block" style=" position:relative; top:0.7em;">
@@ -656,7 +602,7 @@ overflow:hidden;
             </div>
 
              <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--m" for="width-10">
+              <label class="govuk-label" for="width-10">
                 Postcode
               </label>
               <span id="postcodeError" class="govuk-error-message govuk-!-display-none pcnError">
@@ -665,7 +611,7 @@ overflow:hidden;
               
               <input class="govuk-input govuk-input--width-10 cardFields" id="postcode" name="width-10" type="text"></div>
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-label--m"  for="event-name">
+                <label class="govuk-label"  for="event-name">
                     Email address 
                   </label>
                 
@@ -677,12 +623,15 @@ overflow:hidden;
                 </span>
                 <input class="govuk-input govuk-!-width-two-thirds cardFields" id="email" name="event-name" type="text">
               </div>
-            <a id="nextPage" href="flow8">
-              <!-- onclick="window.location.href='flow7'" -->
-               <button id="confirmPay"  class="govuk-button" data-module="govuk-button">
-              Confirm and pay
-            </button>
-            </a> 
+              <!-- <button id="confirmPay" onclick="window.location.href='flow7'" class="govuk-button" data-module="govuk-button">
+                Confirm and pay
+              </button>       -->
+              <a id="nextPage" href="flow7">
+                <!-- onclick="window.location.href='flow7'" -->
+                 <button id="confirmPay"  class="govuk-button" data-module="govuk-button">
+                Confirm and pay
+              </button>
+              </a> 
 
      
         <br>
@@ -814,26 +763,23 @@ overflow:hidden;
                       Total: <input type="text" size="2" name="total" value="0"/>
                       </form> -->
                      <script>
-                       let applePay = document.getElementById("applePay")
-                       let appleSection = document.getElementById("appleSection")
 
+                       let applePay = document.getElementById("applePay")
                        const matchResult = window.matchMedia("(max-width : 767px)") 
                        console.log(matchResult)       
                         if (matchResult.matches){
                           applePay.classList.remove("govuk-!-display-none")
-                          appleSection.classList.remove("govuk-!-display-none")
                         }
                        applePay.addEventListener("mouseenter", function(){
-                         applePay.setAttribute("src", `\\public\\images\\appleHover.png`)
+                         applePay.setAttribute("src", `\\public\\images\\applePayHover.png`)
                        })
                        applePay.addEventListener("mouseout", function(){
-                         applePay.setAttribute("src", `\\public\\images\\appleDefault.png`)
+                         applePay.setAttribute("src", `\\public\\images\\applePayDefault.png`)
                        })
-                       let container = document.getElementById("tbody");
+
+
+                      let container = document.getElementById("tbody");
                        let charge = document.getElementById("charge");
-                       let charge2 = document.getElementById("charge2");
-                       let plateNom = document.getElementById("plateNom");
-                       let countPCNs = document.getElementById("countPCNs");
                        var roper = JSON.parse(localStorage.getItem("pcnDetailsTable"));
                         let vandal = []
                         if (typeof(roper[0])=="string"){
@@ -851,18 +797,21 @@ overflow:hidden;
                        chargeCummulator += parseInt(vandal[i][11].split('£')[1]);
                       }
                       //  element IDs can be treated as variable names
-                        plateNom.innerHTML = vandal[0][0]
-                        countPCNs.innerHTML = vandal.length
-                        charge.innerHTML =`£${chargeCummulator}`
-                        // charge2.innerHTML =`£${chargeCummulator}`
-
+                        
+                      charge.innerHTML =`£${chargeCummulator}`
+                      
                        //  Variables to get current routename
                        let url = window.location.href
                        let routeName = url.substring(url.lastIndexOf('/')+1);
 
                        let cardFields  = document.getElementsByClassName("cardFields");
                        let confirmPay = document.getElementById("confirmPay");
-                       
+
+                      //  autofill cardFields when loading this page from confirm payment page
+                       for (c=0; c<cardEntriesChange.length-1; c++){
+                         cardFields[c].value = cardEntriesChange[c]
+                       };
+                      
                        function payValidate (){
                         let errorSummary = document.querySelector(".govuk-error-summary")
                         // const errorSpan = `<span id="pcnError${i}" class="govuk-error-message pcnError"><span class="govuk-visually-hidden">Error:</span> Enter a valid PCN number</span>`
@@ -880,21 +829,8 @@ overflow:hidden;
                         let cardError5 = document.querySelector("#cardError5")
                         let cardError6 = document.querySelector("#cardError6")
                         let cardError7 = document.querySelector("#cardError7")
-
-                        let e1 = document.getElementById('cardError1').classList.value
-                        let e2 = document.getElementById('cardError2').classList.value
-                        let e3 = document.getElementById('cardError3').classList.value
-                        let e4 = document.getElementById('cardError4').classList.value
-                        let e5 = document.getElementById('cardError5').classList.value
-                        let e6 = document.getElementById('cardError6').classList.value
-                        let e7 = document.getElementById('cardError7').classList.value
                         //  validate credit card number
-                         
-                        if (cardFields[0].value===""){
-                          cardFields[0].value="355266188299511"
-                        }
-                        
-                        if (cardFields[0].value.length>0 && cardFields[0].value.length>15&& cardFields[0].value.length<=14){
+                         if (cardFields[0].value===""||cardFields[0].value.length!=15){
                           event.preventDefault()
         
                           errorSummary.classList.remove("govuk-!-display-none")
@@ -907,24 +843,7 @@ overflow:hidden;
                           cardNumError.classList.remove("govuk-!-display-none")
                           errorSummary.focus()
                          }
-                         
-                         if (cardFields[0].value.length==15){
-                                  
-                          // errorSummary.classList.add("govuk-!-display-none")
-                          // regField.setAttribute("value", "Invalid VRN")
-                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
-                          cardFields[0].setAttribute("aria-describedby", "reg_field-error")
-                          cardFields[0].classList.remove("govuk-input--error")
-                          cardFields[0].parentElement.classList.remove("govuk-form-group--error")
-                          cardError1.classList.add("govuk-!-display-none")
-                          cardNumError.classList.add("govuk-!-display-none")                          
-                         }
-
-                         if (cardFields[1].value===""){
-                          cardFields[1].value="01"
-                         }
-
-                         if (cardFields[1].value<1 || cardFields[1].value>12) {
+                         if (cardFields[1].value===""||cardFields[1].value<1 || cardFields[1].value>12) {
                           event.preventDefault()
         
                           errorSummary.classList.remove("govuk-!-display-none")
@@ -937,25 +856,7 @@ overflow:hidden;
                           monthError.classList.remove("govuk-!-display-none")
                           errorSummary.focus()
                          }
-                         if (cardFields[1].value>=1 && cardFields[1].value<=12) {
-                                  
-                          // errorSummary.classList.add("govuk-!-display-none")
-                          // regField.setAttribute("value", "Invalid VRN")
-                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
-                          cardFields[1].setAttribute("aria-describedby", "reg_field-error")
-                          cardFields[1].classList.remove("govuk-input--error")
-                          cardFields[1].parentElement.classList.remove("govuk-form-group--error")
-                          cardError2.classList.add("govuk-!-display-none")
-                          monthError.classList.add("govuk-!-display-none")
-                          
-                         }
-
-
-                         if (cardFields[2].value==""){
-                          cardFields[2].value="25"
-                         }
-
-                         if (cardFields[2].value<21 || cardFields[2].value>25) {
+                         if (cardFields[2].value===""|| cardFields[2].value<21 || cardFields[2].value>25) {
                           event.preventDefault()
         
                           errorSummary.classList.remove("govuk-!-display-none")
@@ -968,22 +869,7 @@ overflow:hidden;
                           yearError.classList.remove("govuk-!-display-none")
                           errorSummary.focus()
                          }
-                         if (cardFields[2].value>=21 && cardFields[2].value<=25) {
-                                  
-                          //  errorSummary.classList.remove("govuk-!-display-none")
-                           // regField.setAttribute("value", "Invalid VRN")
-                           // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
-                           cardFields[2].setAttribute("aria-describedby", "reg_field-error")
-                           cardFields[2].classList.remove("govuk-input--error")
-                           cardFields[2].parentElement.classList.remove("govuk-form-group--error")
-                           cardError3.classList.add("govuk-!-display-none")
-                           yearError.classList.add("govuk-!-display-none")                                  
-                          }      
-                          
-                          if (cardFields[3].value==="") {
-                            cardFields[3].value="John Doe"
-                          }
-                         if (cardFields[3].value.length==1) {
+                         if (cardFields[3].value===""||cardFields[3].value.length==1) {
                           event.preventDefault()
         
                           errorSummary.classList.remove("govuk-!-display-none")
@@ -996,22 +882,7 @@ overflow:hidden;
                           nameError.classList.remove("govuk-!-display-none")
                           errorSummary.focus()
                          }
-                         if (cardFields[3].value.length>1) {
-                                  
-                          // errorSummary.classList.add("govuk-!-display-none")
-                          // regField.setAttribute("value", "Invalid VRN")
-                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
-                          cardFields[3].setAttribute("aria-describedby", "reg_field-error")
-                          cardFields[3].classList.remove("govuk-input--error")
-                          cardFields[3].parentElement.classList.remove("govuk-form-group--error")
-                          cardError4.classList.add("govuk-!-display-none")
-                          nameError.classList.add("govuk-!-display-none")                          
-                         }
-
-                         if (cardFields[4].value===""){
-                          cardFields[4].value="323"
-                         }
-                         if (cardFields[4].value.length>0 && cardFields[4].value.length<3 && cardFields[4].value.length > 3) {
+                         if (cardFields[4].value.length!=3) {
                           event.preventDefault()
         
                           errorSummary.classList.remove("govuk-!-display-none")
@@ -1024,22 +895,7 @@ overflow:hidden;
                           cvvError.classList.remove("govuk-!-display-none")
                           errorSummary.focus()
                          }
-                         if (cardFields[4].value.length==3) {
-                                  
-                          // errorSummary.classList.add("govuk-!-display-none")
-                          // regField.setAttribute("value", "Invalid VRN")
-                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
-                          cardFields[4].setAttribute("aria-describedby", "reg_field-error")
-                          cardFields[4].classList.remove("govuk-input--error")
-                          cardFields[4].parentElement.classList.remove("govuk-form-group--error")
-                          cardError5.classList.add("govuk-!-display-none")
-                          cvvError.classList.add("govuk-!-display-none")                          
-                         }
-
-                         if (cardFields[5].value===""){
-                          cardFields[5].value="NW105AD"
-                         }
-                         if (cardFields[5].value.length>0 && cardFields[5].value.length<4 ||cardFields[5].value.length>7) {
+                         if (cardFields[5].value===""||cardFields[5].value.length<4 ||cardFields[5].value.length>7) {
                           event.preventDefault()
         
                           errorSummary.classList.remove("govuk-!-display-none")
@@ -1052,23 +908,7 @@ overflow:hidden;
                           postcodeError.classList.remove("govuk-!-display-none")
                           errorSummary.focus()
                          }
-                         if (cardFields[5].value.length>=4 && cardFields[5].value.length<=7) {
-                                
-                          // errorSummary.classList.add("govuk-!-display-none")
-                          // regField.setAttribute("value", "Invalid VRN")
-                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
-                          cardFields[5].setAttribute("aria-describedby", "reg_field-error")
-                          cardFields[5].classList.remove("govuk-input--error")
-                          cardFields[5].parentElement.classList.remove("govuk-form-group--error")
-                          cardError6.classList.add("govuk-!-display-none")
-                          postcodeError.classList.add("govuk-!-display-none")                          
-                         }
-
-                         if (cardFields[6].value==""){
-                          cardFields[6].value="johndoe@email.com"
-                         }
-                         if (cardFields[6].value!="" && !cardFields[6].value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-                          // cardFields[6].value="johndoe@email.com"
+                         if (!cardFields[6].value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
                           event.preventDefault()
         
                           errorSummary.classList.remove("govuk-!-display-none")
@@ -1080,36 +920,18 @@ overflow:hidden;
                           cardError7.classList.remove("govuk-!-display-none")
                           emailError.classList.remove("govuk-!-display-none")
                           errorSummary.focus()
-                          // cardError7.addEventListener("mouseover", function(){
-                          //   cardFields[6].value="johndoe@email.com"
-                          // })
-                          // cardFields[6].value="johndoe@email.com"
                          }
-                         if (cardFields[6].value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-                                  
-                          errorSummary.classList.add("govuk-!-display-none")
-                          // regField.setAttribute("value", "Invalid VRN")
-                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
-                          cardFields[6].setAttribute("aria-describedby", "reg_field-error")
-                          cardFields[6].classList.remove("govuk-input--error")
-                          cardFields[6].parentElement.classList.remove("govuk-form-group--error")
-                          cardError7.classList.add("govuk-!-display-none")
-                          emailError.classList.add("govuk-!-display-none")                          
-                         }
-                        // if (e1=='govuk-!-display-none'&&e2==e1&&e3==e1&&e4==e1&&e5==e1&&e6==e1&&e7==e6) {
-                        //   errorSummary.classList.add("govuk-!-display-none")
-                        // }
+                         
                        }
                        let nextPage = document.getElementById("nextPage")
                        nextPage.addEventListener("mouseover", function(){
                          payValidate()
                        })
-                       
+                      
+                       let cardEntries = []
                        confirmPay.addEventListener("click", function(){
-                        //  payValidate()
-                        let cardEntries = []
+                        payValidate()
                          for (let i=0; i<cardFields.length; i++){
-                          
                            cardEntries.push(cardFields[i].value)
                          }
                          cardEntries.push(routeName);
