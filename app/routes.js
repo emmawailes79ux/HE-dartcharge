@@ -945,4 +945,77 @@ router.get(
 
 // Dashboaord section end
 
+// Resolve PCN
+router.get("/resolve-pcn/:version/flow1", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/landingRemod`);
+});
+
+router.get("/resolve-pcn/:version/flow2", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/vehicleRemod`);
+});
+
+router.get("/resolve-pcn/:version/flow4", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/outstandingRemod`);
+});
+
+router.get("/resolve-pcn/:version/flow5b", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/pcn_details`);
+});
+
+router.get("/resolve-pcn/:version/flow5a", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/pcn_details_b`);
+});
+
+router.get("/resolve-pcn/:version/flow5details", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/pcnDetails`);
+});
+
+router.get("/resolve-pcn/:version/flow6", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/payDetails`);
+});
+
+router.get("/resolve-pcn/:version/flow6details", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/pcnDetailsPay`);
+});
+
+router.get("/resolve-pcn/:version/flow7", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/confirmPay`);
+});
+
+router.get("/resolve-pcn/:version/flow8", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/payConfirm`);
+});
+
+router.get("/resolve-pcn/:version/flow9", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/challengePCNRemod`);
+});
+
+router.get("/resolve-pcn/:version/flow10", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/pcnChallengeReasons`);
+});
+
+router.get("/resolve-pcn/:version/flow11", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/supportingEvidence`);
+});
+
+router.get("/resolve-pcn/:version/flow13", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/challengeSummary`);
+});
+
+router.get("/resolve-pcn/:version/flow14", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/challengePCNchange`);
+});
+
+router.get("/resolve-pcn/:version/flow15", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/pcnChallengeReasonsChange`);
+});
+
+router.get("/resolve-pcn/:version/flow16", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/supportingEvidenceChange`);
+});
+
+router.get("/resolve-pcn/:version/flow17", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/challengeConfirm`);
+});
+
 module.exports = router;
