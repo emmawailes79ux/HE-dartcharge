@@ -164,21 +164,21 @@ GOV.UK Prototype Kit
                 <a href="flow6details"><button class="govuk-button" data-module="govuk-button">
                   Proceed to payment
                 </button></a>
-                <h1 class="govuk-heading-m">Challenge the <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span></h1>
+                <h1 class="govuk-heading-m">Challenge the <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only govuk-visually-hidden" >Penalty charge notice</span></h1>
       
-                <p>If you think the <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span>(s) have been issued incorrectly, you can challenge/ appeal it by
+                <p>If you think the <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only govuk-visually-hidden" >Penalty charge notice</span>(s) have been issued incorrectly, you can challenge/ appeal it by
                   making a representation online.</p>
                   <p><a class="govuk-link" href="#">See on which grounds you can make a representation</a></p>
                 
                   <a class="govuk-link" href="flow9"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                    Challenge <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span>
+                    Challenge <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only govuk-visually-hidden" >Penalty charge notice</span>
                   </button></a>
                 
                
       
       
                         <p><b>If we accept your representation,</b> we will send you written confirmation that you are no
-                          longer liable for the <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span>.</p>
+                          longer liable for the <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only govuk-visually-hidden">Penalty charge notice</span>.</p>
                         <p><b>If we reject your representation,</b>  we will send you a notice of rejection which will tell you
                           what you should do next.</p>
               </div>  
@@ -277,11 +277,11 @@ $(document).ready(function(){
   let tableFields = `
   <tbody class="govuk-table__body">
                     <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header"><span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span> number</th>
+                      <th scope="row" class="govuk-table__header"><span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only govuk-visually-hidden" >Penalty charge notice</span> number</th>
                       <td class="govuk-table__cell">${pcnDetailsTable[5]}</td>
                     </tr>
                     <tr class="govuk-table__row">
-                      <th scope="row" class="govuk-table__header">RNumber plate</th>
+                      <th scope="row" class="govuk-table__header">Number plate</th>
                       <td class="govuk-table__cell">${pcnDetailsTable[0]}</td>
                     </tr>
                     <tr class="govuk-table__row">
