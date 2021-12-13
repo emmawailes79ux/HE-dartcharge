@@ -324,8 +324,10 @@ overflow:hidden;
                 <label class="govuk-label" for="address-postcode">
                   Postcode
                 </label>
-                <input class="govuk-input govuk-input--width-10" id="address-postcode-2" name="address-postcode" type="text" autocomplete="postal-code"></div>
-            
+                <input class="govuk-input govuk-input--width-10 govuk-!-margin-bottom-2" id="address-postcode-2" name="address-postcode" type="text" autocomplete="postal-code">
+                <!--<p class="govuk-body" id="autofindAdd"><a href="javascript:void(0)" class="govuk-link govuk-!-display-block">Find my address automatically by postcode</a></p>-->
+              </div>
+                
             </fieldset>
              
  <div id="addySelect"class="govuk-form-group govuk-!-margin-bottom-0" style="display:none;">
@@ -490,6 +492,7 @@ overflow:hidden;
                     let postcodeLabel = document.getElementById("postcodeLabel")
                     let addblock = document.getElementById("addblock")
                     let typeAddMyself = document.getElementById("typeAddMyself")
+                    let autofindAdd = document.getElementById("autofindAdd")
                     typeAddMyself.addEventListener("click", function (){
                       postEntry.style.display="none";
                       addblock.classList.remove("govuk-!-display-none")
@@ -504,6 +507,14 @@ overflow:hidden;
                             postEntry.style.display="block";
                             document.getElementById("challengeHint").style.display="block"     
                           })
+
+                          // autofindAdd.addEventListener("click", function (){
+                          //   postEntry.style.display="block";
+                          //   addblock.classList.add("govuk-!-display-none")
+                          //   defaultNext.classList.add("govuk-!-display-none")
+                          //   postcodeLabel.classList.remove("govuk-!-display-none")
+                            
+                          // })
                     
                     // }
                     // checkAddy()
@@ -541,7 +552,22 @@ overflow:hidden;
                       let deets = [document.getElementById("fullName").value]
                       localStorage.setItem("challengeDetails", JSON.stringify(deets))
                     }
-                    
+                    addyBtn.addEventListener("mouseover", function(){
+                      if (document.getElementById("fullName").value ===""){
+                        document.getElementById("fullName").value = "John Doe"
+                        // deets = [document.getElementById("fullName").value]
+                        // localStorage.setItem("challengeDetails", JSON.stringify(deets))
+                      }
+                      if (document.getElementById("email").value===""){
+                        document.getElementById("email").value= "johndoe@email.com"
+                      }
+                      if (document.getElementById("phone").value===""){
+                        document.getElementById("phone").value= "08219919918"
+                      }
+                      if (document.getElementById("address-postcode").value===""){
+                        document.getElementById("address-postcode").value= "CM17BD"
+                      }
+                    })
                     let defaultDetails = document.getElementById("defaultDetails")
                     // defaultDetails.addEventListener("mouseover", function(){
                       document.getElementById('nextPage').addEventListener("mouseover", function(){
