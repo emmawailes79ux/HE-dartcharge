@@ -987,7 +987,7 @@ router.get("/resolve-pcn/:version/flow8", function (req, res) {
 });
 
 router.get("/resolve-pcn/:version/flow9", function (req, res) {
-  res.render(`prototype-demo/resolve-pcn/${req.params.version}/challengePCNRemod`);
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/challengePCNremod`);
 });
 
 router.get("/resolve-pcn/:version/flow10", function (req, res) {

@@ -276,9 +276,13 @@ overflow:hidden;
            <b>Number plate</b> <br>
            <span id="plateNom">{{data['vrn']}}</span>
         </p>
-        <p class="gem-c-contextual-sidebar__brexit-text govuk-body">
+        <!--<p class="gem-c-contextual-sidebar__brexit-text govuk-body">
           <b>Number of pcns</b> <br>
           <span id="countPCNs">4</span>
+        </p>-->
+        <p class="gem-c-contextual-sidebar__brexit-text govuk-body">
+          <b>PCN numbers</b> <br>
+          <span id="listPCNs">4</span>
         </p>
         <p class="gem-c-contextual-sidebar__brexit-text govuk-body govuk-!-margin-bottom-1">
           Total amount: <br>
@@ -833,9 +837,11 @@ overflow:hidden;
                        let charge = document.getElementById("charge");
                        let charge2 = document.getElementById("charge2");
                        let plateNom = document.getElementById("plateNom");
+                       let listPCNs = document.getElementById("listPCNs");
                        let countPCNs = document.getElementById("countPCNs");
                        var roper = JSON.parse(localStorage.getItem("pcnDetailsTable"));
                         let vandal = []
+                        peeArray = []
                         if (typeof(roper[0])=="string"){
                           vandal.push(roper)
                           }else if(typeof(roper[0])=="object"){vandal=roper}
@@ -849,11 +855,13 @@ overflow:hidden;
                                         `
                        container.innerHTML += fieldHTML;
                        chargeCummulator += parseInt(vandal[i][11].split('£')[1]);
+                       peeArray.push(vandal[i][5])
                       }
                       //  element IDs can be treated as variable names
                         plateNom.innerHTML = vandal[0][0]
-                        countPCNs.innerHTML = vandal.length
+                        //countPCNs.innerHTML = vandal.length
                         charge.innerHTML =`£${chargeCummulator}`
+                        listPCNs.innerHTML = peeArray.join("<br>")
                         // charge2.innerHTML =`£${chargeCummulator}`
 
                        //  Variables to get current routename
