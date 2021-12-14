@@ -954,6 +954,10 @@ router.get("/resolve-pcn/:version/flow2", function (req, res) {
   res.render(`prototype-demo/resolve-pcn/${req.params.version}/vehicleRemod`);
 });
 
+router.get("/resolve-pcn/:version/flow2Alt", function (req, res) {
+  res.render(`prototype-demo/resolve-pcn/${req.params.version}/vehicleRemodAlt`);
+});
+
 router.get("/resolve-pcn/:version/flow4", function (req, res) {
   res.render(`prototype-demo/resolve-pcn/${req.params.version}/outstandingRemod`);
 });
