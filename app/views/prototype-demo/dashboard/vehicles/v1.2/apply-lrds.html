@@ -1,0 +1,75 @@
+{% extends "../../dashboard-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicles</h1>
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Apply LRDS</h1>
+                <div class="app-!-bottom-line"></div>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+               
+                <p class="govuk-heading-m">LO62 NRO</p>
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="select-lrds-type">
+                      <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input
+                            class="govuk-radios__input"
+                            id="lrds-online"
+                            name="lrds-submit-type"
+                            type="radio"
+                            value="lrds-online"
+                            aria-describedby="pre-pay-hint"
+                          />
+                          <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="lrds-online">
+                            Submit online
+                          </label>
+                        </div>
+              
+                        <div class="govuk-radios__item">
+                          <input
+                            class="govuk-radios__input"
+                            id="lrds-post"
+                            name="lrds-submit-type"
+                            type="radio"
+                            value="lrds-post"
+                            aria-describedby="payg-hint"
+                          />
+                          <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="lrds-post">
+                            Submit by post
+                          </label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <button
+                    class="govuk-button lrds-submit-type"
+                    data-module="govuk-button"
+                    role="button"
+                    disabled
+                  >
+                  Continue
+                  </button>
+
+            </div>
+
+        </div>
+        
+    </div>
+    {% include "./dashboard-vehicle-info.html" %}
+</div>
+
+{% endblock %}

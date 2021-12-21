@@ -1,0 +1,55 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../../../setup-acct-head-container.html" %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Local resident discount scheme (LRDS)</h3>
+      
+      <!-- <div class="govuk-grid-column-one-third govuk-!-padding-top-1">
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="../select-account"> Change account type </a>
+      </div> -->
+    
+    
+    
+        <div class="govuk-!-padding-right-9">
+            <p class="govuk-body govuk-!-margin-bottom-2">
+                This account acts as a personal manual top-up account until the documents are verified and approved. Once approved, the
+                account will get converted into an LRDS account.
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>You can only get discount for one vehicle in an account.</li>
+                <li>You must provide evidence by uploading the documents or photographs. Alternatively you can send them by post.
+                </li>
+            </ul>
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-2">You will need to provide </h2>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Your vehicle details</li>
+                <li>A current Council Tax bill that matches the address in your application</li>
+                <li>Proof that you live in Dartford or Thurrock council, e.g. a gas, electricity or water bill (less than 3 months old), bank or credit card statement, (less than 3 months old), income support book, rent document or driving licence</li>
+                <li>Proof that your vehicle is registered in Dartford or Thurrock council, e.g. a copy of your V5C vehicle registration or a vehicle lease in your name</li>
+                <li>A debit or credit card</li>
+            </ul>
+            <!-- <p class="govuk-body">You cannot get a local resident discount if your vehicle is registered to a company.</p> -->
+
+      
+
+            <button
+            class="govuk-button lrds-postcode govuk-!-padding-right-5 govuk-!-padding-left-5 govuk-!-margin-top-5"
+            data-module="govuk-button"
+            role="button"
+            >
+            Next
+            </button>
+        </div>
+      </div>
+    </div>
+    
+    
+{% include "../../../setup-acct-bottom-container.html" %}
+{% endblock %}

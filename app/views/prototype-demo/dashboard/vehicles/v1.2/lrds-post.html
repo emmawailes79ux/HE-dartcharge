@@ -1,0 +1,54 @@
+{% extends "../../dashboard-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicles</h1>
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Apply LRDS</h1>
+                <div class="app-!-bottom-line"></div>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+               
+                <p class="govuk-heading-m">LO62 NRO</p>
+
+                <p class="govuk-body">Please post your documents to the following address</p>
+                <p class="govuk-body-l govuk-!-margin-bottom-2">LRDS</p>
+                <p class="govuk-body govuk-!-margin-bottom-2">Post box 1234</p>
+                <p class="govuk-body govuk-!-margin-bottom-7">Leeds, LS1 2GD</p>
+                
+
+                
+                <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Remember to include the following documents</p>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>Proof that you live in Dartford or Thurrock council</li>
+                    <li>Proof your vehcile is registered in Dartford or Thurrock council</li>
+                    <li>Current council tax bill</li>
+                  </ul>
+
+                
+
+                <p class="govuk-!-margin-top-7"><a href="success-lrds" class="govuk-button">Continue</a></p>
+                
+
+                
+
+            </div>
+
+        </div>
+        
+    </div>
+    {% include "./dashboard-vehicle-info.html" %}
+</div>
+
+{% endblock %}
