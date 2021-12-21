@@ -29,22 +29,22 @@
         </h2>
         <ul class="govuk-tabs__list">
           <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#past-day">
+            <a class="govuk-tabs__tab" href="#quick">
               Quick payment
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#past-week">
+            <a class="govuk-tabs__tab" href="#card">
               Debit/Credit Card
             </a>
           </li>
           <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#past-month">
+            <a class="govuk-tabs__tab" href="#bank">
               Bank transfer
             </a>
           </li>
         </ul>
-        <div class="govuk-tabs__panel" id="past-day">
+        <div class="govuk-tabs__panel" id="quick">
           
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="paypal" name="option-payment" type="radio"
@@ -73,14 +73,14 @@
           </div>
           
           <div class="govuk-button-group govuk-!-margin-top-6">
-            <button onClick="location.href='./lrds-success'" data-module="govuk-button" class="govuk-button" value="Proceed to payment" type="submit" role="button"
+            <button data-module="govuk-button" class="govuk-button lrds-success" value="Proceed to payment" type="submit" role="button"
                 aria-label="Proceed to payment">Proceed to payment</button>
         </div>
       
         </div>
 
 
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="card">
         
           <div class="govuk-form-group govuk-!-margin-bottom-2">
             <label class="govuk-label govuk-!-font-weight-bold " for="card-number">Card number</label>
@@ -158,13 +158,13 @@
         </div>
         <p class="govuk-!-margin-top-2 govuk-body-s"><a href="#" >Read terms and conditions</a></p>
         <div class="govuk-button-group govuk-!-margin-top-6">
-            <button onClick="location.href='./lrds-success'" data-module="govuk-button" class="govuk-button" value="Proceed to payment" type="submit" role="button"
+            <button data-module="govuk-button" class="govuk-button lrds-success" value="Proceed to payment" type="submit" role="button"
                 aria-label="Proceed to payment">Proceed to payment</button>
                 <!-- onClick="location.href='./payment-failure'" -->
         </div>
 
         </div>
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden " id="past-month">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden " id="bank">
           <div class='govuk-!-margin-bottom-5'>
               <p class="govuk-body govuk-!-font-weight-bold">Name of the bank:</p>
               <p>Barclays Bank</p>
@@ -186,7 +186,7 @@
               <p>HDJ2123F</p>
           </div>
           <div class="govuk-button-group govuk-!-margin-top-6">
-            <button onClick="location.href='./lrds-success'" data-module="govuk-button" class="govuk-button" value="Proceed to payment" type="submit" role="button"
+            <button data-module="govuk-button" class="govuk-button lrds-success" value="Proceed to payment" type="submit" role="button"
                 aria-label="Proceed to payment">Proceed to payment</button>
           </div>
         </div>

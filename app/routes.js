@@ -1,3 +1,4 @@
+
 const express = require("express");
 const router = express.Router();
 const landingData = require("./data/landing-data");
@@ -21,26 +22,55 @@ router.get("/landing", function (req, res) {
   });
 });
 // Setup account section routes
-router.get("/create-account", function (req, res) {
-  res.render("prototype-demo/setup-account/create-account", {
+router.get("/create-account/:version", function (req, res) {
+  res.render(`prototype-demo/setup-account/${req.params.version}/create-account`, {
     step: 1,
     section: "create-account",
   });
 });
 
 router.get("/faq", function (req, res) {
-
   res.render("prototype-demo/faq");
 });
 
 
-router.post("/create-account", function (req, res) {
+router.get("/forgot-password", function (req, res) {
+  res.render("prototype-demo/password/forgot-password");
+});
+
+router.get("/resend-password", function (req, res) {
+  res.render("prototype-demo/password/resend-password");
+});
+
+router.get("/email-password", function (req, res) {
+  res.render("prototype-demo/password/email-password");
+});
+
+router.get("/text-password", function (req, res) {
+  res.render("prototype-demo/password/text-password");
+});
+
+router.get("/post-password", function (req, res) {
+  res.render("prototype-demo/password/post-password");
+});
+
+router.get("/reset-password", function (req, res) {
+  res.render("prototype-demo/password/reset-password");
+});
+
+router.get("/password-successful", function (req, res) {
+  res.render("prototype-demo/password/password-successful");
+});
+
+
+
+router.post("/create-account/:version", function (req, res) {
   if (req.body.email) {
-    res.redirect("create-account/check-code");
+    res.redirect(`${req.params.version}/check-code`);
   }
 });
 
-router.get("/create-account/check-code", function (req, res) {
+router.get("/create-account/:version/check-code", function (req, res) {
   const {
     data
   } = req.session;
@@ -49,10 +79,10 @@ router.get("/create-account/check-code", function (req, res) {
     section: "check-code",
   });
 
-  res.render("prototype-demo/setup-account/check-code");
+  res.render(`prototype-demo/setup-account/${req.params.version}/check-code`);
 });
 
-router.get("/create-account/verification-confirmation", function (req, res) {
+router.get("/create-account/:version/verification-confirmation", function (req, res) {
   const {
     data
   } = req.session;
@@ -60,20 +90,20 @@ router.get("/create-account/verification-confirmation", function (req, res) {
     step: 1,
     section: "verification-confirmation",
   });
-  res.render("prototype-demo/setup-account/verification-confirmation", {
+  res.render(`prototype-demo/setup-account/${req.params.version}/verification-confirmation`, {
     step: 1,
     section: "verification-confirmation",
   });
 });
 
-router.get("/create-account/step-2/select-account", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/select-account", {
+router.get("/create-account/:version/step-2/select-account", function (req, res) {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/select-account`, {
     step: 2,
     section: "select-account",
   });
 });
 
-router.post("/create-account/step-2/select-account", function (req, res) {
+router.post("/create-account/:version/step-2/select-account", function (req, res) {
   const {
     data
   } = req.session;
@@ -84,20 +114,20 @@ router.post("/create-account/step-2/select-account", function (req, res) {
   res.redirect(`${redirect}`);
 });
 
-router.get("/create-account/step-2/initial-deposit", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/initial-deposit", {
+router.get("/create-account/:version/step-2/initial-deposit", function (req, res) {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/initial-deposit`, {
     step: 4
   });
 });
 
-router.get("/create-account/step-2/personal-account-type", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/personal-account-type", {
+router.get("/create-account/:version/step-2/personal-account-type", function (req, res) {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/personal-account-type`, {
     step: 2,
     section: "personal-account-type",
   });
 });
 
-router.post("/create-account/step-2/personal-account-type", function (req, res) {
+router.post("/create-account/:version/step-2/personal-account-type", function (req, res) {
 
   let redirect = '';
 
@@ -107,7 +137,7 @@ router.post("/create-account/step-2/personal-account-type", function (req, res) 
 
   } else if (req.body['personal-account-type'] === 'lrds') {
 
-    redirect = '../../lrds';
+    redirect = `../../../lrds/${req.params.version}`;
 
   } else {
 
@@ -117,144 +147,144 @@ router.post("/create-account/step-2/personal-account-type", function (req, res) 
   res.redirect(`${redirect}`);
 });
 
-router.get("/create-account/step-2/pre-pay/prerequisites", function (req, res) {
+router.get("/create-account/:version/step-2/pre-pay/prerequisites", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 2;
   data["section"] = "pre-pay-prerequisites";
-  res.render("prototype-demo/setup-account/step-2/prerequisite-content", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/prerequisite-content`, data);
 });
 
-router.get("/create-account/step-2/payg/prerequisites", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/payg-prerquisite-content", {
+router.get("/create-account/:version/step-2/payg/prerequisites", function (req, res) {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/payg-prerquisite-content`, {
     step: 2,
     section: "payg-prerequisites",
   });
 });
 
-router.get("/create-account/step-2/pre-pay/user-info", function (req, res) {
+router.get("/create-account/:version/step-2/pre-pay/user-info", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 2;
   data["section"] = "user-info";
-  res.render("prototype-demo/setup-account/step-2/user-info-form", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/user-info-form`, data);
 });
 
-router.get("/create-account/step-2/nominate-user-confirmation", function (req, res) {
+router.get("/create-account/:version/step-2/nominate-user-confirmation", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 2;
   data["section"] = "nominate-user";
-  res.render("prototype-demo/setup-account/step-2/nominate-user-confirmation", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/nominate-user-confirmation`, data);
 });
 
 router.get(
-  "/create-account/step-2/pre-pay/initial-payment",
+  "/create-account/:version/step-2/pre-pay/initial-payment",
   function (req, res) {
-    res.render("prototype-demo/setup-account/step-2/initial-payment", {
+    res.render(`prototype-demo/setup-account/${req.params.version}/step-2/initial-payment`, {
       step: 2,
       section: "initial-payment",
     });
   }
 );
 
-router.get("/create-account/step-2/:accounttype/done", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/step-2-done", {
+router.get("/create-account/:version/step-2/:accounttype/done", function (req, res) {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/step-2-done`, {
     step: 2,
     section: req.params.accounttype,
   });
 });
 
 // step-3 in account setup start
-router.get("/create-account/step-3/vehicle-register", function (req, res) {
+router.get("/create-account/:version/step-3/vehicle-register", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 3;
   data["section"] = "vehicle-register";
-  res.render("prototype-demo/setup-account/step-3/vehicle-register", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-3/vehicle-register`, data);
 });
-router.get("/create-account/step-3/vehicle-details", function (req, res) {
+router.get("/create-account/:version/step-3/vehicle-details", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 3;
   data["section"] = "vehicle-details";
   data["vehicleData"] = landingData.vehicleList;
-  res.render("prototype-demo/setup-account/step-3/vehicle-details", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-3/vehicle-details`, data);
 });
-router.get("/create-account/step-3/step-3-done", function (req, res) {
+router.get("/create-account/:version/step-3/step-3-done", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 3;
   data["section"] = "step-3-done";
-  res.render("prototype-demo/setup-account/step-3/step-3-done", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-3/step-3-done`, data);
 });
 
 
-router.get("/create-account/step-3/vehicle-upload-details", function (req, res) {
+router.get("/create-account/:version/step-3/vehicle-upload-details", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 3;
   data["section"] = "vehicle-upload-details";
-  res.render("prototype-demo/setup-account/step-3/vehicle-upload-details", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-3/vehicle-upload-details`, data);
 });
 
-router.get("/create-account/step-3/vehicle-upload-edit", function (req, res) {
+router.get("/create-account/:version/step-3/vehicle-upload-edit", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 3;
   data["section"] = "vehicle-upload-edit";
-  res.render("prototype-demo/setup-account/step-3/vehicle-upload-edit", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-3/vehicle-upload-edit`, data);
 });
 
-router.get("/create-account/step-3/vehicle-upload-confirm", function (req, res) {
+router.get("/create-account/:version/step-3/vehicle-upload-confirm", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 3;
   data["section"] = "vehicle-upload-confirm";
-  res.render("prototype-demo/setup-account/step-3/vehicle-upload-confirm", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-3/vehicle-upload-confirm`, data);
 });
 
 // step-3 in account setup end
 
 // step-4 - account setup //
-router.get("/create-account/step-4/payments", function (req, res) {
+router.get("/create-account/:version/step-4/payments", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 4;
-  res.render("prototype-demo/setup-account/step-4/payments", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-4/payments`, data);
 });
 
-router.get("/create-account/step-4/initial-deposit", function (req, res) {
-  res.render("prototype-demo/setup-account/step-4/initial-deposit", {
+router.get("/create-account/:version/step-4/initial-deposit", function (req, res) {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-4/initial-deposit`, {
     step: 4,
     section: "initial-deposit",
   });
 });
 
-router.get("/create-account/step-4/confirm-payment", function (req, res) {
-  res.render("prototype-demo/setup-account/step-4/confirm-payment", {
+router.get("/create-account/:version/step-4/confirm-payment", function (req, res) {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-4/confirm-payment`, {
     step: 4,
     section: "confirm-payment",
   });
 });
 
-router.get("/create-account/step-4/step-4-done", function (req, res) {
+router.get("/create-account/:version/step-4/step-4-done", function (req, res) {
   const {
     data
   } = req.session;
   data["step"] = 4;
   data["section"] = "step-4-done";
-  res.render("prototype-demo/setup-account/step-4/step-4-done", data);
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-4/step-4-done`, data);
 });
 // step-4 - account setup end
 
@@ -286,7 +316,7 @@ router.post("/one-off-payment/:version/pay-crossing", function (req, res) {
   //res.redirect("confirm-vehicle-details");
   if(req.params.version === 'v1.1') {
     res.redirect("no-of-vehicles");
-  } else if(req.params.version === 'v1.2'||req.params.version==='v1.3'){
+  } else {
     res.redirect("vehicle-info");
   }
 });
@@ -443,6 +473,9 @@ router.get("/one-off-payment/:version/confirm-method", function (req, res) {
   res.render(`prototype-demo/one-off-payment/${req.params.version}/confirm-payment-method`);
 
 });
+
+
+
 
 router.get("/one-off-payment/:version/vehicle-crossmade", function (req, res) {
   res.render(`prototype-demo/one-off-payment/${req.params.version}/vehicle-cross-made`);
@@ -629,6 +662,30 @@ router.get("/login", function (req, res) {
   res.render("prototype-demo/login");
 });
 
+// Forgot password
+router.get("/enter-detail", function (req, res) {
+  res.render("prototype-demo/forgot-password/detail");
+});
+router.get("/link", function (req, res) {
+  res.render("prototype-demo/forgot-password/link");
+});
+router.get("/check", function (req, res) {
+  res.render("prototype-demo/forgot-password/check");
+});
+router.get("/create-password", function (req, res) {
+  res.render("prototype-demo/forgot-password/create-password");
+});
+router.get("/success", function (req, res) {
+  res.render("prototype-demo/forgot-password/success");
+});
+
+// Forgot username
+router.get("/user-detail", function (req, res) {
+  res.render("prototype-demo/forgot-username/username-detail");
+});
+router.get("/confirm-user", function (req, res) {
+  res.render("prototype-demo/forgot-username/confirm-username");
+});
 // Dashboaord section start
 
 router.get("/dashboard", function (req, res) {
@@ -747,6 +804,8 @@ router.get("/dashboard/nominated-user/nominated-mulitple-user-detail", function 
   });
 });
 
+
+
 router.get("/dashboard/account/add-new-card", function (req, res) {
   res.render("prototype-demo/dashboard/account/add-new-card");
 });
@@ -794,96 +853,96 @@ router.get("/dashboard/reminder", function (req, res) {
 });
 
 // LRDS
-router.get("/lrds", function (req, res) {
+router.get("/lrds/:version", function (req, res) {
   const {
     data
   } = req.session;
-  res.render("prototype-demo/setup-account/step-2/personal/lrds/lrds-info", {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/lrds-info`, {
     step: 2,
     section: "lrds",
   });
 });
 
-router.get("/lrds/postcode", function (req, res) {
+router.get("/lrds/:version/postcode", function (req, res) {
   res.render(
-    "prototype-demo/setup-account/step-2/personal/lrds/lrds-postcode", {
+    `prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/lrds-postcode`, {
       step: 2,
       section: "lrds",
     }
   );
 });
 
-router.get("/lrds/address", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/personal/lrds/lrds-address", {
+router.get("/lrds/:version/address", function (req, res) {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/lrds-address`, {
     step: 2,
     section: "lrds",
   });
 });
 
-router.get("/lrds/address-confirm", function (req, res) {
-  res.render("prototype-demo/setup-account/step-2/personal/lrds/lrds-confirm", {
+router.get("/lrds/:version/address-confirm", function (req, res) {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/lrds-confirm`, {
     step: 2,
     section: "lrds",
   });
 });
 
-router.get("/lrds/step2", function (req, res) {
+router.get("/lrds/:version/step2", function (req, res) {
   res.render(
-    "prototype-demo/setup-account/step-2/personal/lrds/lrds-info-step2", {
+    `prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/lrds-info-step2`, {
       step: 2,
       section: "lrds",
     }
   );
 });
 
-router.get("/lrds/user-info-form", function (req, res) {
+router.get("/lrds/:version/user-info-form", function (req, res) {
   res.render(
-    "prototype-demo/setup-account/step-2/personal/lrds/user-info-form", {
+    `prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/user-info-form`, {
       step: 2,
       section: "lrds",
     }
   );
 });
 
-router.get("/lrds/vehcile-register", function (req, res) {
+router.get("/lrds/:version/vehicle-register", function (req, res) {
   res.render(
-    "prototype-demo/setup-account/step-2/personal/lrds/lrds-vehicle-register", {
+    `prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/lrds-vehicle-register`, {
       step: 3,
       section: "lrds",
     }
   );
 });
 
-router.get("/lrds/vehcile-details", function (req, res) {
+router.get("/lrds/:version/vehicle-details", function (req, res) {
   res.render(
-    "prototype-demo/setup-account/step-2/personal/lrds/lrds-vehicle-details", {
+    `prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/lrds-vehicle-details`, {
       landingData,
       step: 3,
       section: "lrds",
     });
 });
 
-router.get("/lrds/lrds-summary", function (req, res) {
+router.get("/lrds/:version/lrds-summary", function (req, res) {
   res.render(
-    "prototype-demo/setup-account/step-2/personal/lrds/lrds-summary", {
+    `prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/lrds-summary`, {
       step: 3,
       section: "lrds",
     }
   );
 });
 
-router.get("/lrds/lrds-payment", function (req, res) {
+router.get("/lrds/:version/lrds-payment", function (req, res) {
   res.render(
-    "prototype-demo/setup-account/step-2/personal/lrds/lrds-payment", {
+    `prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/lrds-payment`, {
       step: 4,
       section: "lrds",
     }
   );
 });
 
-router.get("/lrds/lrds-success", function (req, res) {
+router.get("/lrds/:version/lrds-success", function (req, res) {
   res.render(
-    "prototype-demo/setup-account/step-2/personal/lrds/lrds-success", {
+    `prototype-demo/setup-account/${req.params.version}/step-2/personal/lrds/lrds-success`, {
       step: 4,
       section: "lrds",
     }
@@ -895,49 +954,63 @@ router.get("/lrds/lrds-success", function (req, res) {
 
 //BUSINESS ACCOUNT
 
-router.get("/create-account/step-2/biz-topup-select", function (req, res) {
+router.get("/create-account/:version/step-2/biz-topup-select", function (req, res) {
   const {
     data
   } = req.session;
-  res.render("prototype-demo/setup-account/step-2/business/topup-select", {
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/business/topup-select`, {
     step: 2,
   });
 });
 
-router.get("/create-account/step-2/business-account-type", function (req, res) {
+
+
+router.get("/create-account/:version/step-2/business-account-type", function (req, res) {
   const {
     data
   } = req.session;
   res.render(
-    "prototype-demo/setup-account/step-2/business/initial-payment",
+    `prototype-demo/setup-account/${req.params.version}/step-2/business/initial-payment`,
     data
   );
 });
 
-router.get("/create-account/step-2/business-vehicles", function (req, res) {
+
+
+
+router.get("/create-account/:version/step-2/vehicle-bulk-upload", function (req, res) {
   const {
     data
   } = req.session;
-  
-  res.render("prototype-demo/setup-account/step-2/number-of-vehicles", {
+  data["step"] = 3;
+  data["section"] = "vehicle-register";
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/vehicle-bulk-upload`, data);
+});
+
+router.get("/create-account/:version/step-2/business-vehicles", function (req, res) {
+  const {
+    data
+  } = req.session;
+
+  res.render(`prototype-demo/setup-account/${req.params.version}/step-2/number-of-vehicles`, {
     step: 3,
   });
 });
 
-router.post("/create-account/step-2/business-vehicles", function (req, res) {
-  if(req.body['no-of-vehicles']) {
-    if(req.body['no-of-vehicles'] === '5') {
+router.post("/create-account/:version/step-2/business-vehicles", function (req, res) {
+  if (req.body['no-of-vehicles']) {
+    if (req.body['no-of-vehicles'] === '5') {
       res.redirect("../step-3/vehicle-register")
-    } else if(req.body['no-of-vehicles'] === '10') {
-      res.redirect("../../one-off-payment/bulk-upload");
+    } else if (req.body['no-of-vehicles'] === '10') {
+      res.redirect(`../step-2/vehicle-bulk-upload`);
     }
   }
 });
 
 router.get(
-  "/create-account/step-2/business-prerequisites",
+  "/create-account/:version/step-2/business-prerequisites",
   function (req, res) {
-    res.render("prototype-demo/setup-account/step-2/business/topup-select", {
+    res.render(`prototype-demo/setup-account/${req.params.version}/step-2/business/topup-select`, {
       step: 2,
     });
   }
@@ -1017,5 +1090,6 @@ router.get("/resolve-pcn/:version/flow16", function (req, res) {
 router.get("/resolve-pcn/:version/flow17", function (req, res) {
   res.render(`prototype-demo/resolve-pcn/${req.params.version}/challengeConfirm`);
 });
+
 
 module.exports = router;

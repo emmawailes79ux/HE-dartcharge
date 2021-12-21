@@ -19,16 +19,19 @@
     </div>
     
     <div class="govuk-!-padding-right-9">
-        <p class="govuk-body">The address you have provided is eligible for LRDS</p>
+        <p class="govuk-body">Enter your postcode to check your address is eligible for LRDS</p>
         
-        
+        <div class="govuk-form-group ">
+            <label class="govuk-label govuk-!-font-weight-bold" for="postcode_number">Postcode</label>
+            <input class="govuk-input govuk-input--width-5" id="postcode_number" name="postcode_number" value="DA1 DR0"
+              type="text" />
+          </div>
         <button
-            class="govuk-button"
+            class="govuk-button lrds-address"
             data-module="govuk-button"
             role="button"
-            onclick="location.href='/lrds/step2'" 
             >
-            Continue
+            Find address
         </button>
     </div>
     

@@ -6,6 +6,7 @@ if (window.console && window.console.info) {
 }
 
 window.version = 'v1.3';
+window.setupAccountVersion = 'v1.1';
 $(document).ready(function () {
   version = window.location.pathname.split("/")[2] || version;
 
@@ -62,11 +63,11 @@ $(document).ready(function () {
   });
 
   $(".email-verification").click(function () {
-    $.fn.redirectPage("create-account/step-2/select-account");
+    $.fn.redirectPage(`create-account/${version}/step-2/select-account`);
   });
 
   $(".confirm-verification").click(function () {
-    $.fn.redirectPage("create-account/step-2/select-account");
+    $.fn.redirectPage(`create-account/${version}/step-2/select-account`);
   });
 
 
@@ -75,7 +76,7 @@ $(document).ready(function () {
 
   //   if (personalAccountType === "pre-pay") {
   //     url = "pre-pay/prerequisites";
-  //     $.fn.redirectPage(`create-account/step-2/${url}`);
+  //     $.fn.redirectPage(`create-account/${version}/step-2/${url}`);
   //   }
 
   //   if (personalAccountType === "lrds") {
@@ -85,7 +86,7 @@ $(document).ready(function () {
 
   //   // if (personalAccountType === 'payg') {
   //   //   url = 'payg/prerequisites';
-  //   //   $.fn.redirectPage(`create-account/step-2/${url}`);
+  //   //   $.fn.redirectPage(`create-account/${version}/step-2/${url}`);
   //   // }
   // });
 
@@ -93,47 +94,47 @@ $(document).ready(function () {
 
 
   $(".prereq").click(function () {
-    $.fn.redirectPage("create-account/step-2/pre-pay/user-info");
+    $.fn.redirectPage(`create-account/${version}/step-2/pre-pay/user-info`);
   });
 
   $(".user-info").click(function () {
-    $.fn.redirectPage("create-account/step-2/pre-pay/initial-payment");
+    $.fn.redirectPage(`create-account/${version}/step-2/pre-pay/initial-payment`);
   });
 
   $(".initial-payment-next").click(function () {
-    $.fn.redirectPage("create-account/step-2/pre-pay/done");
+    $.fn.redirectPage(`create-account/${version}/step-2/pre-pay/done`);
   });
 
   $(".payg-prereq").click(function () {
-    $.fn.redirectPage("create-account/step-2/payg/done");
+    $.fn.redirectPage(`create-account/${version}/step-2/payg/done`);
   });
 
   $(".redirectStep3").click(function () {
-    $.fn.redirectPage("create-account/step-3/vehicle-register");
+    $.fn.redirectPage(`create-account/${version}/step-3/vehicle-register`);
   });
 
   $(".vehicle_register").click(function () {
-    $.fn.redirectPage("create-account/step-3/vehicle-register");
+    $.fn.redirectPage(`create-account/${version}/step-3/vehicle-register`);
   });
 
   $(".vehicle_details").click(function () {
-    $.fn.redirectPage("create-account/step-3/vehicle-details");
+    $.fn.redirectPage(`create-account/${version}/step-3/vehicle-details`);
   });
 
   $(".add_vehicle").click(function () {
-    $.fn.redirectPage("create-account/step-3/step-3-done");
+    $.fn.redirectPage(`create-account/${version}/step-3/step-3-done`);
   });
 
   $(".payments").click(function () {
-    $.fn.redirectPage("create-account/step-4/payments");
+    $.fn.redirectPage(`create-account/${version}/step-4/payments`);
   });
 
   $(".confrim-payment").click(function () {
-    $.fn.redirectPage("create-account/step-4/confirm-payment");
+    $.fn.redirectPage(`create-account/${version}/step-4/confirm-payment`);
   });
 
   $(".payment_done").click(function () {
-    $.fn.redirectPage("create-account/step-4/step-4-done");
+    $.fn.redirectPage(`create-account/${version}/step-4/step-4-done`);
   });
 
   $(".govuk-back-link").click(function () {
@@ -175,8 +176,65 @@ $(document).ready(function () {
   });
 
   $(".business-vehicles").click(function () {
-    $.fn.redirectPage("create-account/step-2/business-vehicles");
+    $.fn.redirectPage(`create-account/${version}/step-2/business-vehicles`);
   })
+
+
+  $(".lrds-postcode").click(function () {
+    $.fn.redirectPage(`lrds/${version}/postcode`);
+  });
+
+  $(".lrds-address").click(function () {
+    $.fn.redirectPage(`lrds/${version}/address`);
+  });
+
+  $(".lrds-address-confirm").click(function () {
+    $.fn.redirectPage(`lrds/${version}/address-confirm`);
+  });
+
+  $(".lrds-step2").click(function () {
+    $.fn.redirectPage(`lrds/${version}/step2`);
+  });
+
+  $(".lrds-info-form").click(function () {
+    $.fn.redirectPage(`lrds/${version}/user-info-form`);
+  });
+
+  $(".lrds-vehicle-register").click(function () {
+    $.fn.redirectPage(`lrds/${version}/vehicle-register`);
+  });
+
+  $(".lrds-vehicle-details").click(function () {
+    $.fn.redirectPage(`lrds/${version}/vehicle-details`);
+  });
+
+  $(".lrds-summary").click(function () {
+    $.fn.redirectPage(`lrds/${version}/lrds-summary`);
+  });
+
+  $(".lrds-payment").click(function () {
+    $.fn.redirectPage(`lrds/${version}/lrds-payment`);
+  });
+
+  $(".lrds-success").click(function () {
+    $.fn.redirectPage(`lrds/${version}/lrds-success`);
+  });
+
+
+  $(".create-account-bulk-vehicle").click(function () {
+    $.fn.redirectPage(`create-account/${version}/step-3/vehicle-upload-details`);
+  });
+
+  $(".create-account-edit-vehicle").click(function () {
+    $.fn.redirectPage(`create-account/${version}/step-3/vehicle-upload-edit`);
+  });
+
+  $(".create-account-upload-confirm").click(function () {
+    $.fn.redirectPage(`create-account/${version}/step-3/vehicle-upload-confirm`);
+  });
+  
+
+
 
   // $(".multiple-vehicle").click(function () {
   //   $.fn.redirectPage("one-off-payment/${version}/payment-info/1");
@@ -188,7 +246,7 @@ $(document).ready(function () {
 
   //*********** LRDS *************//
   $(".lrds-info-next").click(function () {
-    $.fn.redirectPage("create-account/lrds/lrds-info-step2");
+    $.fn.redirectPage(`create-account/${version}/lrds/lrds-info-step2`);
   });
   //************ /.LRDS ************//
 
@@ -202,7 +260,7 @@ $(document).ready(function () {
         $.fn.redirectPage(`resolve-pcn/${version}/flow1`);
     } else if (radioVal === "create-account") {
 
-      $.fn.redirectPage("create-account");
+      $.fn.redirectPage(`create-account/${setupAccountVersion}`);
 
     } else if (radioVal === "make-oneoff-payment") {
       // $.fn.redirectPage("one-off-payment/${version}/find-vehicle");
@@ -457,7 +515,7 @@ $(".accountpaymentoptionBtn").click(() => {
 
 $("[name='card-number']").click(() => {
   $("[name='name-on-card']").val("John Doe");
-  $("[name='card-number']").val("John Doe");
+  $("[name='card-number']").val("1234 5678 9012");
   $("[name='account-number']").val("12345678");
   $("[name='month']").val("12");
   $("[name='year']").val("21");
@@ -804,7 +862,7 @@ $("[id='plateSubmit']").mouseover(() => {
 //   console.log(radioVal);
 //   if (radioVal === "5") {
 
-//     $.fn.redirectPage("create-account/step-3/vehicle-register");
+//     $.fn.redirectPage(`create-account/${version}/step-3/vehicle-register`);
 //   } else if (radioVal === "10") {
 //     $.fn.redirectPage("one-off-payment/${version}/bulk-upload");
 //   }
