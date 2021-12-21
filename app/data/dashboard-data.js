@@ -247,11 +247,12 @@
     "Registration number",
     "Class",
     "Make",
-    "Model",
-    "Colour",
-    "Vehicle plan",
+    // "Model",
+    // "Colour",
+    // "Vehicle plan",
     "Date added",
-    "Remove",
+    "Notes",
+    // "Remove",
   ];
   exports.crossingListHead = [
     "Crossing date",

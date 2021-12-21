@@ -1,4 +1,4 @@
-{% extends "../dashboard-layout.html" %}
+{% extends "../../dashboard-layout.html" %}
 
 {% block pageTitle %}
 GOV.UK Prototype Kit
@@ -26,11 +26,14 @@ GOV.UK Prototype Kit
         <div class="app-!-table-scroll">
           <div class="app-!-table-list-container">
             <div class="app-!-table-list-row app-!-table-header">
-              {% for head in dashboardData.vehicleListHead %}
-              <div class="app-!-table-list-cell govuk-body-s">
-                {{ head }}
-              </div>
-              {% endfor %}
+              <div class="app-!-table-list-cell govuk-body-s">Registration number</div>
+              <div class="app-!-table-list-cell govuk-body-s">Class</div>
+              <div class="app-!-table-list-cell govuk-body-s">Make</div>
+              <div class="app-!-table-list-cell govuk-body-s">Model</div>
+              <div class="app-!-table-list-cell govuk-body-s">Color</div>
+              <div class="app-!-table-list-cell govuk-body-s">Vehicle plan</div>
+              <div class="app-!-table-list-cell govuk-body-s">Data added</div>
+              <div class="app-!-table-list-cell govuk-body-s">Remove</div>
             </div>
             <div class="app-!-table-list-row app-!-table-body">
               <h5 class="app-!-table-list-cell govuk-body-s">

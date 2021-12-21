@@ -1,0 +1,55 @@
+{% extends "../../dashboard-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicles</h1>
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Apply LRDS</h1>
+                <div class="app-!-bottom-line"></div>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+               
+                <p class="govuk-heading-m">LO62 NRO</p>
+
+                <p class="govuk-body-m govuk-!-font-weight-bold">Required documents</p>
+                <p class="govuk-body-l govuk-!-margin-bottom-2">Current council tax bill</p>
+                <p class="govuk-body">The address on the council tax bill must match the address on your application.</p>
+                <a href="#" class="govuk-button govuk-button--secondary">Upload file</a>
+
+                
+                <p class="govuk-body-l govuk-!-margin-bottom-2">Proof that you live in Dartford or Thurrock council</p>
+                <ul  class="govuk-list govuk-list--bullet">
+                    <li>A gas, electricity or water bill (less than 3 months old),
+                    </li>
+                    <li>bank or credit card statement (less than 3 months old), </li>
+                    <li>income support book, rent document or driving licence</li>    
+                </ul>
+                <a href="#" class="govuk-button govuk-button--secondary">Upload file</a>
+
+                
+                <p class="govuk-body-l govuk-!-margin-bottom-2">Proof your vehcile is registered in Dartford or Thurrock council</p>
+                <p class="govuk-body">Copy of your V5C vehcile registration or a Vehicle lease in your name</p>
+                <a href="#" class="govuk-button govuk-button--secondary">Upload file</a>
+
+
+                <p class="govuk-!-margin-top-5"><a href="success-lrds" class="govuk-button">Submit</a></p>
+            </div>
+
+        </div>
+        
+    </div>
+    {% include "./dashboard-vehicle-info.html" %}
+</div>
+
+{% endblock %}

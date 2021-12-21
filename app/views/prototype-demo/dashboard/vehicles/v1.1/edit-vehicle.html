@@ -1,0 +1,61 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="/home" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicles</h1>
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Add Vehicle</h1>
+                <div class="app-!-bottom-line"></div>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <table class="govuk-table">
+                    <caption class="govuk-table__caption govuk-table__caption--m">Change Vehicle details</caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Registration number</th>
+                            <th scope="col" class="govuk-table__header">LO62NRO </th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Class</th>
+                            <td class="govuk-table__cell"> <input class="govuk-input govuk-input--width-10" id="class"
+                                    name="class" type="text" value="B" /></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Make</th>
+                            <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10" id="make"
+                                    name="make" type="text" value="Audi" /></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Model</th>
+                            <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10" id="model"
+                                    name="model" type="text" value="RS4" /></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Colour</th>
+                            <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10" id="colour"
+                                    name="colour" type="text" value="Black" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="govuk-button edit-vehicle-confirm" data-module="govuk-button" role="button"
+                    aria-label="save and proceed">Save and proceed</button>
+            </div>
+        </div>
+    </div>
+    {% include "./dashboard-vehicle-info.html" %}
+</div>
+
+{% endblock %}

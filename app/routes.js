@@ -694,31 +694,32 @@ router.get("/dashboard", function (req, res) {
   });
 });
 
-router.get("/dashboard/vehicles", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicles/vehicle-details", {
+router.get("/dashboard/vehicles/:version", function (req, res) {
+  res.render(`prototype-demo/dashboard/vehicles/${req.params.version}/vehicle-details`, {
     dashboardData,
   });
 });
 
-router.get("/dashboard/vehicles/bulk-upload", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicles/bulk-upload-vehicle");
+router.get("/dashboard/vehicles/:version/bulk-upload", function (req, res) {
+  res.render(`prototype-demo/dashboard/vehicles/${req.params.version}/bulk-upload-vehicle`);
 });
 
-router.get("/dashboard/vehicles/apply-lrds", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicles/apply-lrds");
+router.get("/dashboard/vehicles/:version/apply-lrds", function (req, res) {
+  res.render(`prototype-demo/dashboard/vehicles/${req.params.version}/apply-lrds`);
 });
 
-router.get("/dashboard/vehicles/online-submit", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicles/lrds-online");
+router.get("/dashboard/vehicles/:version/online-submit", function (req, res) {
+  res.render(`prototype-demo/dashboard/vehicles/${req.params.version}/lrds-online`);
 });
 
-router.get("/dashboard/vehicles/post-submit", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicles/lrds-post");
+router.get("/dashboard/vehicles/:version/post-submit", function (req, res) {
+  res.render(`prototype-demo/dashboard/vehicles/${req.params.version}/lrds-post`);
 });
 
-router.get("/dashboard/vehicles/success-lrds", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicles/success-lrds");
+router.get("/dashboard/vehicles/:version/success-lrds", function (req, res) {
+  res.render(`prototype-demo/dashboard/vehicles/${req.params.version}/success-lrds`);
 });
+
 
 router.get("/dashboard/crossings", function (req, res) {
   res.render("prototype-demo/dashboard/crossing-details", {
@@ -816,36 +817,41 @@ router.get("/dashboard/account/save-card-success", function (req, res) {
 
 // dashboard / add - dashboard - vehicle
 
-router.get("/dashboard/add-dashboard-vehicle", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicles/add-dashboard-vehicle");
+router.get("/dashboard/vehicles/:version/add-dashboard-vehicle", function (req, res) {
+  res.render(`prototype-demo/dashboard/vehicles/${req.params.version}/add-dashboard-vehicle`);
 });
 
-router.post("/dashboard/vehicle/find-vehicle", function (req, res) {
+router.post("/dashboard/vehicles/:version/find-vehicle", function (req, res) {
   res.redirect(
-    "/prototype-demo/dashboard/vehicles/dashboard-confirm-vehicle-details"
+    `/dashboard/vehicles/${req.params.version}/dashboard-confirm-vehicle-details`
   );
 });
 
-router.get("/dashboard/edit-vehicle", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicles/edit-vehicle", {
+router.get("/dashboard/vehicles/:version/edit-vehicle", function (req, res) {
+  res.render(`prototype-demo/dashboard/vehicles/${req.params.version}/edit-vehicle`, {
     dashboardData,
   });
 });
 
 router.get(
-  "/dashboard/vehicles/dashboard-confirm-vehicle-details",
+  "/dashboard/vehicles/:version/dashboard-confirm-vehicle-details",
   function (req, res) {
     res.render(
-      "prototype-demo/dashboard/vehicles/dashboard-confirm-vehicle-details", {
+      `prototype-demo/dashboard/vehicles/${req.params.version}/dashboard-confirm-vehicle-details`, {
         dashboardData,
       }
     );
   }
 );
 
-router.get("/dashboard/vehicles/vehicle-success", function (req, res) {
-  res.render("prototype-demo/dashboard/vehicles/vehicle-success");
+router.get("/dashboard/vehicles/:version/vehicle-cancel", function (req, res) {
+  res.render(`prototype-demo/dashboard/vehicles/${req.params.version}/cancel-adding-vehicle`);
 });
+
+router.get("/dashboard/vehicles/:version/vehicle-success", function (req, res) {
+  res.render(`prototype-demo/dashboard/vehicles/${req.params.version}/vehicle-success`);
+});
+
 router.get("/dashboard/reminder", function (req, res) {
   res.render("prototype-demo/dashboard/account-reminder", {
     dashboardData
@@ -1090,6 +1096,5 @@ router.get("/resolve-pcn/:version/flow16", function (req, res) {
 router.get("/resolve-pcn/:version/flow17", function (req, res) {
   res.render(`prototype-demo/resolve-pcn/${req.params.version}/challengeConfirm`);
 });
-
 
 module.exports = router;
