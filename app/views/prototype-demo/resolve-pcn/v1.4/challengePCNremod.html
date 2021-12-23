@@ -1,0 +1,945 @@
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+
+<!DOCTYPE html>
+<html lang="en" class="govuk-template ">
+  <head>
+    <meta charset="utf-8">
+    <title>
+GOV.UK Prototype Kit
+
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c"> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+      <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/govuk/assets/images/favicon.ico" type="image/x-icon">
+      <link rel="mask-icon" href="/govuk/assets/images/govuk-mask-icon.svg" color="#0b0c0c"> 
+      <link rel="apple-touch-icon" sizes="180x180" href="/govuk/assets/images/govuk-apple-touch-icon-180x180.png">
+      <link rel="apple-touch-icon" sizes="167x167" href="/govuk/assets/images/govuk-apple-touch-icon-167x167.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="/govuk/assets/images/govuk-apple-touch-icon-152x152.png">
+      <link rel="apple-touch-icon" href="/govuk/assets/images/govuk-apple-touch-icon.png">
+    
+
+    
+  <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+<style>
+  .sr-only {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+</style>
+
+
+
+    
+    
+    <meta property="og:image" content="/govuk/assets/images/govuk-opengraph-image.png">
+
+    <script src="/public/javascripts/jquery-1.11.3.js"></script>
+
+    <script type="text/javascript">
+    var chosen = JSON.parse(localStorage.getItem("chosenCar"));
+      $(document).ready(function() {
+      
+      
+      var chosenFull = JSON.parse(localStorage.getItem("chosenCarfull"));
+      $("#reg").html(chosen[0]) ; 
+      $("#cla").html(chosen[1]);  
+      $("#make").html(chosen[2]);  
+      $("#model").html(chosen[3]);  
+      $("#color").html(chosen[4]);
+      $("#pcns").html(chosenFull[0].penalties.length);
+      
+      if ((chosenFull[0].penalties.length >1)||(chosenFull[0].penalties.length<1)){
+        $("#grammar1").html("are");  
+        $("#grammar2").html("s");
+      }
+      else {
+        $("#grammar1").html("is");  
+        $("#grammar2").html("");
+        // $("#grammar3").html("It is on its way");
+        // $("#grammar4").html("it.");
+
+      }
+      
+ 
+  
+      })
+    </script>
+   <script type="text/javascript">
+    let postcodes = [{"postcode":"CM1 7BD", "addresses":["Broomfield Hall, Church Green, Broomfield, CHELMSFORD, CM1 7BD", "Woollards, Church Green, Broomfield, CHELMSFORD, CM1 7BD", "2 Church Green, Broomfield, CHELMSFORD, CM1 7BD", "BROOMFIELD HOUSE MANAGEMENT COMPANY LIMITED, 25 CHURCH GREEN" , "MARINA ONE SECURITY SERVICES LTD, 41 CHURCH GREEN, BROOMFIELD"
+] }, {"postcode":"NW10 5AD", "addresses": ["1 Buchanan Gardens, LONDON", "3b Buchanan Gardens", "Flat B, 5 Buchanan Gardens, LONDON,", "SAMIR HUSSEIN PHOTOGRAPHY LTD, 33 BUCHANAN GARDENS, LONDON", "RUSKONE VINTAGE DESIGN LIMITED, 47A BUCHANAN GARDENS, WILLESDEN, LONDON,"]}]
+
+   localStorage.setItem("postcodes", JSON.stringify(postcodes));
+  </script>
+  </head>
+  <body class="govuk-template__body "><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.27.4'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    
+
+    
+      <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+    
+
+    
+  
+  <header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <!--[if gt IE 8]><!-->
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            class="govuk-header__logotype-crown"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 132 97"
+            height="30"
+            width="36"
+          >
+            <path
+              fill="currentColor" fill-rule="evenodd"
+              d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"
+            ></path>
+          </svg>
+          <!--<![endif]-->
+          <!--[if IE 8]>
+          <img src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32">
+          <![endif]-->
+          <span class="govuk-header__logotype-text">
+            GOV.UK
+          </span>
+        </span>
+        
+      </a>
+    </div>
+    
+    <div class="govuk-header__content">
+    
+    <a href="flow1" class="govuk-header__link govuk-header__link--service-name">
+      Pay for the Dartford Crossing (Dart Charge)
+    </a>
+    
+    
+    </div>
+    
+  </div>
+</header>
+
+
+    
+      <div class="govuk-width-container ">
+        <div class="govuk-width-container app-width-container"><div class="govuk-phase-banner">
+          <p class="govuk-phase-banner__content">
+            <strong class="govuk-tag govuk-phase-banner__content__tag">
+          alpha
+        </strong>
+            <span class="govuk-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+            </span>
+          </p>
+        </div>     
+        <a href="flow2" class="govuk-back-link">Back</a></div>
+
+        <div title="Error" class="govuk-error-summary govuk-!-display-none" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list" id="errorSumList">
+              <li class="govuk-!-display-none"id="challError1">
+                <a href="#nameError">Enter a valid name</a>
+              </li>
+              <li class="govuk-!-display-none" id="challError2">
+                <a href="#emailError">Enter a valid email address</a>
+              </li>  
+              <li class="govuk-!-display-none" id="challError3">
+                <a href="#phoneError">Enter a valid phone number</a>
+              </li>              
+              <li class="govuk-!-display-none" id="challError4">
+                <a href="#postcodeError">Enter a valid postcode</a>
+              </li> 
+               
+            </ul>
+          </div>
+        </div>  
+        
+       
+          
+
+
+
+<div class="govuk-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-l govuk-!-margin-bottom-1 govuk-!-margin-top-0">Resolve a penalty charge notice (PCN)</h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-5">Challenge <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span></h2>
+    </div>
+  </div>
+
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            
+          
+          <p class="govuk-body">Please select the <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span> you wish to challenge below and fill out the details.</p>
+          <!-- <p class="govuk-body"><b>Registration number:</b> <span id="reg">LO69 NRO</span>     <a class="govuk-link" href="flow1">Change</a> </p> -->
+          <div style="overflow-x:auto;">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter" style="text-align: center;">Time until further action is taken</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third" style="text-align: center;" >Time and date of
+                  crossing</th>
+                <th scope="col" class="govuk-table__header govuk-table__header" style="text-align: center;"><span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span> number</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric" style="text-align: center;">Amount owed</th>
+                <th scope="col" class="govuk-table__header govuk-table__header" style="text-align: center;"></th>
+                <th scope="col" class="govuk-table__header govuk-table__header" style="text-align: center;">Select</th>
+
+              </tr>
+            </thead>
+            <tbody id="tbody" class="govuk-table__body">
+
+            </tbody>
+          </table> 
+        </div> 
+          <a href="javascript:void(0)"><button class="govuk-button govuk-button--secondary govuk-!-margin-top-2 govuk-!-margin-bottom-2" data-module="govuk-button" style="float: right;">
+            Add another <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span>
+         </button></a> <br><br><br><br>
+
+         <div>       
+
+          <fieldset class="govuk-fieldset">
+           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+             <h1 class="govuk-fieldset__heading">
+               Personal details
+             </h1>
+           </legend>
+           <div class="govuk-form-group">
+              <label class="govuk-label"  for="event-name">
+                  Full name 
+                </label>
+                <span id="nameError" class="govuk-error-message govuk-!-display-none pcnError">
+                  <span class="govuk-visually-hidden">Error:</span> Enter a valid name
+                </span>
+              <input class="govuk-input govuk-!-width-full challengeInput" id="fullName" name="event-name" type="text">
+            </div>
+           <div class="govuk-form-group">
+              <label class="govuk-label"  for="event-name">
+                  Email address 
+                </label>
+                <div id="event-name-hint" class="govuk-hint">
+                  We will use this to send you confirmation of your challenge.
+                </div>
+                <span id="emailError" class="govuk-error-message govuk-!-display-none pcnError">
+                  <span class="govuk-visually-hidden">Error:</span> Enter a valid email address
+                </span>
+              
+   
+              <input class="govuk-input govuk-!-width-two-thirds challengeInput" id="email" name="event-name" type="text">
+            </div>
+           <div class="govuk-form-group">
+              <label class="govuk-label"  for="event-name">
+                  Phone number 
+                </label>
+              
+              <div id="event-name-hint" class="govuk-hint">
+                Only enter a UK number
+              </div>
+              <span id="phoneError" class="govuk-error-message govuk-!-display-none pcnError">
+                <span class="govuk-visually-hidden">Error:</span> Enter a valid phone number
+              </span>
+              <input class="govuk-input govuk-!-width-one-half challengeInput" id="phone" name="event-name" type="text" maxlength="11" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+            </div>
+            <h3 class="govuk-heading-s">
+              What is your home address?
+            </h3>
+            <div id="challengeHint" class="govuk-hint">
+              We will send your challenge confirmation to this address.
+            </div>
+            <label id ="postcodeLabel" class="govuk-label govuk-heading-s" for="address-postcode"><h3 class="govuk-heading-s">Postcode</h3>
+               
+            </label>
+            <span id="postcodeError" class="govuk-error-message govuk-!-display-none pcnError">
+              <span class="govuk-visually-hidden">Error:</span> Enter a valid postcode
+            </span>
+            <div id="postEntry" class="govuk-form-group" style="display:block;">
+              
+ 
+              <input class="govuk-input govuk-!-width-one-quarter challengeInput" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code"><br><br>
+ <button id="findAddy" class="govuk-button govuk-!-width-one-quarter govuk-!-margin-bottom-0" data-module="govuk-button">
+               Find address
+             </button><br><br>
+
+             <p class="govuk-body" id="typeAddMyself"><a href="javascript:void(0)" class="govuk-link">Enter my address manually</a></p>
+            </div>
+            
+            
+            <fieldset id="addblock"class="govuk-fieldset govuk-!-display-none">
+              <!-- <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What is your address?
+                </h1>
+              </legend> -->
+            
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                  Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+                </label>
+                <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+            
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-2">
+                  <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+                </label>
+                <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2"></div>
+            
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-town">
+                  Town or city
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2"></div>
+            
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-county">
+                  County
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text"></div>
+            
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-postcode">
+                  Postcode
+                </label>
+                <input class="govuk-input govuk-input--width-10 govuk-!-margin-bottom-2" id="address-postcode-2" name="address-postcode" type="text" autocomplete="postal-code">
+                <!--<p class="govuk-body" id="autofindAdd"><a href="javascript:void(0)" class="govuk-link govuk-!-display-block">Find my address automatically by postcode</a></p>-->
+              </div>
+                
+            </fieldset>
+             
+ <div id="addySelect"class="govuk-form-group govuk-!-margin-bottom-0" style="display:none;">
+   <!-- <label class="govuk-label " for="sort"><h3 class="govuk-heading-s">Postcode</h3>    
+   </label> -->
+   <h3 id="showCode"class="govuk-heading-s"></h3>
+   <select class="govuk-select" id="sort" name="sort">
+   <option id="addyCount" selected disabled></option>  
+   </select><br><br>
+ 
+   <p class="govuk-body"><a id = "noAddy" href="javascript:void(0)">I can't find my address in the list</a></p>
+   <button id="foundAddy " onclick="window.location.href='flow10'"  class="govuk-button govuk-!-width-one-quarter" data-module="govuk-button">
+               Continue
+             </button>
+ </div>
+
+           <!-- <div class="govuk-form-group">
+             <label class="govuk-label" for="address-postcode">
+               Postcode
+             </label>
+             <input class="govuk-input govuk-!-width-one-quarter" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code"></div>
+             <button id="findAddy" class="govuk-button govuk-!-width-one-quarter" data-module="govuk-button">
+              Find address
+            </button> -->
+         </fieldset>
+    <div id="defaultNext" class="govuk-!-display-none">
+      <a id='nextPage' href="flow10">
+        <button class="govuk-button govuk-!-width-one-quarter" data-module="govuk-button">
+          Next
+        </button> 
+      </a> 
+    </div>    
+
+
+
+  <br>
+  <br><br><br><br>
+  </div> 
+  
+  <!-- <div>
+         <p>There <span id="grammar1">are</span>  <span id=pcns>2</span> Penalty Charge Notice<span id="grammar2">s</span> (PCN) connected to this vehicle. The total amount
+          you pay will be automatically calculated based on the number of <span title="Penalty charge notices">PCNs</span> selected. If you have multiple <span title="Penalty charge notices">PCNs<span> please select the ones you wish to pay for and the correct amount will be shown below.</p>
+            <p>The amount shown includes the <span title="Penalty charge notice">PCN</span>  charge <b>and</b> the original crossing charge.</p>
+          <div class="govuk-form-group">
+            <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="cost">
+                Payment amount
+              </label>
+            </h3>
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true"><b>£</b></div>
+              <input class="govuk-input govuk-input--width-5" id="amt_owed" name="amt_owed" type="text" spellcheck="false" value="105" style="font-weight:bold ;">
+            </div>
+          </div>
+          <a id="confirmPayBTN" href="flow6details"><button class="govuk-button" data-module="govuk-button">
+            Proceed to payment
+          </button></a>
+          <h1 class="govuk-heading-m">Challenge the <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span></h1>
+
+          <p>If you feel your <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span> has been issued unfairly, you can challenge it by
+            making an appeal online.</p>
+          <p><a class="govuk-link" href="#">See on which grounds you can make a representation</a></p>
+          <a class="govuk-link" href="flow9"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Challenge <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span>
+          </button></a>
+          
+          
+         
+
+
+                  <p><b>If we accept your representation,</b> we will send you written confirmation that you are no
+                    longer liable for the <span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span>.</p>
+                  <p><b>If we reject your representation,</b>  we will send you a notice of rejection which will tell you
+                    what you should do next.</p>
+        </div> 
+        
+      </div> -->
+                    <!-- javascript to access list of checkboxes in the DOM:
+                    const checks = document.querySelectorAll('tr > td:nth-child(6) > div') -->
+                    <!-- Javascript to access list of payment values in the DOM:
+                    const amt = document.querySelectorAll('tr > td:nth-child(4)') -->
+                    <!-- javascript to access the textbox to display sum of charges:
+                    const sumBox = document.querySelector('#amt_owed') -->
+                    <!-- <div class="govuk-checkboxes govuk-checkboxes--small govuk-checkboxes__item" data-module="govuk-checkboxes">
+                      <input class="govuk-checkboxes__input"  name="organisation" type="checkbox" value="employment-tribunal">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      </label> -->
+                      </div>
+                     
+                     <!-- test script for adding checkbox values -->
+                     <script src="/public/javascripts/jquery-1.11.3.js"></script>
+                     <script>
+                      $(document).ready(function() {
+                      var pcn_fields = JSON.parse(localStorage.getItem("pcn_fields"));
+                      var chosenFull = JSON.parse(localStorage.getItem("chosenCarfull"));
+                      let penaltyDetails =[];
+                          for (k = 0; k < pcn_fields.length; k++){
+                            for (j = 0; j < chosenFull.length; j++) { 
+                              for (i = 0; i < chosenFull[j].penalties.length; i++){
+                                if (pcn_fields[k].replace(/\s/g, "") === chosenFull[j].penalties[i].pcn.replace(/\s/g, "")){
+                                    penaltyDetails.push(chosenFull[j].penalties[i])
+                                 };
+                             }
+                            }
+                          }
+                      
+                    
+                    for (w=0; w<penaltyDetails.length; w++){
+                    let fieldHTML = `<tr  class="govuk-table__row">
+                                <td class="govuk-table__cell govuk-table__cell" style="text-align: center;">${penaltyDetails[w].daysToEsc}</td>
+                                <td class="govuk-table__cell govuk-table__cell" >${penaltyDetails[w].conTime} on ${penaltyDetails[w].conDate}</td>
+                                <td class="govuk-table__cell govuk-table__cell" >${penaltyDetails[w].pcn}</td>
+                                <td class="govuk-table__cell govuk-table__cell--numeric"  name="pay" style="text-align: center;">${penaltyDetails[w].charge}</td>
+                                <td class="govuk-table__cell govuk-table__cell" ><a name="details" class="govuk-link" href="flow5details">Details</a></td>
+                                <td class="govuk-table__cell govuk-table__cell" >
+                                  <div class="govuk-checkboxes govuk-checkboxes--small govuk-checkboxes__item" data-module="govuk-checkboxes" style="margin-left:20%; padding-top: 10%;">
+                                    <input class="govuk-checkboxes__input"  name="organisation" type="checkbox" value=""  onchange="checkCharge()" checked>
+                                    <label class="govuk-label govuk-checkboxes__label govuk-!-padding-right-0" for="organisation-2">
+                                    </label>
+                                    </div>
+                                </td>
+                              </tr>`;
+                    document.getElementById("tbody").innerHTML += fieldHTML;
+                    let noAddy = document.getElementById("noAddy")
+                    let foundAddy = document.getElementById("addySelect")
+                    let addyBtn = document.getElementById("findAddy");
+
+                    
+                    let postEntry = document.getElementById("postEntry")
+                    let chosenAddy = []
+                    
+                    let container = document.getElementById('sort')
+
+                    // window.addEventListener('load', (event) => {
+
+                      // function checkAddy(){
+                      addyBtn.addEventListener("click", function (event){ 
+                      for (let i=0; i<postcodes.length; i++){
+                        
+                        if (document.getElementById("address-postcode").value.toUpperCase().replace(/\s/g, "")==
+                          postcodes[i].postcode.toUpperCase().replace(/\s/g, "")){
+                          chosenAddy = postcodes[i].addresses;
+                          localStorage.setItem("chosenAddy", JSON.stringify(chosenAddy));
+                          document.getElementById("addyCount").innerHTML=`${chosenAddy.length} address(es) found`
+                          document.getElementById("challengeHint").style.display="none"
+                          document.getElementById("showCode").innerHTML=postcodes[i].postcode
+                        for (let k=0; k<chosenAddy.length; k++){
+                            let fieldHTML = `<option value="${chosenAddy[k]}">${chosenAddy[k]}</option>`;
+                            container.innerHTML+=fieldHTML;
+                            foundAddy.style.display="block";
+                            postEntry.style.display="none";
+                            
+                          } 
+
+                        };
+
+                          
+
+                      }
+                    })
+
+                    let defaultNext = document.getElementById("defaultNext")
+                    let postcodeLabel = document.getElementById("postcodeLabel")
+                    let addblock = document.getElementById("addblock")
+                    let typeAddMyself = document.getElementById("typeAddMyself")
+                    let autofindAdd = document.getElementById("autofindAdd")
+                    typeAddMyself.addEventListener("click", function (){
+                      postEntry.style.display="none";
+                      addblock.classList.remove("govuk-!-display-none")
+                      defaultNext.classList.remove("govuk-!-display-none")
+                      postcodeLabel.classList.add("govuk-!-display-none")
+                    })
+                      // });
+                        noAddy.addEventListener("click", function (){        
+                        // chosenAddy = []
+                        //  window.location.reload()
+                        foundAddy.style.display="none";
+                            postEntry.style.display="block";
+                            document.getElementById("challengeHint").style.display="block"     
+                          })
+
+                          // autofindAdd.addEventListener("click", function (){
+                          //   postEntry.style.display="block";
+                          //   addblock.classList.add("govuk-!-display-none")
+                          //   defaultNext.classList.add("govuk-!-display-none")
+                          //   postcodeLabel.classList.remove("govuk-!-display-none")
+                            
+                          // })
+                    
+                    // }
+                    // checkAddy()
+                    function autoFill(){
+                      // let deets = [document.getElementById("fullName").value]
+                      if (document.getElementById("fullName").value ===""){
+                        document.getElementById("fullName").value = "John Doe"
+                        // deets = [document.getElementById("fullName").value]
+                        // localStorage.setItem("challengeDetails", JSON.stringify(deets))
+                      }
+                      if (document.getElementById("email").value===""){
+                        document.getElementById("email").value= "johndoe@email.com"
+                      }
+                      if (document.getElementById("phone").value===""){
+                        document.getElementById("phone").value= "08219919918"
+                      }
+                      if (document.getElementById("address-postcode").value===""){
+                        document.getElementById("address-postcode").value= "CM17BD"
+                      }
+                      if (document.getElementById("address-line-1").value===""){
+                        document.getElementById("address-line-1").value= "2 Church Green"
+                      }
+                      if (document.getElementById("address-line-2").value===""){
+                        document.getElementById("address-line-2").value= "Broomfield"
+                      }
+                      if (document.getElementById("address-town").value===""){
+                        document.getElementById("address-town").value= "Chelmsford"
+                      }
+                      if (document.getElementById("address-county").value===""){
+                        document.getElementById("address-county").value= "Essex"
+                      }
+                      if (document.getElementById("address-postcode-2").value===""){
+                        document.getElementById("address-postcode-2").value= "CM17BD"
+                      }
+                      let deets = [document.getElementById("fullName").value]
+                      localStorage.setItem("challengeDetails", JSON.stringify(deets))
+                    }
+                    addyBtn.addEventListener("mouseover", function(){
+                      if (document.getElementById("fullName").value ===""){
+                        document.getElementById("fullName").value = "John Doe"
+                        // deets = [document.getElementById("fullName").value]
+                        // localStorage.setItem("challengeDetails", JSON.stringify(deets))
+                      }
+                      if (document.getElementById("email").value===""){
+                        document.getElementById("email").value= "johndoe@email.com"
+                      }
+                      if (document.getElementById("phone").value===""){
+                        document.getElementById("phone").value= "08219919918"
+                      }
+                      if (document.getElementById("address-postcode").value===""){
+                        document.getElementById("address-postcode").value= "CM17BD"
+                      }
+                    })
+                    let defaultDetails = document.getElementById("defaultDetails")
+                    // defaultDetails.addEventListener("mouseover", function(){
+                      document.getElementById('nextPage').addEventListener("mouseover", function(){
+                      autoFill()
+                      let challengedPCNs = []
+                      for (let k=0; k<document.getElementsByName('organisation').length; k++){
+                        if (document.getElementsByName('organisation')[k].checked){
+                        challengedPCNs.push(penaltyDetails[k].pcn)}
+                      }
+                      localStorage.setItem("challengedPCNs", JSON.stringify(challengedPCNs)) 
+                   })
+                    
+                    foundAddy.addEventListener("click", function() {
+                      let fullName =document.getElementById("fullName").value 
+                      let email = document.getElementById("email").value
+                      let phone = document.getElementById("phone").value
+                      let showCode = document.getElementById("showCode").innerHTML
+                      let sort =document.getElementById("sort")
+                      let homeAddy = sort.options[sort.selectedIndex].value
+                      let challengeDetails = [fullName, email, phone, showCode, homeAddy]
+                      localStorage.setItem("challengeDetails", JSON.stringify(challengeDetails))
+                      let checkslist = document.getElementsByName('organisation')
+                      let challengedPCNs = []
+                      for (let k=0; k<checkslist.length; k++){
+                        if (checkslist[k].checked){
+                        challengedPCNs.push(penaltyDetails[k].pcn)
+                        
+                      }
+                      
+                    }
+                    localStorage.setItem("challengedPCNs", JSON.stringify(challengedPCNs))
+                    })
+                                      }
+                    // localStorage.setItem("penaltyDetails",JSON.stringify(penaltyDetails));
+                    // let pcnDetailslinks = document.getElementsByName("details");
+                    // let pcnDetailsTable = [];
+                    // for (let g=0; g<pcnDetailslinks.length; g++){
+                    //   // pcnDetailslinks[g].addEventListener("mouseover", function(){
+                    //   pcnDetailslinks[g].addEventListener("click", function(){
+                    //     pcnDetailsTable = (chosen.concat(Object.values(penaltyDetails[g]))) 
+                    //     localStorage.setItem("pcnDetailsTable",JSON.stringify(pcnDetailsTable));
+                    //      });
+                          
+                    // };
+                    // let confirmPayBTN = document.getElementById("confirmPayBTN");
+                    
+                    // let checkslist = document.getElementsByName('organisation')
+
+                    // confirmPayBTN.addEventListener("click", function(){
+                    //   for (let k=0; k<checkslist.length; k++){
+                    //     if (checkslist[k].checked){
+                    //       pcnDetailsTable.push((chosen.concat(Object.values(penaltyDetails[k]))))
+                    //     }
+                    //   }
+                    //   if(pcnDetailsTable.length>1){
+                    //     pcnDetailsTable=pcnDetailsTable
+                    //   }else if(pcnDetailsTable.length=1){pcnDetailsTable=pcnDetailsTable.flat(1)}
+                    //   localStorage.setItem("pcnDetailsTable",JSON.stringify(pcnDetailsTable));
+                    // })
+                       let challengeInputs  = document.getElementsByClassName("challengeInput");
+                       let confirmPay = document.getElementById("confirmPay");
+                       
+                       function payValidate (){
+                        let errorSummary = document.querySelector(".govuk-error-summary")
+                        // const errorSpan = `<span id="pcnError${i}" class="govuk-error-message pcnError"><span class="govuk-visually-hidden">Error:</span> Enter a valid PCN number</span>`
+                        
+                        let nameError = document.querySelector("#nameError")
+                        let emailError = document.querySelector("#emailError")
+                        let phoneError = document.querySelector("#phoneError")
+                        let postcodeError = document.querySelector("#postcodeError")
+                        
+                        let challError1 = document.querySelector("#challError1")
+                        let challError2 = document.querySelector("#challError2")
+                        let challError3 = document.querySelector("#challError3")
+                        let challError4 = document.querySelector("#challError4")
+                        
+                        //  validate credit card number
+                         
+                        
+                        
+                        if (challengeInputs[0].value===""||challengeInputs[0].value.length<2){
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          challengeInputs[0].setAttribute("aria-describedby", "reg_field-error")
+                          challengeInputs[0].classList.add("govuk-input--error")
+                          challengeInputs[0].parentElement.classList.add("govuk-form-group--error")
+                          challError1.classList.remove("govuk-!-display-none")
+                          nameError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         if (challengeInputs[0].value.length>1){
+                                  
+                          // errorSummary.classList.add("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          challengeInputs[0].setAttribute("aria-describedby", "reg_field-error")
+                          challengeInputs[0].classList.remove("govuk-input--error")
+                          challengeInputs[0].parentElement.classList.remove("govuk-form-group--error")
+                          challError1.classList.add("govuk-!-display-none")
+                          nameError.classList.add("govuk-!-display-none")                          
+                         }
+
+
+                         if (!challengeInputs[1].value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          challengeInputs[1].setAttribute("aria-describedby", "reg_field-error")
+                          challengeInputs[1].classList.add("govuk-input--error")
+                          challengeInputs[1].parentElement.classList.add("govuk-form-group--error")
+                          challError2.classList.remove("govuk-!-display-none")
+                          emailError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         if (challengeInputs[1].value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+                                  
+                          // errorSummary.classList.add("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          challengeInputs[1].setAttribute("aria-describedby", "reg_field-error")
+                          challengeInputs[1].classList.remove("govuk-input--error")
+                          challengeInputs[1].parentElement.classList.remove("govuk-form-group--error")
+                          challError2.classList.add("govuk-!-display-none")
+                          emailError.classList.add("govuk-!-display-none")
+                          
+                         }
+
+
+                         
+                         if (challengeInputs[2].value.length!=11) {
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          challengeInputs[2].setAttribute("aria-describedby", "reg_field-error")
+                          challengeInputs[2].classList.add("govuk-input--error")
+                          challengeInputs[2].parentElement.classList.add("govuk-form-group--error")
+                          challError3.classList.remove("govuk-!-display-none")
+                          phoneError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         if (challengeInputs[2].value.length==11) {
+                                  
+                          //  errorSummary.classList.remove("govuk-!-display-none")
+                           // regField.setAttribute("value", "Invalid VRN")
+                           // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                           challengeInputs[2].setAttribute("aria-describedby", "reg_field-error")
+                           challengeInputs[2].classList.remove("govuk-input--error")
+                           challengeInputs[2].parentElement.classList.remove("govuk-form-group--error")
+                           challError3.classList.add("govuk-!-display-none")
+                           phoneError.classList.add("govuk-!-display-none")                                  
+                          }      
+                          
+                          
+                         if (challengeInputs[3].value<4||challengeInputs[3].value>7) {
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          challengeInputs[3].setAttribute("aria-describedby", "reg_field-error")
+                          challengeInputs[3].classList.add("govuk-input--error")
+                          challengeInputs[3].parentElement.classList.add("govuk-form-group--error")
+                          challError4.classList.remove("govuk-!-display-none")
+                          postcodeError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         if (challengeInputs[3].value>=4 && challengeInputs[3].value<=7) {
+                                  
+                          // errorSummary.classList.add("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          challengeInputs[3].setAttribute("aria-describedby", "reg_field-error")
+                          challengeInputs[3].classList.remove("govuk-input--error")
+                          challengeInputs[3].parentElement.classList.remove("govuk-form-group--error")
+                          challError4.classList.add("govuk-!-display-none")
+                          postcodeError.classList.add("govuk-!-display-none")                          
+                         }
+                        }
+                        let nextPage = document.getElementById("nextPage")
+                         nextPage.addEventListener("click", function(){
+                         payValidate()
+                       })
+                    
+                      })
+                    
+                    </script>
+                     <script type="text/javascript">
+                     $(document).ready(function(){
+                     let checks = document.getElementsByName('organisation')
+                     let sumBox = document.querySelector('#amt_owed')
+                     let payFields = document.getElementsByName('pay')
+                    //  const pcnCount = document.getElementById('pcnCount')
+
+                    
+
+                      function setIt(){
+                          for(i=0; i<payFields.length; i++) { 
+                              checks[i].value = parseInt(payFields[i].innerText.split('£')[1]);
+                          }
+                      }
+                      setIt();
+                      // function setPcnCount(){
+                      //   pcnCount.innerText =payFields.length
+                      // }
+                      // setPcnCount();
+                    //     function checkTotal() {
+                          
+                    //       document.listForm.total.value = '35';
+                    //       var sum = 0;
+                    //       for (i=0;i<document.listForm.choice.length;i++) {
+                    //         if (document.listForm.choice[i].checked) {
+                    //           sum = sum + parseInt(document.listForm.choice[i].value);
+                    //         }
+                    //       }
+                    //       document.listForm.total.value = sum;
+                    //     }
+                    // //     function checkCharge() {
+                          
+                    //       sumBox.value = '105';
+                    //       var sum = 0;
+                    //       for (i=0;i<checks.length;i++) {
+                    //         if (checks[i].checked) {
+                    //           sum = sum + parseInt(checks[i].value);
+                    //         }
+                    //       }
+                    //       sumBox.value = sum;
+                    //     }
+                          $(function() {
+
+                          function getTotal(isInit) {
+
+                            var total = 0;
+                            var selector = isInit ? ".govuk-checkboxes__input" : ".govuk-checkboxes__input:checked";
+                            $(selector).each(function() {
+                              total += parseInt($(this).val());
+                            });
+                            //$("#tot_amount").val(sum.toFixed(3));
+
+                            if (total == 0) {
+                              $('#amt_owed').val('0');
+                            } else {
+                              $('#amt_owed').val(total);
+                            }
+
+                          }
+
+                          $(".govuk-checkboxes__input").click(function(event) {
+                            getTotal();
+                          });
+                          getTotal(true);
+
+                          });
+
+                        })
+                      </script>
+<script>
+  
+    
+
+
+   
+  
+ </script>
+
+                      
+                      <!-- <form name="listForm">
+                      <input type="checkbox" name="choice" value="2" onchange="checkTotal()"/>2<br/>
+                      <input type="checkbox" name="choice" value="5" onchange="checkTotal()"/>5<br/>
+                      <input type="checkbox" name="choice" value="10" onchange="checkTotal()"/>10<br/>
+                      <input type="checkbox" name="choice" value="20" onchange="checkTotal()"/>20<br/>
+                      Total: <input type="text" size="2" name="total" value="0"/>
+                      </form> -->
+                      
+        <div class="govuk-grid-column-one-third">
+          
+        </div>
+      </div>
+  
+    </main>
+  </div>
+
+
+        </main>
+      </div>
+    
+<br><br><br><br>
+    
+    <footer class="govuk-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+    
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        
+          <h2 class="govuk-visually-hidden">Support links</h2>
+          
+            <ul class="govuk-footer__inline-list">
+              
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="https://govuk-prototype-kit.herokuapp.com/">
+                    GOV.UK Prototype Kit v9.14.1
+                  </a>
+                </li>
+              
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="/prototype-admin/clear-data">
+                    Clear data
+                  </a>
+                </li>
+              
+            </ul>
+          
+          
+        
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="govuk-footer__licence-logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 483.2 195.7"
+          height="17"
+          width="41"
+        >
+          <path
+            fill="currentColor"
+            d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+          />
+        </svg>
+        <span class="govuk-footer__licence-description">
+          All content is available under the
+          <a
+            class="govuk-footer__link"
+            href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            rel="license"
+          >Open Government Licence v3.0</a>, except where otherwise stated
+        </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <a
+          class="govuk-footer__link govuk-footer__copyright-logo"
+          href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+        >© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+
+    
+  
+    <!-- Javascript -->
+
+
+  <script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+
+
+<script src="/public/javascripts/application.js"></script>
+
+
+  <script src="/public/javascripts/auto-store-data.js"></script>
+
+
+    
+  
+  <!-- GOV.UK Prototype Kit v9.14.1 -->
+
+  </body>
+</html>

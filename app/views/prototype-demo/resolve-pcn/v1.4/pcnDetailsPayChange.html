@@ -1,0 +1,1037 @@
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+
+<!DOCTYPE html>
+<html lang="en" class="govuk-template ">
+  <head>
+    <meta charset="utf-8">
+    <title>
+GOV.UK Prototype Kit
+
+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c"> 
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+      <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/govuk/assets/images/favicon.ico" type="image/x-icon">
+      <link rel="mask-icon" href="/govuk/assets/images/govuk-mask-icon.svg" color="#0b0c0c"> 
+      <link rel="apple-touch-icon" sizes="180x180" href="/govuk/assets/images/govuk-apple-touch-icon-180x180.png">
+      <link rel="apple-touch-icon" sizes="167x167" href="/govuk/assets/images/govuk-apple-touch-icon-167x167.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="/govuk/assets/images/govuk-apple-touch-icon-152x152.png">
+      <link rel="apple-touch-icon" href="/govuk/assets/images/govuk-apple-touch-icon.png">
+    
+
+    
+  <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+<style>
+  .sr-only {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+</style>
+
+
+
+    
+    
+    <meta property="og:image" content="/govuk/assets/images/govuk-opengraph-image.png">
+    <script src="/public/javascripts/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+    let pcnDetailsTable = JSON.parse(localStorage.getItem("pcnDetailsTable"));
+    let cardEntriesChange = JSON.parse(localStorage.getItem("cardEntriesPCN"));
+      $(document).ready(function(){
+         // This is an attempt in JQuery
+         // let cardNumInput = $("#cardset");
+         // let bgCardset=$("#bgCardet");
+         // let fgCardset=$("#fgCardet");
+         // let charCounter=$("#charCount");
+
+         // cardNumInput.oninput = handleInput;
+         // function handleInput(e) {
+         //  charCounter.textContent = `You have entered ${e.target.value.length} characters in the input field`;
+         // }
+         // Trying same code above in Vanilla
+
+         let cardNumInput = document.getElementById("cardset");
+         let bgCardset = document.getElementById("bgCardset");
+         let fgCardset = document.getElementById("fgCardset");
+         let charCount = document.getElementById("charCount");
+         
+         if (cardNumInput.value.length==1){
+             bgCardset.style.opacity="0.2";
+             fgCardset.style.opacity="0";
+             }
+             else if (cardNumInput.value.length>1) {
+                bgCardset.style.opacity="0.2";
+                fgCardset.style.opacity="1";
+            }
+            else {
+               bgCardset.style.opacity="1";
+                fgCardset.style.opacity="1";
+            }
+         
+            cardNumInput.oninput = handleInput;
+            function handleInput(e) {
+
+            if ((e.target.value.length==1)||(cardNumInput.value.length==1)){
+             bgCardset.style.opacity="0.2";
+             fgCardset.style.opacity="0";
+             }
+             else if ((e.target.value.length>1) || (cardNumInput.value.length>1)) {
+                bgCardset.style.opacity="0.2";
+                fgCardset.style.opacity="1";
+            }
+            else {
+               bgCardset.style.opacity="1";
+                fgCardset.style.opacity="1";
+            }
+            
+             // charCount.textContent = `You have entered ${e.target.value.length} characters in the input field and ${e.target.value} is what you are typing`;
+          }
+          
+
+// This is an example in vanilla 
+// 					let input = document.querySelector('input');
+// 					let log = document.getElementById('log');
+
+// 					input.oninput = handleInput;
+
+// 					function handleInput(e) {
+//   					log.textContent = `The field's value is
+//      				 ${e.target.value.length} character(s) long.`;
+// 					}
+
+				})
+			</script> -->
+
+
+  </head>
+  <body class="govuk-template__body "><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.27.4'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    
+
+    
+      <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+    
+
+    
+  
+  <header class="govuk-header " role="banner" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+      <a href="/" class="govuk-header__link govuk-header__link--homepage">
+        <span class="govuk-header__logotype">
+          <!--[if gt IE 8]><!-->
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            class="govuk-header__logotype-crown"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 132 97"
+            height="30"
+            width="36"
+          >
+            <path
+              fill="currentColor" fill-rule="evenodd"
+              d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"
+            ></path>
+          </svg>
+          <!--<![endif]-->
+          <!--[if IE 8]>
+          <img src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image" width="36" height="32">
+          <![endif]-->
+          <span class="govuk-header__logotype-text">
+            GOV.UK
+          </span>
+        </span>
+        
+      </a>
+    </div>
+    
+    <div class="govuk-header__content">
+    
+    <a href="flow1" class="govuk-header__link govuk-header__link--service-name">
+      Pay for the Dartford Crossing (Dart Charge)
+    </a>
+    
+    
+    </div>
+    
+  </div>
+</header>
+
+
+    
+      <div class="govuk-width-container ">
+        <div class="govuk-width-container app-width-container"><div class="govuk-phase-banner">
+          <p class="govuk-phase-banner__content">
+            <strong class="govuk-tag govuk-phase-banner__content__tag">
+          alpha
+        </strong>
+            <span class="govuk-phase-banner__text">
+              This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+            </span>
+          </p>
+        </div>     
+        <a href="flow4" class="govuk-back-link">Back</a></div>
+
+        
+        <div title="Error" class="govuk-error-summary govuk-!-display-none" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list" id="errorSumList">
+              <li class="govuk-!-display-none"id="cardError1">
+                <a href="#cardNumError">Enter a valid credit card number</a>
+              </li> 
+              <li class="govuk-!-display-none" id="cardError2">
+                <a href="#monthError">Enter a valid expiry month</a>
+              </li> 
+              <li class="govuk-!-display-none" id="cardError3">
+                <a href="#yearError">Enter a valid expiry year</a>
+              </li> 
+              <li class="govuk-!-display-none" id="cardError4">
+                <a href="#nameError">Enter a valid name</a>
+              </li> 
+              <li class="govuk-!-display-none" id="cardError5">
+                <a href="#cvvError">Enter a valid cvv</a>
+              </li> 
+              <li class="govuk-!-display-none" id="cardError6">
+                <a href="#postcodeError">Enter a valid postcode</a>
+              </li> 
+              <li class="govuk-!-display-none" id="cardError7">
+                <a href="#emailError">Enter a valid email address</a>
+              </li> 
+            </ul>
+          </div>
+        </div> 
+          
+
+
+
+<div class="govuk-width-container">
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter"></div>
+    <div class="govuk-grid-column-one-quarter"></div>
+</div>
+
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-caption-l govuk-!-margin-bottom-0 govuk-!-margin-top-0">Pay a penalty charge notice (PCN)</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-5">Payment details</h1>
+        </div>
+        
+        <div class="govuk-grid-column-three-quarters">
+            
+          
+          <!-- <p class="govuk-body">This page gives a view of the PCNs you have provided</p>
+          <p class="govuk-body"><b>Registration number:</b> LO69 NRO    <a class="govuk-link" href="flow1">Change</a> </p> -->
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <!-- <th scope="col" class="govuk-table__header  govuk-!-width-one-quarter" style="text-align: center;">Time left till
+                  escalation</th> -->
+                
+                <th scope="col" class="govuk-table__header govuk-table__header" ><span aria-hidden="true" title="Penalty charge notice">PCN</span> <span class="sr-only" >Penalty charge notice</span> number</th>
+                <th scope="col" class="govuk-table__header govuk-table__header" >Amount owed</th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third" >Time and date of
+                  crossing</th>
+                <!-- <th scope="col" class="govuk-table__header govuk-table__header" style="text-align: center;"></th>
+                <th scope="col" class="govuk-table__header govuk-table__header" style="text-align: center;">Select</th> -->
+
+              </tr>
+            </thead>
+            <tbody id="tbody" class="govuk-table__body">
+              <!-- <tr  class="govuk-table__row"> -->
+                <!-- <td class="govuk-table__cell govuk-table__cell" >14 days</td> -->
+                
+                <!-- <td class="govuk-table__cell govuk-table__cell" >IB09383638</td>
+                <td class="govuk-table__cell govuk-table__cell"  name="pay" style=>£70</td>
+                <td class="govuk-table__cell govuk-table__cell" >07:32 on 1 Aug 2019</td> -->
+                <!-- <td class="govuk-table__cell govuk-table__cell" ><a class="govuk-link" href="flow5a">Details</a></td>
+                <td class="govuk-table__cell govuk-table__cell" >
+                  <div class="govuk-checkboxes govuk-checkboxes--small govuk-checkboxes__item" data-module="govuk-checkboxes" style="margin-left:20%; padding-top: 10%;">
+                    <input class="govuk-checkboxes__input"  name="organisation" type="checkbox" value=""  onchange="checkCharge()" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                    </label>
+                    </div>
+                </td> -->
+              <!-- </tr> -->
+              <!-- <tr class="govuk-table__row"> -->
+                <!-- <td class="govuk-table__cell govuk-table__cell" >3 days</td> -->
+                
+                <!-- <td class="govuk-table__cell govuk-table__cell" >IB09383639</td>
+                <td class="govuk-table__cell govuk-table__cell" name="pay" >£35</td>
+                <td class="govuk-table__cell govuk-table__cell" >07:56 on 2 Aug 2019</td> -->
+                <!-- <td class="govuk-table__cell govuk-table__cell" ><a class="govuk-link" href="flow5b">Details</a></td> -->
+                <!-- <td class="govuk-table__cell govuk-table__cell" >
+                  <div class="govuk-checkboxes govuk-checkboxes--small govuk-checkboxes__item" data-module="govuk-checkboxes" style="margin-left:20%;">
+                    <input class="govuk-checkboxes__input"  name="organisation" type="checkbox" value="" onchange="checkCharge()" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                    </label>
+                    </div>
+                </td> -->
+              <!-- </tr> -->
+              <!-- highlight, then ctrl/ to uncomment the extra row for testing below -->
+
+              <!-- <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-table__cell" style="text-align: center;">3 days</td>
+                <td class="govuk-table__cell govuk-table__cell" >07:32 on 3 Aug 2019</td>
+                <td class="govuk-table__cell govuk-table__cell" >IB09383640</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric" name="pay" style="text-align: center;">£45</td>
+                <td class="govuk-table__cell govuk-table__cell" ><a class="govuk-link" href="flow5b">Details</a></td>
+                <td class="govuk-table__cell govuk-table__cell" >
+                  <div class="govuk-checkboxes govuk-checkboxes--small govuk-checkboxes__item" data-module="govuk-checkboxes" style="margin-left:20%;">
+                    <input class="govuk-checkboxes__input"  name="organisation" type="checkbox" value="" onchange="checkCharge()" checked>
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                    </label>
+                    </div>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>  
+          <!-- <a href="flow2"><button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="float: right;">
+            Add another PCN
+         </button></a> <br><br><br><br> -->
+         <div class="govuk-inset-text govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-top-0 govuk-!-margin-bottom-9">
+          <h3 class="govuk-body-xl govuk-!-margin-top-0 govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">Payment amount</h3>
+          <h1 id = "charge" class="govuk-body-xl govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0 govuk-!-margin-top-0">£105</h1>
+        </div>
+        
+        <img id=applePay class=" govuk-!-width-two-thirds govuk-!-display-none govuk-!-margin-bottom-3" src="\public\images\applePayDefault.png" alt="apple Pay">
+        <div class="govuk-form-group govuk-!-margin-bottom-3">
+          <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+            Enter card details
+            </label>
+          </h3>
+          <span id="cardNumError" class="govuk-error-message govuk-!-display-none pcnError">
+            <span class="govuk-visually-hidden">Error:</span> Enter a valid credit card number
+          </span>
+          <input class="govuk-input govuk-!-width-two-thirds cardFields" id="cardset" name="event-name" type="text" maxlength="15" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+          
+        </div>
+        <div class="govuk-!-margin-bottom-2" style="position:relative;"><img src ="\public\images\cardarray.png" id="bgCardset" style=" position: absolute;" class="govuk-!-width-two-thirds" alt="supported cards"/> 
+         <img src ="\public\images\cardarrayAMEX.png" id="fgCardset" style="max-width: 7.966461%; height:auto;  z-index: 9;" alt="AMEX"/></div>
+
+  
+        <div id="event-name-hint" class="govuk-hint">
+          Accepted credit and debit card types
+        </div>
+
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-margin-top-5">Expiry date</h2>
+        <div id="event-name-hint" class="govuk-hint govuk-!-margin-top-0">
+          For example, 10/20
+        </div>
+        <div class="govuk-form-group govuk-!-margin-top-0" style="display:inline-block;">
+          <label class="govuk-label" for="width-2">
+            Month
+          </label>
+          <span id="monthError" class="govuk-error-message govuk-!-display-none pcnError">
+            <span class="govuk-visually-hidden">Error:</span> Enter a valid month
+          </span>
+          <input class="govuk-input govuk-input--width-2 cardFields" id="month" name="width-2" type="text" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        </div>
+        <h3 class="govuk-heading-m" style="display:inline-block;">/</h3>
+        <div class="govuk-form-group" style="display:inline-block;">
+          <label class="govuk-label" for="width-4">
+            Year
+          </label>
+          <span id="yearError" class="govuk-error-message govuk-!-display-none pcnError">
+            <span class="govuk-visually-hidden">Error:</span> Enter a valid year
+          </span>
+          <input class="govuk-input govuk-input--width-4 cardFields" id="year" name="width-4" type="text" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        </div>  
+          <div class="govuk-form-group govuk-!-margin-top-0">
+            <label class="govuk-label" for="width-2">
+              Name on card
+              
+            </label>
+            <span id="nameError" class="govuk-error-message govuk-!-display-none pcnError">
+              <span class="govuk-visually-hidden">Error:</span> Enter a valid name
+            </span>
+            <input class="govuk-input govuk-!-width-one-half cardFields" id="userName" type="text"></div> 
+          <div class="govuk-form-group govuk-!-margin-top-0 govuk-!-margin-right-2 govuk-!-display-inline-block" >
+            <label class="govuk-label" for="width-5">
+                Card security code
+                <div id="event-name-hint" class="govuk-hint govuk-!-margin-top-0" >
+                  The last three digits on the back of the card
+                </div>
+              </label>
+              <span id="cvvError" class="govuk-error-message govuk-!-display-none pcnError">
+                <span class="govuk-visually-hidden">Error:</span> Enter a valid cvv
+              </span>
+              <input class="govuk-input govuk-input--width-4 cardFields" id="cvv" type="text" maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>              
+              <div class="govuk-!-display-inline-block" style=" position:relative; top:0.7em;">
+               <svg
+                xmlns:dc="http://purl.org/dc/elements/1.1/"
+                xmlns:cc="http://creativecommons.org/ns#"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
+                id="svg8"
+                version="1.1"
+                viewBox="0 0 54.653999 34.323002"
+                height="34.323"
+                width="54.654">
+               <defs
+                  id="defs2" />
+               <metadata
+                  id="metadata5">
+                 <rdf:RDF>
+                   <cc:Work
+                      rdf:about="">
+                     <dc:format>image/svg+xml</dc:format>
+                     <dc:type
+                        rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                     <dc:title></dc:title>
+                   </cc:Work>
+                 </rdf:RDF>
+               </metadata>
+               <g
+                  id="layer1">
+                 <g
+                    transform="matrix(0.27542404,0,0,0.27542404,74.881086,-3.0948571)"
+                    id="g1345">
+                   <path
+                      id="Rectangle-1"
+                      style="fill:#b3b3b3;fill-rule:nonzero;stroke:none;stroke-width:0.264583"
+                      transform="scale(-1,1)"
+                      d="M 83.721723,11.773959 H 260.99256 c 5.86316,0 10.58333,4.720167 10.58333,10.583333 V 125.80938 c 0,5.86316 -4.72017,10.58333 -10.58333,10.58333 H 83.721723 c -5.863167,0 -10.583333,-4.72017 -10.583333,-10.58333 V 22.357292 c 0,-5.863166 4.720166,-10.583333 10.583333,-10.583333 z" />
+                   <g
+                      style="fill:#ffffff;fill-opacity:0.850807;fill-rule:nonzero;stroke:none;stroke-width:1"
+                      fill-opacity="0.196078"
+                      fill="#ffffff"
+                      transform="matrix(-0.26458333,0,0,0.26458333,-87.690476,114.69687)"
+                      id="text4189">
+                     <polygon
+                        points="0.04028,1.98727 7.01294,0.58102 10.95825,0.58102 10.95825,26.42087 17.40356,26.42087 17.40356,29.74118 0.60669,29.74118 0.60669,26.42087 7.052,26.42087 7.052,4.17477 0.04028,5.58102 "
+                        id="path4190"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <polygon
+                        points="25.50903,1.98727 32.48169,0.58102 36.427,0.58102 36.427,26.42087 42.87231,26.42087 42.87231,29.74118 26.07544,29.74118 26.07544,26.42087 32.52075,26.42087 32.52075,4.17477 25.50903,5.58102 "
+                        id="path4192"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <path
+                        id="path4194"
+                        d="m 66.99341,26.42087 h 13.76953 v 3.32031 H 62.24731 v -3.32031 c 1.4974,-1.54948 3.535163,-3.626303 6.11329,-6.23047 2.59114,-2.617187 4.218743,-4.303383 4.88281,-5.05859 1.26302,-1.419273 2.141927,-2.61719 2.63672,-3.59375 0.507813,-0.989587 0.76172,-1.95964 0.76172,-2.91016 0,-1.54948 -0.546877,-2.8125 -1.64063,-3.78906 -1.080727,-0.9765667 -2.493487,-1.46485 -4.23828,-1.46485 -1.23698,0 -2.545573,0.2148433 -3.92578,0.64453 -1.367187,0.4296933 -2.83203,1.0807367 -4.39453,1.95313 V 1.98727 c 1.58854,-0.63802 3.072913,-1.11979 4.45312,-1.44531 1.380207,-0.32552 2.643227,-0.48828 3.78906,-0.48828 3.020833,0 5.42969,0.75521 7.22657,2.26563 1.796873,1.5104133 2.69531,3.52864 2.69531,6.05468 0,1.19792 -0.227863,2.337243 -0.68359,3.41797 -0.442713,1.067707 -1.256517,2.330727 -2.44141,3.78906 -0.32552,0.377607 -1.360677,1.471357 -3.10547,3.28125 -1.744793,1.79688 -4.20573,4.316413 -7.38281,7.5586 z"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <path
+                        id="path4196"
+                        d="m 101.01685,14.01852 c 1.88802,0.403647 3.35937,1.243493 4.41406,2.51954 1.06771,1.27604 1.60156,2.85156 1.60156,4.72656 0,2.8776 -0.98958,5.104163 -2.96875,6.67969 -1.97917,1.57552 -4.791667,2.36328 -8.4375,2.36328 -1.22396,0 -2.48698,-0.1237 -3.78906,-0.3711 -1.289067,-0.234373 -2.623703,-0.592447 -4.00391,-1.07422 v -3.80859 c 1.093753,0.63802 2.29167,1.11979 3.59375,1.44531 1.302087,0.32552 2.662763,0.48828 4.08203,0.48828 2.47396,0 4.35547,-0.48828 5.64453,-1.46484 1.30209,-0.97656 1.95313,-2.39583 1.95313,-4.25781 0,-1.718753 -0.60547,-3.0599 -1.81641,-4.02344 -1.19791,-0.97656 -2.87109,-1.46484 -5.01953,-1.46484 H 92.87231 V 12.53415 H 96.427 c 1.940107,0 3.424483,-0.384113 4.45313,-1.15234 1.02865,-0.781253 1.54297,-1.9010467 1.54297,-3.35938 0,-1.4973933 -0.53386,-2.6432267 -1.60157,-3.4375 -1.054687,-0.8072933 -2.571613,-1.21094 -4.55078,-1.21094 -1.080727,0 -2.23958,0.11719 -3.47656,0.35157 -1.23698,0.2343733 -2.597657,0.5989567 -4.08203,1.09375 V 1.30368 c 1.497393,-0.41666667 2.897133,-0.72916667 4.19922,-0.9375 1.3151,-0.20833333 2.552077,-0.3125 3.71093,-0.3125 2.994793,0 5.36459,0.68359333 7.10938,2.05078 1.74479,1.3541667 2.61719,3.1901033 2.61719,5.50781 0,1.6145867 -0.46224,2.981777 -1.38672,4.10157 -0.92448,1.106767 -2.23958,1.874993 -3.94531,2.30468 z"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <path
+                        id="path4198"
+                        d="m 127.30591,0.58102 h 15.48828 v 3.32032 h -11.875 v 7.14843 c 0.57291,-0.195307 1.14583,-0.338533 1.71875,-0.42968 0.57291,-0.104167 1.14583,-0.15625 1.71875,-0.15625 3.25521,0 5.83333,0.891927 7.73437,2.67578 1.90105,1.783853 2.85157,4.199217 2.85157,7.24609 0,3.13802 -0.97656,5.579427 -2.92969,7.32422 -1.95313,1.731773 -4.70703,2.59766 -8.26172,2.59766 -1.22396,0 -2.47396,-0.104167 -3.75,-0.3125 -1.26302,-0.208333 -2.57161,-0.520833 -3.92578,-0.9375 v -3.96485 c 1.17187,0.63802 2.38281,1.11328 3.63281,1.42578 1.25,0.3125 2.57162,0.46875 3.96485,0.46875 2.2526,0 4.03645,-0.592447 5.35156,-1.77734 1.3151,-1.184893 1.97265,-2.792967 1.97265,-4.82422 0,-2.031247 -0.65755,-3.63932 -1.97265,-4.82422 -1.31511,-1.184893 -3.09896,-1.77734 -5.35156,-1.77734 -1.05469,0 -2.10938,0.117187 -3.16407,0.35156 -1.04167,0.234373 -2.10937,0.598957 -3.20312,1.09375 z"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <path
+                        id="path4200"
+                        d="m 161.1731,15.89352 c -1.875,0 -3.35287,0.501303 -4.4336,1.50391 -1.06771,1.002607 -1.60156,2.382817 -1.60156,4.14063 0,1.757807 0.53385,3.138013 1.60156,4.14062 1.08073,1.002607 2.5586,1.50391 4.4336,1.50391 1.875,0 3.35286,-0.501303 4.43359,-1.50391 1.08073,-1.015627 1.62109,-2.395833 1.62109,-4.14062 0,-1.757813 -0.54036,-3.138023 -1.62109,-4.14063 -1.06771,-1.002607 -2.54557,-1.50391 -4.43359,-1.50391 z m -3.94532,-1.67968 c -1.69271,-0.416667 -3.01432,-1.204427 -3.96484,-2.36328 -0.9375,-1.15886 -1.40625,-2.5716233 -1.40625,-4.23829 0,-2.3307267 0.82682,-4.1731733 2.48047,-5.52734 1.66667,-1.35416667 3.94531,-2.03125 6.83594,-2.03125 2.90364,0 5.18228,0.67708333 6.83593,2.03125 1.65365,1.3541667 2.48047,3.1966133 2.48047,5.52734 0,1.6666667 -0.47526,3.07943 -1.42578,4.23829 -0.9375,1.158853 -2.24609,1.946613 -3.92578,2.36328 1.90104,0.442707 3.3789,1.30859 4.43359,2.59765 1.06771,1.289067 1.60157,2.86459 1.60157,4.72657 0,2.82552 -0.86589,4.993487 -2.59766,6.5039 -1.71875,1.51042 -4.1862,2.26563 -7.40234,2.26563 -3.21615,0 -5.69011,-0.75521 -7.42188,-2.26563 -1.71875,-1.510413 -2.57812,-3.67838 -2.57812,-6.5039 0,-1.86198 0.53385,-3.437503 1.60156,-4.72657 1.06771,-1.28906 2.55208,-2.154943 4.45312,-2.59765 z m -1.44531,-6.23047 c 0,1.5104133 0.46875,2.688797 1.40625,3.53515 0.95052,0.84636 2.27865,1.26954 3.98438,1.26954 1.69271,0 3.01432,-0.42318 3.96484,-1.26954 0.96354,-0.846353 1.44531,-2.0247367 1.44531,-3.53515 0,-1.51042 -0.48177,-2.6888067 -1.44531,-3.53516 -0.95052,-0.8463533 -2.27213,-1.26953 -3.96484,-1.26953 -1.70573,0 -3.03386,0.4231767 -3.98438,1.26953 -0.9375,0.8463533 -1.40625,2.02474 -1.40625,3.53516 z"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                   </g>
+                   <g
+                      style="fill:#ffffff;fill-opacity:0.850807;fill-rule:nonzero;stroke:none;stroke-width:1"
+                      fill-opacity="0.196078"
+                      fill="#ffffff"
+                      transform="matrix(-0.26458333,0,0,0.26458333,-154.63006,114.43229)"
+                      id="text4214">
+                     <polygon
+                        points="0.26978,2.01953 7.24243,0.61328 11.18774,0.61328 11.18774,26.45312 17.63306,26.45312 17.63306,29.77344 0.83618,29.77344 0.83618,26.45312 7.28149,26.45312 7.28149,4.20703 0.26978,5.61328 "
+                        id="path4173"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <path
+                        id="path4175"
+                        d="m 37.57446,14.05078 c 1.88802,0.403647 3.359377,1.24349 4.41407,2.51953 1.067707,1.27604 1.60156,2.85156 1.60156,4.72656 0,2.877607 -0.989583,5.10417 -2.96875,6.67969 -1.979167,1.57552 -4.791667,2.36328 -8.4375,2.36328 -1.22396,0 -2.48698,-0.123697 -3.78906,-0.37109 -1.289067,-0.234373 -2.623703,-0.592447 -4.00391,-1.07422 v -3.80859 c 1.093747,0.63802 2.291663,1.11979 3.59375,1.44531 1.30208,0.32552 2.662757,0.48828 4.08203,0.48828 2.47396,0 4.35547,-0.48828 5.64453,-1.46484 1.302087,-0.976567 1.95313,-2.39584 1.95313,-4.25782 0,-1.718747 -0.60547,-3.05989 -1.81641,-4.02343 -1.197913,-0.976567 -2.87109,-1.46485 -5.01953,-1.46485 h -3.39844 v -3.24218 h 3.55469 c 1.940107,0 3.42448,-0.384117 4.45312,-1.15235 1.028647,-0.781247 1.54297,-1.9010367 1.54297,-3.35937 0,-1.4974 -0.533853,-2.6432333 -1.60156,-3.4375 -1.054687,-0.8072933 -2.571613,-1.21094 -4.55078,-1.21094 -1.080727,0 -2.23958,0.1171867 -3.47656,0.35156 -1.23698,0.2343733 -2.597657,0.5989567 -4.08203,1.09375 V 1.33594 c 1.497393,-0.41666667 2.89713,-0.72916667 4.19921,-0.9375 1.315107,-0.20833333 2.552087,-0.3125 3.71094,-0.3125 2.994793,0 5.364587,0.68359333 7.10938,2.05078 1.744787,1.3541667 2.61718,3.1901033 2.61718,5.50781 0,1.6145867 -0.462237,2.981773 -1.38671,4.10156 -0.92448,1.106773 -2.239587,1.875003 -3.94532,2.30469 z"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <path
+                        id="path4177"
+                        d="m 54.48853,26.45312 h 13.76953 v 3.32032 H 49.74243 v -3.32032 c 1.4974,-1.549473 3.53516,-3.626293 6.11328,-6.23046 2.591147,-2.617193 4.218753,-4.303393 4.88282,-5.0586 1.26302,-1.419267 2.141923,-2.617183 2.63671,-3.59375 0.507813,-0.98958 0.76172,-1.95963 0.76172,-2.91015 0,-1.54948 -0.546873,-2.8125033 -1.64062,-3.78907 -1.080733,-0.97656 -2.493493,-1.46484 -4.23828,-1.46484 -1.23698,0 -2.545573,0.2148433 -3.92578,0.64453 -1.367193,0.4296867 -2.83204,1.08073 -4.39454,1.95313 V 2.01953 c 1.588547,-0.63802 3.072923,-1.11979 4.45313,-1.44531 1.380207,-0.32552 2.643227,-0.48828 3.78906,-0.48828 3.020833,0 5.429687,0.75520667 7.22656,2.26562 1.79688,1.51042 2.69532,3.52865 2.69532,6.05469 0,1.1979133 -0.227867,2.337237 -0.6836,3.41797 -0.442707,1.067707 -1.256507,2.330727 -2.4414,3.78906 -0.32552,0.377607 -1.360677,1.471357 -3.10547,3.28125 -1.744793,1.796873 -4.20573,4.316403 -7.38281,7.55859 z"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <polygon
+                        points="76.67603,2.01953 83.64868,0.61328 87.59399,0.61328 87.59399,26.45312 94.03931,26.45312 94.03931,29.77344 77.24243,29.77344 77.24243,26.45312 83.68774,26.45312 83.68774,4.20703 76.67603,5.61328 "
+                        id="path4179"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <path
+                        id="path4181"
+                        d="m 126.71509,14.05078 c 1.88802,0.403647 3.35937,1.24349 4.41406,2.51953 1.06771,1.27604 1.60156,2.85156 1.60156,4.72656 0,2.877607 -0.98958,5.10417 -2.96875,6.67969 -1.97917,1.57552 -4.79167,2.36328 -8.4375,2.36328 -1.22395,0 -2.48697,-0.123697 -3.78906,-0.37109 -1.28906,-0.234373 -2.6237,-0.592447 -4.00391,-1.07422 v -3.80859 c 1.09375,0.63802 2.29167,1.11979 3.59375,1.44531 1.30209,0.32552 2.66277,0.48828 4.08204,0.48828 2.47395,0 4.35546,-0.48828 5.64453,-1.46484 1.30208,-0.976567 1.95312,-2.39584 1.95312,-4.25782 0,-1.718747 -0.60547,-3.05989 -1.8164,-4.02343 -1.19792,-0.976567 -2.8711,-1.46485 -5.01954,-1.46485 h -3.39843 v -3.24218 h 3.55468 c 1.94011,0 3.42448,-0.384117 4.45313,-1.15235 1.02865,-0.781247 1.54297,-1.9010367 1.54297,-3.35937 0,-1.4974 -0.53385,-2.6432333 -1.60156,-3.4375 -1.05469,-0.8072933 -2.57162,-1.21094 -4.55079,-1.21094 -1.08073,0 -2.23958,0.1171867 -3.47656,0.35156 -1.23698,0.2343733 -2.59766,0.5989567 -4.08203,1.09375 V 1.33594 c 1.49739,-0.41666667 2.89713,-0.72916667 4.19922,-0.9375 1.31511,-0.20833333 2.55209,-0.3125 3.71094,-0.3125 2.99479,0 5.36458,0.68359333 7.10937,2.05078 1.74479,1.3541667 2.61719,3.1901033 2.61719,5.50781 0,1.6145867 -0.46224,2.981773 -1.38672,4.10156 -0.92448,1.106773 -2.23958,1.875003 -3.94531,2.30469 z"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <path
+                        id="path4183"
+                        d="m 151.07056,4.05078 -9.96094,15.56641 h 9.96094 z m -1.03516,-3.4375 h 4.96094 v 19.00391 h 4.16015 v 3.28125 h -4.16015 v 6.875 h -3.92578 v -6.875 h -13.16407 v -3.8086 z"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <path
+                        id="path4185"
+                        d="m 165.73853,0.61328 h 15.48828 v 3.32031 h -11.875 v 7.14844 c 0.57291,-0.195313 1.14583,-0.338543 1.71875,-0.42969 0.57291,-0.104167 1.14583,-0.15625 1.71875,-0.15625 3.25521,0 5.83333,0.891927 7.73437,2.67578 1.90104,1.78386 2.85156,4.199227 2.85156,7.2461 0,3.13802 -0.97656,5.579427 -2.92968,7.32422 -1.95313,1.731767 -4.70703,2.59765 -8.26172,2.59765 -1.22396,0 -2.47396,-0.104167 -3.75,-0.3125 -1.26302,-0.208333 -2.57161,-0.520833 -3.92578,-0.9375 V 25.125 c 1.17187,0.63802 2.38281,1.11328 3.63281,1.42578 1.25,0.3125 2.57161,0.46875 3.96484,0.46875 2.25261,0 4.03646,-0.592447 5.35157,-1.77734 1.3151,-1.1849 1.97265,-2.792973 1.97265,-4.82422 0,-2.031253 -0.65755,-3.639327 -1.97265,-4.82422 -1.31511,-1.184893 -3.09896,-1.77734 -5.35157,-1.77734 -1.05469,0 -2.10937,0.117187 -3.16406,0.35156 -1.04167,0.234373 -2.10937,0.598957 -3.20312,1.09375 z"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                     <path
+                        id="path4187"
+                        d="m 191.20728,0.61328 h 15.48828 v 3.32031 h -11.875 v 7.14844 c 0.57291,-0.195313 1.14583,-0.338543 1.71875,-0.42969 0.57291,-0.104167 1.14583,-0.15625 1.71875,-0.15625 3.25521,0 5.83333,0.891927 7.73437,2.67578 1.90104,1.78386 2.85156,4.199227 2.85156,7.2461 0,3.13802 -0.97656,5.579427 -2.92968,7.32422 -1.95313,1.731767 -4.70703,2.59765 -8.26172,2.59765 -1.22396,0 -2.47396,-0.104167 -3.75,-0.3125 -1.26302,-0.208333 -2.57161,-0.520833 -3.92578,-0.9375 V 25.125 c 1.17187,0.63802 2.38281,1.11328 3.63281,1.42578 1.25,0.3125 2.57161,0.46875 3.96484,0.46875 2.25261,0 4.03646,-0.592447 5.35157,-1.77734 1.3151,-1.1849 1.97265,-2.792973 1.97265,-4.82422 0,-2.031253 -0.65755,-3.639327 -1.97265,-4.82422 -1.31511,-1.184893 -3.09896,-1.77734 -5.35157,-1.77734 -1.05469,0 -2.10937,0.117187 -3.16406,0.35156 -1.04167,0.234373 -2.10937,0.598957 -3.20312,1.09375 z"
+                        style="fill:#ffffff;fill-opacity:0.850807" />
+                   </g>
+                   <rect
+                      style="fill-rule:nonzero;stroke:none;stroke-width:0.264583"
+                      height="26.987499"
+                      width="198.4375"
+                      y="-52.519791"
+                      x="-271.5759"
+                      transform="scale(1,-1)"
+                      fill="#333333"
+                      id="rect4300" />
+                   <rect
+                      style="fill-rule:nonzero;stroke:none;stroke-width:0.264583"
+                      height="21.166666"
+                      width="148.69583"
+                      y="58.605209"
+                      x="-267.34256"
+                      fill="#ffffff"
+                      id="rect4322" />
+                   <g
+                      style="fill-rule:nonzero;stroke:none;stroke-width:1"
+                      fill="#000000"
+                      transform="matrix(0.26458333,0,0,0.26458333,-145.36964,64.426042)"
+                      id="text4324">
+                     <polygon
+                        points="0.8,6.9 2.6,9.85 10.5,5.1 10.5,31.6 2,31.6 2,35 21.85,35 21.85,31.6 14.65,31.6 14.65,0.6 11,0.6 "
+                        id="path4331" />
+                     <path
+                        id="path4333"
+                        d="m 39.43047,0 c -4.65,0 -7.75,1.65 -10.5,4.95 l 2.9,2.2 c 2.2,-2.55 4.05,-3.65 7.45,-3.65 3.85,0 6.15,2.4 6.15,6.25 0,5.65 -2.8,9.4 -15.8,21.85 V 35 h 20.45 l 0.5,-3.55 h -16.2 c 11.35,-10.35 15.4,-15.5 15.4,-21.8 0,-5.5 -3.85,-9.65 -10.35,-9.65 z" />
+                     <path
+                        id="path4335"
+                        d="m 69.41094,0 c -3.5,0 -6.85,1.2 -9.75,4 l 2.25,2.55 c 2.3,-2.15 4.35,-3.2 7.3,-3.2 3.65,0 6.55,2.05 6.55,5.85 0,4.15 -3.25,6.05 -6.55,6.05 h -2.05 l -0.5,3.3 h 2.9 c 4.05,0 7.15,1.6 7.15,6.55 0,4.3 -2.85,7.05 -7.7,7.05 -2.8,0 -5.7,-1.15 -7.65,-3.45 l -2.8,2.3 c 2.6,3.2 6.7,4.55 10.55,4.55 7.1,0 11.95,-4.5 11.95,-10.45 0,-5.35 -3.8,-8.15 -7.85,-8.45 3.65,-0.7 6.75,-3.85 6.75,-8 0,-4.7 -4.1,-8.65 -10.55,-8.65 z" />
+                   </g>
+                   <path
+                      id="rect4328"
+                      style="fill:#a5a5a5;fill-rule:nonzero;stroke:none;stroke-width:0.264583"
+                      d="m -257.47068,102.87419 h 21.96042 c 3.66448,0 6.61458,2.9501 6.61458,6.61459 v 11.90625 c 0,3.66447 -2.9501,6.61458 -6.61458,6.61458 h -21.96042 c -3.66448,0 -6.61458,-2.95011 -6.61458,-6.61458 v -11.90625 c 0,-3.66449 2.9501,-6.61459 6.61458,-6.61459 z" />
+                   <g
+                      style="fill:#ffffff;fill-opacity:0.955645;fill-rule:nonzero;stroke:none;stroke-width:1"
+                      fill-opacity="0.196078"
+                      fill="#ffffff"
+                      transform="matrix(-0.26458333,0,0,0.26458333,-86.645861,85.592708)"
+                      id="text4185">
+                     <polygon
+                        points="27.102474,31.37012 27.102474,27.57512 21.984974,27.57512 21.984974,16.30512 17.787474,16.30512 17.384974,27.57512 5.942474,27.57512 16.522474,2.50512 12.554974,0.78012 0.882474,27.92012 0.882474,31.37012 17.327474,31.37012 17.327474,41.03012 21.984974,41.03012 21.984974,31.37012 "
+                        id="path4219"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <path
+                        id="path4221"
+                        d="m 46.687513,0.78012 c -4.025,0 -7.8775,1.38 -11.2125,4.6 l 2.5875,2.9325 c 2.645,-2.4725 5.0025,-3.68 8.395,-3.68 4.197497,0 7.532497,2.3575 7.532497,6.7275 0,4.7725 -3.7375,6.9575 -7.532497,6.9575 h -2.3575 l -0.575,3.795 h 3.335 c 4.657497,0 8.222497,1.84 8.222497,7.5325 0,4.945 -3.2775,8.1075 -8.854997,8.1075 -3.22,0 -6.555,-1.3225 -8.7975,-3.9675 l -3.22,2.645 c 2.99,3.68 7.705,5.2325 12.1325,5.2325 8.164997,0 13.742497,-5.175 13.742497,-12.0175 0,-6.1525 -4.37,-9.3725 -9.0275,-9.7175 4.1975,-0.805 7.7625,-4.4275 7.7625,-9.2 0,-5.405 -4.715,-9.9475 -12.132497,-9.9475 z"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <path
+                        id="path4223"
+                        d="m 81.16505,0.78012 c -5.3475,0 -8.9125,1.8975 -12.075,5.6925 l 3.335,2.53 c 2.53,-2.9325 4.6575,-4.1975 8.5675,-4.1975 4.4275,0 7.0725,2.76 7.0725,7.1875 0,6.4975 -3.22,10.81 -18.17,25.1275 v 3.91 h 23.5175 l 0.575,-4.0825 h -18.63 c 13.0525,-11.9025 17.71,-17.825 17.71,-25.07 0,-6.325 -4.4275,-11.0975 -11.9025,-11.0975 z"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <polygon
+                        points="105.69509,8.71512 107.76509,12.10762 116.85009,6.64512 116.85009,37.12012 107.07509,37.12012 107.07509,41.03012 129.90259,41.03012 129.90259,37.12012 121.62259,37.12012 121.62259,1.47012 117.42509,1.47012 "
+                        id="path4225"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <polygon
+                        points="199.49017,31.37012 199.49017,27.57512 194.37267,27.57512 194.37267,16.30512 190.17517,16.30512 189.77267,27.57512 178.33017,27.57512 188.91017,2.50512 184.94267,0.78012 173.27017,27.92012 173.27017,31.37012 189.71517,31.37012 189.71517,41.03012 194.37267,41.03012 194.37267,31.37012 "
+                        id="path4227"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <path
+                        id="path4229"
+                        d="m 219.07521,0.78012 c -4.025,0 -7.8775,1.38 -11.2125,4.6 l 2.5875,2.9325 c 2.645,-2.4725 5.0025,-3.68 8.395,-3.68 4.1975,0 7.5325,2.3575 7.5325,6.7275 0,4.7725 -3.7375,6.9575 -7.5325,6.9575 h -2.3575 l -0.575,3.795 h 3.335 c 4.6575,0 8.2225,1.84 8.2225,7.5325 0,4.945 -3.2775,8.1075 -8.855,8.1075 -3.22,0 -6.555,-1.3225 -8.7975,-3.9675 l -3.22,2.645 c 2.99,3.68 7.705,5.2325 12.1325,5.2325 8.165,0 13.7425,-5.175 13.7425,-12.0175 0,-6.1525 -4.37,-9.3725 -9.0275,-9.7175 4.1975,-0.805 7.7625,-4.4275 7.7625,-9.2 0,-5.405 -4.715,-9.9475 -12.1325,-9.9475 z"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <path
+                        id="path4231"
+                        d="m 253.55275,0.78012 c -5.3475,0 -8.9125,1.8975 -12.075,5.6925 l 3.335,2.53 c 2.53,-2.9325 4.6575,-4.1975 8.5675,-4.1975 4.4275,0 7.0725,2.76 7.0725,7.1875 0,6.4975 -3.22,10.81 -18.17,25.1275 v 3.91 h 23.5175 l 0.575,-4.0825 h -18.63 c 13.0525,-11.9025 17.71,-17.825 17.71,-25.07 0,-6.325 -4.4275,-11.0975 -11.9025,-11.0975 z"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <polygon
+                        points="278.08279,8.71512 280.15279,12.10762 289.23779,6.64512 289.23779,37.12012 279.46279,37.12012 279.46279,41.03012 302.29029,41.03012 302.29029,37.12012 294.01029,37.12012 294.01029,1.47012 289.81279,1.47012 "
+                        id="path4233"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <polygon
+                        points="371.87786,31.37012 371.87786,27.57512 366.76036,27.57512 366.76036,16.30512 362.56286,16.30512 362.16036,27.57512 350.71786,27.57512 361.29786,2.50512 357.33036,0.78012 345.65786,27.92012 345.65786,31.37012 362.10286,31.37012 362.10286,41.03012 366.76036,41.03012 366.76036,31.37012 "
+                        id="path4235"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <path
+                        id="path4237"
+                        d="m 391.4629,0.78012 c -4.025,0 -7.8775,1.38 -11.2125,4.6 l 2.5875,2.9325 c 2.645,-2.4725 5.0025,-3.68 8.395,-3.68 4.1975,0 7.5325,2.3575 7.5325,6.7275 0,4.7725 -3.7375,6.9575 -7.5325,6.9575 h -2.3575 l -0.575,3.795 h 3.335 c 4.6575,0 8.2225,1.84 8.2225,7.5325 0,4.945 -3.2775,8.1075 -8.855,8.1075 -3.22,0 -6.555,-1.3225 -8.7975,-3.9675 l -3.22,2.645 c 2.99,3.68 7.705,5.2325 12.1325,5.2325 8.165,0 13.7425,-5.175 13.7425,-12.0175 0,-6.1525 -4.37,-9.3725 -9.0275,-9.7175 4.1975,-0.805 7.7625,-4.4275 7.7625,-9.2 0,-5.405 -4.715,-9.9475 -12.1325,-9.9475 z"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <path
+                        id="path4239"
+                        d="m 425.94044,0.78012 c -5.3475,0 -8.9125,1.8975 -12.075,5.6925 l 3.335,2.53 c 2.53,-2.9325 4.6575,-4.1975 8.5675,-4.1975 4.4275,0 7.0725,2.76 7.0725,7.1875 0,6.4975 -3.22,10.81 -18.17,25.1275 v 3.91 h 23.5175 l 0.575,-4.0825 h -18.63 c 13.0525,-11.9025 17.71,-17.825 17.71,-25.07 0,-6.325 -4.4275,-11.0975 -11.9025,-11.0975 z"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <polygon
+                        points="450.47048,8.71512 452.54048,12.10762 461.62548,6.64512 461.62548,37.12012 451.85048,37.12012 451.85048,41.03012 474.67798,41.03012 474.67798,37.12012 466.39798,37.12012 466.39798,1.47012 462.20048,1.47012 "
+                        id="path4241"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <polygon
+                        points="544.26556,31.37012 544.26556,27.57512 539.14806,27.57512 539.14806,16.30512 534.95056,16.30512 534.54806,27.57512 523.10556,27.57512 533.68556,2.50512 529.71806,0.78012 518.04556,27.92012 518.04556,31.37012 534.49056,31.37012 534.49056,41.03012 539.14806,41.03012 539.14806,31.37012 "
+                        id="path4243"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <path
+                        id="path4245"
+                        d="m 563.8506,0.78012 c -4.025,0 -7.8775,1.38 -11.2125,4.6 l 2.5875,2.9325 c 2.645,-2.4725 5.0025,-3.68 8.395,-3.68 4.1975,0 7.5325,2.3575 7.5325,6.7275 0,4.7725 -3.7375,6.9575 -7.5325,6.9575 h -2.3575 l -0.575,3.795 h 3.335 c 4.6575,0 8.2225,1.84 8.2225,7.5325 0,4.945 -3.2775,8.1075 -8.855,8.1075 -3.22,0 -6.555,-1.3225 -8.7975,-3.9675 l -3.22,2.645 c 2.99,3.68 7.705,5.2325 12.1325,5.2325 8.165,0 13.7425,-5.175 13.7425,-12.0175 0,-6.1525 -4.37,-9.3725 -9.0275,-9.7175 4.1975,-0.805 7.7625,-4.4275 7.7625,-9.2 0,-5.405 -4.715,-9.9475 -12.1325,-9.9475 z"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <path
+                        id="path4247"
+                        d="m 598.32814,0.78012 c -5.3475,0 -8.9125,1.8975 -12.075,5.6925 l 3.335,2.53 c 2.53,-2.9325 4.6575,-4.1975 8.5675,-4.1975 4.4275,0 7.0725,2.76 7.0725,7.1875 0,6.4975 -3.22,10.81 -18.17,25.1275 v 3.91 h 23.5175 l 0.575,-4.0825 h -18.63 c 13.0525,-11.9025 17.71,-17.825 17.71,-25.07 0,-6.325 -4.4275,-11.0975 -11.9025,-11.0975 z"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                     <polygon
+                        points="622.85818,8.71512 624.92818,12.10762 634.01318,6.64512 634.01318,37.12012 624.23818,37.12012 624.23818,41.03012 647.06568,41.03012 647.06568,37.12012 638.78568,37.12012 638.78568,1.47012 634.58818,1.47012 "
+                        id="path4249"
+                        style="fill:#ffffff;fill-opacity:0.955645" />
+                   </g>
+                   <circle
+                      style="opacity:1;fill:none;stroke:#ff0000;stroke-width:6.89906;stroke-linecap:round;paint-order:markers fill stroke"
+                      id="path1213"
+                      cx="-133.80354"
+                      cy="71.059525"
+                      r="38.488205" />
+                 </g>
+               </g>
+             </svg>
+             </div>  
+            </div>
+
+             <div class="govuk-form-group">
+              <label class="govuk-label" for="width-10">
+                Postcode
+              </label>
+              <span id="postcodeError" class="govuk-error-message govuk-!-display-none pcnError">
+                <span class="govuk-visually-hidden">Error:</span> Enter a valid postcode
+              </span>
+              
+              <input class="govuk-input govuk-input--width-10 cardFields" id="postcode" name="width-10" type="text"></div>
+              <div class="govuk-form-group">
+                <label class="govuk-label"  for="event-name">
+                    Email address 
+                  </label>
+                
+                <div id="event-name-hint" class="govuk-hint">
+                  We'll only use this to send you a receipt
+                </div>
+                <span id="emailError" class="govuk-error-message govuk-!-display-none pcnError">
+                  <span class="govuk-visually-hidden">Error:</span> Enter a valid email
+                </span>
+                <input class="govuk-input govuk-!-width-two-thirds cardFields" id="email" name="event-name" type="text">
+              </div>
+              <!-- <button id="confirmPay" onclick="window.location.href='flow7'" class="govuk-button" data-module="govuk-button">
+                Confirm and pay
+              </button>       -->
+              <a id="nextPage" href="flow7">
+                <!-- onclick="window.location.href='flow7'" -->
+                 <button id="confirmPay"  class="govuk-button" data-module="govuk-button">
+                Confirm and pay
+              </button>
+              </a> 
+
+     
+        <br>
+        <br><br><br><br>
+        
+
+         <!-- <p>There are <span id=pcnCount>2</span>  Penalty Charge Notices (PCN) connected to this vehicle. The total amount
+          you owe has been autocalculated for you. If you’d like to pay a different amount or for a
+          specific PCN, deselect the PCN you don’t wish to pay/ challenge at the moment or enter
+          a different amount in the input field below</p>
+
+          <div class="govuk-form-group">
+            <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="cost">
+                Payment amount
+              </label>
+            </h3>
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true"><b>£</b></div>
+              <input class="govuk-input govuk-input--width-5" id="amt_owed" name="amt_owed" type="text" spellcheck="false" value="0" style="font-weight:bold ;">
+            </div>
+          </div>
+          <button class="govuk-button" data-module="govuk-button">
+            Proceed to payment
+          </button>
+          <h1 class="govuk-heading-m">Challenge the PCN</h1>
+
+          <p>If you think the PCN(s) have been issued incorrectly, you can challenge/ appeal it by
+            making a representation online.</p>
+          <p><a class="govuk-link" href="#">See on which grounds you can make a representation</a></p>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Challenge PCN
+          </button>
+          
+          
+         
+
+
+                  <p><b>If we accept your representation,</b> we will send you written confirmation that you are no
+                    longer liable for the PCN.</p>
+                  <p><b>If we reject your representation,</b>  we will send you a notice of rejection which will tell you
+                    what you should do next.</p> -->
+        </div>  
+                    <!-- javascript to access list of checkboxes in the DOM:
+                    const checks = document.querySelectorAll('tr > td:nth-child(6) > div') -->
+                    <!-- Javascript to access list of payment values in the DOM:
+                    const amt = document.querySelectorAll('tr > td:nth-child(4)') -->
+                    <!-- javascript to access the textbox to display sum of charges:
+                    const sumBox = document.querySelector('#amt_owed') -->
+                    <!-- <div class="govuk-checkboxes govuk-checkboxes--small govuk-checkboxes__item" data-module="govuk-checkboxes">
+                      <input class="govuk-checkboxes__input"  name="organisation" type="checkbox" value="employment-tribunal">
+                      <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                      </label> -->
+                      </div>
+                     
+                     <!-- test script for adding checkbox values -->
+                     <script src="/public/javascripts/jquery-1.11.3.js"></script>
+                     <!-- <script type="text/javascript">
+                     
+                     const checks = document.getElementsByName('organisation')
+                     const sumBox = document.querySelector('#amt_owed')
+                     const payFields = document.getElementsByName('pay')
+                     const pcnCount = document.getElementById('pcnCount')
+
+                      function setIt(){
+                          for(i=0; i<payFields.length; i++) { 
+                              checks[i].value = payFields[i].innerText.split('£')[1]
+                          }
+                      }
+                      setIt();
+                      function setPcnCount(){
+                        pcnCount.innerText =payFields.length
+                      }
+                      setPcnCount();
+                    //     function checkTotal() {
+                          
+                    //       document.listForm.total.value = '35';
+                    //       var sum = 0;
+                    //       for (i=0;i<document.listForm.choice.length;i++) {
+                    //         if (document.listForm.choice[i].checked) {
+                    //           sum = sum + parseInt(document.listForm.choice[i].value);
+                    //         }
+                    //       }
+                    //       document.listForm.total.value = sum;
+                    //     }
+                    // //     function checkCharge() {
+                          
+                    //       sumBox.value = '105';
+                    //       var sum = 0;
+                    //       for (i=0;i<checks.length;i++) {
+                    //         if (checks[i].checked) {
+                    //           sum = sum + parseInt(checks[i].value);
+                    //         }
+                    //       }
+                    //       sumBox.value = sum;
+                    //     }
+                          $(function() {
+
+                          function getTotal(isInit) {
+
+                            var total = 0;
+                            var selector = isInit ? ".govuk-checkboxes__input" : ".govuk-checkboxes__input:checked";
+                            $(selector).each(function() {
+                              total += parseInt($(this).val());
+                            });
+                            //$("#tot_amount").val(sum.toFixed(3));
+
+                            if (total == 0) {
+                              $('#amt_owed').val('');
+                            } else {
+                              $('#amt_owed').val(total);
+                            }
+
+                          }
+
+                          $(".govuk-checkboxes__input").click(function(event) {
+                            getTotal();
+                          });
+                          getTotal(true);
+
+                          });
+
+                      </script> -->
+                      
+                      <!-- <form name="listForm">
+                      <input type="checkbox" name="choice" value="2" onchange="checkTotal()"/>2<br/>
+                      <input type="checkbox" name="choice" value="5" onchange="checkTotal()"/>5<br/>
+                      <input type="checkbox" name="choice" value="10" onchange="checkTotal()"/>10<br/>
+                      <input type="checkbox" name="choice" value="20" onchange="checkTotal()"/>20<br/>
+                      Total: <input type="text" size="2" name="total" value="0"/>
+                      </form> -->
+                     <script>
+
+                       let applePay = document.getElementById("applePay")
+                       const matchResult = window.matchMedia("(max-width : 767px)") 
+                       console.log(matchResult)       
+                        if (matchResult.matches){
+                          applePay.classList.remove("govuk-!-display-none")
+                        }
+                       applePay.addEventListener("mouseenter", function(){
+                         applePay.setAttribute("src", `\\public\\images\\applePayHover.png`)
+                       })
+                       applePay.addEventListener("mouseout", function(){
+                         applePay.setAttribute("src", `\\public\\images\\applePayDefault.png`)
+                       })
+
+
+                      let container = document.getElementById("tbody");
+                       let charge = document.getElementById("charge");
+                       var roper = JSON.parse(localStorage.getItem("pcnDetailsTable"));
+                        let vandal = []
+                        if (typeof(roper[0])=="string"){
+                          vandal.push(roper)
+                          }else if(typeof(roper[0])=="object"){vandal=roper}
+                       let chargeCummulator = 0
+                          for (i=0; i<vandal.length; i++){
+                       let fieldHTML = `<tr  class="govuk-table__row">                
+                                        <td class="govuk-table__cell govuk-table__cell" >${vandal[i][5]}</td>
+                                        <td class="govuk-table__cell govuk-table__cell"  name="pay">${vandal[i][11]}</td>
+                                        <td class="govuk-table__cell govuk-table__cell" >${vandal[i][7]} on ${vandal[i][6]}</td>                
+                                        </tr>
+                                        `
+                       container.innerHTML += fieldHTML;
+                       chargeCummulator += parseInt(vandal[i][11].split('£')[1]);
+                      }
+                      //  element IDs can be treated as variable names
+                        
+                      charge.innerHTML =`£${chargeCummulator}`
+                      
+                       //  Variables to get current routename
+                       let url = window.location.href
+                       let routeName = url.substring(url.lastIndexOf('/')+1);
+
+                       let cardFields  = document.getElementsByClassName("cardFields");
+                       let confirmPay = document.getElementById("confirmPay");
+
+                      //  autofill cardFields when loading this page from confirm payment page
+                       for (c=0; c<cardEntriesChange.length-1; c++){
+                         cardFields[c].value = cardEntriesChange[c]
+                       };
+                      
+                       function payValidate (){
+                        let errorSummary = document.querySelector(".govuk-error-summary")
+                        // const errorSpan = `<span id="pcnError${i}" class="govuk-error-message pcnError"><span class="govuk-visually-hidden">Error:</span> Enter a valid PCN number</span>`
+                        let cardNumError = document.querySelector("#cardNumError")
+                        let monthError = document.querySelector("#monthError")
+                        let yearError = document.querySelector("#yearError")
+                        let nameError = document.querySelector("#nameError")
+                        let cvvError = document.querySelector("#cvvError")
+                        let postcodeError = document.querySelector("#postcodeError")
+                        let emailError = document.querySelector("#emailError")
+                        let cardError1 = document.querySelector("#cardError1")
+                        let cardError2 = document.querySelector("#cardError2")
+                        let cardError3 = document.querySelector("#cardError3")
+                        let cardError4 = document.querySelector("#cardError4")
+                        let cardError5 = document.querySelector("#cardError5")
+                        let cardError6 = document.querySelector("#cardError6")
+                        let cardError7 = document.querySelector("#cardError7")
+                        //  validate credit card number
+                         if (cardFields[0].value===""||cardFields[0].value.length!=15){
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          cardFields[0].setAttribute("aria-describedby", "reg_field-error")
+                          cardFields[0].classList.add("govuk-input--error")
+                          cardFields[0].parentElement.classList.add("govuk-form-group--error")
+                          cardError1.classList.remove("govuk-!-display-none")
+                          cardNumError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         if (cardFields[1].value===""||cardFields[1].value<1 || cardFields[1].value>12) {
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          cardFields[1].setAttribute("aria-describedby", "reg_field-error")
+                          cardFields[1].classList.add("govuk-input--error")
+                          cardFields[1].parentElement.classList.add("govuk-form-group--error")
+                          cardError2.classList.remove("govuk-!-display-none")
+                          monthError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         if (cardFields[2].value===""|| cardFields[2].value<21 || cardFields[2].value>25) {
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          cardFields[2].setAttribute("aria-describedby", "reg_field-error")
+                          cardFields[2].classList.add("govuk-input--error")
+                          cardFields[2].parentElement.classList.add("govuk-form-group--error")
+                          cardError3.classList.remove("govuk-!-display-none")
+                          yearError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         if (cardFields[3].value===""||cardFields[3].value.length==1) {
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          cardFields[3].setAttribute("aria-describedby", "reg_field-error")
+                          cardFields[3].classList.add("govuk-input--error")
+                          cardFields[3].parentElement.classList.add("govuk-form-group--error")
+                          cardError4.classList.remove("govuk-!-display-none")
+                          nameError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         if (cardFields[4].value.length!=3) {
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          cardFields[4].setAttribute("aria-describedby", "reg_field-error")
+                          cardFields[4].classList.add("govuk-input--error")
+                          cardFields[4].parentElement.classList.add("govuk-form-group--error")
+                          cardError5.classList.remove("govuk-!-display-none")
+                          cvvError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         if (cardFields[5].value===""||cardFields[5].value.length<4 ||cardFields[5].value.length>7) {
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          cardFields[5].setAttribute("aria-describedby", "reg_field-error")
+                          cardFields[5].classList.add("govuk-input--error")
+                          cardFields[5].parentElement.classList.add("govuk-form-group--error")
+                          cardError6.classList.remove("govuk-!-display-none")
+                          postcodeError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         if (!cardFields[6].value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+                          event.preventDefault()
+        
+                          errorSummary.classList.remove("govuk-!-display-none")
+                          // regField.setAttribute("value", "Invalid VRN")
+                          // pcnEntries[i].insertAdjacentHTML("beforebegin", errorSpan)
+                          cardFields[6].setAttribute("aria-describedby", "reg_field-error")
+                          cardFields[6].classList.add("govuk-input--error")
+                          cardFields[6].parentElement.classList.add("govuk-form-group--error")
+                          cardError7.classList.remove("govuk-!-display-none")
+                          emailError.classList.remove("govuk-!-display-none")
+                          errorSummary.focus()
+                         }
+                         
+                       }
+                       let nextPage = document.getElementById("nextPage")
+                       nextPage.addEventListener("mouseover", function(){
+                         payValidate()
+                       })
+                      
+                       let cardEntries = []
+                       confirmPay.addEventListener("click", function(){
+                        payValidate()
+                         for (let i=0; i<cardFields.length; i++){
+                           cardEntries.push(cardFields[i].value)
+                         }
+                         cardEntries.push(routeName);
+                         localStorage.setItem("cardEntriesPCN", JSON.stringify(cardEntries));  
+                       })
+                     </script> 
+        <div class="govuk-grid-column-one-third">
+          
+        </div>
+ 
+      </div>
+  
+    </main>
+  </div>
+
+
+        </main>
+      </div>
+    
+
+    
+    <footer class="govuk-footer " role="contentinfo">
+  <div class="govuk-width-container ">
+    
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        
+          <h2 class="govuk-visually-hidden">Support links</h2>
+          
+            <ul class="govuk-footer__inline-list">
+              
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="https://govuk-prototype-kit.herokuapp.com/">
+                    GOV.UK Prototype Kit v9.14.1
+                  </a>
+                </li>
+              
+                <li class="govuk-footer__inline-list-item">
+                  <a class="govuk-footer__link" href="/prototype-admin/clear-data">
+                    Clear data
+                  </a>
+                </li>
+              
+            </ul>
+          
+          
+        
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="govuk-footer__licence-logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 483.2 195.7"
+          height="17"
+          width="41"
+        >
+          <path
+            fill="currentColor"
+            d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+          />
+        </svg>
+        <span class="govuk-footer__licence-description">
+          All content is available under the
+          <a
+            class="govuk-footer__link"
+            href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            rel="license"
+          >Open Government Licence v3.0</a>, except where otherwise stated
+        </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <a
+          class="govuk-footer__link govuk-footer__copyright-logo"
+          href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
+        >© Crown copyright</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+
+    
+  
+    <!-- Javascript -->
+
+
+
+  <script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+
+
+<script src="/public/javascripts/application.js"></script>
+
+
+  <script src="/public/javascripts/auto-store-data.js"></script>
+
+
+    
+  
+  <!-- GOV.UK Prototype Kit v9.14.1 -->
+
+  </body>
+</html>
