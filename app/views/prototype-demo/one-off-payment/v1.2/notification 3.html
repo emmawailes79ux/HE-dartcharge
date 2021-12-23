@@ -1,0 +1,54 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-margin-top-6">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Receive notifications of crossings</h1>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table govuk-!-margin-bottom-6">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Registration number</th>
+          {% if data['vrm-1'] | length%}
+          <td class="govuk-table__cell">
+            {% for i, vrm in data %}
+            {% if (loop.index > 0) %}
+            <span class="govuk-caption-l">
+              {{data['vrm-' + loop.index][0]}}
+            </span>
+            {% endif %}
+            {% endfor %}
+          </td>
+          {% else %}
+          <td class="govuk-table__cell">
+            7 Vehicles
+          </td>
+          {%endif%}
+
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Email address</th>
+          <td class="govuk-table__cell">johndoe@gmail.com</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Name</th>
+          <td class="govuk-table__cell">John Doe</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="notification-success" class="govuk-button" data-module="govuk-button" role="button"
+      aria-label="Confirm notifications">Confirm</a>
+  </div>
+</div>
+
+
+{% endblock %}

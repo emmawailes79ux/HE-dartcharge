@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Dartford Crossing Dart Charge</h1>
+      <h2 class="govuk-heading-m">Account login</h2>
+      <p class="govuk-hint">Please enter your username and password.</p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <p
+            id="passport-issued-error"
+            class="govuk-error-message govuk-!-margin-0"
+            >
+            <span class="govuk-visually-hidden">Error:</span> {{ error }}
+        </p>
+          <form onSubmit="submitLogin()" id="login-submit" method="POST" role="form">
+            <div class="govuk-form-group  govuk-!-margin-bottom-3">
+                <label class="govuk-label" for="username"> Username </label>
+                <input
+                class="govuk-input"
+                id="username"
+                name="username"
+                type="text"
+                formControlName="username" aria-required="true" aria-label="enter your username"
+                />
+                <p
+                class="govuk-error-message govuk-!-margin-0"
+                id="user-name-error"
+                > 
+                </p>
+                <p class="govuk-!-margin-top-0">
+                <a
+                    class="govuk-link govuk-body-s forgetUsrname"
+                    href="javascript:void(0)"
+                    (click)="navigatePage('forgetUsername')" aria-label="Forgot username"
+                >
+                    Forgot username
+                </a>
+                </p>
+            </div>
+
+            <div class="govuk-form-group govuk-!-margin-bottom-3">
+                <label class="govuk-label" for="password"> Password </label>
+                <input
+                class="govuk-input"
+                id="password"
+                name="password"
+                type="password"
+                formControlName="password" aria-required="true" aria-label="enter your password"
+                />
+                <p
+                class="govuk-error-message govuk-!-margin-0"
+                id="password-error"
+                >
+                
+                </p>
+                <p class="govuk-!-margin-top-0">
+                <a
+                    class="govuk-link govuk-body-s forgetPassword"
+                    href="javascript:void(0)"
+                    (click)="navigatePage('forgetPassword')" aria-label="Forgot password"
+                >
+                    Forgot password</a
+                >
+                </p>
+            </div>
+            <div class="govuk-button-group govuk-!-margin-top-6 todashboard">
+                <input
+                data-module="govuk-button"
+                class="govuk-button"
+                value="Sign In"
+                type="submit" role="button"
+                aria-label="Sign In"
+                />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

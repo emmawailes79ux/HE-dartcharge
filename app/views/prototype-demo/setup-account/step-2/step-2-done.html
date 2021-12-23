@@ -1,0 +1,32 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+ 
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-3"><span class="app-!-check-icon"></span> You have selected</p>
+   
+    <p class="govuk-body govuk-!-margin-bottom-7">
+    {% if section==='pre-pay' %}
+      Pre-pay personal account - Auto top-up
+    {% elif section==='payg' %}
+      Personal - Pay as you go account
+    {% endif %}
+    </p>
+</div>
+
+<!-- <div class="govuk-grid-column-one-third govuk-!-padding-top-1">
+    <a class="govuk-link govuk-body govuk-link--no-visited-state" href="select-account"> Change account type </a>
+</div> -->
+</div>
+<button class="govuk-button redirectStep3" data-module="govuk-button" role="button"
+  aria-label="Navigate to Add Vehicle">Continue</button>
+
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

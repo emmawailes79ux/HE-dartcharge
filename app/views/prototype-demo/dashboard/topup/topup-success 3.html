@@ -1,0 +1,47 @@
+{% extends "../dashboard-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="/dashboard" style="cursor: pointer;" class="govuk-back-link govuk-!-margin-top-0">Home</a> 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">
+        <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Payment successful
+        </h1>
+        <div class="govuk-panel__body">
+            Your reference number<br><strong>HDJ2123F</strong>
+        </div>
+        </div>
+        <p>We have sent a confirmation email to <a href="#">johndoe@gmail.com</a></p>
+        <table class="govuk-table govuk-!-margin-bottom-2">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date</th>
+                <td class="govuk-table__cell">26 Aug 2021</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Amount</th>
+                <td class="govuk-table__cell">£5.00</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<a class="govuk-link" href="#" aria-label="Print or download a PDF copy of your payment receipt">Print or download a PDF copy of your payment receipt</a>
+
+<div class="govuk-button-group govuk-!-margin-top-5">
+    <button onClick="location.href='/dashboard'"  class="govuk-button"  aria-label="Go to account summary page">Go to account summary page</button>
+</div>
+
+</div>
+</div> 
+
+
+{% endblock %}

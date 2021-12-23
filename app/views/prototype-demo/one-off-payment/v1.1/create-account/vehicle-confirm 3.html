@@ -1,0 +1,51 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "../one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-6">
+        Create an account step 3 of 4
+      </h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        Add a vehicle
+      </h2>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <table class="govuk-table govuk-!-margin-top-5">
+                <caption class="govuk-table__caption govuk-table__caption--m">Your vehicle </caption>
+                
+                {% for vehicle in data %}
+                <tr class="govuk-table__row">
+                <td scope="col" class="govuk-table__header govuk-body "> {{ vehicle.head }}</td>
+                <td class="govuk-table__cell  govuk-body {{vehicle.class}}"> {{ vehicle.value }} </td>
+                </tr>
+                {% endfor %}
+            
+            </table>
+            <div class="govuk-body-s govuk-!-margin-bottom-7">
+                *Additional vehicles can be added later after creating the account
+            </div>
+            <div class="govuk-form-group govuk-button-group" style="float: left;">
+                <a href="vehicle-done" class="govuk-button add_vehicle" data-module="govuk-button" role="button" aria-label="Confirm a vehicle"
+                >Confirm vehicle details</a>
+                <button class="govuk-button govuk-button--secondary reject_vehicle" data-module="govuk-button" role="button" aria-label="Not my a vehicle"
+                >Change</button>
+            </div>
+          </div>
+       </div>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,171 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-form-group govuk-form-group--error">
+        <div class="govuk-error-message govuk-!-font-size-24 govuk-!-margin-bottom-2">
+            Vehicle not found
+        </div>
+        <div class="govuk-body">
+            Your vehicle registration number <strong>MN62 VRO</strong> could not be found.       
+        </div>
+       
+      </div>
+
+
+    <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">What is your vehicle’s class?</caption>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">
+                <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="select-vehcile" name="select-vehcile" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="select-vehcile">
+                    Motorcycles
+                  </label>
+                </div>
+                </div>
+            </td>
+            <td class="govuk-table__cell">Motorcycles with 2 or 3 wheels / 3 wheel cars / Quadricycles / Quad bikes.</td>
+            <td class="govuk-table__cell"><img height="50px" src="/public/images/bike-img.png"/></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">
+                <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="select-vehcile" name="select-vehcile" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="select-vehcile">
+                    Car / Van / Bus
+                  </label>
+                </div>
+                </div>
+            </td>
+            <td class="govuk-table__cell">Cars with or without trailers / caravans / 
+                Motorhomes / Passenger vans and buses with no more than 8 seats in addition to driver's seat.</td>
+            <td class="govuk-table__cell"><img height="54px" src="/public/images/car-img.png"/></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">
+                <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="select-vehcile" name="select-vehcile" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="select-vehcile">
+                    Goods Van / Car-based vans
+                  </label>
+                </div>
+                </div>
+            </td>
+            <td class="govuk-table__cell">Goods vans, including car-based vans without side windows behind the driver.
+                Vans / buses with more than 8 seats in addition to the driver's seat.</td>
+            <td class="govuk-table__cell"><img height="70px" src="/public/images/van-img.png"/></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">
+                <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="select-vehcile" name="select-vehcile" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="select-vehcile">
+                    2 Axle vehicles
+                  </label>
+                </div>
+                </div>
+            </td>
+            <td class="govuk-table__cell">Goods vehicles with two axles. A two axle goods vehicle with a drawbar trailer is charged as a two axle goods vehicle.</td>
+            <td class="govuk-table__cell"><img height="40px" src="/public/images/truck-img.png"/></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">
+                <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="select-vehcile" name="select-vehcile" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="select-vehcile">
+                    2+ Axle vehicles
+                  </label>
+                </div>
+                </div>
+            </td>
+            <td class="govuk-table__cell">Goods vehicles with more than two axles (whether dropped or not).
+                Buses and coaches with more than two axles.</td>
+            <td class="govuk-table__cell"><img height="40px" src="/public/images/fulltruck-img.png"/></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">
+                <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="select-vehcile" name="select-vehcile" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="select-vehcile">
+                    Semi-trailers
+                  </label>
+                </div>
+                </div>
+            </td>
+            <td class="govuk-table__cell">An articulated vehicle with a semi-trailer.</td>
+            <td class="govuk-table__cell"><img height="40px" src="/public/images/semitruck-img.png"/></td>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+         Make
+        </label>
+        <input class="govuk-input govuk-input--width-10"  type="text">
+    </div>
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+         Model
+        </label>
+        <input class="govuk-input govuk-input--width-10"  type="text">
+    </div>
+    <!-- <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+         Country of registration
+        </label>
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item govuk-!-margin-bottom-0">
+            <input class="govuk-radios__input" id="changed-name" name="vrm-1" type="radio" value="UK" checked>
+            <label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+              for="changed-name"> UK</label>
+          </div>
+          <div class="govuk-radios govuk-radios--inline ">
+            <div class="govuk-radios__item govuk-!-margin-right-0">
+              <input class="govuk-radios__input" id="changed-name" name="vrm-1" type="radio" value="Non-UK">
+              <label class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+                for="changed-name"> Non-UK</label>
+            </div>
+          </div>
+        </div>
+    </div> -->
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="selfDeclare" name="organisation" type="checkbox"
+                  value="selfDeclare" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="selfDeclare">
+                I declare that the information given above is correct
+              </label>
+          </div>
+      </div>
+  </div>
+   
+    
+    <div class="govuk-form-group govuk-button-group">
+      <button class="govuk-button create-account-upload-confirm" data-module="govuk-button" role="button" aria-label="Confirm a vehicle"
+        onclick="location.href='/create-account/step-3/vehicle-upload-confirm'">Continue</button>
+
+    </div>
+  </div>
+</div>
+
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

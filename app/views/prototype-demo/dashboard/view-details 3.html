@@ -1,0 +1,96 @@
+{% extends "./dashboard-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row app-!-detail-inner-page-margin" >
+    <div class="govuk-grid-column-full">
+        <a href="#" class="govuk-back-link">Back</a>
+    </div>
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-top-5 govuk-!-margin-bottom-1">PMEZE171</h1>
+                <p class="govuk-body govuk-!-margin-bottom-7">Added on 27 Sep 2021</p>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <div class="app-!-dashboard-card-container">
+                    <p class="govuk-body govuk-!-font-weight-bold">Vehicle details</p>
+                    <button class="govuk-button" data-module="govuk-button">Edit</button>
+                </div>
+                
+                <div class="app-!-table-list-container">
+                    <div class="app-!-table-list-row app-!-table-body">
+                      <h5 class="app-!-table-list-cell govuk-body-s govuk-!-font-weight-bold">Class</h5>
+                      <h5 class="app-!-table-list-cell govuk-body-s">Class B</h5>
+                    </div>
+                    <div class="app-!-table-list-row app-!-table-body">
+                        <h5 class="app-!-table-list-cell govuk-body-s govuk-!-font-weight-bold">Make</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">Audi</h5>
+                    </div>
+                    <div class="app-!-table-list-row app-!-table-body">
+                        <h5 class="app-!-table-list-cell govuk-body-s govuk-!-font-weight-bold">Model</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">RS4</h5>
+                    </div>
+                    <div class="app-!-table-list-row app-!-table-body">
+                        <h5 class="app-!-table-list-cell govuk-body-s govuk-!-font-weight-bold">Color</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">Black</h5>
+                    </div>
+                    <div class="app-!-table-list-row app-!-table-body">
+                        <h5 class="app-!-table-list-cell govuk-body-s govuk-!-font-weight-bold">Vehicle plan</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">Standard</h5>
+                    </div>
+                    <div class="app-!-table-list-row app-!-table-body">
+                        <h5 class="app-!-table-list-cell govuk-body-s govuk-!-font-weight-bold">Group name</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s"> -</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-3 govuk-!-margin-top-8">Crossing</h1>                
+                <p class="govuk-body">Payments can take up to 48 hours to appear on your account</p>
+                <div class="app-!-table-scroll">
+                    <div class="app-!-table-list-container" >
+                    <div class="app-!-table-list-row app-!-table-header">
+                      {% for head in dashboardData.crossingListHead %}
+                      <div  class="app-!-table-list-cell govuk-body-s" >
+                        {{ head }}
+                      </div>
+                      {% endfor %}
+                    </div>
+                    {% for crossingItem in dashboardData.transactionList %}
+                    <div
+                        class="app-!-table-list-row app-!-table-body">
+                        <h5 class="app-!-table-list-cell govuk-body-s">
+                            {{ crossingItem.postingDate}}
+                        </h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">
+                            {{ crossingItem.exitTime }}
+                        </h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">{{ crossingItem.direction }}</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">
+                            <a href="/dashboard/vehicles/view" class="govuk-link">{{ crossingItem.number }}</a>
+                        </h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s"> </h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">
+                            {{ crossingItem.transactionDate }}
+                        </h5>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    {% include "./dashboard-user-account-info.html" %}
+</div>
+
+
+{% endblock %}

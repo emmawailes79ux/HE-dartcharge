@@ -1,0 +1,39 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<a href="/dashboard" style="cursor: pointer;" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">
+        <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+                New vehicle added successfully
+            </h1>
+        </div>
+        <p>We have sent a confirmation email to <a href="#">johndoe@gmail.com</a></p>
+        <table class="govuk-table govuk-!-margin-bottom-6">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Registration number</th>
+                    <td class="govuk-table__cell">
+                        <p class="govuk-caption-xl govuk-!-margin-bottom-2">LO62NPR</p>
+                        <p class="govuk-caption-xl govuk-!-margin-bottom-2">AB4195</p>
+                        <p class="govuk-caption-xl govuk-!-margin-bottom-2">AN23CHA</p>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Date</th>
+                    <td class="govuk-table__cell"><span class="govuk-caption-xl">26 Aug 2021</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="govuk-button vehicle-success" data-module="govuk-button" role="button"
+            aria-label="back to dashboard">Back to vehicles</button>
+    </div>
+</div>
+{% endblock %}

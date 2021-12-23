@@ -1,0 +1,73 @@
+{% extends "./dashboard-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Account</h1>
+                <div class="app-!-dashboard-card-container">
+                    <div class="app-!-dashboard-card-heading">
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2">Update profile</p>
+                    </div>
+                </div>
+                <div class="app-!-bottom-line"></div>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="govuk-form-group govuk-!-margin-bottom-4">
+                    <label class="govuk-label" for="full-name">Full name</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="full-name" name="full-name" type="text"
+                        aria-required="true" aria-label="Enter full name" value="John Doe" />
+                </div>
+                <div class="govuk-form-group govuk-!-margin-bottom-4">
+                    <label class="govuk-label" for="mobile">Mobile telephone number (optional)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="mobile" name="mobile" type="text"
+                        aria-required="true" aria-label="Enter Mobile" />
+                </div>
+                <div class="govuk-form-group govuk-!-margin-bottom-4">
+                    <label class="govuk-label" for="landline">Landline telephone number (optional)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="landline" name="landline" type="text"
+                        aria-required="true" aria-label="Enter Landline" />
+                </div>
+                <div class="govuk-form-group govuk-!-margin-bottom-4">
+                    <label class="govuk-label" for="email">Email address</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="email" name="email" type="text"
+                        aria-required="true" aria-label="Enter Email" value="john.deo@email.com" /> <a href="#" class="govuk-!-margin-left-2">Change</a>
+                </div>
+                <div class="govuk-form-group govuk-!-margin-bottom-4">
+                    <label class="govuk-label" for="full-name">Password</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="full-name" name="full-name" type="password"
+                        aria-required="true" aria-label="Enter full name" value="password" /> <a href="#" class="govuk-!-margin-left-2">Change</a>
+                </div>
+                <div class="govuk-form-group govuk-!-margin-bottom-4">
+                    <label class="govuk-label" for="full-name">Postcode</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="full-name" name="full-name" type="text"
+                        aria-required="true" aria-label="Enter full name" />
+                </div>
+                <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+                   Update
+                </button>
+
+            </div>
+
+        </div>
+       
+        
+    </div>
+    {% include "./account-setting-info.html" %}
+
+
+
+    
+
+
+
+</div>
+
+
+{% endblock %}

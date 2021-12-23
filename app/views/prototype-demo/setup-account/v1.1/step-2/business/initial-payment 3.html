@@ -1,0 +1,141 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../../setup-acct-head-container.html" %}
+<div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Business account</h3>
+        <h4 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Initial deposit to your account:
+        </h4>
+        <p aria-label="Minimal Payment" class="govuk-body">
+            You need to make an initial minimum deposit amount of £200 to open your account.
+        </p>
+        <p class="govuk-heading-m govuk-!-font-weight-bold">
+            How would you like to top-up your account?
+          </p>
+            <div class="govuk-form-group app-!-topup-methods">
+              <fieldset class="govuk-fieldset" aria-describedby="select-account-type">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input
+                      class="govuk-radios__input"
+                      id="auto-topup"
+                      name="initial-payment"
+                      type="radio"
+                      value="auto-topup"
+                      aria-describedby="auto-topup-item-hint"
+                      aria-label="Auto topup"
+                    />
+                    <label
+                      class="govuk-label govuk-radios__label govuk-body govuk-!-margin-bottom-1"
+                      for="auto-topup"
+                    >
+                      Auto top-up
+                    </label>
+                      <div id="auto-topup-item-hint" class="govuk-body app-!-radio-select-content govuk-!-margin-left-3">
+                          No need to remember to top-up, funds will be automatically added to your account when the balance falls below the specified amount.        
+                        <div class="app-!-radio-select govuk-!-margin-top-2" id="auto-topup-options" style="display: none">
+                          <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset">
+                              <div class="govuk-form-group govuk-!-margin-bottom-3">
+                                <label class="govuk-body " for="topup-by-amt">
+                                  Top-up my account by
+                                </label>
+                                <div class="govuk-input__wrapper govuk-!-padding-top-2">
+                                  <div class="govuk-input__prefix govuk-!-margin-bottom-2" aria-hidden="true">
+                                    £
+                                  </div>
+                                  <input
+                                    class="govuk-input govuk-input--width-5"
+                                    id="topup-amount"
+                                    name="topup-amount"
+                                    type="text"
+                                    spellcheck="false"
+                                    aria-label="Enter Top-up amount"
+                                    value="10.00"
+                                    
+                                  />
+                                </div>
+                              </div>
+          
+                              <div class="govuk-form-group">
+                                <label class="govuk-body" for="topup-least-amt">
+                                  When my balance falls below
+                                </label>
+                                <div class="govuk-input__wrapper govuk-!-padding-top-2">
+                                  <div class="govuk-input__prefix govuk-!-margin-bottom-2" aria-hidden="true">
+                                    £
+                                  </div>
+                                  <input
+                                    class="govuk-input govuk-input--width-5"
+                                    id="least-amount"
+                                    name="least-amount"
+                                    type="text"
+                                    spellcheck="false"
+                                    aria-label="Enter Top-up amount"
+                                    value="5.00"
+                                  />
+                                </div>
+                              </div>
+                            </fieldset>
+                          </div>
+                        </div>
+                      </div>
+                    
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input
+                      class="govuk-radios__input"
+                      id="manual-topup"
+                      name="initial-payment"
+                      type="radio"
+                      value="manual-topup"
+                      aria-describedby="manual-topup-item-hint"
+                      aria-label="Manual topup"
+                    />
+                    <label
+                      class="govuk-label govuk-radios__label govuk-body govuk-!-margin-bottom-1"
+                      for="manual-topup"
+                    >
+                      Manual top-up
+                    </label>
+                      <div
+                        id="manual-topup-item-hint"
+                        class="govuk-body app-!-radio-select-content govuk-!-margin-left-3"
+                      >
+                      You will need to remember to add funds to your account yourself when your balance is low.
+          
+                        <div class="app-!-radio-select govuk-!-margin-top-2" id="manual-topup-option" style="display: none">
+                          If your account balance goes below zero, you will have 24 hours to
+                          add funds. After 24 hours the account will be closed and you may
+                          receive a penalty charge if you use the crossing and don't pay.
+                        </div>
+                      </div>
+                    
+                  </div>
+          
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-button-group ">
+              <button
+                type="submit"
+                class="govuk-button"
+                data-module="govuk-button"
+                aria-label="Continue"
+                onClick="location.href='biz-topup-select'"
+              >
+              Continue
+              </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% include "../../setup-acct-bottom-container.html" %}
+{% endblock %}

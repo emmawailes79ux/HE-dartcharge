@@ -1,0 +1,49 @@
+{% extends "../../dashboard-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<!-- <a href="/dashboard" style="cursor: pointer;" class="govuk-back-link">Home</a> -->
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">
+        <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+                New vehicle added successfully
+            </h1>
+        </div>
+        <p>We have sent a confirmation email to johndoe@gmail.com</p>
+        <table class="govuk-table govuk-!-margin-bottom-6">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Date</th>
+                    <td class="govuk-table__cell"><span class="govuk-caption-m">26 Aug 2021</span></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Registration number</th>
+                    <td class="govuk-table__cell">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    View vehicles
+                                </span>
+                            </summary>
+                            <div class="govuk-inset-text govuk-!-margin-0">
+                                <p class="govuk-caption-m govuk-!-margin-bottom-2">NA62ROP</p>
+                                <p class="govuk-caption-m govuk-!-margin-bottom-2">LO63NRO</p>
+                                <p class="govuk-caption-m govuk-!-margin-bottom-0">CK16NRH</p>
+                            </div>
+                        </details>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="govuk-button vehicle-success" data-module="govuk-button" role="button"
+            aria-label="back to dashboard">Back to vehicle list</button>
+    </div>
+</div>
+{% endblock %}

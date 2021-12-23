@@ -1,0 +1,106 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../../../setup-acct-head-container.html" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h3 class="govuk-heading-m">Local resident discount scheme (LRDS)</h3>
+      <h2 class="govuk-body-l govuk-!-margin-bottom-3">Initial deposit to your account</h2>
+      <p class="govuk-body">You need to make an initial minimum deposit of £10 to open your account.
+      </p>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <p class=" govuk-heading-s govuk-!-margin-bottom-0">
+              Select the LRDS account you wish to apply for
+            </p>
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="lrds10" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                LRDS 10
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
+                  <li>This account allows you to make up to 50 crossings in any one year. </li>
+                  <li>You will need to make an initial minimum deposit of £10 to open your account. </li>
+                  <li>This amount will be used to pay for the crossings until the LRDS account has been created. </li>
+                  <li>You will be responsible to add funds to your account. </li>
+                  <li>Once the documents required to create an LRDS account are verified, you have to pay £10 for the
+                    LRDS account. </li>
+                  <li>After you have made 50 crossings in the year,
+                    <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
+                      <li>You can either add £10 to the existing account which will upgrade you to LRDS 20 for the
+                        remainder of the year. </li>
+                      <li>Or you will have to set up a separate Pre-Pay or Pay as you go account to pay for additional
+                        crossings.</li>
+                    </ul>
+                  </li>
+                </ul>
+              
+              </div>
+      
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="lrds20" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                LRDS 20
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+              <div class="govuk-form-group">
+                <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-3">
+                  <li>This account allows you to make unlimited crossings in any one year</li>
+                  <li>You will need to make an initial deposit of £10 to open your account. </li>
+                  <li>This amount will be used to pay for the crossings until the LRDS account has been created.</li>
+                  <li>You will be responsible to add funds to your account.</li>
+                  <li>Once the documents required to create an LRDS account are verified, you have to pay £20 for the
+                    LRDS account</li>
+                </ul>
+              
+              </div>
+      
+            </div>
+
+
+
+
+            
+
+            </div>
+
+
+
+
+
+          </div>
+          <button class="govuk-button lrds-info-form" data-module="govuk-button" role="button">
+        Continue
+      </button>
+        </fieldset>
+      </div>
+
+      
+  </div>
+
+  <!-- <div class="govuk-grid-column-one-third govuk-!-padding-top-1">
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="../select-account"> Change account type </a>
+      </div> -->
+
+</div>
+
+
+
+
+{% include "../../../setup-acct-bottom-container.html" %}
+{% endblock %}

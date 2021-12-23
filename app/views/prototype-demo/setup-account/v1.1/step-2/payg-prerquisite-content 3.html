@@ -1,0 +1,56 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Personal- Pay as you go</h3>
+      </div>
+
+      <!-- <div class="govuk-grid-column-one-third govuk-!-padding-top-1">
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="../select-account"> Change account type </a>
+      </div> -->
+    
+    </div>
+    
+    <div class="govuk-!-padding-right-9">
+        <p class="govuk-body">
+        Pay for crossings you plant to make in the next 12 months.
+        Payments are valid for 12 months from the date you make them.
+    </p>
+
+    <div class="govuk-inset-text govuk-body ">
+        Do not use this option if you have received a Penalty Charge Notice(PCN),
+        use the Pay or Challenge a PCN option to pay.
+    </div>
+    
+    <p class="govuk-body">
+        For data prtection reasons we are unable to show crossings or payments for a particular vehicle unless you enter a valid payment reference or setup an account.
+    </p>
+
+    <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-weight-bold" for="sort">
+          Country of registration
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="uk">United Kingdom</option>
+        </select>
+      </div>
+
+    <button
+        class="govuk-button payg-prereq govuk-!-padding-right-5 govuk-!-padding-left-5 govuk-!-margin-top-5"
+        data-module="govuk-button"
+        role="button"
+        >
+        Next
+        </button>
+    </div>
+    
+    
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

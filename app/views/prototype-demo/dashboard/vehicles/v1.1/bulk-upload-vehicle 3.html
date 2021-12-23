@@ -1,0 +1,60 @@
+{% extends "../../dashboard-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicles</h1>
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Add Vehicles</h1>
+                <div class="app-!-bottom-line"></div>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <p>You can add vehicle or use the bulk upload feature to add multiple vehicles.</p>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="company-registration-number"> Enter vehicle registration number </label>
+                    <input
+                      class="govuk-input govuk-!-width-one-half"
+                      id="company-registration-number"
+                      name="company-registration-number"
+                      type="text"
+                      aria-required="true"
+                    />
+                  </div>
+                  <div class="govuk-button-group">
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add vehicle
+                    </button>
+                    <button class="govuk-button" data-module="govuk-button">
+                      Find your vehicle
+                    </button>
+                  </div>
+                  <p class="govuk-!-margin-top-7">
+                    Use the bulk upload functionality to manage your group names, along with adding and deleting vehicles. See the <a href="#" class="govuk-link govuk-body govuk-link--no-visited-state">Bulk Upload Guide</a> for details.
+                  </p>
+                  <button class="govuk-button" data-module="govuk-button">
+                    Bulk upload vehicle details
+                  </button>
+
+                  <p class="govuk-!-margin-top-3">
+                    You can use the bulk upload template to add multiple vehicles to your account.
+                    <br>
+                    <a href="#" class="govuk-link govuk-body govuk-link--no-visited-state">Download bulk upload template (CSV)</a>
+                  </p>
+            </div>
+
+        </div>
+        
+    </div>
+    {% include "./dashboard-vehicle-info.html" %}
+</div>
+
+{% endblock %}

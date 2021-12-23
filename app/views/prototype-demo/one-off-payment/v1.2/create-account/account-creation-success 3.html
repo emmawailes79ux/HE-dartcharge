@@ -1,0 +1,35 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "../one-off-payment-body-head.html" %}
+
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">
+  <div class="govuk-panel govuk-panel--confirmation">
+    <h1 class="govuk-panel__title">
+      Account has been created successfully
+    </h1>
+    <div class="govuk-panel__body">
+      Your reference number<br><strong>HDJ2123F</strong>
+    </div>
+  </div>
+  <p>We have sent a confirmation email to <a href="#">johndoe@gmail.com</a></p>
+  </div>
+  <div class="govuk-grid-column-full govuk-!-margin-top-4">
+    <button class="govuk-button todashboard" data-module="govuk-button" role="button" aria-label="Go to account summary page"
+    >Go to account summary page</button>
+  
+  </div>
+  </div>
+  <a class="govuk-link" href="#" aria-label="Print or download a PDF copy of your payment receipt">Print or download a PDF copy of your payment receipt</a>
+  </div>
+  </main>
+  {% endblock %}

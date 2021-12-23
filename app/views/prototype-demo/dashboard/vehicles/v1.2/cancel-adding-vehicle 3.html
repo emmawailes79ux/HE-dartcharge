@@ -1,0 +1,97 @@
+{% extends "../../dashboard-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-three-quarters">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicle management</h1>
+          </div>
+          <div class="govuk-grid-column-one-quarter app-!-divider-right">
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-2">3 <span class="govuk-body-m">vehicle</span> </h1>
+          </div>
+        </div>
+        <hr class="govuk-!-margin-0">
+    </div>
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-5">Add vehicles</h1>
+                <div class="govuk-inset-text">
+                   Please update the vehicle details by clicking "Change"
+                </div>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="app-!-table-scroll">
+                    <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Registration number</th>
+                            <th scope="col" class="govuk-table__header">Country marker</th>
+                            <th scope="col" class="govuk-table__header">Class</th>
+                            <th scope="col" class="govuk-table__header">Make</th>
+                            <th scope="col" class="govuk-table__header">Model</th>
+                            <th scope="col" class="govuk-table__header">Color</th>
+                            <th scope="col" class="govuk-table__header">Change</th>
+                            <th scope="col" class="govuk-table__header">Remove</th>
+                          </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"><a href="#" class="govuk-link">AB4195</a></td>
+                            <td class="govuk-table__cell">Non-UK</td>
+                            <td class="govuk-table__cell">-</td>
+                            <td class="govuk-table__cell">-</td>
+                            <td class="govuk-table__cell">-</td>
+                            <td class="govuk-table__cell">-</td>
+                            <td class="govuk-table__cell"><a href="/dashboard/vehicles/v1.2/edit-vehicle" class="govuk-link">Change</a></td>
+                            <td class="govuk-table__cell"><a href="#" class="govuk-link">Remove</a></td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"><a href="#" class="govuk-link">AN23CHA</a></td>
+                            <td class="govuk-table__cell">Non-UK</td>
+                            <td class="govuk-table__cell">B</td>
+                            <td class="govuk-table__cell">AUDI</td>
+                            <td class="govuk-table__cell">-</td>
+                            <td class="govuk-table__cell">-</td>
+                            <td class="govuk-table__cell"><a href="/dashboard/vehicles/v1.2/edit-vehicle" class="govuk-link">Change</a></td>
+                            <td class="govuk-table__cell"><a href="#" class="govuk-link">Remove</a></td>
+                          </tr>
+                        </tbody>
+                    </table>
+
+                  
+
+                </div>
+                <div class="govuk-inset-text">
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                          <span class="govuk-warning-text__assistive">Warning</span>
+                          Do you want to cancel adding the vehicles ?
+                        </strong>
+                      </div>
+                 </div>
+                <div class="govuk-form-group govuk-button-group govuk-!-margin-top-6">
+                    <button type="button" class="govuk-button vehicle-success govuk-button--secondary" data-module="govuk-button" role="button"
+                        aria-label="confirm">Yes</button>
+                    <button class="govuk-button edit-vehicle-confirm" data-module="govuk-button" >No</button>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    {% include "./dashboard-vehicle-info.html" %}
+</div>
+</div>
+{% endblock %}

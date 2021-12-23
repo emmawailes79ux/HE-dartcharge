@@ -1,0 +1,44 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">
+<div class="govuk-panel govuk-panel--confirmation">
+    <h1 class="govuk-panel__title">
+      Thank you for applying for LRDS account
+    </h1>
+  
+  <div class="govuk-panel__body">
+    Your reference number<br><strong>87892101</strong>
+  </div>
+</div>
+<p>We have sent a confirmation email to johndoe@gmail.com
+</p>
+</div>
+<div class="govuk-grid-column-full govuk-!-margin-top-4">
+  <button class="govuk-button todashboard" data-module="govuk-button" role="button" aria-label="Go to account summary page"
+  >Go to account summary page</button>
+
+
+</div>
+</div>
+
+</div>
+</main>
+{% endblock %}

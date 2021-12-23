@@ -1,0 +1,46 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+
+<!-- If it is a business account then render this form -->
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m">How many vehicles you need to add?</h3>
+    </div>
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+        <form action="" method="post">
+            <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item govuk-!-margin-bottom-4">
+                        <input class="govuk-radios__input" id="less-than-5" name="no-of-vehicles" type="radio"
+                            value="5" aria-describedby="less-than-5" />
+                        <label class="govuk-label govuk-radios__label" for="less-than-5">
+                            Less than 5
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item govuk-!-margin-bottom-7">
+                        <input class="govuk-radios__input" id="more-than-5" name="no-of-vehicles" type="radio"
+                            value="10" aria-describedby="more-than-5" />
+                        <label class="govuk-label govuk-radios__label" for="more-than-5">
+                            More than 5
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button class="govuk-button number-of-vehicles" data-module="govuk-button" role="button" disabled>
+                Continue
+            </button>
+        </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

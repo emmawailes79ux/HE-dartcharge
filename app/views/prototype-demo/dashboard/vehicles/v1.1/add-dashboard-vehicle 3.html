@@ -1,0 +1,93 @@
+{% extends "../../dashboard-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicles</h1>
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Add vehicle</h1>
+                <div class="app-!-bottom-line"></div>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Vehicle registration number</h1> -->
+                <form method="post" action="/dashboard/vehicles/v1.1/find-vehicle" id="dashboard-add-vehicle-form">
+
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full">
+                            <table class="govuk-table " id="mytable">
+                                <thead class="govuk-table__head">
+                                    <tr class="govuk-table__row">
+                                        <th scope="col" class="govuk-table__header">Registration number</th>
+                                        <th scope="col" class="govuk-table__header">Country registration</th>
+                                        <th scope="col" class="govuk-table__header"></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                        <td scope="row" class="govuk-table__header">
+                                            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                                                <span class="govuk-error-message vrm-error" style="display: none">
+                                                    <span class="govuk-visually-hidden">Error:</span> Please enter
+                                                    Registration number
+                                                </span>
+                                                <input class="govuk-input govuk-input govuk-input--width-10 vrms"
+                                                    id="vrm" name="vrm-1" type="text">
+                                            </div>
+                                        </td>
+
+                                        <td class="govuk-table__cell">
+                                            <div class="govuk-radios govuk-radios--inline">
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="changed-name" name="vrm-1"
+                                                        type="radio" value="UK" checked>
+                                                    <label
+                                                        class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+                                                        for="changed-name"> UK</label>
+                                                </div>
+                                                <div class="govuk-radios govuk-radios--inline ">
+                                                    <div class="govuk-radios__item govuk-!-margin-right-0">
+                                                        <input class="govuk-radios__input" id="changed-name"
+                                                            name="vrm-1" type="radio" value="Non-UK">
+                                                        <label
+                                                            class="govuk-label govuk-radios__label govuk-!-padding-right-0 govuk-!-padding-left-1"
+                                                            for="changed-name"> Non-UK</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="govuk-table__cell"></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                    <div class="govuk-button-group dashboard-vehicle-form">
+                        <button type="submit" class="govuk-button" data-module="govuk-button" role="button"
+                            aria-label="Find a vehicle">Find your vehicle</button>
+                        <button type="button" class="govuk-button govuk-button--secondary dashboard-add-vehicle"
+                            data-module="govuk-button" role="button" aria-label="Add vehicle">Add vehicle</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    {% include "./dashboard-vehicle-info.html" %}
+</div>
+</div>
+{% endblock %}

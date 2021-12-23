@@ -1,0 +1,91 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+<div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">Business account</div>
+      </div>
+  
+      <!-- <div class="govuk-grid-column-one-third govuk-!-padding-top-1 govuk-!-padding-bottom-3">
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#"> Change account type </a>
+      </div> -->
+    </div>
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h4 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Initial deposit to your account:</h4>
+            <p aria-label="Minimal Payment" class="govuk-body">
+              You need to make an initial minimum deposit amount of £10 to open your account.
+            </p>
+        
+            <p class="govuk-heading-m govuk-!-font-weight-bold">
+              Top-up
+            </p>
+        
+            <div class="govuk-form-group govuk-!-margin-bottom-3">
+                <label class="govuk-body " for="topup-by-amt">
+                  Top-up my account by
+                </label>
+                <div class="govuk-input__wrapper govuk-!-padding-top-2">
+                  <div class="govuk-input__prefix govuk-!-margin-bottom-2" aria-hidden="true">
+                    £
+                  </div>
+                  <input
+                    class="govuk-input govuk-input--width-3"
+                    id="topup-amount"
+                    name="topup-amount"
+                    type="text"
+                    spellcheck="false"
+                    aria-label="Enter Top-up amount"
+                    value="200"
+                  />
+                </div>
+            </div>
+            
+            
+            <div class="govuk-form-group govuk-!-margin-bottom-7 govuk-!-margin-top-7">
+                <label class="govuk-body " for="topup-by-amt">
+                  When my balance falls below
+                </label>
+                <div class="govuk-input__wrapper govuk-!-padding-top-2">
+                  <div class="govuk-input__prefix govuk-!-margin-bottom-2" aria-hidden="true">
+                    £
+                  </div>
+                  <input
+                    class="govuk-input govuk-input--width-3"
+                    id="topup-amount"
+                    name="topup-amount"
+                    type="text"
+                    spellcheck="false"
+                    aria-label="Enter Top-up amount"
+                    value="50"
+                    
+                  />
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="govuk-button-group ">
+  
+      <button
+        onClick="location.href='/create-account/step-4/payments'"
+        type="button"
+        class="govuk-button"
+        data-module="govuk-button"
+        aria-label="Continue"
+      >
+      Continue
+      </button>
+    </div>
+  </div>
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+<div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">Business account</div>
+      </div>
+  
+      <!-- <div class="govuk-grid-column-one-third govuk-!-padding-top-1 govuk-!-padding-bottom-3">
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#"> Change account type </a>
+      </div> -->
+    </div>
+    
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h4 class="govuk-heading-m govuk-!-margin-top-4 govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Nominate users</h4>
+            <p aria-label="Minimal Payment" class="govuk-body">
+              You need nominate users to manage your account.
+            </p>
+        
+        </div>
+    </div>
+  
+    <div class="govuk-button-group govuk-!-margin-top-7">
+  
+      <button
+        type="button"
+        class="govuk-button"
+        data-module="govuk-button"
+        aria-label="Continue"
+      >
+      Nominate users
+      </button>
+
+      <button
+        type="button"
+        class="govuk-button"
+        data-module="govuk-button"
+        aria-label="Continue"
+        onClick="location.href ='../step-3/vehicle-register'"
+      >
+      Skip
+      </button>
+    </div>
+  </div>
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

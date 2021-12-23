@@ -1,0 +1,159 @@
+{% extends "../../dashboard-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicle management</h1>
+      </div>
+      <div class="govuk-grid-column-one-quarter app-!-divider-right">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2">3 <span class="govuk-body-m">vehicle</span> </h1>
+      </div>
+    </div>
+    <hr class="govuk-!-margin-0">
+  </div>
+  <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-7 app-!-divider">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full govuk-!-margin-top-4">
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-5">Vehicle list</h1>
+      </div>
+
+      <div class="govuk-grid-column-full">
+
+        <!-- <p class="app-!-table-info-text govuk-body-s">Clicking on column headers will refresh the data sorted by the chosen
+          heading </p> -->
+
+        <div class="app-!-table-scroll">
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                {% for head in dashboardData.vehicleListHead %}
+                <th scope="col" class="govuk-table__header">
+                {{ head }}
+                </th>
+              {% endfor %}
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">PMEZE171</a></td>
+                <td class="govuk-table__cell">B</td>
+                <td class="govuk-table__cell">AUDI</td>
+                <td class="govuk-table__cell">02 Sep 2021 </td>
+                <td class="govuk-table__cell">info about vehicle </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">AB4195</a></td>
+                <td class="govuk-table__cell">B</td>
+                <td class="govuk-table__cell">AUDI</td>                
+                <td class="govuk-table__cell">12 Aug 2021 </td>
+                <td class="govuk-table__cell">info about vehicle </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">AN23CHA</a></td>
+                <td class="govuk-table__cell">B</td>
+                <td class="govuk-table__cell">BMW</td>               
+                <td class="govuk-table__cell">22 Sep 2021 </td>
+                <td class="govuk-table__cell">info about vehicle </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- <div class="app-!-table-list-container">
+            <div class="app-!-table-list-row app-!-table-header">
+              {% for head in dashboardData.vehicleListHead %}
+              <div class="app-!-table-list-cell govuk-body-s">
+                {{ head }}
+              </div>
+              {% endfor %}
+            </div>
+            <div class="app-!-table-list-row app-!-table-body">
+              <h5 class="app-!-table-list-cell govuk-body-s">
+                <a href="#" class="govuk-link">PMEZE171</a>
+              </h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">B</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">AUDI</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">TT FSI</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">Black</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">Standard</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">02 Sep 2021</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s govuk-!-padding-left-4">
+                <div class="govuk-checkboxes--small app-!-table-remove-check">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
+                      value="DfT">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-4"></label>
+                  </div>
+                </div>
+              </h5>
+            </div>
+            <div class="app-!-table-list-row app-!-table-body">
+              <h5 class="app-!-table-list-cell govuk-body-s">
+                <a href="#" class="govuk-link">AB4195</a>
+              </h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">B</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">AUDI</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">RS4</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">Black</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">Standard</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">02 Sep 2021</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s govuk-!-padding-left-4">
+                <div class="govuk-checkboxes--small app-!-table-remove-check">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
+                      value="DfT">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-4"></label>
+                  </div>
+                </div>
+              </h5>
+            </div>
+            <div class="app-!-table-list-row app-!-table-body">
+              <h5 class="app-!-table-list-cell govuk-body-s">
+                <a href="#" class="govuk-link">AN23CHA</a>
+              </h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">A</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">BMW</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">TT FSI</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">Black</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">LRDS </h5>
+              <h5 class="app-!-table-list-cell govuk-body-s">02 Sep 2021</h5>
+              <h5 class="app-!-table-list-cell govuk-body-s govuk-!-padding-left-4">
+                <div class="govuk-checkboxes--small app-!-table-remove-check">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
+                      value="DfT">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-4"></label>
+                  </div>
+                </div>
+              </h5>
+            </div>
+          </div> -->
+
+
+        </div>
+
+        <div class="govuk-!-margin-top-6">
+          <button role="button" class="govuk-button govuk-!-margin-right-3 add-dashboard-vehicle"
+            data-module="govuk-button">
+            Add vehicles
+          </button>
+          <!-- <button role="button" class="govuk-button govuk-button--secondary " data-module="govuk-button">
+            Remove vehicle
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include "./dashboard-vehicle-info.html" %}
+</div>
+
+
+{% endblock %}

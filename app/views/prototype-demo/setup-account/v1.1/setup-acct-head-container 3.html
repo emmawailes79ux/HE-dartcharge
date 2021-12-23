@@ -1,0 +1,56 @@
+<!-- <div class="govuk-breadcrumbs">
+      <ol class="govuk-breadcrumbs__list">
+          <li class="govuk-breadcrumbs__list-item">
+              <a href="/home" class="govuk-breadcrumbs__link" >Home</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+              Set up an account
+          </li>
+      </ol>
+      
+    </div> -->
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>    
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-0">
+      
+
+        {% if (step === 2) %}
+        Create an account - Step 2 of 4
+        {% elif (step === 3) %}
+        Create an account - Step 3 of 4
+        {% elif (step === 4) %}
+        Create an account - Step 4 of 4
+        {% else %}
+        Create an account - Step 1 of 4
+        {% endif %}
+        
+        
+      
+      </h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">
+        {% if (step === 2) %}
+        Select an account type
+        {% elif (step === 3) %}
+        Add a vehicle
+        {% elif (step === 4) %}
+        Payment
+        {% else %}
+        Step 1 - Verification
+        {% endif %}
+      </h2>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-padding-top-5">

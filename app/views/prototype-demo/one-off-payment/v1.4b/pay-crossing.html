@@ -1,0 +1,101 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-1">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay for the Dartford Crossing (Dart
+            Charge)
+        </h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Pay for crossings without an account</h1>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <!-- <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Pay for crossings</h1> -->
+        <p class="govuk-body">
+            Pay for crossings:</p>
+            
+          <ul class="govuk-list govuk-list--bullet">
+            <li>you've made yesterday or today</li>
+            <li>you plan to make in the future</li>
+          </ul>
+            <p>  
+            Payments are valid for 12 months. <br>
+            
+        </p>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Do you have an older crossing you have not paid for?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            ‘If you made a crossing before yesterday you have not paid for, you cannot pay for it now. You’ll need to wait to get the penalty charge notice in the post and then pay or challenge it.
+          </div>
+        </details>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            Do not use this option if you want to pay a penalty charge notice (PCN). Use the <a href="https://dartford-crossing-charge.herokuapp.com/demo/flow1">resolve penalty charge notice</a> option instead.
+          </strong>
+        </div>
+    </div>
+</div>
+
+
+
+<form method="post">
+<div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="vrn">
+        Number plate
+      </label>
+    </h1>
+    <input class="govuk-input govuk-!-width-one-half" id="vrn" name="vrn" type="text">
+  </div>
+
+    <div id="vrn-type-info" class="govuk-body">
+      Where is the vehicle registered?
+    </div>
+    <!-- <div id="vrn-type-hint" class="govuk-hint">
+      Morbi pulvinar elit quis enim sollicitudin, sit amet vehicula leo hendrerit. <br>Aenean cursus sapien a justo lobortis.
+    </div> -->
+
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="vrn-region" name="vrn-region" type="radio" value="UK">
+        <label class="govuk-label govuk-radios__label" for="vrn-region">
+          UK
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="vrn-region-2" name="vrn-region" type="radio" value="Non-UK">
+        <label class="govuk-label govuk-radios__label" for="vrn-region-2">
+          Non-UK
+        </label>
+      </div>
+    </div>
+    
+    <button type="submit" id="plateSubmit" class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+      Find your vehicle
+    </button>
+</form>
+<!-- <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        I have a non-UK registration plate
+      </span>
+    </summary>
+     <div class="govuk-details__text">
+      We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+    </div> -->
+  <!-- </details> -->
+
+
+{% endblock %}

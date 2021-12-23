@@ -1,0 +1,71 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">
+<div class="govuk-panel govuk-panel--confirmation">
+  {% if data['select-account'] === 'business-account' %}
+    <h1 class="govuk-panel__title">
+      Business account has been created successfully
+    </h1>
+  {% else %}
+    <h1 class="govuk-panel__title">
+      Your account has been created successfully
+    </h1>
+  {% endif %}
+  
+  <div class="govuk-panel__body">
+    <div class="govuk-!-margin-bottom-1">
+      Your account number <strong>1163425136</strong>
+    </div>
+    <div>
+      Your reference number <strong>87094510</strong>
+    </div>
+    
+    
+  </div>
+</div>
+<p>We have sent a confirmation email to
+    
+    {% if data['select-account'] === 'business-account' %}
+        doeplumbers@gmail.com
+    {% else %}
+        johndoe@gmail.com
+    {% endif %}
+    
+</p>
+</div>
+<div class="govuk-grid-column-full govuk-!-margin-top-4">
+{% if (data['select-account'] === 'business-account') or (data['personal-account-type'] === 'pre-pay') %}
+  <button class="govuk-button todashboard" data-module="govuk-button" role="button" aria-label="Go to account summary page"
+  >Go to account summary page</button>
+{% endif %}
+
+{% if data['personal-account-type'] === 'lrds' and (data['select-account'] !== 'business-account') %}
+<button class="govuk-button touploaddoc" data-module="govuk-button" role="button" 
+>Upload documents</button>
+{% endif %}
+  
+
+</div>
+</div>
+<a class="govuk-link" href="#" aria-label="Print or download a PDF copy of your payment receipt">Print or download a PDF copy of your payment receipt</a>
+</div>
+</main>
+{% endblock %}

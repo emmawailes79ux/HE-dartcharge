@@ -1,0 +1,141 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-0">
+        Create an account - Summary
+
+      </h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">
+        You have selected
+      </h2>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters govuk-!-padding-top-5">
+
+      {% if data['select-account'] === 'business-account' or data['personal-account-type'] === 'lrds' %}
+      <div class="govuk-grid-column-full govuk-!-padding-0">
+        <div class="app-!-pull-left">
+          <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1">
+            <span class="app-!-check-icon"></span>
+            {% if data['personal-account-type'] === 'lrds' %}
+            johndoe@gmail.com
+            {% elif (data['select-account'] === 'business-account') %}
+            doeplumbers@gmail.com
+            {% endif %}
+
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
+            Your email address has been verified successfully
+          </p>
+        </div>
+        <div class="app-!-pull-right">
+          <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-full govuk-!-padding-0">
+        <div class="app-!-pull-left">
+          <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="app-!-check-icon"></span>
+            {% if (data['no-of-vehicles']) and (data['select-account'] === 'business-account') %}
+            Business account - Auto top-up
+            {% elif data['personal-account-type'] === 'lrds' %}
+            LRDS - 10 
+            {% endif %}
+          </p>
+          <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">
+            {% if (data['no-of-vehicles']) and (data['select-account'] === 'business-account') %}
+            Business account - Auto top-up
+            {% elif data['personal-account-type'] === 'lrds' %}
+            You have selected a local residents discount account (LRDS)
+            {% endif %}
+          </p>
+        </div>
+        <div class="app-!-pull-right">
+          <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
+        </div>
+      </div>
+
+      <div class="govuk-grid-column-full govuk-!-padding-0">
+        <div class="app-!-pull-left">
+          {% if (data['no-of-vehicles'] === '10') and (data['select-account'] === 'business-account') %}
+          <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="app-!-check-icon"></span> Vehicles list</p>
+          <details class="govuk-details govuk-!-padding-left-7 govuk-!-margin-bottom-0" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                      View vehicles list (7)
+                  </span>
+              </summary>
+              <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
+              <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO63NRO</p>
+              <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">MN62NRO</p>
+              <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO62NRO</p>
+              <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">GJ71KRO</p>
+              <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
+              <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p>
+          </details>
+          <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">Your selected vehicles</p>
+            {% elif data['personal-account-type'] === 'lrds' %}
+            <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="app-!-check-icon"></span> LO61NRO</p>
+            <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">Your selected vehicle</p>
+            {% elif data['no-of-vehicles'] === '5' %}
+            <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-1"><span class="app-!-check-icon"></span> LO61NRO</p>
+            <p class="govuk-body govuk-!-margin-bottom-7 govuk-!-margin-left-8">Your selected vehicle</p>
+            {% endif %}
+
+        </div>
+        <div class="app-!-pull-right">
+          <a class="govuk-link govuk-body govuk-link--no-visited-state" href="#">Change details</a>
+        </div>
+      </div>
+
+
+      {% else %}
+      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-3"><span class="app-!-check-icon"></span> LO62 NRO
+      </p>
+      <p class="govuk-body govuk-!-margin-bottom-7">
+        Your vehicle has been added
+      </p>
+
+      {% endif %}
+
+
+      {% if (data['select-account'] === 'business-account') %}
+      <div class="govuk-form-group">
+        <button class="govuk-button" onclick="location.href='../step-4/initial-deposit'" data-module="govuk-button"
+          role="button" aria-label="Move to payment">Proceed to payment</button>
+      </div>
+      {% elif (data['personal-account-type'] === 'lrds') %}
+      <div class="govuk-form-group">
+        <button class="govuk-button" onclick="location.href='../step-2/initial-deposit'" data-module="govuk-button"
+          role="button" aria-label="Move to payment">Proceed to payment</button>
+      </div>
+      {% else %}
+      <div class="govuk-form-group">
+        <button class="govuk-button" onclick="location.href='../step-4/payments'" data-module="govuk-button"
+          role="button" aria-label="Move to payment">Proceed to payment</button>
+      </div>
+      {% endif %}
+
+    </div>
+    {% include "../setup-acct-bottom-container.html" %}
+    {% endblock %}

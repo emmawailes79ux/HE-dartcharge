@@ -1,0 +1,33 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "../one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-6">
+        Create an account step 3 of 4
+      </h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        Add a vehicle
+      </h2>
+      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-3"><span class="app-!-check-icon"></span> LO62 NRO</p>
+        <p class="govuk-body govuk-!-margin-bottom-7">Your vehicle has been added</p>
+        <div class="govuk-form-group">
+            <a href="account-payment" class="govuk-button payments" data-module="govuk-button" role="button" aria-label="Move to payment"
+            >Proceed to payment</a>
+        </div>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-margin-top-6">
+    <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-inset-text">
+      {{data['vrm-1']}} has no unpaid crossings or PCN
+    </div>
+
+    <p class="govuk-heading-m">Would you like to pay for future crossings?</p>
+    <div class="govuk-form-group govuk-button-group" >
+      <button onClick="location.href='./payment-info-single'" class="govuk-button" data-module="govuk-button" role="button" aria-label="Yes"
+      >Yes</button>
+        <button class="govuk-button govuk-button--secondary " data-module="govuk-button" role="button" aria-label="No"
+        >No</button>
+    </div>
+
+    </div>
+    </div>
+{% endblock %}

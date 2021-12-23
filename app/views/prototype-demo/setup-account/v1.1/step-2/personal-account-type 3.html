@@ -1,0 +1,102 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+<div >
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Personal account</h3>
+      </div>
+
+      <!-- <div class="govuk-grid-column-one-third govuk-!-padding-top-1">
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="select-account"> Change account type </a>
+      </div> -->
+    </div>
+    <form action="" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="select-account-type">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="pre-pay"
+                name="personal-account-type"
+                type="radio"
+                value="pre-pay"
+                aria-describedby="pre-pay-hint"
+              />
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pre-pay">
+                Pre-pay
+              </label>
+              <div id="pre-pay-item-hint" class="govuk-hint">
+                <ul class="govuk-!-margin-top-1 govuk-!-margin-bottom-3">
+                  <li>Discount applied to every crossing</li>
+                  <li>Minimum of £10 deposit required</li>
+                  <li>Payment taken automatically from your debit or credit card</li>
+                  <li>Auto top-up from your debit or credit card when your balance is low</li>
+                </ul>
+                <!-- <a href="javascript:void(0)" role="link" class="govuk-!-margin-left-4">Know more</a> -->
+              </div>
+            </div>
+  
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="payg"
+                name="personal-account-type"
+                type="radio"
+                value="payg"
+                aria-describedby="payg-hint"
+              />
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="payg">
+                Pay as you go
+              </label>
+              <div id="payg-item-hint" class="govuk-hint ">
+                <ul class="govuk-!-margin-top-1 govuk-!-margin-bottom-3">
+                  <li>No discount, No initial deposit</li>
+                  <li>Pay taken automatically after you cross from your debit/credit card</li>
+                </ul>
+                <!-- <a href="javascript:void(0)" role="link" class="govuk-!-margin-left-4">Know more</a> -->
+              </div>
+            </div>
+  
+            <div class="govuk-radios__item">
+              <input
+                class="govuk-radios__input"
+                id="lrds"
+                name="personal-account-type"
+                type="radio"
+                value="lrds"
+                aria-describedby="lrds-hint"
+              />
+              <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="lrds">
+                Local resident discount scheme
+              </label>
+              <div id="lrds-item-hint" class="govuk-hint">
+                <ul class="govuk-!-margin-top-1 govuk-!-margin-bottom-1">
+                  <li>Provides discount for Dartford or Thurrock residents.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button
+        type="submit"
+        class="govuk-button prsl-acct-type"
+        data-module="govuk-button"
+        role="button"
+        disabled
+      >
+      Continue
+      </button>
+    </form>
+  </div>
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

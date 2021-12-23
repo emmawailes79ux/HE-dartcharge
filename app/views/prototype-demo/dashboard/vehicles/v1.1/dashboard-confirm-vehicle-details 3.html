@@ -1,0 +1,90 @@
+{% extends "../../dashboard-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-9 app-!-divider">
+        <div class="govuk-grid-row  govuk-!-margin-bottom-4">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Vehicles</h1>
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Add vehicle</h1>
+                <!-- <div class="app-!-bottom-line"></div> -->
+                <hr>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-m govuk-!-margin-bottom-3">Confirm vehicle details</h1>
+                <div class="app-!-table-scroll">
+                    <div class="app-!-table-list-container">
+                        <div class="app-!-table-list-row app-!-table-header">
+                            <div class="app-!-table-list-cell govuk-body app-!-first-col">Registration number</div>
+                            <div class="app-!-table-list-cell govuk-body">Class</div>
+                            <div class="app-!-table-list-cell govuk-body">Make</div>
+                            <div class="app-!-table-list-cell govuk-body">Model</div>
+                            <div class="app-!-table-list-cell govuk-body">Color</div>
+                            <div class="app-!-table-list-cell govuk-body">Change</div>
+                            <div class="app-!-table-list-cell govuk-body">Remove</div>
+                        </div>
+                        <div class="app-!-table-list-row app-!-table-body">
+                            <h5 class="app-!-table-list-cell govuk-body">AB4195</h5>
+                            <h5 class="app-!-table-list-cell govuk-body">B</h5>
+                            <h5 class="app-!-table-list-cell govuk-body">AUDI</h5>
+                            <h5 class="app-!-table-list-cell govuk-body">-</h5>
+                            <h5 class="app-!-table-list-cell govuk-body">-</h5>
+                            <h5 class="app-!-table-list-cell govuk-body"><a href="/dashboard/vehicles/v1.1/edit-vehicle"
+                                    class="govuk-link">Change</a></h5>
+                            <h5 class="app-!-table-list-cell govuk-body"><a href="#" class="govuk-link">Remove</a></h5>
+                        </div>
+                        <div class="app-!-table-list-row app-!-table-body">
+                            <h5 class="app-!-table-list-cell govuk-body">AN23CHA</h5>
+                            <h5 class="app-!-table-list-cell govuk-body">A</h5>
+                            <h5 class="app-!-table-list-cell govuk-body">AUDI</h5>
+                            <h5 class="app-!-table-list-cell govuk-body">TT FSI</h5>
+                            <h5 class="app-!-table-list-cell govuk-body">Black</h5>
+                            <h5 class="app-!-table-list-cell govuk-body"><a href="/dashboard/vehicles/v1.1/edit-vehicle"
+                                    class="govuk-link">Change</a></h5>
+                            <h5 class="app-!-table-list-cell govuk-body"><a href="#" class="govuk-link">Remove</a></h5>
+                        </div>
+
+
+                        <!-- <div class="app-!-table-list-row app-!-table-body">
+                        <h5 class="app-!-table-list-cell govuk-body-s"><a href="/dashboard/vehicles/view"
+                            class="govuk-link">ASIE843</a></h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">B</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">BMW</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">550</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">Red</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">Standard</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s">18 Sep 2021</h5>
+                        <h5 class="app-!-table-list-cell govuk-body-s govuk-!-padding-left-4">
+                          <div class="govuk-checkboxes--small app-!-table-remove-check">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
+                                value="DfT">
+                              <label class="govuk-label govuk-checkboxes__label" for="organisation-4"></label>
+                            </div>
+                          </div>
+                        </h5>
+                      </div> -->
+                    </div>
+                </div>
+                <div class="govuk-!-margin-top-6">
+                    <button type="button" class="govuk-button vehicle-confirm" data-module="govuk-button" role="button"
+                        aria-label="confirm">Confirm</button>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    {% include "./dashboard-vehicle-info.html" %}
+</div>
+</div>
+{% endblock %}

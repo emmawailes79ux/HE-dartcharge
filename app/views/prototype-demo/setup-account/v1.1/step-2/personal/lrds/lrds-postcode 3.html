@@ -1,0 +1,40 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../../../setup-acct-head-container.html" %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Local resident discount scheme (LRDS)</h3>
+      </div>
+
+      <!-- <div class="govuk-grid-column-one-third govuk-!-padding-top-1">
+        <a class="govuk-link govuk-body govuk-link--no-visited-state" href="../select-account"> Change account type </a>
+      </div> -->
+    
+    </div>
+    
+    <div class="govuk-!-padding-right-9">
+        <p class="govuk-body">Enter your postcode to check your address is eligible for LRDS</p>
+        
+        <div class="govuk-form-group ">
+            <label class="govuk-label govuk-!-font-weight-bold" for="postcode_number">Postcode</label>
+            <input class="govuk-input govuk-input--width-5" id="postcode_number" name="postcode_number" value="DA1 DR0"
+              type="text" />
+          </div>
+        <button
+            class="govuk-button lrds-address"
+            data-module="govuk-button"
+            role="button"
+            >
+            Find address
+        </button>
+    </div>
+    
+    
+{% include "../../../setup-acct-bottom-container.html" %}
+{% endblock %}

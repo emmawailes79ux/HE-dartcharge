@@ -1,0 +1,59 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Confirm your payment details</h3>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Card number</th>
+              <th scope="col" class="govuk-table__cell govuk-table__cell--numeric">0000 0000 0000 0000</th>
+              <th scope="col" class="govuk-table__cell govuk-table__cell--numeric"> <a class="govuk-link" href="#">Change</a> </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Expiry date</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">12/25</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="#">Change</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Name on card</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">John Doe</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="#">Change</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Postcode</th>
+              <td class="govuk-table__cell govuk-table__cell--numeric">BR8 7PE</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="#">Change</a></td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <div class="govuk-inset-text govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-top-0 govuk-!-margin-bottom-4">
+          <h3 class="govuk-body-xl govuk-!-margin-top-0 govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">Payment amount</h3>
+          <h1 id="chargeAmount" class="govuk-body-xl govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0 govuk-!-margin-top-0">£10.00</h1>
+        </div>
+  
+      <button
+        class="govuk-button payment_done"
+        data-module="govuk-button"
+        role="button"
+      >
+      Pay now
+      </button>
+      </div>
+
+      
+    </div>
+    
+    
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "../setup-acct-head-container.html" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Upload vehicle details</h1>
+   
+
+    <table class="govuk-table">
+
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <td scope="col" class="govuk-table__header">Registration number</td>
+                <td scope="col" class="govuk-table__header">Class</td>
+                <td class="govuk-table__header">Make</td>
+                <td class="govuk-table__header">Model</td>
+                <td class="govuk-table__header">Colour</td>
+                <td class="govuk-table__header"></td>
+                <td class="govuk-table__header"><td>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">NA62ROP</td>
+                <td class="govuk-table__cell">B</td>
+                <td class="govuk-table__cell">AUDI</td>
+                <td class="govuk-table__cell">X5</td>
+                <td class="govuk-table__cell">White</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Remove</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">LO63NRO</td>
+                <td class="govuk-table__cell">A</td>
+                <td class="govuk-table__cell">BMW</td>
+                <td class="govuk-table__cell">550</td>
+                <td class="govuk-table__cell">White</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Remove</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">MN62NRO</td>
+                <td class="govuk-table__cell">B </td>
+                <td class="govuk-table__cell">BMW</td>
+                <td class="govuk-table__cell">350</td>
+                <td class="govuk-table__cell">Blue</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Remove</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">LO62NRO</td>
+                <td class="govuk-table__cell">B</td>
+                <td class="govuk-table__cell">BMW</td>
+                <td class="govuk-table__cell">X5</td>
+                <td class="govuk-table__cell">White</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Remove</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">GJ71KRO</td>
+                <td class="govuk-table__cell">B</td>
+                <td class="govuk-table__cell">AUDI</td>
+                <td class="govuk-table__cell">450</td>
+                <td class="govuk-table__cell">Yellow</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Remove</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">LO6ANBG</td>
+                <td class="govuk-table__cell">B</td>
+                <td class="govuk-table__cell">BMW</td>
+                <td class="govuk-table__cell">550</td>
+                <td class="govuk-table__cell">White</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Remove</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">CK16NRH</td>
+                <td class="govuk-table__cell">B</td>
+                <td class="govuk-table__cell">AUDI</td>
+                <td class="govuk-table__cell">X5</td>
+                <td class="govuk-table__cell">Red</td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a></td>
+                <td class="govuk-table__cell"><a href="#" class="govuk-link">Remove</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+   
+    
+    <div class="govuk-form-group govuk-button-group" style="float: left;">
+      <button class="govuk-button add_vehicle" data-module="govuk-button" role="button" aria-label="Confirm a vehicle"
+        >Confirm</button>
+       
+    </div>
+  </div>
+</div>
+
+{% include "../setup-acct-bottom-container.html" %}
+{% endblock %}

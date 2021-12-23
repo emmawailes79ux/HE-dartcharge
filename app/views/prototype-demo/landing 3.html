@@ -1,0 +1,189 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<!-- <div class="govuk-width-container"> -->
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>  
+    <!--<div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+          <p class="govuk-body govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-2">Already have an account?
+          <a class="govuk-link govuk-link--no-visited-state govuk-!-font-weight-bold" href="javascript:void(0)" id="login-btn" data-module="govuk-button" role="button"
+            >
+            Log in
+          </a></p>
+      </div>
+    </div>-->
+    <hr class="govuk-section-break govuk-section-break--visible">
+    <a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+    <main class="govuk-main-wrapper govuk-!-padding-top-2" id="main-content">
+      
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">What would you like to do?</h1>
+
+          <div class="govuk-form-group govuk-!-margin-bottom-3">
+            <fieldset class="govuk-fieldset" aria-describedby="select-account-type">
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="make-oneoff-payment"
+                    type="radio"
+                    value="make-oneoff-payment"
+                    aria-describedby="make-oneoff-payment-hint"
+                    name="selectlink"
+                    checked="checked"
+                  />
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="make-oneoff-payment">
+                    Make a one off payment
+                  </label>
+                  <div class="govuk-body-s govuk-!-padding-left-3">
+                    <p>Make a payment for recent or future crossings without creating an account. This is not for paying a penalty charge notice.</p>
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="create-account"
+                    type="radio"
+                    value="create-account"
+                    aria-describedby="create-account-hint"
+                    name="selectlink"
+                  />
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="create-account">
+                   Create or manage an account
+                  </label>
+                  <div class="govuk-body-s govuk-!-padding-left-3 govuk-!-margin-top-1">
+                    <p style="margin: -10px 0 0 0;">Account types include:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>pre-pay (discounted crossings for personal and business use)</li>
+            <li>pay as you go (never forget to pay for a crossing)</li>
+            <li>discount scheme for residents of Dartford and Thurrock</li>
+          </ul>
+                  </div>
+                </div>
+      
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="pcn"
+                    type="radio"
+                    value="pcn"
+                    aria-describedby="pcn-hint"
+                    name="selectlink"
+                  />
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="pcn">
+                    Resolve a penalty charge notice (PCN)
+                  </label>
+                  <div class="govuk-body-s govuk-!-padding-left-3">
+                    <p>Pay or challenge a penalty charge notice.</p>
+                  </div>
+                </div>
+      
+                
+
+                <!--<div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="paid-crossing"
+                    type="radio"
+                    value="paid-crossing"
+                    aria-describedby="paid-crossing-hint"
+                    name="selectlink"
+                  />
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="paid-crossing">
+                    Check my vehicle
+                  </label>
+                  <div id="lrds-item-hint" class="govuk-body-s govuk-!-padding-left-3">
+                    <p>Find out the charge for a vehicle and check recent payments.</p>
+                  </div>
+                </div> -->
+
+                <!-- <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="login"
+                    type="radio"
+                    value="login"
+                    aria-describedby="login-hint"
+                    name="selectlink"
+                  />
+                  <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="login">
+                   Log in
+                  </label>
+                  <div class="govuk-body-s govuk-!-padding-left-3">
+                    <p>Log in to Dart Charge</p>
+                  </div>
+                </div> -->
+
+              </div>
+            </fieldset>
+          </div>
+            <button
+            class="govuk-button landingNxtBtn"
+            data-module="govuk-button"
+            role="button"
+          >
+          Continue
+          </button>
+
+
+
+        </div>
+      </div>
+        
+      <!---table start-->
+      <!-- <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <table class="govuk-table govuk-!-margin-top-5 govuk-!-margin-bottom-0" role="table">
+            <caption class="govuk-table__caption govuk-table__caption--m">
+              Charges (6am - 10pm)
+            </caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                {% for head in landingData.chargeListHead %}
+                <th scope="col" class="govuk-table__header">
+                  {{ head }}
+                </th> 
+                {% endfor %} -->
+                <!-- <th scope="col" class="govuk-table__header" *ngFor="let head of chargeListHead">
+                  {{ head }}
+                </th> -->
+              <!-- </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+              {% for list in landingData.chargeList %}
+                <tr class="govuk-table__row" >
+                  <td class="govuk-table__cell">{{ list.title }}</td>
+                  <td class="govuk-table__cell">{{ list.oneOff }}</td>
+                  <td class="govuk-table__cell">{{ list.payG }}</td>
+                  <td class="govuk-table__cell">{{ list.prePay }}</td>
+                </tr> 
+                {% endfor %}
+      
+            </tbody>
+          </table>
+        </div>
+      </div> -->
+  
+      <!----table end-->
+    </main>
+  <!-- </div> -->
+
+{% endblock %}

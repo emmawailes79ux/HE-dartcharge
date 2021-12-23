@@ -1,0 +1,65 @@
+{% extends "../dashboard-layout.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Account</h1>
+                <div class="app-!-dashboard-card-container">
+                    <div class="app-!-dashboard-card-heading">
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2 app-!-pull-left">Payment method</p>
+                        <a href="add-new-card" style="float:right" class="govuk-link govuk-!-margin-bottom-2">Add new debit/credit card</a>
+                    </div>
+                </div>
+                <div class="app-!-bottom-line"></div>
+            </div>
+            <div class="govuk-grid-column-full">
+              <div class="govuk-heading-m">Default card</div>
+              <div class="govuk-body">This card will be used for crossing payments</div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                    <div class="govuk-inset-text">
+                        <table class="govuk-table">
+                            <thead class="govuk-table__head">
+                              <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Type</th>
+                                <th scope="col" class="govuk-table__header">American express</th>
+                              </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">Card number</th>
+                                <td class="govuk-table__cell">****7890</td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">Expiry date</th>
+                                <td class="govuk-table__cell">2021/07</td>
+                              </tr>
+                              <tr class="govuk-table__row">
+                                <th scope="row" class="govuk-table__header">Name on card</th>
+                                <td class="govuk-table__cell">John Doe</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <a href="#" class="govuk-link govuk-!-margin-right-7">Edit card details</a>
+                          <a href="#" class="govuk-link">Delete card</a>
+                    </div>
+                </div>
+            </div>
+              
+            </div>
+            
+        </div>
+        
+    </div>
+    {% include "../account-setting-info.html" %}
+
+</div>
+
+
+{% endblock %}

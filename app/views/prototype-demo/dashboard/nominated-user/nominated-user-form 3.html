@@ -1,0 +1,87 @@
+{% extends "../dashboard-layout.html" %}
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters app-!-divider">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Profile</h1>
+                <div class="dashboard-card-container">
+                    <div class="dashboard-card-heading">
+                        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2 pull-left">Nominated contact</p>
+                    </div>
+                </div>
+                <div class="app-!-bottom-line"></div>
+            </div>
+            <div class="govuk-grid-column-full">
+                <div class="govuk-form-group govuk-!-margin-bottom-4">
+                    <label class="govuk-label" for="full-name">Full name</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="full-name" name="full-name" type="text"
+                        aria-required="true" aria-label="Enter full name"  />
+                </div>
+                <div class="govuk-form-group govuk-!-margin-bottom-4">
+                    <label class="govuk-label" for="email-id">Email ID</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="email-id" name="email-id" type="text"
+                        aria-required="true" aria-label="Enter email ID"  />
+                </div>
+                <div class="govuk-form-group govuk-!-margin-bottom-4">
+                    <label class="govuk-label" for="mobile-number">Mobile number (optional)</label>
+                    <input class="govuk-input govuk-!-width-one-half" id="mobile-number" name="mobile-number" type="text"
+                        aria-required="true" aria-label="Enter Mobile number (optional)"  />
+                </div>
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                        <div class="dashboard-card-heading">
+                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2 pull-left">Access rights</p>
+                        </div>
+                 
+                      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="account-data" name="account-data" type="checkbox" value="carcasses">
+                          <label class="govuk-label govuk-checkboxes__label" for="account-data">
+                            Account Data - The nominated contact can amend account data
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="payment-method" name="waste" type="checkbox" value="mines">
+                          <label class="govuk-label govuk-checkboxes__label" for="payment-method">
+                            Payment Method - The nominated contact can update or change payment methods
+                          </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                          <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                            Viewing Information - The nominated contact can read only access to account information
+                          </label>
+                        </div>
+                      </div>
+                  
+                    </fieldset>
+                  </div>
+                  <div class="govuk-button-group">
+                    <button class="govuk-button nominated-user-form" data-module="govuk-button">
+                      Invite
+                      </button>
+                      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Cancel
+                        </button>
+                  </div>
+
+                 
+
+
+            </div>
+            
+        </div>
+        
+    </div>
+    {% include "../account-setting-info.html" %}
+
+</div>
+
+
+{% endblock %}

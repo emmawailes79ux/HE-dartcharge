@@ -1,0 +1,115 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)
+        </h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-3">
+        <h1 class="govuk-heading-m   govuk-!-margin-bottom-3">Confirm your payment</h1>
+        <table class="govuk-table govuk-!-margin-bottom-1">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Quick payment</th>
+                    <td class="govuk-table__cell">
+                            PayPal </td>
+                    <td class="govuk-table__cell"><a href="javascript:void(0)">Change</a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Email address</th>
+                    <td class="govuk-table__cell"><span class="govuk-caption-m">johndoe@gmail.com</span></td>
+                    <td class="govuk-table__cell"><a href="javascript:void(0)">Change</a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    {% if data['vrm-1'] | length%}
+                    <th scope="row" class="govuk-table__header">Registration numbers
+                    </th>
+                    {%else%}
+                    <th scope="row" class="govuk-table__header">
+                       
+                    </th>
+                    {% endif %}
+                    {% if data['vrm-1'] | length%}
+                    <td class="govuk-table__cell">
+                        {% if data['vrm-2'] %}
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                   5 Vehicles
+                                </span>
+                            </summary>
+                            <div class="govuk-inset-text govuk-!-padding-0 govuk-!-margin-2">
+                                <ul>
+                                    <li>NA62ROP</li>
+                                    <li>LO63NRO</li>
+                                    <li>MN62NRO</li>
+                                    <li>LO62NRO</li>
+                                    <li>GJ71KRO</li>
+                                </ul>
+                            </div>
+                        </details>
+                        {% else %}
+                        {{data['vrm-1'][0]}}
+                        {% endif %}
+
+
+                        <!-- {% for i, vrm in data %}
+                        {% if (loop.index > 0) %}
+                        <span class="govuk-caption-l">
+                            {{data['vrm-' + loop.index][0]}}
+                        </span>
+                       
+                        {% endif %}
+                        {% endfor %} -->
+                        <!-- <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Registration numbers
+                                </span>
+                            </summary>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO63NRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">MN62NRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO62NRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">GJ71KRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p>
+                        </details> -->
+                    </td>
+                    {% else %}
+                    <td class="govuk-table__cell">
+                        5 Vehicles
+                    </td>
+                    {%endif%}
+
+                    <td class="govuk-table__cell"><a href="javascript:void(0)">Change</a>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <div role="note" aria-label="Information" class="govuk-inset-text govuk-!-margin-top-4">
+            <h1 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-1">Payment amount
+            </h1>
+            <h1 class="govuk-heading-xl"> £25.00</h1>
+        </div>
+        <button class="govuk-button pay-now govuk-!-margin-right-2" data-module="govuk-button" role="button">
+            Pay now
+        </button>
+    </div>
+
+</div>
+{% endblock %}
