@@ -5,7 +5,7 @@ if (window.console && window.console.info) {
   window.console.info("GOV.UK Prototype Kit - do not use for production");
 }
 
-window.version = 'v1.3';
+window.version = 'v1.4';
 window.setupAccountVersion = 'v1.1';
 window.vehicleManagementVer= 'v1.1';
 $(document).ready(function () {
