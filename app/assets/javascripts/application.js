@@ -62,7 +62,7 @@ $(document).ready(function () {
   });
 
   $(".create-acct").click(function () {
-    $.fn.redirectPage("create-account");
+    $.fn.redirectPage(`create-account/${setupAccountVersion}`);
   });
 
   $(".email-verification").click(function () {
@@ -175,7 +175,7 @@ $(document).ready(function () {
   });
 
   $(".touploaddoc").click(function () {
-    $.fn.redirectPage(`dashboard/vehicles/${vehicleManagementVer}/apply-lrds`);
+    $.fn.redirectPage(`dashboard/vehicles/v1.2/apply-lrds`);
   });
 
   $(".business-vehicles").click(function () {
@@ -518,7 +518,7 @@ $(".accountpaymentoptionBtn").click(() => {
 
 $("[name='card-number']").click(() => {
   $("[name='name-on-card']").val("John Doe");
-  $("[name='card-number']").val("1234 5678 9012");
+  $("[name='card-number']").val("John Doe");
   $("[name='account-number']").val("12345678");
   $("[name='month']").val("12");
   $("[name='year']").val("21");
@@ -868,13 +868,14 @@ $("[id='plateSubmit']").mouseover(() => {
   $("[id='vrn']").val("LO62 NRO");
 });
 
-// $('.number-of-vehicles').click(() => {
-//   let radioVal = $("[name='no-of-vehicles']:checked").val();
-//   console.log(radioVal);
-//   if (radioVal === "5") {
+$(".resendpassword").click(() => {
+  let radioVal = $("[name='selectlink']:checked").val();
+  if (radioVal === "emailmessage") {
+      $.fn.redirectPage("email-password");
+  } else if (radioVal === "textmessage") {
+      $.fn.redirectPage("text-password");
+  } else if (radioVal === "postmessage") {
+      $.fn.redirectPage("post-password");
+  }
+});
 
-//     $.fn.redirectPage(`create-account/${setupAccountVersion}/step-3/vehicle-register`);
-//   } else if (radioVal === "10") {
-//     $.fn.redirectPage("one-off-payment/${version}/bulk-upload");
-//   }
-// })

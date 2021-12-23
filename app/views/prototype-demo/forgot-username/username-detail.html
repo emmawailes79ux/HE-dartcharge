@@ -1,0 +1,49 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-6">
+        Forgot username
+      </h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">
+          Enter your details
+      </h2>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="account-number"> Account number </label>
+       <input
+          class="govuk-input govuk-input--width-20"
+          id="account-number"
+          name="account-number"
+          type="text"
+          aria-required="true"
+        />
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="postcode"> Postcode </label>
+        <input
+          class="govuk-input govuk-input--width-20"
+          id="postcode"
+          name="postcode"
+          type="text"
+          aria-required="true"
+        />
+      </div>
+        
+      <button onClick="location.href='./confirm-user'" data-module="govuk-button" class="govuk-button" value="Next" type="submit" role="button"
+      aria-label="Next">Next</button>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}
