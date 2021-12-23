@@ -1,0 +1,177 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="/home" style="cursor: pointer;" class="govuk-back-link">Home</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-padding-top-5">
+        <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+                Payment successful
+            </h1>
+            <div class="govuk-panel__body">
+                Your payment receipt number is<br><strong>HDJ2123F</strong>
+            </div>
+        </div>
+        <p>We have sent a confirmation email to johndoe@gmail.com</p>
+        <table class="govuk-table govuk-!-margin-bottom-2">
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Date</th>
+                    <td class="govuk-table__cell">26 Aug 2021</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Amount</th>
+                    <td class="govuk-table__cell">£25.00</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    {% if data['vrm-1'] | length%}
+                    <th scope="row" class="govuk-table__header">Registration numbers</th>
+                    {%else%}
+                    <th scope="row" class="govuk-table__header">
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Registration numbers
+                                </span>
+                            </summary>
+                            <!-- <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">NA62ROP</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO63NRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">MN62NRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO62NRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">GJ71KRO</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">LO6ANBG</p>
+                            <p class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-left-4">CK16NRH</p> -->
+                        </details>
+                    </th>
+                    {% endif %}
+                    {% if data['vrm-1'] | length%}
+                    <td class="govuk-table__cell">
+                        {% if data['vrm-2'] %}
+                        <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                   5 Vehicles
+                                </span>
+                            </summary>
+                            <div class="govuk-inset-text govuk-!-padding-0 govuk-!-margin-2">
+                                <ul>
+                                    <li>NA62ROP</li>
+                                    <li>LO63NRO</li>
+                                    <li>MN62NRO</li>
+                                    <li>LO62NRO</li>
+                                    <li>GJ71KRO</li>
+                                </ul>
+                            </div>
+                        </details>
+                        {% else %}
+                        {{data['vrm-1'][0]}}
+                        {% endif %}
+                        <!-- {% for i, vrm in data %}
+                        {% if (loop.index > 0) %}
+                        <span class="govuk-caption-l">
+                            {{data['vrm-' + loop.index][0]}}
+                        </span>
+                        {% endif %}
+                        {% endfor %} -->
+                    </td>
+                    {% else %}
+                    <td class="govuk-table__cell">
+                        5 Vehicles
+                    </td>
+                    {%endif%}
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a class="govuk-link" href="#" aria-label="Print or download a PDF copy of your payment receipt">Print or
+            download a PDF copy of your payment receipt</a>
+
+        {% if data['vrm-1'][0] === 'LO61 NRO' or data['vrm-1'][0] === 'LO62 NRO' and data['vrm-2'] === undefined %}
+
+        <!-- <div class="govuk-warning-text govuk-!-margin-top-7">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                {{data['vrm-1'][0]}} has 1 Dartford Crossing charge, which missed the payment deadline, check if there is a penalty assigned to it.
+            </strong>
+        </div> -->
+        <!-- <p class="govuk-body">Do not ignore your PCN. Resolve a PCN before the due date to prevent any addiotional
+            changes</p> -->
+        <!-- <div class="govuk-button-group govuk-!-margin-top-3">
+            <button onClick="location.href='https://dartford-crossing-charge.herokuapp.com/demo/flow1'"
+                class="govuk-button" aria-label="Next">Check for penalty</button>
+        </div> -->
+
+        {% else %}
+        
+        
+        {% if data['vrm-2'] %}
+
+        <p class="govuk-!-margin-top-7 govuk-!-margin-bottom-2">You can create an account based on the details already provided.</p>
+
+        <div class="govuk-heading-m">What would you like to do next?</div>
+        <div class="govuk-radios govuk-!-margin-bottom-3">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="create-account" name="successnextoption" type="radio"
+                    value="create-account">
+                <label class="govuk-label govuk-radios__label" for="create-account">
+                    Create an account with the details already provided.
+                </label>
+            </div>
+            <!-- <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="vrm-notifi" name="successnextoption" type="radio"
+                    value="vrm-notifi">
+                <label class="govuk-label govuk-radios__label" for="vrm-notifi">
+                    Receive notifications of crossings made by the registered vehicle.
+                </label>
+            </div> -->
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="oneoff-pay" name="successnextoption" type="radio"
+                    value="oneoff-pay">
+                <label class="govuk-label govuk-radios__label" for="oneoff-pay">
+                    Make another payment
+                </label>
+            </div>
+        </div>
+        
+        <div class="govuk-button-group govuk-!-margin-top-5">
+            
+            <input data-module="govuk-button" class="govuk-button successNxt govuk-!-margin-bottom-0" value="Continue" type="submit" role="button"
+                    aria-label="Next" />
+            <!-- <button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" data-module="govuk-button" 
+                    onclick="location.href='/home'" >
+                       Go to home page
+                      </button> -->
+        </div>
+
+        {% else %}
+        {{data['vrm-1'][0]}}
+        {% endif %}
+        
+        
+        <!-- <p class="govuk-body govuk-!-margin-top-7">You can <a href="javascript:void(0)">make another payment</a> or
+            close the window to
+            finish.</p> -->
+        {% if data['vrm-1'] | length%}
+        <div class="govuk-button-group successNxt govuk-!-margin-top-3">
+            <!-- <a href="#" class="govuk-button" aria-label="Next">Make another payment</a> -->
+        </div>
+        {%endif%}
+        {% endif %}
+
+
+    </div>
+</div>
+
+{% endblock %}

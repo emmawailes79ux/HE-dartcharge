@@ -1,0 +1,120 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "../one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-caption-xl govuk-!-margin-bottom-1 govuk-!-margin-top-6">
+        Create an account step 2 of 4
+      </h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+          Select an account type
+      </h2>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Personal Pre-pay account</h3>
+            <p class="govuk-body">
+                In order to set up your Dart Charge account, please provide
+                <br />
+                 the below information.
+              </p>
+         
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="full-name"> Full name </label>
+                    <input
+                      class="govuk-input govuk-!-width-one-half"
+                      id="full-name"
+                      name="full-name"
+                      type="text"
+                      aria-required="true" value="John Doe"
+                    />
+                  </div>
+          
+            
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="mobile-no"> Mobile telephone number (optional) </label>
+                    <input
+                      class="govuk-input govuk-!-width-one-half"
+                      id="mobile-no"
+                      name="mobile-no"
+                      type="number"
+                      aria-required="true"
+                    />
+                  </div>
+                 
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="landline-no"> Landline telephone number (optional) </label>
+                    <input
+                      class="govuk-input govuk-!-width-one-half"
+                      id="landline-no"
+                      name="landline-no"
+                      type="number"
+                      aria-required="true"
+                    />
+                  </div>
+            
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="email"> Email </label>
+                    <input
+                      class="govuk-input govuk-!-width-one-half"
+                      id="email"
+                      name="email"
+                      type="email"
+                      aria-required="true" value="johndoe@gmail.com"
+                    />
+                  </div>
+            
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="password"> Create password </label>
+                    <!-- <label class="govuk-caption-m govuk-!-margin-bottom-1" > Password constraints placeholder</label> -->
+                    <input
+                      class="govuk-input govuk-!-width-one-half"
+                      id="password"
+                      name="password"
+                      type="password"
+                      aria-required="true"
+                    />
+                  </div>
+            
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="password-1"> Confirm password </label>
+                    <input
+                      class="govuk-input govuk-!-width-one-half"
+                      id="password-1"
+                      name="password-1"
+                      type="password-1"
+                      aria-required="true"
+                    />
+                  </div>
+                </fieldset>
+              </div>
+              
+              <a href="initial-pay"
+                class="govuk-button"
+                data-module="govuk-button"
+                role="button"
+                aria-label="Continue"
+              >
+              Continue
+            </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

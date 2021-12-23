@@ -1,0 +1,181 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds error-summary" style="display: none; margin-bottom:-60px">
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+      data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#">Enter a valid email address</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-full govuk-!-margin-top-6">
+    <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)
+    </h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h5 class="govuk-heading-m"> Registration number: {{data['vrn']}}</h5>
+    {% if (data['vrm-1'][0] === 'LO61 NRO') %}
+    <div class="govuk-inset-text govuk-!-margin-top-0 ">
+      <p class="govuk-body"><b>{{data['vrm-1'][0]}}</b> has 1 unpaid Dartford Crossing charges.</p>
+    </div>
+
+    {% endif %}
+    {% if (data['vrm-1'][0] === 'LO62 NRO') %}
+    <div class="govuk-inset-text govuk-!-margin-top-0 ">
+      <p class="govuk-body"><b>{{data['vrm-1'][0]}}</b> has <b>2 unpaid</b> Dartford Crossing charges.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li class="govuk-boyd">Number of <b>payable</b> Dartford Crossing charges: <b>1</b></li>
+        <li class="govuk-boyd">Number of Dartford Crossing charges <b>missed payment deadline: 1</b></li>
+      </ul>
+    </div>
+    {% endif %}
+    {% if (data['vrm-1'][0] === 'LO63 NRO') %}
+    <div class="govuk-inset-text govuk-!-margin-top-0 ">
+      <p class="govuk-body"><b>{{data['vrm-1'][0]}}</b> has no unpaid Dartford Crossing charges.</p>
+    </div>
+    {% endif %}
+    {% if (data['vrm-1'][0] === 'LO64 NRO') %}
+    <div class="govuk-inset-text govuk-!-margin-top-0 ">
+      <p class="govuk-body"><b>{{data['vrm-1'][0]}}</b> has <b>1 unpaid</b> Dartford Crossing charges.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li class="govuk-boyd">Number of Dartford Crossing charges <b>missed payment deadline: 1</b></li>
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if (data['vrm-1'][0] == 'LO62 NRO') %}
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text govuk-!-font-weight-regular">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        We suggest you clear the payable Dartford Crossing charges first to avoid missing the payment deadline.</br>
+        You can then resolve the Dartford Crossing charges which have already missed the deadline.
+      </strong>
+    </div>
+    {% endif %}
+    {% if (data['vrm-1'][0] == 'LO64 NRO') %}
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text govuk-!-font-weight-regular">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You need resolve the Dartford Crossing charges which have already missed the deadline.
+      </strong>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if (data['vrm-1'][0] === 'LO61 NRO') or (data['vrm-1'][0] === 'LO62 NRO') or (data['vrm-1'][0] === 'LO63 NRO') %}
+    <table class="govuk-table payment-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Crossings</th>
+          <th scope="col" class="govuk-table__header">Number of trips</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        {% if (data['vrm-1'][0] === 'LO61 NRO') or (data['vrm-1'][0] === 'LO62 NRO') %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-padding-top-3">Payable crossings</th>
+          <td class="govuk-table__cell">
+            <div class="govuk-form-group select-box govuk-!-margin-bottom-0">
+              <label class="govuk-label govuk-!-margin-bottom-0" for="trips">
+                <select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">
+                  <option value="1" selected>1</option>
+                  <option value="2" >2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </label>
+            </div>
+          </td>
+          <td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3">£2.50</td>
+        </tr>
+        {% endif %}
+        {% if (data['vrm-1'][0] === 'LO63 NRO') %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-padding-top-3">Future crossings</th>
+
+          <td class="govuk-table__cell">
+            <div id="future-crossing-selectbox" class="govuk-form-group select-box govuk-!-margin-bottom-0">
+              <label class="govuk-label govuk-!-margin-bottom-0" for="trips-future-crossing">
+                <select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips-future-crossing">
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </label>
+            </div>
+          </td>
+          <td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3">
+            £2.50
+          </td>
+
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+    {% endif %}
+    {% if (data['vrm-1'][0] === 'LO61 NRO') or (data['vrm-1'][0] === 'LO62 NRO') %}
+    <div class="govuk-!-padding-bottom-5 add-future-crossings-row">
+      <a href="javascript:void(0)" class="govuk-link" role="link">Add future crossings</a>
+    </div>
+    {% endif %}
+    {% if (data['vrm-1'][0] !== 'LO64 NRO') %}
+    <div class="govuk-form-group ">
+      <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">Payment
+        amount</label>
+
+      <div class="govuk-input__wrapper govuk-grid-column-two-third">
+        <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
+        {% if (data['vrm-1'][0] === 'LO62 NRO') or (data['vrm-1'][0] === 'LO64 NRO') %}
+        <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount"
+          name="amount" value="2.50" type="number" aria-describedby="amount" spellcheck="false">
+        {% else %}
+        <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount"
+          name="amount" value="2.50" type="number" aria-describedby="amount" spellcheck="false">
+        {% endif %}
+
+      </div>
+    </div>
+    {% endif %}
+    <div class="govuk-button-group govuk-!-margin-top-6">
+      {% if (data['vrm-1'][0] !== 'LO64 NRO') %}
+      <button onClick="location.href='./pay-receipt-single'" class="govuk-button" data-module="govuk-button"
+        role="button" aria-label="paytrips">Continue</button>
+      {% else %}
+      <button onClick="location.href='https://dartford-crossing-charge.herokuapp.com/demo/flow1'" class="govuk-button"
+        data-module="govuk-button" role="button" aria-label="paytrips">Resolve</button>
+      {% endif %}
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
