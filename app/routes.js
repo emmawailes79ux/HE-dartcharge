@@ -286,7 +286,8 @@ router.post("/one-off-payment/:version/pay-crossing", function (req, res) {
   //res.redirect("confirm-vehicle-details");
   if(req.params.version === 'v1.1') {
     res.redirect("no-of-vehicles");
-  } else if(req.params.version === 'v1.2'||req.params.version==='v1.3'){
+  //} else if(req.params.version === 'v1.2'||req.params.version==='v1.3'){
+  }else if(req.params.version !== 'v1.1'){
     res.redirect("vehicle-info");
   }
 });
@@ -483,6 +484,13 @@ router.get("/one-off-payment/:version/payment-info-single", function (req, res) 
     data
   } = req.session;
   res.render(`prototype-demo/one-off-payment/${req.params.version}/payment-info-single`, data);
+});
+
+router.get("/one-off-payment/:version/payment-info-future", function (req, res) {
+  const {
+    data
+  } = req.session;
+  res.render(`prototype-demo/one-off-payment/${req.params.version}/payment-info-future`, data);
 });
 
 router.get("/one-off-payment/:version/payment-info-multiple", function (req, res) {
