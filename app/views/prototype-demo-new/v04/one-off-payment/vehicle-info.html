@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)
+        </h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+         <table class="govuk-table ">
+            <caption class="govuk-table__caption govuk-table__caption--m">Your vehicle</caption>
+
+            <tr class="govuk-table__row">
+                <td scope="col" class="govuk-table__header govuk-body ">Registration number</td>
+                <td class="govuk-table__cell  govuk-body "><b>{{data['vrm-1'][0]}}</b></td>
+                <!-- <td class="govuk-table__cell  govuk-body "> </td> -->
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td scope="col" class="govuk-table__header govuk-body ">Class</td>
+                <td class="govuk-table__cell  govuk-body ">B</td>
+                <!-- <td class="govuk-table__cell  govuk-body "> <a href="javascript:void(0)" class="govuk-link"
+                        area-role="link">Change</a></td> -->
+            </tr>
+            <tr class="govuk-table__row">
+                <td scope="col" class="govuk-table__header govuk-body ">Make</td>
+                <td class="govuk-table__cell  govuk-body ">Audi</td>
+                <!-- <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
+                        area-role="link">Change</a></td> -->
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td scope="col" class="govuk-table__header govuk-body ">Model</td>
+                <td class="govuk-table__cell  govuk-body ">RS4</td>
+                <!-- <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
+                        area-role="link">Change</a></td> -->
+            </tr>
+
+            <tr class="govuk-table__row">
+                <td scope="col" class="govuk-table__header govuk-body ">Colour</td>
+                <td class="govuk-table__cell  govuk-body ">Black</td>
+                <!-- <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
+                        area-role="link">Change</a></td> -->
+            </tr>
+            <tr class="govuk-table__row">
+                <td scope="col" class="govuk-table__header govuk-body ">Country of registration</td>
+                <td class="govuk-table__cell  govuk-body ">Non-UK
+                </td>
+                <!-- <td class="govuk-table__cell  govuk-body "><a href="javascript:void(0)" class="govuk-link"
+                        area-role="link">Change</a></td> -->
+            </tr>
+        </table> 
+
+        <!-- <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                   
+                    <th scope="col" class="govuk-table__header">Registration number</th>
+                    <th scope="col" class="govuk-table__header">Class</th>
+                    <th scope="col" class="govuk-table__header">Make</th>
+                    <th scope="col" class="govuk-table__header">Model</th>
+                    <th scope="col" class="govuk-table__header">Colour</th>
+                    <th scope="col" class="govuk-table__header">Change </th>
+                    <th scope="col" class="govuk-table__header">Remove </th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                   
+                    <td class="govuk-table__cell">{{data['vrm-1'][0]}}</td>
+                    <td class="govuk-table__cell">B</td>
+                    <td class="govuk-table__cell">Audi</td>
+                    <td class="govuk-table__cell">RS4</td>
+                    <td class="govuk-table__cell">Black</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state"> </a>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Remove</a>
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table> -->
+
+        {% if data['vrm-1'][0] === 'LO63 NRO' %}
+        <div class="govuk-inset-text">
+            You vehicle is exempt from Dartford Crossing charges.<br />
+            Do you still want to make a payment?
+        </div>
+        {% endif %}
+
+        <div class="govuk-form-group govuk-button-group">
+            <button onClick="location.href='./payment-info-single'" class="govuk-button" data-module="govuk-button"
+                role="button" aria-label="Confirm a vehicle">Confirm</button>
+            <button class="govuk-button govuk-button--secondary reject_vehicle" data-module="govuk-button" role="button"
+                aria-label="Not my a vehicle">This is not your vehicle</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container app-width-container">
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
+
+<div class="govuk-width-container">
+    <a href="flow4" class="govuk-back-link">Back</a>
+  
+    <main class="govuk-main-wrapper">
+  
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            
+          <h1 class="govuk-heading-xl">Pay a Penalty Charge Notice (PCN)</h1>
+            <h2 class="govuk-heading-l">Penalty Charge Notice Details</h2>
+          <p class="govuk-body">Please check details to confirm they’re correct</p>
+          <table class="govuk-table">  
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">PCN number</th>
+                <td class="govuk-table__cell">IB09383639</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Registration number</th>
+                <td class="govuk-table__cell">LO69 NRO</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Make</th>
+                <td class="govuk-table__cell">Audi</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Model</th>
+                <td class="govuk-table__cell">TT FSI</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Contravention time and date</th>
+                <td class="govuk-table__cell">07:56 on 2 August 2019</td>
+              </tr>                                          
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Location</th>
+                <td class="govuk-table__cell">The A282 Trunk Road Dartford
+                  Crossing Southbound Bridge</td>
+              </tr>                                          
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Charge</th>
+                <td class="govuk-table__cell"> <b>£35</b> (if paid before 20 Aug 2019)
+                  rising to <b>£70</b> if paid after</td>
+              </tr>                                          
+            </tbody>
+          </table>
+
+          <h1 class="govuk-heading-m">Payment amount:  £35</h1>
+          <button class="govuk-button" data-module="govuk-button">
+            Proceed to payment
+          </button>
+          <h1 class="govuk-heading-m">Challenge the PCN</h1>
+
+          <p>If you think the PCN(s) have been issued incorrectly, you can challenge/ appeal it by
+            making a representation online.</p>
+            <p><a class="govuk-link" href="#">See on which grounds you can make a representation</a></p>
+          
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Challenge PCN
+          </button>
+          
+         
+
+
+                  <p><b>If we accept your representation,</b> we will send you written confirmation that you are no
+                    longer liable for the PCN.</p>
+                  <p><b>If we reject your representation,</b>  we will send you a notice of rejection which will tell you
+                    what you should do next.</p>
+        </div>  
+        <div class="govuk-grid-column-one-third">
+          
+        </div>
+      </div>
+  
+    </main>
+  </div>
+
+{% endblock %}

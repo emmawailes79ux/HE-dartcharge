@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Example - Passing data
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Step 3 - Your vehicle</h1>
+        <fieldset class="govuk-fieldset">
+          <h1 class="govuk-heading-l">Is this your vehicle?</h1>
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            </legend>
+      <form action="email" method="post" class="form">
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Registration number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              MJ71 UNF
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Car
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Make
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Peugeot
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Colour
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Grey
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <div id="changed-name-hint" class="govuk-hint">
+            </div>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="yes-vehicle-confirm" name="yes-vehicle-confirm" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="yes-vehicle-confirm">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no-vehicle-confirm" name="no-vehicle-confirm" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="no-vehicle-confirm">
+                  No, search again
+                </label>
+              </div>
+            </div>
+
+  </fieldset>
+</div>
+      <!--  <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="vehicle-type-car" name="vehicle-type" type="radio" value="Car" {{ checked("vehicle-type", "Car") }}>
+                <label class="govuk-label govuk-radios__label" for="vehicle-type-car">
+                  Car (with or without trailers),  Motorhomes, Passenger vans, Buses with less than 8 seats
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="vehicle-type-lorry" name="vehicle-type" type="radio" value="Lorry" {{ checked("vehicle-type", "Lorry") }}>
+                <label class="govuk-label govuk-radios__label" for="vehicle-type-lorry">
+                  Goods vans, including car-based vans without side windows behind the driver.
+                  Vans / buses with more than 8 seats in addition to the driver's seat.
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="vehicle-type-motorcycle" name="vehicle-type" type="radio" value="Motorcycle" {{ checked("vehicle-type", "Motorcycle") }}>
+                <label class="govuk-label govuk-radios__label" for="vehicle-type-motorcycle">
+                  Motorcycle (2 or 3 wheels) or Quadricycle/Quad bikes
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>-->
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verify your email
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="account-confirmation" method="post">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Step 4 - your account</h1>
+      <h1 class="govuk-heading-l">Check your mobile phone</h1>
+      {{ govukInsetText({
+
+        html: "<p class='govuk-body'>We have sent a text message to <br>0789912345</p>"
+      }) }}
+
+      <p>The text message contains a 4 digit security code</p>
+
+      <p>Your text message might take a few minutes to arrive.</p>
+
+        <p>The code will expire after 15 minutes.</p>
+        <form action="step4-code" method="post">
+
+            <div class="govuk-form-group govuk-!-margin-top-6">
+
+              <label class="govuk-label" for="">
+                Enter the 4 digit security code
+              </label>
+        <input class="govuk-input govuk-input--width-4" id="security-code" name="security-code" type="text">
+        </div>
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+<!--<button class="govuk-button" data-module="govuk-button">Verify email</button>
+-->
+  <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I don't have a code
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Request a new code if:
+          <br>the code is not working or has expired, or you did not receive online
+          <br>you want to use a different mobile number
+          <p class='govuk-body'><a href='#'>Request a new code</a></p>
+
+        </div>
+      </details>
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

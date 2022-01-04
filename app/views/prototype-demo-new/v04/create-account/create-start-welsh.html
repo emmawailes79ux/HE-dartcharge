@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Creu eich cyfrif
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">yn ôl</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Creu cyfrif Croesi Dartford neu fewngofnodi</h1>
+
+      <form class="form" action="/step1-details" method="post">
+        <p class="govuk-body">Bydd angen cyfeiriad e-bost a rhif ffôn symudol y DU arnoch chi.<br>Bydd yn cymryd tua 5 munud.</p>
+
+        <p class="govuk-body">Mae'r gwasanaeth ar-lein hefyd ar gael <a class="govuk-link" href="create-start">yn Saesneg</a>.</p>
+
+        <button class="govuk-button" data-module="govuk-button">Creu eich cyfrif</button>
+
+        <p class='govuk-body'> Os oes gennych gyfrif eisoes gallwch <a href='#'>mewngofnodi</a></p>
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

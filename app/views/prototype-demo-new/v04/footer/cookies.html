@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cookies - Manage your Kickstart Scheme
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">How we use cookies</h1>
+    <p class="govuk-body">A cookie is a small file which is stored on your device for a short time to make this service work.</p>
+
+    <p class="govuk-body">We use cookies that are:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>essential - these make the service work, for example by remembering your answers to certain questions</li>
+      <li>optional - these will not stop the service from working, but will give us information to help us make it better</li>
+    </ul>
+
+    <p class="govuk-body">We will not:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>use any essential cookies until you use the service</li>
+      <li>use any optional cookies unless you tell us we can</li>
+      <li>be able to identify you through using cookies</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">Optional cookie settings</h2>
+    <p class="govuk-body">You can change the settings on this page at any time.</p>
+    <h3 class="govuk-heading-s">Analytics cookies</h3>
+
+    <p class="govuk-body">We use Google Analytics to get information about how you use this service, which helps us to make it better.</p>
+    <form method="get" action="privacy-policy" id="change-cookies-form">
+      <div class="govuk-form-group" id="change-cookies">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend"><b>Can we use optional analytics cookies to help us improve the service?</b></legend>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yes-cookieConsent" name="cookieConsent" type="radio" value="accept" data-ga-question="Can we use cookies to help us improve the service?" data-ga-answer="Yes" checked="true">
+              <label class="govuk-label govuk-radios__label" for="yes-cookieConsent">Use optional analytics cookies</label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-cookieConsent" name="cookieConsent" type="radio" value="reject" data-ga-question="Can we use cookies to help us improve the service?" data-ga-answer="No">
+              <label class="govuk-label govuk-radios__label" for="no-cookieConsent">Do not use optional analytics cookies</label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button" id="cookieConsent-submit">
+        Save and continue
+      </button>
+      <p class="govuk-body">
+        <a class="govuk-link" href="cookie-details">Find out more about cookies on this service</a>
+      </p>
+    </form>
+  </div>
+  </div>
+
+{% endblock %}

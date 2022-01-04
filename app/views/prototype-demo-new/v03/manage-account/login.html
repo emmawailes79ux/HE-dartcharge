@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Enter your email
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="2fa-mobile" method="post">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1"></h1>
+          <fieldset class="govuk-fieldset">
+            <h1 class="govuk-heading-l">Sign into your Dart Charge account</h1>
+
+              {{ govukInsetText({
+                            html: "<p class='govuk-body'>The online service is also available in <a href='#'>Welsh (Cymraeg)</a></p>"
+                          }) }}
+
+                          {{ govukInput({
+                  label: {
+                      text: "Email address"
+                  },
+                  id: "email-address",
+                  name: "email-address",
+                  classes: "govuk-!-width-two-thirds"
+              }) }}
+
+              {{ govukInput({
+                  label: {
+                      text: "Password"
+                  },
+                  id: "password",
+                  name: "password",
+                  classes: "govuk-!-width-two-thirds",
+                  type: "password"
+              }) }}
+
+              {{ govukButton({
+                  text: "Continue"
+              }) }}
+
+              <p><a href="forgotten-password">Forgotten your password?</a></p>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

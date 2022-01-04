@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Enter your email
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="verify" method="post">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Step 4 - your account</h1>
+          <fieldset class="govuk-fieldset">
+            <h1 class="govuk-heading-l">Enter your email address</h1>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                </label>
+                <div id="email-hint" class="govuk-hint">
+                  We will use this to set up your account
+                </div>
+                <input class="govuk-input govuk-!-width-two-thirds" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+              </div>
+
+  <button class="govuk-button" data-module="govuk-button">Confirm email</button>
+  <p class='govuk-body'><a href='#'>Resend verification</a></p>
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
