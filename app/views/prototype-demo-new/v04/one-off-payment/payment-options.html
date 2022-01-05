@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+  <a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full ">
+        <div class="govuk-form-group ">
+            <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">
+              Payment amount</label>
+               
+            <div class="govuk-input__wrapper">
+                <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
+                {% if (data.vrm === 'LO62 NRO' ) or (data.vrm === 'LO64 NRO')  %} 
+                <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount" name="amount" value="2.50" type="number" aria-describedby="amount" spellcheck="false">
+                {% else %} 
+                <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount" name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false">
+              {% endif %}
+            </div>
+        </div>
+        {% include "./../../widget-payment-option.html" %}
+    </div>
+</div>
+
+{% endblock %}

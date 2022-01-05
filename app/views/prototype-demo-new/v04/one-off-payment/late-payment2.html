@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+      <!-- <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing (Dart Charge)</h1> -->
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">What would you like to do?</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row ">
+  
+    <div class="govuk-grid-column-full">
+        <div class="govuk-warning-text ">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <p class="govuk-warning-text__text govuk-!-font-size-24 govuk-!-font-weight-bold">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              <span class="warning_payment"> {{data['vrm-1']}} has 1 PCN and 2 unpaid crossings</span> 
+            </p>
+          </div>
+      <div class="govuk-form-group govuk-!-margin-top-5">
+          <div class="govuk-radios ">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="panalty" name="payment" type="radio" value="penalty">
+              <label class="govuk-label govuk-radios__label" for="penalty">
+                Resolve the penalty charge notice (PCN)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="pay" name="payment" type="radio" value="pay">
+              <label class="govuk-label govuk-radios__label" for="pay">
+                Pay for crossing
+              </label>
+            </div>
+          </div>
+      </div>
+      <div class="govuk-form-group">
+        <button class="govuk-button payment-madecross" data-module="govuk-button" role="button" aria-label="Find a vehicle" disabled>Next</button>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}    

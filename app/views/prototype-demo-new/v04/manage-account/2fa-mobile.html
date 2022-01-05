@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Enter your email
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="dashboard-summary" method="post">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1"></h1>
+          <fieldset class="govuk-fieldset">
+            <h1 class="govuk-heading-l">We have sent you a text message with your security code</h1>
+
+                        <p>It should take one minute to arrive.</p>
+
+                        <form action="job-list-empty-tabs" method="post" class="form">
+                            <div class="govuk-form-group govuk-!-margin-top-6">
+                                <label class="govuk-label" for="email-security-code">
+                                    Enter security code
+                                </label>
+                                <input class="govuk-input govuk-input--width-10" id="email-security-code" name="email-security-code" type="text">
+                            </div>
+
+              {{ govukButton({
+                  text: "Continue"
+              }) }}
+
+              <p><a href="forgotten-password">Forgotten your password?</a></p>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

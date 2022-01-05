@@ -1,0 +1,35 @@
+{% extends "layout-dashboard.html" %}
+
+{% block pageTitle %}
+  Enter your email
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% include "includes/header-summary-users.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form action="#" method="post">
+      <h1 class="govuk-heading-l">Account Summary</h1>
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your balance</h3>
+            <p class="govuk-!-font-size-48 govuk-!-font-weight-regular balance">
+              £ 14.00
+              <a href="dashboard/top-up" data-module="govuk-button" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-0">Top-up</a>
+            </p>
+  </div>
+ </div>
+ <div>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  </div>
+<!--
+  <div class="govuk-grid-column-one-quarter">
+    <p><b>Notifications </b><br> 459244993</p>
+    <p><b>Account type </b><br> Personal PrePay account</p>
+</div>
+-->
+
+
+{% endblock %}

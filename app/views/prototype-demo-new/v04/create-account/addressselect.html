@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Select your address
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="vehicle-registration" method="post">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Step 2 - Where you live</h1>
+          <fieldset class="govuk-fieldset">
+            <h1 class="govuk-heading-l">Select your address</h1>
+            <!--<div class="govuk-inset-text">
+              This postcode has been recognised as a valid Local Resident Discount Scheme (LRDS) postcode.
+            </div>-->
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+            <!--  Select your address-->
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+
+                <option value="addressfound" selected>8 addresses found</option>
+                <option value="published">1 Bark Road, Dartford, Kent DA1 1DY</option>
+                <option value="published">3 Bark Road, Dartford, Kent DA1 1DY</option>
+                <option value="published">5 Bark Road, Dartford, Kent DA1 1DY</option>
+                <option value="published">7 Bark Road, Dartford, Kent DA1 1DY</option>
+                <option value="published">9 Bark Road, Dartford, Kent DA1 1DY</option>
+                <option value="published">11 Bark Road, Dartford, Kent DA1 1DY</option>
+                <option value="published">15 Bark Road, Dartford, Kent DA1 1DY</option>
+                <option value="published">17 Bark Road, Dartford, Kent DA1 1DY</option>
+              </select>
+
+          <!--  <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code"></div>
+-->
+        </fieldset>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      <!--  <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I live outside of the UK
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Accounts are optional, but they can help you to keep uptodate with the crossing.<br> <br>You can create an account to make payments for crossings, add on discount schemes if you live in the area, manage your vehicles and update payment details so you never miss a charge.
+          </div>
+        </details>-->
+        <p class='govuk-body'><a href='addressmanual'>Enter your address manually</a></p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

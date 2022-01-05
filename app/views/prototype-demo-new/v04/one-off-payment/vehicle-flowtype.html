@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+      <!-- <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing (Dart Charge)</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1> -->
+    </div>
+</div>
+
+<div class="govuk-grid-row ">
+  
+    <div class="govuk-grid-column-full">
+      <p class="govuk-heading-l govuk-!-font-weight-bold govuk-!-margin-bottom-3">What would you like to do?
+
+        {{data["vrm"]}}
+      </p>
+      
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          <span class="govuk-!-font-weight-regular">LO62 NRO has</span> 1 PCN, 1 unpaid crossing
+        </strong>
+      </div>
+      <div class="govuk-form-group">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="crossing-info" name="vehilce-crossinfo" type="radio" value="resolve-penalty">
+              <label class="govuk-label govuk-radios__label" for="crossing-info">
+               Resolve the penalty charge
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="crossing-info" name="vehilce-crossinfo" type="radio" value="pay-crossing">
+              <label class="govuk-label govuk-radios__label" for="crossing-info">
+                Pay for crossing made or future crossing
+              </label>
+            </div>
+          </div>
+      </div>
+      <div class="govuk-form-group">
+        <button class="govuk-button vehicle-flowtype" data-module="govuk-button" role="button" aria-label="Find a vehicle" disabled>Next</button>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}    

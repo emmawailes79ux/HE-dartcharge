@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart
+            Charge)
+        </h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Make a one off payment</h1>
+    </div>
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-m govuk-!-margin-bottom-2">The charges for the crossings</h1>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>You have made since 6 am yesterday morning.</li>
+            <li>You are planning to make for next 12 months are valid for same time period.</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<form method="post">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+    </button>
+</form>
+
+
+{% endblock %}

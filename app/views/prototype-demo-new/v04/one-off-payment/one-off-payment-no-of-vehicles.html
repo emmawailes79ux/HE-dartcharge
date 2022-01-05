@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "./one-off-payment-body-head.html" %}
+
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart
+            Charge)
+        </h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <!-- <h3 class="govuk-heading-s">How many vehicles you need to pay?</h3> -->
+    </div>
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group">
+            <form action="" method="post">
+                <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item govuk-!-margin-bottom-4">
+                            <input class="govuk-radios__input" id="less-than-5" name="make-oneoff-no-of-vehicles"
+                                type="radio" value="5" aria-describedby="less-than-5" />
+                            <label class="govuk-label govuk-radios__label" for="less-than-5">
+                                Single Vehicle
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item govuk-!-margin-bottom-7">
+                            <input class="govuk-radios__input" id="more-than-5" name="make-oneoff-no-of-vehicles"
+                                type="radio" value="10" aria-describedby="more-than-5" />
+                            <label class="govuk-label govuk-radios__label" for="more-than-5">
+                                Multiple Vehicles
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button class="govuk-button make-oneoff-number-of-vehicles" data-module="govuk-button" role="button"
+                    disabled>
+                    Continue
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

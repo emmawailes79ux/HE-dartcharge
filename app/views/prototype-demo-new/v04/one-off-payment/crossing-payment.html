@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a> 
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds error-summary" style="display: none; margin-bottom:-60px">
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#">Fill all the details</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Make a one off payment</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Pay for one or more crossings</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-form-group ">
+            <label class="govuk-body-l govuk-!-font-weight-bold " for="amount">Payment amount</label>
+            
+            <div class="govuk-input__wrapper govuk-!-padding-top-1">
+            <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3" id="amount" name="amount" value="5.00" type="number" aria-describedby="amount" spellcheck="false">
+            </div>
+        
+        </div>
+        
+        <div class="govuk-form-group govuk-!-margin-bottom-2">
+            <label class="govuk-label govuk-!-font-weight-bold " for="card-number">Card number</label>
+            <span class="govuk-error-message card-number-error" style="display: none">
+                <span class="govuk-visually-hidden">Error:</span> Enter a card number
+            </span>
+            <input class="govuk-input govuk-input--width-20" id="card-number" name="card-number" type="text"
+                aria-required="true" aria-label="Enter the card number" />
+        </div>
+        <div class="govuk-!-margin-bottom-2"><img class="card-img" src="/public/images/cards.png"  width="360px" alt="payment" /></div>
+        <div class="govuk-caption-m govuk-!-margin-bottom-5">
+        Accepted credit and debit card types
+        </div>
+        <div class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
+            Expiry date
+        </div>
+        <div class="govuk-caption-m govuk-!-margin-bottom-2">
+            For example, 11/20
+        </div>
+        <div style="display: flex;">
+            <div class="govuk-form-group govuk-!-margin-bottom-2">
+                <label class="govuk-label" for="month">Month</label>
+                <input class="govuk-input govuk-input--width-2" id="month" name="month" type="text"
+                    aria-required="true" aria-label="Enter the card holder name"  />
+            </div> 
+            <div class="govuk-caption-xl govuk-!-font-weight-regular govuk-!-margin-top-5 govuk-!-margin-bottom-0 govuk-!-padding-2"> / </div>
+            <div class="govuk-form-group govuk-!-margin-bottom-2">
+                <label class="govuk-label" for="year">Year</label>
+                <input class="govuk-input govuk-input--width-4" id="year" name="year" type="text"
+                    aria-required="true" aria-label="Enter the card holder name"  />
+            </div>
+        </div>
+        
+        <div class="govuk-form-group govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+            <label class="govuk-label govuk-!-font-weight-bold " for="name-on-card">Name on card</label>
+            <span class="govuk-error-message card-name-error" style="display: none">
+                <span class="govuk-visually-hidden">Error:</span> Enter a valid name
+            </span>
+            <input class="govuk-input govuk-input--width-20" id="name-on-card" name="name-on-card" type="text"
+                aria-required="true" aria-label="Enter the card holder name" />
+        </div>
+        
+        <div class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">
+            Card security code
+        </div>
+        <div class="govuk-caption-m govuk-!-margin-bottom-2">
+            The last 3 digits on the back of the card
+        </div>
+        
+        <div style="display: flex;">
+            <div class="govuk-form-group">
+                <input class="govuk-input govuk-input--width-3" id="cvv" name="cvv" type="text"
+                    aria-required="true" aria-label="Enter the card holder name"  />
+            </div>
+            <div class="govuk-!-margin-left-3"><img src="/public/images/cvv.png"  width="64px" alt="cvv" /></div>
+        </div>
+        
+        
+        <!-- Terms and Condition Starts-->
+        <div class="govuk-form-group govuk-!-margin-bottom-2" >
+            <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-0" for="Terms and conditions">You must agree to the service terms and conditions
+            </p>
+        
+        </div>
+        <div class="govuk-form-group govuk-!-margin-bottom-1">
+            <div class="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox"
+                        value="DfT">
+                    <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                        I accept the terms and conditions
+                    </label>
+                </div>
+            </div>
+        </div>
+        <p class="govuk-!-margin-top-2 govuk-body-s"><a href="#" >Read terms and conditions</a></p>
+        <div class="govuk-button-group govuk-!-margin-top-6">
+            <button data-module="govuk-button" class="govuk-button confirm-payment-btn" value="Confirm" type="submit" role="button"
+                aria-label="Pay crossing payment">Confirm</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

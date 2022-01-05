@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full govuk-!-margin-top-6">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)
+        </h1>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">Make a one off payment</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Confirm vehicle details</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <!-- <th scope="col" class="govuk-table__header govuk-!-padding-0">
+                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="select-all" name="organisation"
+                                    type="checkbox" value="hmrc">
+                                <label class="govuk-label govuk-checkboxes__label govuk-!-padding-0" for="organisation">
+                                </label>
+                            </div>
+                        </div>
+                    </th> -->
+                    <th scope="col" class="govuk-table__header">Registration number</th>
+                    <th scope="col" class="govuk-table__header">Class</th>
+                    <th scope="col" class="govuk-table__header">Make</th>
+                    <th scope="col" class="govuk-table__header">Model</th>
+                    <th scope="col" class="govuk-table__header">Colour</th>
+                    <th scope="col" class="govuk-table__header">Country of registration</th>
+                    <th scope="col" class="govuk-table__header">Change </th>
+                    <th scope="col" class="govuk-table__header">Remove </th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                {% for i, vrm in data %}
+                {% if data['vrm-' + loop.index] %}
+                <tr class="govuk-table__row">
+                    <!-- <td scope="row" class="govuk-table__header govuk-!-padding-0">
+                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="organisation" name="organisation"
+                                    type="checkbox" value="hmrc">
+                                <label class="govuk-label govuk-checkboxes__label govuk-!-padding-0" for="organisation">
+
+                                </label>
+                            </div>
+                        </div>
+                    </td> -->
+                    <td class="govuk-table__cell">{{data['vrm-' + loop.index][0]}}</td>
+                    <td class="govuk-table__cell">B</td>
+                    <td class="govuk-table__cell">Audi</td>
+                    <td class="govuk-table__cell">RS4</td>
+                    <td class="govuk-table__cell">Black</td>
+                    <td class="govuk-table__cell">UK</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Edit</a>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Remove</a>
+
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <div class="govuk-button-group">
+            <button onClick="location.href='./payment-info-multiple'" class="govuk-button" data-module="govuk-button"
+                role="button">
+                Confirm
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button" role="button">
+                This is not your vehicle
+            </button>
+            <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button" role="button">
+                This is not your vehicle
+            </button> -->
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/alpha-banner.html" %}
+  {% include "includes/back-link.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)</h1>
+
+        <form class="form" method="post" action='landing'>
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            idPrefix: "start-choose",
+            name: "start-choose",
+            fieldset: {
+              legend: {
+                text: "What would you like to do?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "one-off-payment",
+                text: "Make a one off payment",
+                hint: {
+                  text: "Make a payment for recent or future crossings without creating an account. This is not for paying a penalty charge notice."
+                }
+              },
+              {
+                value: "create-account",
+                text: "Create an account or sign in",
+                hint: {
+                  text: "Prepay for crossings and apply for discounts with an account"
+                }
+              },
+              {
+                value: "resolve-pcn",
+                text: "Resolve a penalty charge notice (PCN)",
+                hint: {
+                  text: "Pay or challenge a penalty charge notice."
+                }
+              }
+            ]
+          }) }}
+
+<!--      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What would you like to do?
+      </h1>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="sign-in">
+            Make a one off payment
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          Make a payment for recent or future crossings without creating an account. This is not for paying a penalty charge notice.
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+        <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="sign-in-2">
+          Create an account or sign in
+        </label>
+        <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          Account types include:
+            <ul class="govuk-list govuk-list--bullet">
+              <li>pre-pay (discounted crossings for personal and business use)</li>
+              <li>pay as you go (never forget to pay for a crossing)</li>
+              <li>discount scheme for residents of Dartford and Thurrock</li>
+            </ul>
+        </div>
+      </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="sign-in-3" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+          <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="sign-in-2">
+            Resolve a penalty charge notice (PCN)
+          </label>
+          <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+            Pay or challenge a penalty charge notice.
+        </div>
+    </div>
+
+  </fieldset>
+</div>-->
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
