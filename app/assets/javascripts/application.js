@@ -268,7 +268,8 @@ $(document).ready(function () {
     } else if (radioVal === "make-oneoff-payment") {
       // $.fn.redirectPage("one-off-payment/${version}/find-vehicle");
       //$.fn.redirectPage("one-off-payment/${version}/confirm-vehicle-details");
-      $.fn.redirectPage(`one-off-payment/${version}/pay-crossing`);
+      //$.fn.redirectPage(`one-off-payment/${version}/pay-crossing`);
+      $.fn.redirectPage(`one-off-payment/v1.4a/pay-crossing`);
 
     } else if (radioVal === "login") {
 
