@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create your account
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Create a Dartford Crossing account or sign in</h1>
+
+      <form action="name" method="post">
+        <p class="govuk-body">You'll need an email address and a UK mobile phone number.<br> It will take about 5 minutes. </p>
+
+  <!-- <p class="govuk-body">The online service is also available in <a class="govuk-link" href="create-start-welsh">Welsh (Cymraeg)</a>.</p>
+-->
+
+      <p class='govuk-body'> If you already have an account you can <a href='../manage-account/login'>sign in here</a></p>
+
+
+      <button class="govuk-button" data-module="govuk-button">Create your account</button>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I need help doing this online
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">We can help you to:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>pay a recent charge</li>
+                  <li>pay future charges</li>
+                  <li>set up your account</li>
+                </ul>
+            <b>Dart Charge contact centre </b><br> Telephone 0300 300 0120 <br> Textphone 18001 0300 300 0120 <br> Everyday 8am to 8pm
+          </div>
+        </details>
+<!--
+        <h2 class="govuk-heading-m">Before you start</h2>
+
+        <p class="govuk-body">The online service is also available in <a class="govuk-link" href="create-start-welsh">Welsh (Cymraeg)</a>.</p>
+
+            <p class="govuk-body">You'll need:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a smartphone to set up your security</li>
+              <li>details of the vehicle registration (number plate)</li>
+            </ul>
+-->
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+{% include "./setup-acct-head-container.html" %}
+
+<p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-3"><span class="app-!-check-icon"></span> {{data.email}}</p>
+<p class="govuk-body govuk-!-margin-bottom-7">Your email address has been verified successfully</p>
+<button class="govuk-button confirm-verification"
+        data-module="govuk-button" role="button"
+        aria-label="Next Step">Continue</button>
+
+
+
+
+{% include "./setup-acct-bottom-container.html" %}
+{% endblock %}

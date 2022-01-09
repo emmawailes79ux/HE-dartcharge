@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Notifications
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/alpha-banner.html" %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="payment1" method="post">
+          <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Step 4 - your account</h1>
+          <h1 class="govuk-heading-l">Enter your phone number</h1>
+
+              {{ govukFieldset({
+                  legend: {
+                      html: "",
+                      classes: "govuk-fieldset__legend--l",
+                      isPageHeading: true
+                  }
+              })}}
+
+              {{ govukInput({
+                  label: {
+                      text: "We will use this to send you a security code by text message"
+                  },
+                  id: "phone-number",
+                  name: "phone-number",
+                  classes: "govuk-input--width-10"
+              }) }}
+
+              {{ govukButton({
+                  text: "Continue"
+              }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

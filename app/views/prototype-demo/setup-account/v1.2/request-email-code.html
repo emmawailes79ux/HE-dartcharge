@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Request a new code
+{% endblock %}
+
+
+{% block beforeContent %}
+{% include "includes/alpha-banner.html" %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="create-password" method="post">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1"></h1>
+      <h1 class="govuk-heading-l">Request a new code</h1>
+
+
+      <p>We'll send an email to <b>Alex.Lee@icloud.com</b>.</p>
+
+      <p>Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.</p>
+
+      <p>The code will expire after 15 minutes.</p>
+
+
+        {{ govukButton({
+        text: "Send a new code"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

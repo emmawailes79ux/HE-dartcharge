@@ -60,6 +60,13 @@ router.get("/confirm-user", function (req, res) {
 
 // Forgot credential end
 
+
+////EW  Setup-account
+
+
+
+
+
 // Setup account section routes
 router.get("/create-account/:version", function (req, res) {
   res.render(`prototype-demo/setup-account/${req.params.version}/create-account`, {

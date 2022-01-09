@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your name
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="addresslookup" method="post">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Step 1 - About you</h1>
+          <fieldset class="govuk-fieldset">
+
+            <h1 class="govuk-heading-l">Enter your full name</h1>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="name">
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" id="account-name" name="account-name" value="{{ data['account-name']}}" type="text" autocomplete="name"></div>
+
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

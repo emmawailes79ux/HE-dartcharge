@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Register a vehicle{% endblock %}
+
+
+{% block beforeContent %}
+{% include "includes/alpha-banner.html" %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Step 3 - Your vehicle</h1>
+        <fieldset class="govuk-fieldset">
+          <h1 class="govuk-heading-l">What is the registration number of the vehicle?</h1>
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            </legend>
+      <form action="confirm-vehicle" method="post" class="form">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label" for="registration-number">
+              Vehicle registration number (number plate)<br>For example, CU57ABC
+            </label>
+          </h1>
+          <input class="govuk-input govuk-input--width-10" id="registration-number" name="vehicle-registration" value="{{ data['vehicle-registration'] }}" type="text">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <p>*You can add more vehicles later in your account.</p>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Pre-pay for crossings
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/alpha-banner.html" %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="payment3a" method="post">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Step 4 - your payment</h1>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  How do you top up your account?
+                </h1>
+              </legend>
+              <div id="sign-in-hint" class="govuk-hint">
+              <!--  You’ll need an account to prove your identity and complete your Self Assessment.-->
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="sign-in">
+                  Auto top-up
+                </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    No need to remember to top-up your account. Funds are added automatically when the balance goes below the cost of 2 crossings.
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                    Manual top-ups
+                  </label>
+                  <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                    You will need to remember to add funds to your account when your balance is low.
+                  </div>
+                </div>
+              </div>
+
+                          </div>
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+  <!--<p class='govuk-body'><a href='#'>Resend verification</a></p>-->
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

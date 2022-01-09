@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Pay for crossings
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/alpha-banner.html" %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="payment2" method="post">
+        <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Step 4 - your payment</h1>
+          <fieldset class="govuk-fieldset">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                </label>
+
+
+                          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                          {{ govukRadios({
+                            idPrefix: "start-choose",
+                            name: "start-choose",
+                            fieldset: {
+                              legend: {
+                                text: "How do you want to pay for crossings?",
+                                isPageHeading: false,
+                                classes: "govuk-fieldset__legend--l"
+                              }
+                            },
+                            items: [
+                              {
+                                value: "Manual",
+                                text: "Pre pay for my crossings",
+                                hint: {
+                                  text: "Top up my account when I choose."
+                                }
+                              },
+                              {
+                                value: "Auto",
+                                text: "Pay as I cross",
+                                hint: {
+                                  text: "Debit my registered card when I make a crossing."
+                                }
+
+                              }
+                            ]
+                          }) }}
+                          </div>
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+  <!--<p class='govuk-body'><a href='#'>Resend verification</a></p>-->
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

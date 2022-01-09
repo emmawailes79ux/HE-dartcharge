@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Account Successfully Created
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Account successfully created</h1>
+        <div class="govuk-panel__body">
+          Your account reference number is<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+      <p>
+        You will need this account reference whenever you contact us.
+      </p>
+      <p>
+        We have sent you a confirmation email with your account details.
+      </p>
+    <!--  <p> <p><a href="https://www.gov.uk/.html">Sign into your account</a></p>-->
+
+  <div>
+      <h2 class="govuk-heading-s"><a href="../manage-account/login">Sign into your account</a> to:</h2>
+      <ul class="govuk-list govuk-list--bullet">
+    <!--  <li>We might contact you to ask for more information</li>-->
+      <li>Choose how you want to pay for crossings</li>
+      <li>Add more vehicles to your account</li>
+      <li>Choose how you want to receive notifications</li>
+      </ul>
+</div>
+<!--<p><a href="https://www.gov.uk/.html">What did you think of this service?</a> (takes 30 seconds)</p>
+-->
+
+    </div>
+  </div>
+
+{% endblock %}
