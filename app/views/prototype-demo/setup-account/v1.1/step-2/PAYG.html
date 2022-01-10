@@ -21,48 +21,7 @@
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="select-account-type">
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-          {{ govukRadios({
-            idPrefix: "select",
-            name: "select",
-            fieldset: {
-              legend: {
-                text: "",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            hint: {
-              text: ""
-            },
-            items: [
-              {
-                value: "prepay",
-                text: "Pre-Pay",
-                hint: {
-                  text: "Discount applied to every crossing"
-                }
-              },
-              {
-                value: "PAYG",
-                text: "Pay as you Go",
-                hint: {
-                  text: "Pay taken automatically after you cross from your debit/credit card."
-                }
-              },
-              {
-                value: "LRDS",
-                text: "Local Resident Discount Scheme",
-                hint: {
-                  text: "Provides discount for Dartford or Thurrock residents."
-                }
-              }
-            ]
-          }) }}
-
-
-      <!--    <div class="govuk-radios">
+          <div class="govuk-radios">
             <div class="govuk-radios__item">
               <input
                 class="govuk-radios__input"
@@ -83,9 +42,9 @@
                   <li>Auto top-up from your debit or credit card when your balance is low</li>
                 </ul>
                 <!-- <a href="javascript:void(0)" role="link" class="govuk-!-margin-left-4">Know more</a> -->
-        <!--      </div>
+              </div>
             </div>
-
+  
             <div class="govuk-radios__item">
               <input
                 class="govuk-radios__input"
@@ -102,11 +61,11 @@
                 <ul class="govuk-!-margin-top-1 govuk-!-margin-bottom-3">
                   <li>No discount, No initial deposit</li>
                   <li>Pay taken automatically after you cross from your debit/credit card</li>
-                </ul>-->
+                </ul>
                 <!-- <a href="javascript:void(0)" role="link" class="govuk-!-margin-left-4">Know more</a> -->
-            <!--  </div>
+              </div>
             </div>
-
+  
             <div class="govuk-radios__item">
               <input
                 class="govuk-radios__input"
@@ -115,7 +74,7 @@
                 type="radio"
                 value="lrds"
                 aria-describedby="lrds-hint"
-              <div/>
+              />
               <label class="govuk-label govuk-radios__label govuk-!-font-weight-bold" for="lrds">
                 Local resident discount scheme
               </label>
@@ -124,7 +83,7 @@
                   <li>Provides discount for Dartford or Thurrock residents.</li>
                 </ul>
               </div>
-            </div>-->
+            </div>
           </div>
         </fieldset>
       </div>
@@ -133,8 +92,9 @@
         class="govuk-button prsl-acct-type"
         data-module="govuk-button"
         role="button"
-        <!--disabled-->
-    >Continue
+        disabled
+      >
+      Continue
       </button>
     </form>
   </div>

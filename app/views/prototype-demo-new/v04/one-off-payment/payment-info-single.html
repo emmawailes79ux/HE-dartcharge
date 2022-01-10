@@ -1,0 +1,295 @@
+{% extends "prototype-layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% include "./one-off-payment-body-head.html" %}
+<a href="#" style="cursor: pointer;" class="govuk-back-link">Back</a>
+<style>
+     .gem-c-contextual-sidebar__brexit-cta {text-size-adjust: 100%;
+    font-family: "GDS Transport",arial,sans-serif;
+    margin-bottom: 30px;
+    background-color: #f3f2f1;
+    border-top: 2px solid #282538;
+    display: block;
+    padding: 0 15px 15px;
+    text-decoration: none;}
+</style>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds error-summary" style="display: none; margin-bottom:-60px">
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1"
+      data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#">Enter a valid email address</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-top-1">
+    <h1 class="govuk-caption-l govuk-!-margin-top-0 govuk-!-margin-bottom-1">Pay the Dartford Crossing charge (Dart Charge)
+    </h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Pay for recent crossings</h1>
+    <div class="govuk-body govuk-!-margin-top-0">
+      Here are the details of the crossings you've made yesterday and today.
+    </div>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+         Is there a crossing missing?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Recent crossings can take a short time to show up so please check back later.
+      </div>
+    </details>
+    <div class="gem-c-contextual-sidebar__brexit-cta govuk-!-margin-bottom-1">
+      <!-- <h2 class="gem-c-contextual-sidebar__brexit-heading govuk-heading-m govuk-!-margin-bottom-0 -2 govuk-!-margin-top-1">Payment summary</h2>
+      <p class="gem-c-contextual-sidebar__brexit-text govuk-body">
+        Penalty charge notice payment
+    </p> -->
+    <p class="gem-c-contextual-sidebar__brexit-text govuk-body govuk-!-margin-top-1">
+     <b>Number plate</b> <br>
+     <span id="plateNom">{{data['vrn']}}</span>
+  </p>
+  <!--<p class="gem-c-contextual-sidebar__brexit-text govuk-body">
+    <b>Number of pcns</b> <br>
+    <span id="countPCNs">4</span>
+  </p>-->
+  <p class="gem-c-contextual-sidebar__brexit-text govuk-body govuk-!-margin-bottom-0">
+    <b>Crossings made</b> <br>
+    <span class="govuk-!-margin-bottom-0" id="listCrossings">3 (2 Southbound and 1 Northbound)</span>
+  </p>
+  <!-- <p class="gem-c-contextual-sidebar__brexit-text govuk-body govuk-!-margin-bottom-1">
+    Total amount: <br>
+    <h1 id="charge" class="govuk-heading-xl govuk-!-margin-top-1 govuk-!-margin-bottom-1">£10</h1>
+  </p> -->
+    </div>
+  <br>
+    <!-- <div class="govuk-warning-text govuk-!-margin-top-1">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You have 2 unpaid crossings. If you do not pay for a crossing you could get a penalty charge notice (PCN).
+      </strong>
+    </div> -->
+   
+    <div class="govuk-body">It costs <b>£2.50 per crossing</b> for a car. </div><br>
+
+
+    <!-- <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Number of crossings
+      </label>
+      <select class="govuk-select govuk-!-width-one-quarter" id="sort" name="sort">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+
+      </select>
+    </div> -->
+    <div class="govuk-inset-text govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-top-0 govuk-!-margin-bottom-5">
+      <h3 class="govuk-body-xl govuk-!-margin-top-0 govuk-!-padding-top-0 govuk-!-padding-bottom-0 govuk-!-margin-bottom-0">Payment amount</h3>
+      <h1 id = "charge" class="govuk-body-xl govuk-!-margin-bottom-0 govuk-!-padding-bottom-0 govuk-!-padding-top-0 govuk-!-margin-top-0">£7.50</h1>
+    </div>
+    <div class="govuk-body govuk-!-margin-bottom-5">
+      You can now proceed to payment or pay for additional future crossings.
+    </div> 
+    <div class="govuk-button-group">
+    <button onClick="location.href='./payment-options'" id="confirmPay"  class="govuk-button" data-module="govuk-button">
+      Proceed to payment
+    </button>
+    <button onClick="location.href='./payment-info-future'" id="payinfofuture"  class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Add future crossings
+    </button>
+  </div>
+  </div>
+  <!-- <div class="gem-c-contextual-sidebar__brexit-cta">
+    <h2 class="gem-c-contextual-sidebar__brexit-heading govuk-heading-s">Brexit</h2>
+    <p class="gem-c-contextual-sidebar__brexit-text govuk-body">
+      <a class="govuk-link" data-module="gem-track-click" data-track-category="relatedLinkClicked" data-track-action="1.0 Transition" data-track-label="/brexit" data-track-dimension="Check what you need to do" data-track-dimension-index="29" lang="en" href="/brexit">Check what you need to do</a>
+  </p>
+  </div>  -->
+  
+</div>
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h5 class="govuk-heading-m"> Registration number: {{data['vrn']}}</h5>
+    {% if (data['vrn'] === 'LO61 NRO') %}
+    <div class="govuk-inset-text govuk-!-margin-top-0 ">
+      <p class="govuk-body"><b>{{data['vrm-1'][0]}}</b> has 1 unpaid Dartford Crossing charges.</p>
+    </div>
+
+    {% endif %}
+    {% if (data['vrn'] === 'LO62 NRO') %}
+    <div class="govuk-inset-text govuk-!-margin-top-0 ">
+      <p class="govuk-body"><b>{{data['vrm-1'][0]}}</b> has <b>2 unpaid</b> Dartford Crossing charges.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li class="govuk-boyd">Number of <b>payable</b> Dartford Crossing charges: <b>1</b></li>
+        <li class="govuk-boyd">Number of Dartford Crossing charges <b>missed payment deadline: 1</b></li>
+      </ul>
+    </div>
+    {% endif %}
+    {% if (data['vrm-1'][0] === 'LO63 NRO') %}
+    <div class="govuk-inset-text govuk-!-margin-top-0 ">
+      <p class="govuk-body"><b>{{data['vrm-1'][0]}}</b> has no unpaid Dartford Crossing charges.</p>
+    </div>
+    {% endif %}
+    {% if (data['vrm-1'][0] === 'LO64 NRO') %}
+    <div class="govuk-inset-text govuk-!-margin-top-0 ">
+      <p class="govuk-body"><b>{{data['vrm-1'][0]}}</b> has <b>1 unpaid</b> Dartford Crossing charges.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li class="govuk-boyd">Number of Dartford Crossing charges <b>missed payment deadline: 1</b></li>
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if (data['vrm-1'][0] == 'LO62 NRO') %}
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text govuk-!-font-weight-regular">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        We suggest you clear the payable Dartford Crossing charges first to avoid missing the payment deadline.</br>
+        You can then resolve the Dartford Crossing charges which have already missed the deadline.
+      </strong>
+    </div>
+    {% endif %}
+    {% if (data['vrm-1'][0] == 'LO64 NRO') %}
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text govuk-!-font-weight-regular">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        You need resolve the Dartford Crossing charges which have already missed the deadline.
+      </strong>
+    </div>
+    {% endif %}
+
+  </div>
+</div> -->
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if (data['vrm-1'][0] === 'LO61 NRO') or (data['vrm-1'][0] === 'LO62 NRO') or (data['vrm-1'][0] === 'LO63 NRO') %}
+    <table class="govuk-table payment-table">
+
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Crossings</th>
+          <th scope="col" class="govuk-table__header">Number of trips</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        {% if (data['vrm-1'][0] === 'LO61 NRO') or (data['vrm-1'][0] === 'LO62 NRO') %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-padding-top-3">Payable Crossings</th>
+          <td class="govuk-table__cell">
+            <div class="govuk-!-padding-top-1">1</div>
+            <!-- <div class="govuk-form-group select-box govuk-!-margin-bottom-0">
+              <label class="govuk-label govuk-!-margin-bottom-0" for="trips">
+                <select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips">
+                  <option value="1" selected>1</option>
+                  <option value="2" >2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </label>
+            </div> -->
+          </td>
+          <td id="trip-amt" class="govuk-table__cell govuk-!-padding-top-3 govuk-table__header--numeric">£2.50</td>
+        </tr>
+        {% endif %}
+        {% if (data['vrm-1'][0] === 'LO63 NRO') %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header govuk-!-padding-top-3">Future Crossings</th>
+
+          <td class="govuk-table__cell">
+            <div id="future-crossing-selectbox" class="govuk-form-group select-box govuk-!-margin-bottom-0">
+              <label class="govuk-label govuk-!-margin-bottom-0" for="trips-future-crossing">
+                <select class="govuk-select govuk-!-margin-right-2 " id="sort" name="trips-future-crossing">
+                  <option value="0">0</option>
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </label>
+            </div>
+          </td>
+          <td id="future-amt" class="govuk-table__cell govuk-!-padding-top-3 govuk-table__header--numeric">
+            £2.50
+          </td>
+
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+    {% endif %}
+    {% if (data['vrm-1'][0] === 'LO61 NRO') or (data['vrm-1'][0] === 'LO62 NRO') %}
+    <div class="govuk-!-padding-bottom-5 add-future-crossings-row">
+      <a href="javascript:void(0)" class="govuk-link" role="link">Add Future Crossings</a>
+    </div>
+    {% endif %}
+    {% if (data['vrm-1'][0] !== 'LO64 NRO') %}
+    <div class="govuk-form-group ">
+      <label class="govuk-label govuk-body-l govuk-!-font-weight-bold govuk-!-font-size-24" for="amount">Payment
+        amount</label>
+
+      <div class="govuk-input__wrapper govuk-grid-column-two-third">
+        <div class="govuk-input__prefix govuk-!-font-weight-bold" aria-hidden="true">£</div>
+        {% if (data['vrm-1'][0] === 'LO62 NRO') or (data['vrm-1'][0] === 'LO64 NRO') %}
+        <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount"
+          name="amount" value="2.50" type="number" aria-describedby="amount" spellcheck="false">
+        {% else %}
+        <input class="govuk-input govuk-!-font-weight-bold govuk-input--width-3 govuk-!-padding-left-3" id="amount"
+          name="amount" value="2.50" type="number" aria-describedby="amount" spellcheck="false">
+        {% endif %}
+
+      </div>
+    </div>
+    {% endif %}
+    <div class="govuk-button-group govuk-!-margin-top-6">
+      {% if (data['vrm-1'][0] !== 'LO64 NRO') %}
+      <button onClick="location.href='./pay-receipt-single'" class="govuk-button" data-module="govuk-button"
+        role="button" aria-label="paytrips">Continue</button>
+      {% else %}
+      <button onClick="location.href='https://dartford-crossing-charge.herokuapp.com/demo/flow1'" class="govuk-button"
+        data-module="govuk-button" role="button" aria-label="paytrips">Resolve</button>
+      {% endif %}
+    </div>
+  </div>
+</div> -->
+</div>
+<!-- <script>
+  document.getElementById('sort').addEventListener('change', function() {
+  document.getElementById('charge').innerHTML="£"+this.value*2.50;
+});
+</script> -->
+{% endblock %}

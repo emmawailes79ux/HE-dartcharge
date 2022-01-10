@@ -63,6 +63,14 @@ router.get("/confirm-user", function (req, res) {
 
 ////EW  Setup-account
 
+//start screen
+router.post("/create-account/:version", function (req, res) {
+///  if (req.body.email) {
+    res.redirect(`${req.params.version}/name`);
+  }
+});
+
+
 
 
 
@@ -82,7 +90,7 @@ router.get("/faq", function (req, res) {
 
 
 router.post("/create-account/:version", function (req, res) {
-  if (req.body.email) {
+///  if (req.body.email) {
     res.redirect(`${req.params.version}/check-code`);
   }
 });
@@ -142,6 +150,18 @@ router.get("/create-account/:version/step-2/personal-account-type", function (re
     step: 2,
     section: "personal-account-type",
   });
+});
+
+router.post('/create-account/:version/step-2/personal-account-type', function (req, res) {
+  const editChoice = req.session.data['start-choose']
+  if (editChoice === 'pre-pay') {
+    res.redirect('/v01/one-off-payment/pay-crossing')
+  } else if (editChoice === 'create-account') {
+    res.redirect('/v01/create-account/create-account')
+  }
+  else if (editChoice === 'resolve-pcn') {
+    res.redirect('/v01/resolve-pcn/payConfirm')
+  }
 });
 
 router.post("/create-account/:version/step-2/personal-account-type", function (req, res) {
